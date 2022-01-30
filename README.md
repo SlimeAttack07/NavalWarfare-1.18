@@ -12,3 +12,8 @@ Although this mod can be played standalone, it is highly recommended that you al
 ## Notes
 Naval Warfare is designed to be a multiplayer game. Although you can play against yourself if you want to, it'll be a lot more fun if you have friends to play with. This mod is fully survival friendly and you're allowed to include it in any modpack you want.
 If you have any issues related to this mod, be sure to first check the 'Known Issues' page in the guide book / issues page on GitHub before posting a new issue.
+
+If anything in the source code structure looks odd / different from convention, it is for a few reasons:
+* This mod was originally made with MCP mappings in Minecraft 1.14. It was then updated to 1.16.4, and later on updated to 1.18.1. During these updates the conventions updated several times, causing misalignments between my naming styles and the naming conventions in the modding community. I'm not planning on changing those (they're just file/folder names after all)
+* In the 1.18.1 update I switched to the official Mojang mappings, which is why some things don't allows allign (like constantly calling blockentities 'tileentity').
+* Since I'm new to modding, several tutorials were followed in the creation of this mod. Some influences carried over here and there.

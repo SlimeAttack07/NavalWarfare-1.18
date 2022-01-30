@@ -17,6 +17,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerPlayer;
 
+// Huge thanks to Jabelar for providing this class to use for custom advancements!
+
 public class CustomTrigger implements CriterionTrigger<CustomTrigger.Instance>
 {
     private final ResourceLocation RL;

@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplie
 import slimeattack07.naval_warfare.NavalWarfare;
 
 public class CaptainsCabin extends StructureFeature<JigsawConfiguration>{
+	// Huge thanks to TelepathicGrunt for their structure tutorial providing most of this code to use
 	
 	public CaptainsCabin(Codec<JigsawConfiguration> codec) {
         super(codec, CaptainsCabin::createPiecesGenerator, PostPlacementProcessor.NONE);

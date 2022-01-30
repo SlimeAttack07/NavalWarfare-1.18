@@ -19,6 +19,8 @@ import slimeattack07.naval_warfare.config.NavalWarfareConfig;
 import slimeattack07.naval_warfare.objects.structures.CaptainsCabin;
 
 public class NWStructures {
+	// Huge thanks to TelepathicGrunt for their structure tutorial providing most of this code to use
+	
 	public static final DeferredRegister<StructureFeature<?>> STRUCTURES = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, NavalWarfare.MOD_ID);
 	
 	public static final RegistryObject<StructureFeature<JigsawConfiguration>> CAPTAINS_CABIN = STRUCTURES.register("captains_cabin", 

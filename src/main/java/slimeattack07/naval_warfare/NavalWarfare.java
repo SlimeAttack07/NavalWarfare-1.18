@@ -236,6 +236,8 @@ public class NavalWarfare {
 	}
 	 
     public void addDimensionalSpacing(final WorldEvent.Load event) {
+    	// Huge thanks to TelepathicGrunt for their structure tutorial providing most of this code to use
+    	
         if(event.getWorld() instanceof ServerLevel){
             ServerLevel serverLevel = (ServerLevel)event.getWorld();
             ChunkGenerator chunkGenerator = serverLevel.getChunkSource().getGenerator();
@@ -277,6 +279,8 @@ public class NavalWarfare {
     
     private static void associateBiomeToConfiguredStructure(Map<StructureFeature<?>, HashMultimap<ConfiguredStructureFeature<?, ?>, 
     		ResourceKey<Biome>>> STStructureToMultiMap, ConfiguredStructureFeature<?, ?> configuredStructureFeature, ResourceKey<Biome> biomeRegistryKey) {
+    	// Huge thanks to TelepathicGrunt for their structure tutorial providing most of this code to use
+    	
         STStructureToMultiMap.putIfAbsent(configuredStructureFeature.feature, HashMultimap.create());
         HashMultimap<ConfiguredStructureFeature<?, ?>, ResourceKey<Biome>> configuredStructureToBiomeMultiMap = STStructureToMultiMap.
         		get(configuredStructureFeature.feature);
