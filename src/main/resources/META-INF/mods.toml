@@ -1,33 +1,18 @@
-# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
-# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-# The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
-# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT"
-# A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
-# A list of mods - how many allowed here is determined by the individual mod loader
+issueTrackerURL="https://github.com/SlimeAttack07/NavalWarfare-1.18/issues" #optional
 [[mods]] #mandatory
-# The modid of the mod
 modId="naval_warfare" #mandatory
-# The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-# ${file.jarVersion} will substitute the value of the Implementation-Version as load from the mod's JAR file metadata
-# see the associated build.gradle script for how to populate this completely automatically during a build
 version="${file.jarVersion}" #mandatory
- # A display name for the mod
 displayName="Naval Warfare" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-# A file name (in the root of the mod JAR) containing a logo for display
 logoFile="logo.png" #optional
-# A text field displayed in the mod UI
 credits="TurtyWurty, Cy4's Modding & Cryness Forge Tutorials for their modding tutorials, Sailcraft developers for my inspiration, many authors on flaticon.com for their icon textures." #optional
-# A text field displayed in the mod UI
 authors="SlimeAttack07" #optional
-# The description text for the mod (multi line!) (#mandatory)
 description='''
 This mod allows players to play the board game battleship with a twist. There are new ship shapes to confuse your opponents,
 abilities to combo into devastating attacks and utilities to throw your opponents off guard. This mod takes heavy inspiration from
