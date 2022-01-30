@@ -4,7 +4,7 @@
 This mod allows players to play the board game battleship with a twist. There are new ship shapes to confuse your opponents,
 abilities to combo into devastating attacks and utilities to throw your opponents off guard. This mod takes heavy inspiration from a mobile app called SailCraft Battleships Online, which unfortunately  shut down on 28/08/2018 and is no longer available to play.
 
-[Trailer.](https://youtu.be/MYxKNoMBGgo "Naval Warfare Trailer")  
+[Trailer](https://youtu.be/MYxKNoMBGgo "Naval Warfare Trailer")  
 [Spotlight](https://youtu.be/abzme82r_DM "Naval Warfare Mod Spotlight")  
 ![ships](https://i.imgur.com/BLJpoj4.png "All Ships")
 
