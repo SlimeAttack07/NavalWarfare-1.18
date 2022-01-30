@@ -22,6 +22,9 @@ If anything in the source code structure looks odd / different from convention, 
 * In the 1.18.1 update I switched to the official Mojang mappings, which is why some things don't always allign (like constantly calling blockentities 'tileentity').
 * Since I'm new to modding, several tutorials were followed in the creation of this mod. Some influences carried over here and there.
 
+## Contribution
+If you want to contribute to this mod, please read 'Contribution': https://github.com/SlimeAttack07/NavalWarfare-1.18/blob/main/Contribution.md
+
 ## Credits
 ### Tutorials
 These are people whose tutorials I've used to help me develop this mod.
