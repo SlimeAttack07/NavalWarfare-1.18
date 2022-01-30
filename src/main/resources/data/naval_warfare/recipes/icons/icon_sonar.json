@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:compass"
+		},
+		{
+			"item": "naval_warfare:icon_turret"
+		},
+		{
+			"tag": "forge:dyes/green"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_sonar",
+		"count": 1
+	}
+}

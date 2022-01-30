@@ -1,0 +1,45 @@
+{
+    "name": "Gallant",
+    "icon": "naval_warfare:gallant",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Pirate fishermen"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Gallant used to be a fishing boat until it was boarded by a group of pirates, who slaughtered the original crew. They ended up taking over the ship, installing 6 cannons and new sails. They've kept the large fishing net at the back, although the reason for this is unclear.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)Salvo/$$(br)Gallant's cannons fire at a $(l)line of 5 tiles, damaging all of them/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/torpedo_net)$(l)Protective Net/$$(br)The fishing net at the back $(l)protects 9 tiles in a row from $(l:naval_warfare:abilities/active/torpedo)torpedoes/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:gallant[ship_part=four]",
+					"1": "naval_warfare:gallant[ship_part=three]",
+					"2": "naval_warfare:gallant[ship_part=two]",
+					"3": "naval_warfare:gallant[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:gallant": 2
+		}
+}

@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"H ",
+		"HH",
+		"HH"
+	],
+	"key": {
+		"H": {
+			"item": "naval_warfare:hull_part"
+		}
+	},
+	"result": {
+			"item": "naval_warfare:hull_small_b",
+			"count": 1
+	}
+}

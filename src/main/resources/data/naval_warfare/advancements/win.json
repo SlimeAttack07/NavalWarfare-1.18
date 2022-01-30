@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.win.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.win.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "minecraft:copper_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "win": {
+            "trigger": "win"
+         }
+    },
+    "parent": "naval_warfare:ship_configuration"
+}

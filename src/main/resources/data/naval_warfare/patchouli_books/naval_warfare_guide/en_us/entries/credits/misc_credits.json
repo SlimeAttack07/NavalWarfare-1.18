@@ -1,0 +1,21 @@
+{
+    "name": "Misc Credits",
+    "icon": "naval_warfare:icon_battleship",
+    "category": "naval_warfare:credits",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "The page filler texture (seen at the end of any entry with an uneven amount of pages) is a free to use texture that was not made by me. I was not able to track down the original author due to the many copies and re-uploads circling around. Should you know who the original author is, please let me know."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.fantasynamegenerators.com/ship-names.php",
+			"link_text": "FantasyNameGenerators",
+			"text": "Most ship names were generated using the ship and yacht name generators on Fantasy Name Generators."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Most sounds used were obtained from pixabay.com and mixkit.co. Both sites offer free to use, royalty free sound effects without required attribution."
+		}
+	]
+}

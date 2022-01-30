@@ -1,0 +1,31 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" S ",
+		"BLG",
+		" R "
+	],
+
+	"key": {
+		"L": {
+			"tag": "forge:storage_blocks/lapis"
+		},
+		"B": {
+			"tag": "forge:dyes/brown"
+		},
+		"G": {
+			"tag": "forge:dyes/green"
+		},
+		"R": {
+			"tag": "forge:dyes/red"
+		},
+		"S": {
+			"tag": "minecraft:boats"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:game_controller",
+			"count": 1
+	}
+}

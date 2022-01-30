@@ -1,0 +1,45 @@
+{
+    "name": "Vanquisher",
+    "icon": "naval_warfare:vanquisher",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Run while you can"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Vanquisher is a rutheless pirate ship, carrying a whopping 22 cannons on board. Picking a fight with this ship is a terrible idea, as many other ships have found out the hard way.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/missile)$(l)Absolute Overkill/$$(br)Vanquisher $(l)targets a tile/$ and fires all 22 cannons at once, $(l)absolutely obliterating anything present in that tile/$. This ability has $(l)1 Use/$ and costs $(l)16 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/suppression)$(l)Wildfire/$$(br)$(l)As vanquisher sinks/$, the crew tries its best to avenge the ship, wildly firing its cannons and $(l)damaging 8 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:vanquisher[ship_part=four]",
+					"1": "naval_warfare:vanquisher[ship_part=three]",
+					"2": "naval_warfare:vanquisher[ship_part=two]",
+					"3": "naval_warfare:vanquisher[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:vanquisher": 2
+		}
+}

@@ -1,0 +1,15 @@
+{
+	"parent": "naval_warfare:block/template_paradox_two",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/stripped_dark_oak_log",
+		"2": "block/brown_concrete_powder",
+		"3": "block/black_concrete_powder",
+		"4": "block/stripped_dark_oak_log",
+		"5": "block/gray_concrete_powder",
+		"6": "block/sandstone",
+		"7": "block/purple_concrete_powder",
+		"8": "block/magenta_concrete_powder",
+		"particle": "block/brown_concrete_powder"
+	}
+}

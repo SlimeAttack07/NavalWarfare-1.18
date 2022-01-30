@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"PSP",
+		"PPP"
+	],
+
+	"key": {
+		"P": {
+			"tag": "minecraft:planks"
+		},
+		"S": {
+			"tag": "minecraft:boats"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:ship_display",
+			"count": 2
+	}
+}

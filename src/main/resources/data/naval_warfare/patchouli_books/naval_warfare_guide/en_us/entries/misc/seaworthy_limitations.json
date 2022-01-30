@@ -1,0 +1,15 @@
+{
+    "name": "Seaworthy Limitations",
+    "icon": "naval_warfare:icon_seaworthy",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Due to the way the game is constructed, there is no easy way to handle the removal of board tiles without also removing the ships to prevent ships falling outside the board. Because of this, removing/deregistering any ship with the $(l:naval_warfare:abilities/passive/seaworthy)Seaworthy/$ passive ability will cause the board to be reset to a new, empty board."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "To avoid having to remake your loadout several times, please ensure your happy with the placement of these ships before adding your other ships. Note that you can still use the $(l:naval_warfare:misc/utility_tool)Utility Tool/$ to randomize all ship positions without causing a board reset. Using it to randomize only a ship with the Seaworthy passive will trigger the board reset if it fails to spawn on the first try."
+		}
+    ]
+}

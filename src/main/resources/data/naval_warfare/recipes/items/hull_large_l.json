@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_medium_l"
+		},
+		{
+			"item": "naval_warfare:hull_part"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:hull_large_l",
+		"count": 1
+	}
+}

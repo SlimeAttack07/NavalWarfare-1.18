@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "board_state=neutral": { "model": "naval_warfare:block/board_neutral"},
+        "board_state=highlighted": { "model": "naval_warfare:block/board_highlighted"},
+        "board_state=empty":  { "model": "naval_warfare:block/board_empty"},
+        "board_state=hit":  { "model": "naval_warfare:block/board_hit"},
+		"board_state=highempty": { "model": "naval_warfare:block/board_highempty"},
+		"board_state=highhit": { "model": "naval_warfare:block/board_highhit"}
+    }
+}

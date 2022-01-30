@@ -1,0 +1,9 @@
+{
+	"parent": "naval_warfare:block/template_safeguard_two",
+	"textures": {
+		"0": "block/cyan_terracotta",
+		"1": "block/gray_concrete",
+		"2": "block/light_gray_concrete",
+		"particle": "block/cyan_terracotta"
+	}
+}

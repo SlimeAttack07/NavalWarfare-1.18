@@ -1,0 +1,26 @@
+{
+    "name": "Mortars",
+    "icon": "naval_warfare:icon_mortar",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Mortars select a large area of tiles and then target a set amount of random tiles within that area, dealing 1 damage to each targeted grid. Each mortar has three stats: Length, Width and Amount. The length and Width determine how many tiles are selected the ability (length * width), and the Amount determines how many of those tiles are actually targeted."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Be aware that if you select a tile too close to the edge of the board, the ability may target less tiles than its stats indicate.$(br2)$(l)Tips & Tricks:/$$(li)Mortars can be useful for scouting early on.$(li)When a mortar hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, it will only deal one damage to the shield regardless of how much of the ability hits the shield."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/boundless",
+				"naval_warfare:ships/ship_types/battleships/castlereagh",
+				"naval_warfare:ships/ship_types/battleships/tyrant",
+				"naval_warfare:ships/ship_types/battleships/dulverton",
+				"naval_warfare:ships/ship_types/battleships/ephira"
+			]
+		}
+    ]
+}

@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_arethuse_two",
+	"textures": {
+		"0": "block/red_terracotta",
+		"1": "block/gray_concrete",
+		"2": "block/yellow_terracotta",
+		"3": "block/black_concrete",
+		"4": "block/brown_concrete",
+		"particle": "block/red_terracotta"
+	}
+}

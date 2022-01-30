@@ -1,0 +1,39 @@
+{
+    "name": "Energy Shields",
+    "icon": "naval_warfare:icon_energy_shield",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-GameStart)/$$(br)Energy shields are always deployed at the start of the round, centered around their corresponding ships. As long as both the shield itself and the ship it belongs to are not destroyed, the shield will nullify any and all incoming $(thing)air based/$ attacks. These are attacks that strike from above, including manual target shots!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "If multiple shields overlap with eachother and one shield is destroyed, any pieces overlapping with the destroyed shield will remain, so you won't lose both shields at once. Note that when a shield is hit, it will take 1 damage regardless of how much damage the attack would originally have done if it had hit a ship."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Energy shields have three stats: Length, Width and Health. When a shield's health drops to 0, the shield is destroyed. Note that the length and width rotate with your ship's placement, where the length is always in the direction that the ship faces."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks/$$(li)Try not to overlap energy shields, as any hits on the overlapping parts will damage BOTH shields! $(li)Most energy shields can protect multiple ships if your ships are close together. However, this may also means that you may lose multiple ships in quick succession once the shield is destroyed." 
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Always check whether your opponent has any ships with an $(l:naval_warfare:abilities/active/energy_overloader)$(thing)Energy Overloader/$ ability, as this ability will instantly destroy any shield hit by it AND the tile below the shield! Try to destroy any ship with this ability as fast as possible to preserve your shields. $(li)Shields DO NOT STOP $(l:abilities/active/torpedo)$(thing)Torpedoes/$!$(li)Your opponent will be notified when they hit your shield, and will see a shield"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "tile appear on their targeting board above the tile they fired at. They will likely keep shooting there to break the shield, so keep in mind that any ship located there may only live for a few more rounds (remember that you will lose access to its ability when the ship is destroyed)!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/safeguard",
+				"naval_warfare:ships/ship_types/destroyers/vervain"
+			]
+		}
+    ]
+}

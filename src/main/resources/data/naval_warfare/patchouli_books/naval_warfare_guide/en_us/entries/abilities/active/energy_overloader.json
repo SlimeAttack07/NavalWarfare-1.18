@@ -1,0 +1,23 @@
+{
+    "name": "Energy Overloaders",
+    "icon": "naval_warfare:icon_energy_overloader",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Energy Overloaders target a single tile and deal 1 damage to it. If there is an $(l:naval_warfare:abilities/passive/energy_shield)Energy Shield/$ protecting that tile, it will be destroyed and the tile will still be damaged!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)This ability is THE best counter against energy shields! Should you ever encounter an Energy Shield and you have this ability, you'll be able to completely nullify it.$(li)Try to avoid wasting energy overloaders on unprotected tiles, or else you might suddenly find yourself out of uses against a high HP energy shield."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/cybele",
+				"naval_warfare:ships/ship_types/supports/leopards_whelp"
+			]
+		}
+    ]
+}

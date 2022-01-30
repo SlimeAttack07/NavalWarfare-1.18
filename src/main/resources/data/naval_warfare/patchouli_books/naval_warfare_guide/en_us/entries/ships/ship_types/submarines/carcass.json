@@ -1,0 +1,44 @@
+{
+    "name": "Carcass",
+    "icon": "naval_warfare:carcass",
+    "category": "naval_warfare:ship_types/submarines",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Dead fish"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Carcass is a dangerous submarine responsible for having sunk hundreds of ships. Over the years, it has sustained a fair amount of damage. Instead of repairing the submarine, its crew painted it too look like a fish carcass to honor the submarine's name.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/torpedo)$(l)Bone Torpedo/$$(br)Carcass fires torpedoes too often for its crew to resupply the conventional way, so they instead use the wreckage of the ships they destroy to create their own torpedoes. These abominations $(l)travel up to 7 tiles/$ and splinter upon impact, dealing $(l)3 damage/$ to whatever they hit. The ability has $(l)1 use/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Wreckage Ejection/$$(br)Upon being hit, Carcass's crew quickly fills its torpedo tubes with collected wreckage from previous victories, launching it towards their enemy as a makeshift projectile. Upon leaving the launch tube, the wreckage scatters, $(l)damaging 3 opponent tiles at random/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:carcass[ship_part=three]",
+					"1": "naval_warfare:carcass[ship_part=two]",
+					"2": "naval_warfare:carcass[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:carcass": 2
+		}
+}

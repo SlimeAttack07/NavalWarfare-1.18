@@ -1,0 +1,6 @@
+{
+	"name": "Supports",
+	"parent": "naval_warfare:ships",
+	"description": "Don't underestimate our power..",
+	"icon": "naval_warfare:icon_support"
+}

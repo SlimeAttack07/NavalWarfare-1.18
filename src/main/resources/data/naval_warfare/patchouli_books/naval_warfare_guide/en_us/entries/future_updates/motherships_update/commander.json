@@ -1,0 +1,21 @@
+{
+    "name": "Commander",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "A ship with powerful abilities that ups the pace of the game a lot. Be sure to finish off any damaged ships as quick as possible to reduce the amount of damage done to your own board by your passive."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Fire a 5 damage homing missile that locks on to a random ship within a 5 by 5 target area.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "This ship will auto-repair any damage done to itself as long as you have other ships alive. Every turn, one random tile of your board is damaged for each damaged opponent ship. If your opponent has a mothership, you'll need to destroy it last or you lose the game.",
+			"title": "Passive Ability"
+		}
+    ]
+}

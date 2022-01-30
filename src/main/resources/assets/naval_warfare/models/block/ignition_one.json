@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_ignition_one",
+	"textures": {
+		"0": "block/red_nether_bricks",
+		"1": "block/orange_concrete",
+		"2": "block/brown_concrete",
+		"3": "block/gray_concrete",
+		"4": "block/obsidian",
+		"5": "block/yellow_concrete",
+		"6": "block/red_concrete",
+		"particle": "block/red_nether_bricks"
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Tips",
+    "icon": "naval_warfare:ship_close",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 9,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(li)You can shift-right click any placed ship while this guide is in your hand to instantly jump to the ship's ability information in the guide.$(li)Naval Warfare needs a lot of space whilst playing games. Constantly checking if there are no blocks in this space would impact performance quite heavily."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Because of this, these checks are typically only done when a game starts. $(l)Please be careful where you start games so you don't end up destroying half your base!/$$(li)Don't play games too close to other players. They'll be able to see where your ships are if they look at your board.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)When a game of Naval Warfare starts, the player with the lowest fleet HP gets the first turn. If both player's have the same fleet HP, the player that was in queue longer will get the first turn. No matter who starts, both players start with the same amount of energy in their first turn."
+		}
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "The Scorcher",
+    "icon": "naval_warfare:the_scorcher",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "The most inefficient weaponized ship ever created"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The scorcher is a ship with dual mounted flamethrowers, each one almost as long as half the ship itself. At the back of the ship sit two large fuel tanks used for the flamethrowers. The military still questions why on earth this thing was ever built, and why it hasn't been taken out of service yet.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/napalm)$(l)Inferno/$$(br)The ship uses up a full fuel tank to completely $(l)burn the targeted tile/$. If the tile contained a ship, then it will $(l)take 1 damage each turn until destroyed/$. This ability has $(l)2 Uses/$ and costs $(l)12 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Menacing/$$(br)Enemies refuse to get close to this ship, giving your fleet $(l)an adddition 5 tiles to use/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:the_scorcher[ship_part=three]",
+					"1": "naval_warfare:the_scorcher[ship_part=two]",
+					"2": "naval_warfare:the_scorcher[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:the_scorcher": 2
+		}
+}

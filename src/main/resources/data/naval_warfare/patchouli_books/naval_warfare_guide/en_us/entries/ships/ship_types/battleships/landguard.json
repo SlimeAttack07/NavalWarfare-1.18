@@ -1,0 +1,50 @@
+{
+    "name": "Landguard",
+    "icon": "naval_warfare:landguard",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Defensive power house"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Landguard is a large ship carrying several anti-air guns and two large cranes. Each crane holds a large turret, which can be placed anywhere on the ocean to provide additonal support. Landguard typically protects shorelines, but has been used for other defensive purposes before.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/turret)$(l)Deploy E-54/$$(br)One of Landguard's cranes $(l)deploys a 1 HP turret/$, which floats towards the chosen destination. This ability has $(l)2 Uses/$ and costs $(l)10 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)E-54 Salvo/$$(br)The deployed E-54 Siege Automaton will $(l)target a line of 4 tiles/$ and damage all of them. This ability has $(l)Infinite Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Deployable"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/anti_air)$(l)Anti-Air Battery/$$(br)Landguard's gun battery $(l)protects the ship and 1 tile surrounding it, destroying any air-based attacks/$ that enter its range.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:landguard[ship_part=four]",
+					"1": "naval_warfare:landguard[ship_part=three]",
+					"2": "naval_warfare:landguard[ship_part=two]",
+					"3": "naval_warfare:landguard[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:landguard": 2
+		}
+}

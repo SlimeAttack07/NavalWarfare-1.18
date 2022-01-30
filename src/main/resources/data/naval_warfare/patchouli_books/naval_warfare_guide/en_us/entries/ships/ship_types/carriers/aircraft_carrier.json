@@ -1,0 +1,46 @@
+{
+    "name": "Aircraft Carrier",
+    "icon": "naval_warfare:aircraft_carrier",
+    "category": "naval_warfare:ship_types/carriers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "A Plane Ship"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A simple aircraft carrier carrying a few planes and choppers. This is one of the few ships that has no abilities at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01234"]
+				],
+				"mapping": {
+					"0": "naval_warfare:aircraft_carrier[ship_part=five]",
+					"1": "naval_warfare:aircraft_carrier[ship_part=four]",
+					"2": "naval_warfare:aircraft_carrier[ship_part=three]",
+					"3": "naval_warfare:aircraft_carrier[ship_part=two]",
+					"4": "naval_warfare:aircraft_carrier[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:aircraft_carrier": 2
+		}
+}

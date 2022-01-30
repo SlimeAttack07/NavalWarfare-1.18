@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_ignition_one",
+	"textures": {
+		"0": "block/nether_wart_block",
+		"1": "block/orange_wool",
+		"2": "block/brown_wool",
+		"3": "block/gray_wool",
+		"4": "block/obsidian",
+		"5": "block/yellow_wool",
+		"6": "block/red_wool",
+		"particle": "block/nether_wart_block"
+	}
+}

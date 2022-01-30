@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_kilgobnet_two",
+	"textures": {
+		"0": "block/spruce_planks",
+		"1": "block/gray_wool",
+		"2": "block/spruce_log",
+		"3": "block/brown_wool",
+		"4": "block/black_wool",
+		"6": "block/green_wool",
+		"7": "block/sandstone",
+		"particle": "block/spruce_planks"
+	}
+}

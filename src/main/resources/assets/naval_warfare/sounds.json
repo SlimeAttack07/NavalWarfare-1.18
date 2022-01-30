@@ -1,0 +1,161 @@
+{
+    "shot": {
+		"sounds": [
+			"naval_warfare:shot1"
+		],
+		"subtitle": "subtitle.naval_warfare.shot"
+	},
+	"streak1": {
+		"sounds": [
+			{
+				"name": "naval_warfare:streak1",
+				"pitch": 1.5
+			}
+		],
+		"subtitle": "subtitle.naval_warfare.streak1"
+	},
+	"streak2": {
+		"sounds": [
+			{
+				"name": "naval_warfare:streak2",
+				"pitch": 1.5
+			}
+		],
+		"subtitle": "subtitle.naval_warfare.streak2"
+	},
+	"streak3": {
+		"sounds": [
+			{
+				"name": "naval_warfare:streak3",
+				"pitch": 1.5
+			}
+		],
+		"subtitle": "subtitle.naval_warfare.streak3"
+	},
+	"defeat": {
+		"sounds": [
+			"naval_warfare:defeat"
+		],
+		"subtitle": "subtitle.naval_warfare.defeat"
+	},
+	"destroy": {
+		"sounds": [
+			"naval_warfare:destroy1",
+			"naval_warfare:destroy2",
+			"naval_warfare:destroy3"
+		],
+		"subtitle": "subtitle.naval_warfare.destroy"
+	},
+	"fire_damage": {
+		"sounds": [
+			"naval_warfare:fire_damage"
+		],
+		"subtitle": "subtitle.naval_warfare.fire_damage"
+	},
+	"game_found": {
+		"sounds": [
+			"naval_warfare:game_found"
+		],
+		"subtitle": "subtitle.naval_warfare.game_found"
+	},
+	"hit": {
+		"sounds": [
+			"naval_warfare:hit1",
+			"naval_warfare:hit2",
+			"naval_warfare:hit3",
+			"naval_warfare:hit4"
+		],
+		"subtitle": "subtitle.naval_warfare.hit"
+	},
+	"missile": {
+		"sounds": [
+			"naval_warfare:missile1",
+			"naval_warfare:missile2"
+		],
+		"subtitle": "subtitle.naval_warfare.missile"
+	},
+	"napalm": {
+		"sounds": [
+			"naval_warfare:napalm1"
+		],
+		"subtitle": "subtitle.naval_warfare.napalm"
+	},
+	"torpedo": {
+		"sounds": [
+			"naval_warfare:torpedo"
+		],
+		"subtitle": "subtitle.naval_warfare.torpedo"
+	},
+	"victory": {
+		"sounds": [
+			"naval_warfare:victory"
+		],
+		"subtitle": "subtitle.naval_warfare.victory"
+	},
+	"miss": {
+		"sounds": [
+			{
+				"name": "naval_warfare:miss1",
+				"pitch": 0.75
+			}
+		],
+		"subtitle": "subtitle.naval_warfare.miss"
+	},
+	"energy_shield": {
+		"sounds": [
+			"naval_warfare:energy_shield"
+		],
+		"subtitle": "subtitle.naval_warfare.energy_shield"
+	},
+	"anti_air": {
+		"sounds": [
+			{
+				"name": "naval_warfare:anti_air",
+				"pitch": 1.5
+			}
+		],
+		"subtitle": "subtitle.naval_warfare.anti_air"
+	},
+	"torpedo_net": {
+		"sounds": [
+			"naval_warfare:torpedo_net"
+		],
+		"subtitle": "subtitle.naval_warfare.torpedo_net"
+	},
+	"bomber": {
+		"sounds": [
+			"naval_warfare:bomber1"
+		],
+		"subtitle": "subtitle.naval_warfare.bomber"
+	},
+	"sonar": {
+		"sounds": [
+			"naval_warfare:sonar"
+		],
+		"subtitle": "subtitle.naval_warfare.sonar"
+	},
+	"self_timeout": {
+		"sounds": [
+			"naval_warfare:self_timeout"
+		],
+		"subtitle": "subtitle.naval_warfare.self_timeout"
+	},
+	"opponent_timeout": {
+		"sounds": [
+			"naval_warfare:opponent_timeout"
+		],
+		"subtitle": "subtitle.naval_warfare.opponent_timeout"
+	},
+	"your_turn": {
+		"sounds": [
+			"naval_warfare:your_turn"
+		],
+		"subtitle": "subtitle.naval_warfare.your_turn"
+	},
+	"opponent_turn": {
+		"sounds": [
+			"naval_warfare:opponent_turn"
+		],
+		"subtitle": "subtitle.naval_warfare.opponent_turn"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"naval_warfare:destroyer",
+		"naval_warfare:cybele",
+		"naval_warfare:ignition",
+		"naval_warfare:psyche"
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_ghostnova_four",
+	"textures": {
+		"0": "block/green_wool",
+		"1": "block/blue_wool",
+		"2": "block/cyan_wool",
+		"3": "block/light_blue_wool",
+		"4": "block/black_wool",
+		"5": "block/gray_wool",
+		"particle": "block/green_wool"
+	}
+}

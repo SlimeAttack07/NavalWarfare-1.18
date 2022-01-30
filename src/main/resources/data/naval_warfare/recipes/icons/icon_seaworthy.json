@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "forge:dyes/light_blue"
+		},
+		{
+			"tag": "forge:gems/lapis"
+		},
+		{
+			"item": "minecraft:water_bucket"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_seaworthy",
+		"count": 1
+	}
+}

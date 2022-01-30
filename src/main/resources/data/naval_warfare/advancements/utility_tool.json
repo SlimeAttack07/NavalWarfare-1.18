@@ -1,0 +1,38 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.utility_tool.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.utility_tool.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:utility_tool"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+     "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+							"naval_warfare:utility_tool"
+						]
+                    }
+                ]
+            }
+        }
+    },
+	"requirements": [
+		[
+			"item"
+		]
+	],
+    "parent": "naval_warfare:game_interactor"
+}

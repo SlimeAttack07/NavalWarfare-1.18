@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_quadruple"
+		},
+		{
+			"item": "naval_warfare:icon_torpedo_decoy"
+		},
+		{
+			"item": "naval_warfare:icon_torpedo_decoy"
+		},
+		{
+			"item": "naval_warfare:icon_major_insight"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:barcross",
+		"count": 1
+	}
+}

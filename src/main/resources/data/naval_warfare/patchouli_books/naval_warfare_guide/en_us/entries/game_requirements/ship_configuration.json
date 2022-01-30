@@ -1,0 +1,42 @@
+{
+    "name": "Ship Configuration",
+    "icon": "naval_warfare:ship_configuration",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 2,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A ship configuration is obtained by using the $(l:game_requirements/game_interactor)$(item)Game Interactor$(clear) in $(thing)Save Mode$(clear) on the $(l:game_requirements/game_controller)$(item)Game Controller$(clear) in $(thing)Load/Edit Mode$(clear). This will collect any ships placed upon the board in front of the game controller and store it in a new ship configuration. To spawn a board to place your ships on, you must either load in an existing ship configuration first, or create a new "
+        },
+		{
+			"type": "patchouli:text",
+			"text": "ship configuration first using the game interactor. $(br2)The ship configuration will display the following details in its tooltip: $(br)$(li)Configuration Name$(li)Board Size (amount of tiles)$(li)Total HP$(li)Ships used in configuration$(clear)$(br2)A loadout name can be set by renaming the ship configuration in an anvil."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "To load a ship configuration, simply use the game interactor to set your game controller to $(thing)Load/Edit Mode$(clear), and then right click the controller with your ship configuration. You may then edit the configuration, save it, or request a game to play."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:ship_configuration",
+			"text": "$(l)Step by step guide/$$(br)$(li)1. Use your $(l:game_requirements/game_interactor)$(thing)Game Interactor/$ to create a new ship configuration or load an existing one. Loaded ships will automatically register themselves to the controller.",
+			"link_recipe": true	
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)2. Choose your ships, and right-click each of them on your game controller to register them. This allows the controller to compute whether or not board tiles should be added or removed. Note that all ships used must be unique, so don't try to register multiple of the same ship. Each time you register a ship with the $(l:naval_warfare:abilities/passive/seaworthy)Seaworthy/$ passive ability, your board will be redrawn but any placed ships will remain."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)3. $(l:naval_warfare:game_requirements/ship_placement)Place your ships/$ on the board in front of your game controller. If the ship can't be placed in its current orientation or location, then it will be removed. If this happens, try either placing it somewhere else on the board or rotate your character to rotate the ship (as placement uses the direction you're facing in to determine the rotation of the ship). You'll always get your ships back when placing on board tiles."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)4. Once all your ships are placed, right click the game controller with the game interactor in Save mode $(l)(the game interactor is automatically put in this mode if you used the 'Create new ship configuration' mode)/$. This will give you the ship configuration you just made!$(li)5. (Optional) Rename your ship configuration in an anvil if you want to be fancy or to distinguish it from your other configurations."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Final notes/$: Make sure your total ship hp does not exceed the maximum fleet HP (24 by default), as the controller won't allow you to register any more ships if this number would be exceeded. If you want to deregister a ship, shift-right click the controller with the ship or remove it yourself if it is already present on the board. To remove a ship, see $(l:naval_warfare:game_requirements/removing_ships)Removing Ships/$."
+		}
+    ]
+}

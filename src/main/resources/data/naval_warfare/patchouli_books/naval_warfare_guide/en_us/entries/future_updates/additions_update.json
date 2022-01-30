@@ -1,0 +1,15 @@
+{
+    "name": "Additions Update",
+    "icon": "naval_warfare:icon_destroyer",
+    "category": "naval_warfare:future_updates",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This update consists of a few minor additions:$(li)Battle Log: Keeps track of the battle, and dispenses an item at the end of the battle. Inserting it into a Battle Viewer will quickly replay the match so you can rewatch it.$(li)Simple AI: Enables you to play against AI so that you can still play in single player."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Hard AI structures may generate in the level that each player can beat once for great rewards. $(li)Admin Ships: Creative only Tier 7 ships with amped up abilities. These are really just for fun and will be stupidly overpowered."
+		}
+    ]
+}

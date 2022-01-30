@@ -1,0 +1,46 @@
+{
+    "name": "Arethuse",
+    "icon": "naval_warfare:arethuse",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "What on earth am I looking at.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Arethuse is a royal ship belonging to a king of a long forgotten era. Featuring 22 upwards facing cannons and 8 sideways facing cannons, no blimp or ship could ever get close enough to take it down.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)Deterrent/$$(br)Arethuse fires at $(l)4 opponent tiles in a line/$ to scare them off. This ability has $(l)2 Uses/$ and costs $(l)7 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/anti_air)$(l)Upwards Fire/$$(br)$(l)Arethuse's upwards facing cannons $(l)protect the ship and 1 tile surrounding it, destroying any air-based attacks/$ that enter their range.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01234"]
+				],
+				"mapping": {
+					"0": "naval_warfare:arethuse[ship_part=five]",
+					"1": "naval_warfare:arethuse[ship_part=four]",
+					"2": "naval_warfare:arethuse[ship_part=three]",
+					"3": "naval_warfare:arethuse[ship_part=two]",
+					"4": "naval_warfare:arethuse[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:arethuse": 2
+		}
+}

@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+		"particle": "naval_warfare:block/game_controller_battle",
+        "top": "naval_warfare:block/game_controller_battle_top",
+		"front": "naval_warfare:block/game_controller_battle_front",
+		"side": "naval_warfare:block/game_controller_battle"
+    }
+}

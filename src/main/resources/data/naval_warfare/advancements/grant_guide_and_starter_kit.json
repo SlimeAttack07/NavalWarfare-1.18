@@ -1,0 +1,15 @@
+{
+	"criteria": 
+		{
+			"tick": {
+				"trigger": "minecraft:tick"
+			}
+		},
+	"rewards": 
+		{
+			"loot": [
+				"naval_warfare:advancements/guide",
+				"naval_warfare:advancements/starter_kit"
+			]
+		}
+}

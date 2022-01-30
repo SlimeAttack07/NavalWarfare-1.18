@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_destroyer"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_carrier",
+		"count": 1
+	}
+}

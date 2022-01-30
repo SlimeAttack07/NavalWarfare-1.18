@@ -1,0 +1,27 @@
+{
+    "name": "Spyglasses",
+    "icon": "naval_warfare:icon_spyglass",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Spyglasses will scout tiles in a line, revealing whether or not any ships are located in those tiles. They always scout perpendicular to the direction your controller faces in (left to right, never up/down). Each spyglass has one stat: Length. The length determines how many tiles are targeted by the ability. When selecting the deployment tile, be aware that this length is centered around"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "that tile. This means that if you select a tile too close to the edge of the board, the ability may target less tiles than its length indicates.$(br2)$(l)Tips & Tricks:/$$(li)Spyglasses can be useful for scouting early on.$(li)Spyglasses excel at setting up devastating combos, as you can continue to move after using the ability regardless of whether or not it actually found any ships."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "You can use the spyglass ability to severly decrease the chances that your other abilities miss if they target that tile, since you already know that there is a ship there (just be aware that things like $(l:abilities/passive/energy_shield)$(thing)Energy Shields)/$ may still block your attack.$(li)The ability will mark all target tiles that contain a ship with a 'Ship Here' block (looks like a red exclamation mark). This block disappears if the tile it sits above is damaged!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/scouts/maori",
+				"naval_warfare:ships/ship_types/scouts/pathfinder"
+			]
+		}
+    ]
+}

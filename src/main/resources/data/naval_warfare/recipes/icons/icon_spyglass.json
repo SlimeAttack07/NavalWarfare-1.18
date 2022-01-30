@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "forge:glass_panes"
+		},
+		{
+			"tag": "forge:ingots/iron"
+		},
+		{
+			"tag": "forge:dyes/cyan"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_spyglass",
+		"count": 1
+	}
+}

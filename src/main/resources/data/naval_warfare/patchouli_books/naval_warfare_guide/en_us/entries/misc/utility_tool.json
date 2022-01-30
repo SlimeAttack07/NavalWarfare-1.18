@@ -1,0 +1,29 @@
+{
+    "name": "Utility Tool",
+    "icon": "naval_warfare:utility_tool",
+    "category": "naval_warfare:misc",
+	"sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This item is used to manipulate your deployed loadout. It has 4 modes, which can be cycled by right clicking in the air. The current modes are as follows:$(br)$(li)Move a ship to a random spot on the board with a random orientation by right clicking it.$(li)Move all ships to random spots with random orientations by right clicking the game controller."
+        },
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Place a random ship from your inventory on a random tile on the board with a random orientation by right clicking the controller. Only tier 2 to tier 5 ships are used. $(thing)$(l)Creative Only:/$$(thing)Sneak to generate a random ship instead of checking you inventory./$$(li)Fill your board with as many random ships from your inventory as possible."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Each ship is placed on a random tile with a random orientation. Only tier 2 to tier 5 ships are used. $(thing)$(l)Creative Only:/$$(thing)Sneak to generate random ships instead of checking you inventory./$"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The utility tool will never place or generate ships that would exceed the maximum allowed hp of a fleet (24 by default). If the utility tool states that no ships were placed, check your inventory and the placed ships. You likely either don't have any ships of the accepted tiers or can't place them without exceeding the health limit.",
+			"title": "Notes"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:items/utility_tool"
+		}
+    ]
+}

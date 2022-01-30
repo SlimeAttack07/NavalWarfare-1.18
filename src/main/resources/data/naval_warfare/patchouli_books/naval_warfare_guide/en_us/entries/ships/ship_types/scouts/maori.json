@@ -1,0 +1,44 @@
+{
+    "name": "Maori",
+    "icon": "naval_warfare:maori",
+    "category": "naval_warfare:ship_types/scouts",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Excellent scout"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Maori is a fast and nimble scout ship with several onboard spyglasses. It is a trusted escort ship that has guided many ships to their destination, using its 6 cannons to fend off any unprepared attackers.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/spyglass)$(l)Spyglass/$$(br)Maori's crew looks carefully at $(l)a row of 5 tiles/$. If there are any ship parts in those tiles, then Maori will notify the entire fleet of the $(l)exact location of those ship parts/$. This ability has $(l)2 Uses/$ and costs $(l)6 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Seaworthy/$$(br)The ships strong build provides an $(l)additional 7 tiles/$ to use for your fleet.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:maori[ship_part=three]",
+					"1": "naval_warfare:maori[ship_part=two]",
+					"2": "naval_warfare:maori[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:maori": 2
+		}
+}

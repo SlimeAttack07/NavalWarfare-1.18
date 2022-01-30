@@ -1,0 +1,32 @@
+{
+    "name": "Game Interactor",
+    "icon": "naval_warfare:game_interactor",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This item is used to interact to interact with the $(l:game_requirements/game_controller)$(item)Game Controller$(clear). It has 7 modes, which can be cycled by right clicking in the air. The current modes are as follows:$(br)$(li)Create a new ship configuration by right clicking the game controller, which then spawn a 10x10 board for you to place ships on. The game interactor will switch to Save Mode afterwards."
+        },
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Load a Ship Configuration by right clicking the game controller, after which you can right click it again with a $(l:game_requirements/ship_configuration)$(item)Ship Configuration/$ in your hand to load it.$(br)$(li)Save a Ship Configuration by right clicking the controller, which will give you a Ship Configuration item."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Request a game to play by right clicking the controller. This requires a ship configuration to have been loaded using the load function of the interactor first.$(br)$(li)Target a board tile by right clicking an opponent board tile spawned while playing a game. Just like regular battleship, you will lose your turn if you miss, and may continue if you hit a ship. $(l)It is impossible to tie in Naval Warfare."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Cancel game search request. Using this whilst seaching for a game will cancel your search. You'll need to use this if you were searching for a game and the level/server closed, as this event will cause the mod to forget all controllers that were in queue.$(br)$(li)Forfeit the game instantly. There is no confirmation, since you'd need to cycle through all other modes to get here when using target tile mode."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)WARNING/$: Spam clicking the 'target tile' mode on board tiles may on rare occasions cause the game controller to glitch. This can cause the game to end before all ships are destroyed, or to not end when all ships are destroyed."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:items/game_interactor"
+		}
+    ]
+}

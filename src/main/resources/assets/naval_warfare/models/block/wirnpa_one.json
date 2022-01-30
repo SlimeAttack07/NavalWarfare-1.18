@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_wirnpa_one",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/gray_terracotta",
+		"2": "block/yellow_concrete",
+		"3": "block/yellow_terracotta",
+		"particle": "block/gray_concrete"
+	}
+}

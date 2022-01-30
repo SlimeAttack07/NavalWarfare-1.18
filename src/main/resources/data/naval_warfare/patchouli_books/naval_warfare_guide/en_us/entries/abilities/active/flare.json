@@ -1,0 +1,26 @@
+{
+    "name": "Flares",
+    "icon": "naval_warfare:icon_flare",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Flares will scout tiles in a large area, revealing whether or not any ships are located in the general area around those tiles. Flares have two stats: Length and Width. The ability will target Length * Width tiles. When selecting the deployment tile, be aware that this area is centered around that tile."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "This means that if you select a tile too close to the edge of the board, the ability may target less tiles than its stats indicate.$(br2)$(l)Tips & Tricks:/$$(li)Flares can be useful for scouting large areas on.$(li)You can continue to move after using the ability regardless of whether or not it actually found any ships."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)All flares only semi-reveal at most one ship per use, and will never target tiles that you've already damaged before.$(li)If the ability has found a ship, it will place a 'Ship Close' block (looks like a yellow question mark) somewhere on a non-targeted tile in the 3x3 area centered around the target tile. This block disappears if the tile it sits above is damaged!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/scouts/psyche"
+			]
+		}
+    ]
+}

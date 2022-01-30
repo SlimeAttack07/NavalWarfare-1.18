@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_narvik_three",
+	"textures": {
+		"0": "block/green_wool",
+		"1": "block/gray_wool",
+		"2": "block/black_wool",
+		"3": "block/light_gray_wool",
+		"4": "block/red_wool",
+		"particle": "block/green_wool"
+	}
+}

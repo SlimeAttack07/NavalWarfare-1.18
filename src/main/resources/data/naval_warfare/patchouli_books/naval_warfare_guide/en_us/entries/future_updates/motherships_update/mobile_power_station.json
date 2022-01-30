@@ -1,0 +1,21 @@
+{
+    "name": "Mobile Power Station",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This ship enables you to use abilities more often, but really doesn't provide anything else."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The ship has a 2 HP $(l:naval_warfare:abilities/passive/energy_shield)Energy Shield/$ above it and gives you 2 extra energy each round until destroyed. When destroyed, a blackout sets your energy to -5.",
+			"title": "Passive Ability"
+		}
+    ]
+}

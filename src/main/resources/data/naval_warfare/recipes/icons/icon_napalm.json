@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:glass_bottle"
+		},
+		{
+			"item": "minecraft:fire_charge"
+		},
+		{
+			"tag": "forge:dyes/red"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_napalm",
+		"count": 1
+	}
+}

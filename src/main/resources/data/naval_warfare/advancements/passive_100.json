@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.passive_100.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.passive_100.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:ability_wand"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "passive_100": {
+            "trigger": "passive_100"
+         }
+    },
+    "parent": "naval_warfare:passive_50"
+}

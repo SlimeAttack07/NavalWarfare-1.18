@@ -1,0 +1,43 @@
+{
+    "name": "Cybele",
+    "icon": "naval_warfare:cybele",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "So much electricity on such a small ship..."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Cybele is a small support ship carrying two large tesla coils, allowing its shots to damage shielded ships.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/energy_overloader)$(l)Charged Shell/$$(br)Cybele's tesla coils electrify the front gun, firing a highly energized shell. Upon contacting an $(l:naval_warfare:abilities/passive/energy_shield)energy shield/$, all the stored energy is unleashed, $(l)obliterating the shield/$. This ability has $(l)3 Uses/$ and costs $(l)2 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Energy Outlash/$$(br)$(l)Upon being damaged/$, one of the tesla coils is destroyed. This causes the stored energy to violently lash out, $(l)damaging 2 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01"]
+				],
+				"mapping": {
+					"0": "naval_warfare:cybele[ship_part=two]",
+					"1": "naval_warfare:cybele[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:cybele": 2
+		}
+}

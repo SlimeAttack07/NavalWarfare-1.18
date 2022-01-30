@@ -1,0 +1,15 @@
+{
+    "name": "Dummy Game Interactor",
+    "icon": "naval_warfare:game_interactor_dummy",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This version of the $(l:naval_warfare:game_requirements/game_interactor)Game Interactor/$ works mostly the same, with a few differences. It is mostly used during testing when I don't have anyone available to test something, but still need a second player somehow (I'm not buying an alt account just for testing). Only use this if you know what you're doing, you may encounter issues otherwise..."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "You can 'simulate' a second player as follows:$(li)Spawn a Game Controller using '/setblock x y z naval_warfare:game_controller' to spawn a game controller without an owner.$(li)Right Click the dummy game interactor on the controller to set the dummy owner.$(br)You can now use either version of the game interactor to interact with the controller. Using the dummy version will prevent most messages from appearing twice."
+		}
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.streak_8.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.streak_8.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:icon_fire_damage"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "streak_8": {
+            "trigger": "streak_8"
+         }
+    },
+    "parent": "naval_warfare:streak_4"
+}

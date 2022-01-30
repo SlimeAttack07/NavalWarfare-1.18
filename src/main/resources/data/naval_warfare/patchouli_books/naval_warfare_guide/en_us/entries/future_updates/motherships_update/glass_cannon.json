@@ -1,0 +1,21 @@
+{
+    "name": "Glass Cannon",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This is one of the most risky ships to use, since as soon as its discovered, you won't have a lot of time left to finish the game.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Repair all your damaged ships. Your opponent will have to remember where they are. Once this ship is in the game, the info tool will no longer show the board ID by default (will become a config option).",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Nothing if this is your only ship left alive. Otherwise, redirect the shot to a random ship and end the opponent's turn. Your opponent can remember the location of this mothership to quickly discover your ships..",
+			"title": "Passive Ability"
+		}
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Torpedo Decoys",
+    "icon": "naval_warfare:icon_torpedo_decoy",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Defensive)/$$(br)Torpedo Decoys are deployed on your own board $(l)on unknown tiles/$. As long as they are not destroyed, they'll act just like $(l:naval_warfare:abilities/passive/torpedo_net)Torpedo Nets/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Try to place torpedo decoys where you think the opponent will fire their torpedoes, like in long, unkown lines.$(li)Don't use these if your opponent doesn't have any torpedoes, as they'll provide no value and they'll just be a waste of energy."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Torpedo decoys must be placed on unknown tiles, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place them on a known tile, then nothing happens and the ability is wasted./$$(li)Don't place decoys on occupied tiles, as the ability will be wasted."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/submarines/barcross"
+			]
+		}
+    ]
+}

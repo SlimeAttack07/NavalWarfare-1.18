@@ -1,0 +1,15 @@
+{
+    "name": "Hulls",
+    "icon": "naval_warfare:hull_t5",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Hulls can be obtained in four different ways: $(li)Awarded from finishing a game of Naval Warfare.$(li)Found in certain dungeons and other structures.$(li)Found in a $(l:naval_warfare:misc/captains_cabin)Captain's Cabin/$.$(li)Traded by $(l:naval_warfare:misc/retired_captain)Retired Captains/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "You will not gain hulls from a game of Naval Warfare if you lose due to timing out or forfeiting. This is to prevent exploits for quickly gaining easy hulls. You also don't get any hulls if you're in creative mode to prevent inventory clutter."
+		}
+    ]
+}

@@ -1,0 +1,82 @@
+{
+	"variants": {
+		"facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one"},
+		"facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one_hit"},
+		"facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one_hit", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one_hit", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/dulverton_one_hit", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/dulverton_one_destroyed"},
+		"facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/dulverton_one_destroyed", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/dulverton_one_destroyed", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/dulverton_one_destroyed", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two"},
+		"facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two_hit"},
+		"facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two_hit", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two_hit", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/dulverton_two_hit", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/dulverton_two_destroyed"},
+		"facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/dulverton_two_destroyed", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/dulverton_two_destroyed", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/dulverton_two_destroyed", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three"},
+		"facing=east,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three_hit"},
+		"facing=east,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three_hit", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three_hit", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/dulverton_three_hit", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/dulverton_three_destroyed"},
+		"facing=east,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/dulverton_three_destroyed", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/dulverton_three_destroyed", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/dulverton_three_destroyed", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four"},
+		"facing=east,ship_state=undamaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four_hit"},
+		"facing=east,ship_state=damaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four_hit", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four_hit", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=four": { "model": "naval_warfare:block/dulverton_four_hit", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=four": { "model": "naval_warfare:block/dulverton_four_destroyed"},
+		"facing=east,ship_state=destroyed,ship_part=four": { "model": "naval_warfare:block/dulverton_four_destroyed", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=four": { "model": "naval_warfare:block/dulverton_four_destroyed", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=four": { "model": "naval_warfare:block/dulverton_four_destroyed", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five"},
+		"facing=east,ship_state=undamaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five_hit"},
+		"facing=east,ship_state=damaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five_hit", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five_hit", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=five": { "model": "naval_warfare:block/dulverton_five_hit", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=five": { "model": "naval_warfare:block/dulverton_five_destroyed"},
+		"facing=east,ship_state=destroyed,ship_part=five": { "model": "naval_warfare:block/dulverton_five_destroyed", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=five": { "model": "naval_warfare:block/dulverton_five_destroyed", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=five": { "model": "naval_warfare:block/dulverton_five_destroyed", "y": 270}
+	}
+}

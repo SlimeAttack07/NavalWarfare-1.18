@@ -1,0 +1,37 @@
+{
+    "name": "Intro",
+    "icon": "naval_warfare:ability_wand",
+    "category": "naval_warfare:abilities",
+	"priority": true,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "There are two types of abilities: Active abilities, which you have to activate manually using $(l:naval_warfare:misc/energy)Energy/$, and Passive abilities, which activate automatically. They break down into several subcategories."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)$(l)Active Abilities/$$(li2)Offensive: Must be activated on the opponents board.$(li2)Defensive: Must be activated on your own board.$(li)$(l)Passive Abilities/$$(li2)Loadout: Active while editing your loadout.$(li2)Game start: Activates once when the game begins.$(li2)Turn start: Activates when your turn starts.",
+			"title": "Ability breakdown"
+		},
+        {
+			"type": "patchouli:text",
+			"text": "$(li2)Ship hit: Activates when this ship is hit.$(li2)Ship destroyed: Activates when this ship is destroyed.$(br2)Each ability page consists of three sections:$(li)Explanation of the ability$(li)Tips & Tricks$(li)Ships that have this ability$(br2)Note that several abilities exist that have multiple versions, with their main difference often being things like the area they affect"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "or the amount of damage they deal. Each version often has a unique name, which can make identifying its underlying type harder. If you're ever unsure what category an ability falls in, the best thing to do is to go to the entry of the ship your ability belongs to, and find the ability in there. Clicking it will send you to the right page here, where you may find the info you need."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)IMPORTANT INFO/$:$(br)Note that passive abilities $(l)will not trigger other passive abilities/$!! This means that if if your ship is damaged or destroyed by a passive ability like $(l:naval_warfare:abilities/passive/counterfire)Counter Fire/$ or $(l:naval_warfare:abilities/passive/retaliation)Retaliation/$, its passive ability $(l)will not trigger/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)IT IS IMPOSSIBLE TO TIE IN NAVAL WARFARE!/$ Once either side's last ship is sunk, the game ends even if that ship had a passive that could have caused a tie. That ship's passive will not be triggered. $(l)The first person to sink all opposing ships wins immediately/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)If you want to make the game more difficult, you can disable the 'On-Hit' ability type name and/or animations in the configs. This way. abiliies that trigger on hit only reveal their category instead of their name, and show the same animation instead of their own. You'll have to guess which ship's ability you triggered!"
+		}
+    ]
+}

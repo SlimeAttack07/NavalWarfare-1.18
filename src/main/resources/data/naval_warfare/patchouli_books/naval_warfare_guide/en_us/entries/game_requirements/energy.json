@@ -1,0 +1,12 @@
+{
+    "name": "Energy",
+    "icon": "naval_warfare:icon_energy_gain",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 7,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "In Naval Warfare, most abilities cost energy to use. Each game, you'll start with 7 energy. Every turn, you gain 5 additional energy. However, you'll never exceed the maximum of 16 Energy."
+		}
+    ]
+}

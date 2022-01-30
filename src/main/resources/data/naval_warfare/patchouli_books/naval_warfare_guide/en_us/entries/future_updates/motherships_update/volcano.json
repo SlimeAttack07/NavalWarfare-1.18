@@ -1,0 +1,21 @@
+{
+    "name": "Volcano",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This mothership can quickly take over the board if left unchecked, but can wreak aboslute havoc on your own fleet when destroyed."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Start firing rocks to the enemy every turn. Each rock's damage depends on the damage done to this ship: 1 if 0-2, 2 if 3-5 and 3 if 6-8. The ability will cost a lot of energy to activate.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Only triggers if you used the active ability. When destroyed, the volcano violently erupts, targeting 10 of your own tiles at random and insta-killing anything there. Shields cannot block this and will also be destroyed.",
+			"title": "Passive Ability"
+		}
+    ]
+}

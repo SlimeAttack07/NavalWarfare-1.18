@@ -1,0 +1,21 @@
+{
+    "name": "Inhibitor",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Great at preventing or delaying ability combo's, but encourages your opponent to use high energy cost abilities..."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Your opponent can only use one ability per round while this ship survives. When destroyed, the opponent gains 3 energy for each turn that passed.",
+			"title": "Passive Ability"
+		}
+    ]
+}

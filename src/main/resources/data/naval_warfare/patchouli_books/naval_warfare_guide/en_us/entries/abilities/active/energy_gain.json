@@ -1,0 +1,23 @@
+{
+    "name": "Energy Gain",
+    "icon": "naval_warfare:icon_energy_gain",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Defensive)/$$(br)Energy Gain will give you free extra energy. Each Energy Gain has one stat: Amount. It determines how much extra energy you get. Note that your energy can't exceed the maximum. This ability is free to use. You don't need to target any tiles to use it."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Note your energy will never exceed the maximum energy. Don't use the ability when you're close to or at the maximum, as you'll just waste the ability.$(li)To use the ability, you don't need to target anything. Just select the ship that has the ability, and then select your game controller."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/equilibrium",
+				"naval_warfare:ships/ship_types/supports/poole"
+			]
+		}
+    ]
+}

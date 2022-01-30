@@ -1,0 +1,21 @@
+package slimeattack07.naval_warfare.util;
+
+public enum ControllerAction {
+	VALIDATE,
+	TARGET,
+	TORPEDO,
+	SPYGLASS,
+	FLARE,
+	ACTIVE_ABILITY,
+	PASSIVE_ABILITY,
+	ANNOUNCE,
+	END_TURN,
+	GAIN_ENERGY,
+	FRAGBOMB,
+	MULTI_TARGET,
+	BOMBER,
+	NAPALM,
+	TURN_DAMAGE,
+	SPELL,
+	RAFT
+}

@@ -1,0 +1,46 @@
+{
+    "name": "Goliath",
+    "icon": "naval_warfare:goliath",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Captain David at your service!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Goliath is a massive pirate ship carrying 36 cannons. Its devastating power and ruthless crew has caused the demise of many who encountered it.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)No Escape/$$(br)Goliath's crew moves all its cannons to one side and fires all of them, damaging $(l)10 opponent tiles in a line/$. This ability has $(l)1 Use/$ and costs $(l)12 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/suppression)$(l)Sore Loser/$$(br)$(l)As Goliath sinks/$, the crew quickly fires as many cannons as they can, damaging $(l)10 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01234"]
+				],
+				"mapping": {
+					"0": "naval_warfare:goliath[ship_part=five]",
+					"1": "naval_warfare:goliath[ship_part=four]",
+					"2": "naval_warfare:goliath[ship_part=three]",
+					"3": "naval_warfare:goliath[ship_part=two]",
+					"4": "naval_warfare:goliath[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:goliath": 2
+		}
+}

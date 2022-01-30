@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" GS",
+		"RSR",
+		"SG "
+	],
+
+	"key": {
+		"S": {
+			"tag": "forge:rods/wooden"
+		},
+		"R": {
+			"tag": "forge:dusts/redstone"
+		},
+		"G": {
+			"tag": "forge:dusts/glowstone"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:ability_wand",
+			"count": 1
+	}
+}

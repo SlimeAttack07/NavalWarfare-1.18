@@ -1,0 +1,23 @@
+{
+    "name": "Designing Items",
+    "icon": "naval_warfare:icon_support",
+    "category": "naval_warfare:contribution",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "If you've designed a ship and you feel like making the item texture for it as well, there's a few ways to do so. If you're a pixel artist genius, you could just design it yourself. If you're not (like me) but you built the ship as a structure, then I'll show you an easy way here that I've used for all ship items in the game."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Find a good angle of your ship where the important parts of the ship are visible and take a screenshot.$(li)Use some kind of image editing software to remove the background so that only the ship is visible, the rest is transparant. (I'll be using paint.net for this example, just like I've used for the other ship textures).$(li)Change the canvas size so that the ship fits perfectly in it, to eliminate as much empty space as possible."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "(So if your screenshot was 1920 x 1080 and the ship only takes up 1240 x 670, then change your canvas size to 1240 x 670.)$(li)Resize the largest dimension to 64 pixels, but keep the aspect ratio. (So in this example, resizing 1240 to 64 would also automatically resize 670 to 35).$(li)Sharpen the image. (In paint.net you can use effects->photo->sharpen->amount = 20)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Change the canvas size to 64x64, expanding from the middle so that the ship texture is centered.$(li)Save the texture.$(br2)Note that it's not required to make the texture if you want to send in a ship design. As long as I can download the world the ship is in, I'll be able to make it for you."
+		}
+    ]
+}

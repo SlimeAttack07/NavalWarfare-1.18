@@ -1,0 +1,26 @@
+{
+    "name": "Major Insight",
+    "icon": "naval_warfare:icon_major_insight",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipDestroyed)/$$(br)Major Insight behaves similarly to $(l:naval_warfare:abilities/active/spyglass)Spyglasses/$. It will choose a random undamged opponent ship tile, and apply the spyglass effect, meaning that a 'Ship Here' block is placed on top of the ship."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)If you ever face a ship with this ability, note that you don't have to destroy it right away. If you know where the ship is, you may want to wait and destroy it later in the round, since its destruction will also reveal a ship of yours. Only destroy it if you really have to, either because there aren't many ships left or because you want to disable its active ability."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Remember that passive abilities can't trigger other passive abilities. If you're lucky, one of your own ship's passive abilities may end up taking out a ship that has this passive ability, in which case this passive doesn't trigger!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				
+			]
+		}
+    ]
+}

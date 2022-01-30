@@ -1,0 +1,44 @@
+{
+    "name": "Leopard's Whelp",
+    "icon": "naval_warfare:leopards_whelp",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "When a mommy ship really loves a daddy ship.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A small lifeboat was once the lone survivor of a massacre at sea, carrying two young children. They were rescued by the Leopard, whose crew has been caring for them ever since. Eventually, the bond between the children and the crew became so strong that they ended up attaching a sail to the lifeboat, officially welcoming them as part of their small fleet.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/energy_overloader)$(l)Energetic Cannonball/$$(br)The ship fires a cannonball made of a material that reacts violently when it counters an $(l:naval_warfare:abilities/passive/energy_shield)energy shield/$, $(l)obliterating it/$. This ability has $(l)2 Uses /$ and costs $(l)3 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/guardian)$(l)Guardian/$$(br)$(l)When the Leopard and its whelp are destroyed/$, the crew makes a promise. They failed to protect the children, but they will not fail the rest of the fleet, $(l)shielding 2 other units/$ with a $(l)2 HP Shield/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", " 2"]
+				],
+				"mapping": {
+					"0": "naval_warfare:leopards_whelp[ship_part=one]",
+					"1": "naval_warfare:leopards_whelp[ship_part=two]",
+					"2": "naval_warfare:leopards_whelp[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:leopards_whelp": 2
+		}
+}

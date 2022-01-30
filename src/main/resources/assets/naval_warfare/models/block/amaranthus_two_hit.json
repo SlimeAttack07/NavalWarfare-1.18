@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_amaranthus_two",
+	"textures": {
+		"0": "block/gray_wool",
+		"1": "block/light_gray_wool",
+		"2": "block/red_wool",
+		"3": "block/black_wool",
+		"particle": "block/gray_wool"
+	}
+}

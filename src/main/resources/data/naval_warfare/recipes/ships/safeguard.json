@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_small_t"
+		},
+		{
+			"item": "naval_warfare:icon_shield_placer"
+		},
+		{
+			"item": "naval_warfare:icon_energy_shield"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:safeguard",
+		"count": 1
+	}
+}

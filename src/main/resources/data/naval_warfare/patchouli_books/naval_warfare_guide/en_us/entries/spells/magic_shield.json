@@ -1,0 +1,19 @@
+{
+    "name": "Magic Shield",
+    "icon": "naval_warfare:icon_shield_placer",
+    "category": "naval_warfare:spells",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Defensive)/$$(br)The magic shield spell $(l)summons a 4 by 4 $(l:naval_warfare:abilities/active/shield_placer)Energy Shield/$$(l) on your board/$. The shield has 3 HP."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Be clever with your shield placement. Placing it on top of you last surviving ship is an obvious choice, but in some cases you might be able to fool your opponent by placing it elsewhere..$(li)Be areware that $(l:naval_warfare:abilities/active/energy_overloader)Energy Overloaders/$ will instantly destroy the shield. Using the shield spell whilst the enemy has those available is typically not a useful strategy."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)The shield can be a better alternative to the $(l:naval_warfare:spells/crude_raft) Crude Raft/$ if you still have a lot of empty spaces available. A raft only provides 3 turns of protection. If you're lucky, the magic shield can provide many more turns of protection than that."
+		}
+    ]
+}

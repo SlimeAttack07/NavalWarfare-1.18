@@ -1,0 +1,45 @@
+{
+    "name": "Narvik",
+    "icon": "naval_warfare:narvik",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Remote murder"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Narvik is a highly advanced, remote operated fleet consisting of a main ship, a support ship and four bait ships. The main ship can be operated manually or remotely using an auto-pilot and signal relay feature.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/sea_mine)$(l)Deploy Bait Ship/$$(br)Narvik's systems navigate $(l)one of the bait ships/$ to the chosen spot, where it lies in wait. $(l)When a bait ship is it/$, the onboard flares launch, $(l)damaging 4 random opponent tiles/$. This ability has $(l)4 Uses/$ and costs $(l)6 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/torpedo_net)$(l)Nano-Carbon Net/$$(br)In between the main ship and the support ship lies a large net made of nano-carbon. This net $(l)protects 5 tiles in a row against torpedoes/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", " 2", " 3"]
+				],
+				"mapping": {
+					"0": "naval_warfare:narvik[ship_part=one]",
+					"1": "naval_warfare:narvik[ship_part=two]",
+					"2": "naval_warfare:narvik[ship_part=three]",
+					"3": "naval_warfare:narvik[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:narvik": 2
+		}
+}

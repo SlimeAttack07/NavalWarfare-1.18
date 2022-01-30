@@ -1,0 +1,28 @@
+{
+    "name": "Seaworthy",
+    "icon": "naval_warfare:icon_seaworthy",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-Loadout)/$$(br)Seaworthy will add extra tiles to your ship configuration, which you may utilize already when creating your ship configuration (Since the tiles are added in this stage, the ability does absolutely nothing in combat!). Each Seaworthy has one stat: Amount. The amount determines how many tiles are added to your ship configuration."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)This ability is especially usefull if your configuation's hp is close to the maximum HP (24) to make it harder for the opponent to find your ships."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/destroyers/ignition",
+				"naval_warfare:ships/ship_types/scouts/maori",
+				"naval_warfare:ships/ship_types/destroyers/meeanne",
+				"naval_warfare:ships/ship_types/carriers/nighthawk",
+				"naval_warfare:ships/ship_types/scouts/pathfinder",
+				"naval_warfare:ships/ship_types/destroyers/the_scorcher",
+				"naval_warfare:ships/ship_types/destroyers/wirnpa"
+			]
+		}
+    ]
+}

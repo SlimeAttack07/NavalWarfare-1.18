@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_raider_three",
+	"textures": {
+		"0": "block/yellow_concrete",
+		"1": "block/yellow_terracotta",
+		"2": "block/black_concrete",
+		"3": "block/white_concrete",
+		"4": "block/red_concrete",
+		"5": "block/cyan_terracotta",
+		"particle": "block/yellow_concrete"
+	}
+}

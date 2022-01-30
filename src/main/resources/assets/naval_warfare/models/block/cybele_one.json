@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_cybele_one",
+	"textures": {
+		"0": "block/cyan_terracotta",
+		"1": "block/light_gray_concrete",
+		"2": "block/gray_concrete",
+		"3": "block/white_concrete",
+		"4": "block/light_blue_concrete",
+		"5": "block/blue_concrete",
+		"6": "block/black_concrete",
+		"particle": "block/cyan_terracotta"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_spyglass"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_major_insight",
+		"count": 1
+	}
+}

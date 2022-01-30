@@ -1,0 +1,19 @@
+{
+    "name": "Crude Raft",
+    "icon": "naval_warfare:icon_raft",
+    "category": "naval_warfare:spells",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Defensive)/$$(br)The raft spell $(l)summons a 1 HP raft on your board/$. As long as the raft is not destroyed, you will not lose the game. $(l)The raft will fail and sink 3 turns after being summoned/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Be clever with your raft placement. Stay clear of obvious locations, and try to avoid areas that the oponnent can easily clear with abilities they have left.$(li)Remember that the raft only lives for 3 turns. Don't use this spell if you can't beat the enemy within those turns!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)The raft must be placed on an unknown tile, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place the raft on a known tile, then nothing happens and the spell is wasted./$$(li)Don't place the raft on occupied tiles, as the spell will be wasted."
+		}
+    ]
+}

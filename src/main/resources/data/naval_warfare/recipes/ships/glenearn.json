@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_small_b"
+		},
+		{
+			"item": "naval_warfare:icon_bomber"
+		},
+		{
+			"item": "naval_warfare:icon_bomber"
+		},
+		{
+			"item": "naval_warfare:icon_suppression"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:glenearn",
+		"count": 1
+	}
+}

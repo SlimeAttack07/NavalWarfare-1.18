@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#naval_warfare:ships_t1",
+	"#naval_warfare:ships_t2",
+	"#naval_warfare:ships_t3",
+	"#naval_warfare:ships_t4",
+	"#naval_warfare:ships_t5"
+  ]
+}

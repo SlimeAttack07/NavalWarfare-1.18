@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"PSP",
+		"SIS",
+		"PSP"
+	],
+
+	"key": {
+		"S": {
+			"tag": "forge:stone"
+		},
+		"P": {
+			"tag": "minecraft:planks"
+		},
+		"I": {
+			"tag": "forge:storage_blocks/iron"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:hull_part",
+			"count": 2
+	}
+}

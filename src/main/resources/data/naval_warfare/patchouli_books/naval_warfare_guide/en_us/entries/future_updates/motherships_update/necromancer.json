@@ -1,0 +1,21 @@
+{
+    "name": "Necromancer",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This mothership doesn't stay dead, allowing it be be useful for much longer than other motherships."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/spyglass)Scout one tile/$, infinite uses with low energy cost.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "When desroyed, will be resurrected two turns later. After each resurrection, the active ability cost increases by 1.",
+			"title": "Passive Ability"
+		}
+    ]
+}

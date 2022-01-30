@@ -1,0 +1,21 @@
+{
+    "name": "Tradeoff",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "As the name suggests, this ship is all about taking risks and making tradeoffs."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Free to use. If your next attack hits a target, double your current energy. If you miss, half it instead.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "For every hit, you gain 1 energy. For every miss, you lose 1 energy. This also happens when using abilities!",
+			"title": "Passive Ability"
+		}
+    ]
+}

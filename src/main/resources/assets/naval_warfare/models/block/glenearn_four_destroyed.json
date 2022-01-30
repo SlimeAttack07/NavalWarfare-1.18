@@ -1,0 +1,19 @@
+{
+	"parent": "naval_warfare:block/template_glenearn_four",
+	"textures": {
+		"0": "block/sandstone",
+		"1": "block/gray_concrete_powder",
+		"2": "block/stripped_dark_oak_log",
+		"3": "block/brown_concrete_powder",
+		"4": "block/stripped_dark_oak_log",
+		"5": "block/brown_concrete_powder",
+		"6": "block/stripped_dark_oak_log",
+		"7": "block/yellow_concrete",
+		"8": "block/stripped_dark_oak_log",
+		"9": "block/light_gray_concrete_powder",
+		"10": "block/stripped_dark_oak_log",
+		"11": "block/yellow_concrete_powder",
+		"12": "block/white_concrete_powder",
+		"particle": "block/sandstone"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"parent": "naval_warfare:block/template_ephira_five",
+	"textures": {
+		"0": "block/light_gray_concrete",
+		"1": "block/sandstone",
+		"2": "block/spruce_planks",
+		"3": "block/spruce_log",
+		"4": "block/spruce_log",
+		"5": "block/black_wool",
+		"6": "block/brown_wool",
+		"7": "block/gray_wool",
+		"8": "block/spruce_log",
+		"9": "block/purple_wool",
+		"particle": "block/light_gray_concrete"
+	}
+}

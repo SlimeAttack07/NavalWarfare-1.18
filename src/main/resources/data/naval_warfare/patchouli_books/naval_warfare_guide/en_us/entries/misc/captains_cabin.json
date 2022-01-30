@@ -1,0 +1,19 @@
+{
+    "name": "Captain's Cabin",
+    "icon": "minecraft:dark_oak_door",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Often found in plains and taiga biomes, these cabins provide their resident with a relaxing interiour. You'll usually find some basic materials, hull parts, icons and ship hulls in here, as well as a $(l:naval_warfare:misc/retired_captain)Retired Captain/$ and his ship."
+		},
+		{
+			"type": "patchouli:image",
+			"images": [
+				"naval_warfare:textures/images/captains_cabin.png",
+				"naval_warfare:textures/images/captains_cabin_interiour.png"
+			],
+			"title": "Structure"
+		}
+    ]
+}

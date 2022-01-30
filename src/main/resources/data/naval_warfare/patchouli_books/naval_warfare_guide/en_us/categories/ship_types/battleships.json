@@ -1,0 +1,6 @@
+{
+	"name": "Battleships",
+	"parent": "naval_warfare:ships",
+	"description": "You sunk my battleship!",
+	"icon": "naval_warfare:icon_battleship"
+}

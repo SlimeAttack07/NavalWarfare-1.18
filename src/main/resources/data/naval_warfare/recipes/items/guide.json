@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+
+		{
+			"tag": "forge:dyes/cyan"
+		},
+
+		{
+			"tag": "minecraft:boats"
+		},
+		
+		{
+			"item": "minecraft:book"
+		}
+
+	],
+
+	"result": {
+		"item": "patchouli:guide_book",
+		"nbt": {
+			"patchouli:book": "naval_warfare:naval_warfare_guide"
+		},
+		"count": 1
+	}
+}

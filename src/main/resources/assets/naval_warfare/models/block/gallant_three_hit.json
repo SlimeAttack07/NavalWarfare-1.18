@@ -1,0 +1,14 @@
+{
+	"parent": "naval_warfare:block/template_gallant_three",
+	"textures": {
+		"0": "block/spruce_planks",
+		"1": "block/spruce_log",
+		"2": "block/brown_wool",
+		"3": "block/black_wool",
+		"4": "block/spruce_log",
+		"5": "block/gray_wool",
+		"6": "block/sandstone",
+		"7": "block/spruce_log",
+		"particle": "block/spruce_planks"
+	}
+}

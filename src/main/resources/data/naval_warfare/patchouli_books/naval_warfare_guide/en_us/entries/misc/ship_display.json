@@ -1,0 +1,11 @@
+{
+    "name": "Ship Display",
+    "icon": "naval_warfare:ship_display",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Want to display your ships, but don't want to have a large board in your room? The ship display block has you covered! Place your ship on top of the ship display block, and it will spawn the ship! (Provided that each part can spawn on top of a ship display block)."
+		}
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Interceptor",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "If you have a strategy that heavily relies on a certain ship's active ability, you can use this mothership to protect it."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Protect a ship, multiple uses. Any time the protected ship is attacked, register a miss on the board and add the damage of the shot to interceptor's internal buffer. Protection lasts until this ship is destroyed.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "When the combined damage of this ship and the internal buffer reaches 9, destroy this ship and mark all intercepted tiles as neutral.",
+			"title": "Passive Ability"
+		}
+    ]
+}

@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_glenearn_two",
+	"textures": {
+		"0": "block/sandstone_top",
+		"1": "block/dark_oak_planks",
+		"2": "block/dark_oak_log",
+		"3": "block/cyan_terracotta",
+		"4": "block/brown_concrete",
+		"5": "block/dark_oak_log",
+		"6": "block/dark_oak_log",
+		"particle": "block/sandstone_top"
+	}
+}

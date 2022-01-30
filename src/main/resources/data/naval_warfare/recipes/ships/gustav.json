@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_large_zig"
+		},
+		{
+			"item": "naval_warfare:icon_frag_bomb"
+		},
+		{
+			"item": "naval_warfare:icon_frag_bomb"
+		},
+		{
+			"item": "naval_warfare:icon_counterfire"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:gustav",
+		"count": 1
+	}
+}

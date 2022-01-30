@@ -1,0 +1,15 @@
+{
+    "name": "Regular Updates",
+    "icon": "naval_warfare:icon_destroyer",
+    "category": "naval_warfare:future_updates",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Regular updates will typically contain things like balance changes, new ships and new abilities / spells. Note that I've never made anything like this before, so balance changes may be frequent since I really have no clue how to properly balance things.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "These updates may also contain community suggested additions or changes. If you ever feel like creating a ship for this game, have a look at $(l:naval_warfare:contribution/designing_ships)Designing Ships/$ (no guarantees that it'll be added)."
+		}
+    ]
+}

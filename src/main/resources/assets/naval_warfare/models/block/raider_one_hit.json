@@ -1,0 +1,8 @@
+{
+	"parent": "naval_warfare:block/template_raider_one",
+	"textures": {
+		"0": "block/yellow_wool",
+		"1": "block/yellow_concrete",
+		"particle": "block/yellow_wool"
+	}
+}

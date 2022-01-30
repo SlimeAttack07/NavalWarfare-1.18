@@ -1,0 +1,44 @@
+{
+    "name": "Sterling",
+    "icon": "naval_warfare:sterling",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "(In)Visible from afar!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Sterling is a steam powered ship carrying two large cannons. It emits a massive amount of smoke during it's travells, making it easy to spot.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)Burst Fire/$$(br)Sterling targets a $(l)line of 2 tiles, damaging both of them/$. This ability has $(l)4 Uses/$ and costs $(l)5 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/turn_ender)$(l)Smoke Screen/$$(br)Sterling emits so much smoke that $(l)upon being hit/$, opponents can't tell if their shot hit or not, $(l)ending their turn/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:sterling[ship_part=three]",
+					"1": "naval_warfare:sterling[ship_part=two]",
+					"2": "naval_warfare:sterling[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:sterling": 2
+		}
+}

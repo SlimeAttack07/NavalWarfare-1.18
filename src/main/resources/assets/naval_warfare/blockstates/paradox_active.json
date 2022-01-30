@@ -1,0 +1,50 @@
+{
+	"variants": {
+		"facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one"},
+		"facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one"},
+		"facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/paradox_active_one"},
+		"facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/paradox_active_one", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two"},
+		"facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two"},
+		"facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/paradox_active_two"},
+		"facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/paradox_active_two", "y": 270},
+		
+		
+		"facing=north,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three"},
+		"facing=east,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 90},
+		"facing=south,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 180},
+		"facing=west,ship_state=undamaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 270},
+		
+		"facing=north,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three"},
+		"facing=east,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 90},
+		"facing=south,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 180},
+		"facing=west,ship_state=damaged,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 270},
+		
+		"facing=north,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/paradox_active_three"},
+		"facing=east,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 90},
+		"facing=south,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 180},
+		"facing=west,ship_state=destroyed,ship_part=three": { "model": "naval_warfare:block/paradox_active_three", "y": 270}
+	}
+}

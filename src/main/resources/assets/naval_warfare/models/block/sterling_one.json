@@ -1,0 +1,14 @@
+{
+	"parent": "naval_warfare:block/template_sterling_one",
+	"textures": {
+		"0": "block/brown_concrete",
+		"1": "block/dark_oak_planks",
+		"2": "block/cyan_terracotta",
+		"3": "block/black_concrete",
+		"4": "block/gray_concrete",
+		"5": "block/light_gray_concrete",
+		"6": "block/white_concrete",
+		"7": "block/orange_terracotta",
+		"particle": "block/brown_concrete"
+	}
+}

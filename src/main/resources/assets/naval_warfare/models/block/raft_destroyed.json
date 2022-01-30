@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_raft",
+	"textures": {
+		"0": "block/yellow_concrete_powder",
+		"1": "block/black_concrete_powder",
+		"2": "block/orange_concrete_powder",
+		"3": "block/brown_concrete_powder",
+		"4": "block/gray_concrete_powder",
+		"particle": "block/yellow_concrete_powder"
+	}
+}

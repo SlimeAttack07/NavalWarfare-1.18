@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "forge:dyes/light_blue"
+		},
+		{
+			"tag": "forge:dyes/blue"
+		},
+		{
+			"tag": "forge:dyes/cyan"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_energy_start",
+		"count": 1
+	}
+}

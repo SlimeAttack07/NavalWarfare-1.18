@@ -1,0 +1,15 @@
+{
+    "name": "Ship Tiers",
+    "icon": "naval_warfare:hull_t1",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(li)$(#B75724)$(l)Tier 1/$: Ships with no abilities at all.$(li)$(#4E4E4E)$(l)Tier 2/$: Ships with basic abilities.$(li)$(#CB9F28)$(l)Tier 3/$: Ships with stronger abilities.$(li)$(#A1A1A1)$(l)Tier 4/$: Ships with powerful abilities.$(li)$(#4A92C2)$(l)Tier 5/$: Ships with game changing abilities."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)$(#B24340)$(l)Tier 6/$: Motherships (Future Update)$(li)$(#0E0E0E)$(l)Tier 7/$: Admin Ships (Creative Only, Future Update)"
+		}
+    ]
+}

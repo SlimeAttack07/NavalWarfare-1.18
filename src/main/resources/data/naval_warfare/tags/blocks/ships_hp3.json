@@ -1,0 +1,18 @@
+{
+	"replace": false,
+	"values": [
+		"naval_warfare:cruiser",
+		"naval_warfare:submarine",
+		"naval_warfare:kilgobnet",
+		"naval_warfare:maori",
+		"naval_warfare:pathfinder",
+		"naval_warfare:the_scorcher",
+		"naval_warfare:raider",
+		"naval_warfare:vendetta",
+		"naval_warfare:carcass",
+		"naval_warfare:pyrrhus",
+		"naval_warfare:vervain",
+		"naval_warfare:leopards_whelp",
+		"naval_warfare:sterling"
+	]
+}

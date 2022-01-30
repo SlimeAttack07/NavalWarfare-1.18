@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_vervain_one",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/gray_wool",
+		"2": "block/black_wool",
+		"3": "block/light_gray_wool",
+		"4": "block/blue_wool",
+		"5": "block/white_wool",
+		"6": "block/light_blue_wool",
+		"particle": "block/gray_concrete"
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" GS",
+		"LSL",
+		"SG "
+	],
+
+	"key": {
+		"S": {
+			"tag": "forge:rods/wooden"
+		},
+		"L": {
+			"tag": "forge:gems/lapis"
+		},
+		"G": {
+			"tag": "forge:dusts/glowstone"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:spell_wand",
+			"count": 1
+	}
+}

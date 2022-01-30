@@ -1,0 +1,22 @@
+{
+    "name": "Energy Start",
+    "icon": "naval_warfare:icon_energy_start",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-GameStart)/$$(br)Energy Start will give you extra energy when you start a game of Naval Warfare. Each Energy Start has one stat: Amount. It determines how much extra energy you get. Note that your energy can't exceed the maximum."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Note that this ability only triggers once on game start. This means that you'll have extra energy to use in the first round to give you a head start in the game, but it won't do anything for the rest of the game."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/poole"
+			]
+		}
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "name": "Paradox",
+    "icon": "naval_warfare:paradox",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Diagonal ships are hard to build ok :("
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A long time ago, two rival captains were so determined to kill the other that they ended up ramming their ships when all their ammo had been used up, sacrificing all crew onboard. One of the ships had a wizard on board, who casted a spell to save the innocent crew, binding the two ships together to become one. Their crews have made peace, and now co-exist on the odd ship.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/ghost_ship)$(l)Haunting Past/$$(br)Paradox's wizard focuses his magic, summoning a large $(l)3 tile long/$ ghost ship. This ship has no abilities and behaves excactly like a normal ship would, except for that the opponent does not have to destroy it to win the game. This ability has $(l)1 Use/$ and costs $(l)14 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_grant)$(l)Dying Breath/$$(br)$(l)As Paradox finally perishes/$, the magic that once bound the ships together is released, $(l)restoring 6 Energy/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012", "  3", "  4"]
+				],
+				"mapping": {
+					"0": "naval_warfare:paradox[ship_part=one]",
+					"1": "naval_warfare:paradox[ship_part=two]",
+					"2": "naval_warfare:paradox[ship_part=three]",
+					"3": "naval_warfare:paradox[ship_part=four]",
+					"4": "naval_warfare:paradox[ship_part=five]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:paradox": 2
+		}
+}

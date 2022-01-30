@@ -1,0 +1,46 @@
+{
+    "name": "The Ultimatum",
+    "icon": "naval_warfare:the_ultimatum",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Never miss your deadlines"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The Ultimatum has several side guns and a VLS with 8 missile cells. On top of that, the ship excels at disabling opponents, making it a top priority for enemies to take out. Failing to do so in time may yield devastating results.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/missile)$(l)Everlasting Missiles/$$(br)The ship fires one of its missiles, $(l)dealing 2 damage to whatever tile it hit/$. This ability has $(l)8 Uses/$ and costs $(l)12 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/turn_ender)$(l)Suppressing Crystals/$$(br)Spread across the ship are several green crystals. $(l)When hit/$, the crystal shatters and $(l)instantly ends the opponent's turn/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01234"]
+				],
+				"mapping": {
+					"0": "naval_warfare:the_ultimatum[ship_part=five]",
+					"1": "naval_warfare:the_ultimatum[ship_part=four]",
+					"2": "naval_warfare:the_ultimatum[ship_part=three]",
+					"3": "naval_warfare:the_ultimatum[ship_part=two]",
+					"4": "naval_warfare:the_ultimatum[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:the_ultimatum": 2
+		}
+}

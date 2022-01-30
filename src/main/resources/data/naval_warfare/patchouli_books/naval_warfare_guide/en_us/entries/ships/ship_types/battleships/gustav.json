@@ -1,0 +1,46 @@
+{
+    "name": "Gustav",
+    "icon": "naval_warfare:gustav",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Guess who's back.. back again.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Gustav is inspired by Schwerer Gustav, a massive German railway cannon used in WW2 that could fire 800mm shells. This ship features a large cannon capable of obliterating anything hit. Gustav is always accompanied by Günther, a small, heavily armed ship to protect it, as it has no other weapons besides the large cannon.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/frag_bomb)$(l)Mega Shell/$$(br)Gustav fires its cannon, launching a massive shell at $(l)the selected tile/$. If the tile contains a ship, the shell explodes, $(l)damaging all 8 adjacent tiles/$. This ability has $(l)2 Uses/$ and costs $(l)16 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Cover Fire/$$(br)$(l)When hit/$, Günther $(l)fires 3 shells at random opponent tiles/$ in an attempt to protect Gustav.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0", "12", "3 ", "4 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:gustav[ship_part=one]",
+					"1": "naval_warfare:gustav[ship_part=three]",
+					"2": "naval_warfare:gustav[ship_part=two]",
+					"3": "naval_warfare:gustav[ship_part=four]",
+					"4": "naval_warfare:gustav[ship_part=five]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:gustav": 2
+		}
+}

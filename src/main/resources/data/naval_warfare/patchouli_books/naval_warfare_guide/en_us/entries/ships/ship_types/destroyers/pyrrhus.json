@@ -1,0 +1,44 @@
+{
+    "name": "Pyrrhus",
+    "icon": "naval_warfare:pyrrhus",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "I just love missiles..."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "When you cross a missile truck with a military ship, you get Pyrrhus. It carries a VLS with 6 missile cells and two large missile batteries containing 5 missiles each, for a grand total of 16 missiles loaded at any time. With this much firepower, it can take on any opponent no matter how far away they are.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/missile)$(l)Missile/$$(br)Pyrrhus fires one of its missiles, $(l)dealing 2 damage to the target tile/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/retaliation)$(l)Missile Barrage/$$(br)$(l)Upon being destroyed/$, Pyrrhus fully empties both missile batteries, $(l)dealing 3 damage to a random opponent ship/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:pyrrhus[ship_part=three]",
+					"1": "naval_warfare:pyrrhus[ship_part=two]",
+					"2": "naval_warfare:pyrrhus[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:pyrrhus": 2
+		}
+}

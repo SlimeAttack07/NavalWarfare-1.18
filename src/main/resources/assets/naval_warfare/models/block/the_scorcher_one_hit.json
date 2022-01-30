@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_the_scorcher_one",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/gray_wool",
+		"2": "block/light_gray_wool",
+		"3": "block/black_wool",
+		"4": "block/orange_wool",
+		"5": "block/yellow_wool",
+		"6": "block/red_wool",
+		"particle": "block/gray_concrete"
+	}
+}

@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.streak_4.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.streak_4.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:icon_fire_damage"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "streak_4": {
+            "trigger": "streak_4"
+         }
+    },
+    "parent": "naval_warfare:ship_configuration"
+}

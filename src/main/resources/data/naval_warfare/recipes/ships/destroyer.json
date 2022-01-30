@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t1"
+		},
+		{
+			"item": "naval_warfare:hull_double"
+		},
+		{
+			"tag": "forge:gunpowder"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:destroyer",
+		"count": 1
+	}
+}

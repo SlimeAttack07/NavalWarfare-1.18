@@ -1,0 +1,20 @@
+{
+    "name": "Info Tool",
+    "icon": "naval_warfare:info_tool",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 4,
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "The $(item)Info Tool$(clear) is the best way to read the state of an active game. You may right click on any of the following components to discover information about the game:$(li)Any ship -> Name of ship, status, abilities$(li)Board tiles -> Status, id$(li)Game Controller -> Opponent ships that aren't destroyed yet. Shift Right Click to see ALL opponent ships."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Energy Shields, Torpedo Nets and Anti-Air -> Ship/Ability that deployed it, health$(li)Ship Close and Ship Here blocks -> Explanation"
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:items/info_tool"
+		}
+    ]
+}

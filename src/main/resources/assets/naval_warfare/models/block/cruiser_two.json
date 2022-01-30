@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_cruiser_two",
+	"textures": {
+		"0": "block/cyan_terracotta",
+		"1": "block/light_gray_concrete",
+		"2": "block/black_concrete",
+		"3": "block/white_concrete",
+		"particle": "block/cyan_terracotta"
+	}
+}

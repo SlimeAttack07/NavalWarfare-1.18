@@ -1,0 +1,21 @@
+{
+    "name": "Shifter",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This ship is more about luck than anything else."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Activate an ability. The ability changes each turn, you'll need to use the info tool to see the current ability.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Only activates if you used your active ability. Give the enemy a buff or yourself a debuff depending on the ability you activated.",
+			"title": "Passive Ability"
+		}
+    ]
+}

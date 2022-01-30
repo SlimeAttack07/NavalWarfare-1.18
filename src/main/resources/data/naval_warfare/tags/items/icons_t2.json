@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "naval_warfare:icon_missile",
+    "naval_warfare:icon_retaliation",
+	"naval_warfare:icon_heatseaker",
+	"naval_warfare:icon_turret",
+	"naval_warfare:icon_mortar",
+	"naval_warfare:icon_spyglass",
+	"naval_warfare:icon_major_insight",
+	"naval_warfare:icon_bomber",
+	"naval_warfare:icon_frag_bomb",
+	"naval_warfare:icon_ship_sunk_own",
+	"naval_warfare:icon_ship_sunk_opponent",
+	"naval_warfare:icon_fire_damage",
+	"naval_warfare:icon_battleship",
+	"naval_warfare:icon_destroyer",
+	"naval_warfare:icon_carrier",
+	"naval_warfare:icon_submarine",
+	"naval_warfare:icon_scout",
+	"naval_warfare:icon_support",
+	"naval_warfare:icon_mothership",
+	"naval_warfare:icon_whirlpool",
+	"naval_warfare:icon_guardian",
+	"naval_warfare:icon_shield_placer",
+	"naval_warfare:icon_napalm",
+	"naval_warfare:icon_sea_mine",
+	"naval_warfare:icon_torpedo_net",
+	"naval_warfare:icon_energy_shield",
+	"naval_warfare:icon_deployable_aa"
+  ]
+}

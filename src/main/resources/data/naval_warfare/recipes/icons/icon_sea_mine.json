@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "minecraft:boats"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"tag": "forge:dyes/gray"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_sea_mine",
+		"count": 1
+	}
+}

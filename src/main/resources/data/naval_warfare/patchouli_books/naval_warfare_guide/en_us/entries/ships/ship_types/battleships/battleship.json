@@ -1,0 +1,45 @@
+{
+    "name": "Battleship",
+    "icon": "naval_warfare:battleship",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "You sunk my batt... wait, didn't I make that reference already?"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A basic battleship with several guns. This is one of the few ships with no abilities at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:battleship[ship_part=four]",
+					"1": "naval_warfare:battleship[ship_part=three]",
+					"2": "naval_warfare:battleship[ship_part=two]",
+					"3": "naval_warfare:battleship[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:battleship": 2
+		}
+}

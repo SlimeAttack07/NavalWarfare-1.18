@@ -1,0 +1,46 @@
+{
+    "name": "Equilibrium",
+    "icon": "naval_warfare:equilibrium",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Light the way"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Equilibrium is an large lighthouse on top of a massive rock. The old structure guides nearby ships trough the dangerous waters surrounding it. The rock itself has two large piers, allowing ships to resupply the keepers of the lighthouse and to trade with each other.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/energy_gain)$(l)Sailor's Gratitude/$$(br)A sailor arives safely at one of the piers. As a token of gratitude, they restore $(l)4 Energy/$ to your fleet. This ability has $(l)2 Uses/$ and $(l)is free to use/$",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/whirlpool)$(l)Lightshow/$$(br)When the island and the lighthouse are $(l)fully destroyed/$, the lighthouse collapses. Its light reflects of the many pieces of broken glass before shattering upon contact with the ground, revealing $(l)10 empty opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 " , "123", " 4 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:equilibrium[ship_part=one]",
+					"1": "naval_warfare:equilibrium[ship_part=five]",
+					"2": "naval_warfare:equilibrium[ship_part=two]",
+					"3": "naval_warfare:equilibrium[ship_part=four]",
+					"4": "naval_warfare:equilibrium[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:equilibrium": 2
+		}
+}

@@ -1,0 +1,46 @@
+{
+    "name": "Amaranthus",
+    "icon": "naval_warfare:amaranthus",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Supportive Destroyer"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Amaranthus is a modified destroyer with several VLS on board. Two large hovercrafts are attached to the ship with a triple rod system, which can be retracted at any point to release them. Each hovercraft houses an experimental SAM system with two rotational points and a pivot, allowing it to target anything in a 360 degree radius around it.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/deployable_aa)$(l)SAM Hovercraft/$$(br)One of the hovercrafts is released, which moves to the target location. Once there, $(l)it shoots down any aircraft that cross the tile/$. The ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/suppression)$(l)Missile Madness/$$(br)$(l)As the final blow strikes Amaranthus/$, all missiles are launced, $(l)damaging 7 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["  0", "123", "  4"]
+				],
+				"mapping": {
+					"0": "naval_warfare:amaranthus[ship_part=one]",
+					"1": "naval_warfare:amaranthus[ship_part=five]",
+					"2": "naval_warfare:amaranthus[ship_part=four]",
+					"3": "naval_warfare:amaranthus[ship_part=two]",
+					"4": "naval_warfare:amaranthus[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:amaranthus": 2
+		}
+}

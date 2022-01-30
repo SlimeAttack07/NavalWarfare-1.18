@@ -1,0 +1,6 @@
+{
+	"name": "Destroyers",
+	"parent": "naval_warfare:ships",
+	"description": "ExTeRmInAtE",
+	"icon": "naval_warfare:icon_destroyer"
+}

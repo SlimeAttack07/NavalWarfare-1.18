@@ -1,0 +1,44 @@
+{
+    "name": "Pathfinder",
+    "icon": "naval_warfare:pathfinder",
+    "category": "naval_warfare:ship_types/scouts",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Sky High"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Pathfinder is a large airship that used to escort merchant ships to their destination. Due to its slow turning speed, it is rarely used nowadays as other ships outclass it. It is now used as a search and rescue ship, as it can spot ships in need of help from a great distance and is extremely hard to hit for most enemy ships due to the altitude it cruises at.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/spyglass)$(l)Tactical Scout/$$(br)Pathfinder will scout $(l)2 Tiles in a line/$ and highlight any ship parts in that area. This ability has $(l)3 Uses/$ and costs $(l)4 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Aerial Supremacy/$$(br)Pathfinder doesn't take up any waters since its flying, providing an additional $(l)6 Tiles/$ for your fleet to use.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:pathfinder[ship_part=three]",
+					"1": "naval_warfare:pathfinder[ship_part=two]",
+					"2": "naval_warfare:pathfinder[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:pathfinder": 2
+		}
+}

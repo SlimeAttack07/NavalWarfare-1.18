@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 50,
+          "name": "naval_warfare:hull_t1"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "naval_warfare:hull_t2"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "name": "naval_warfare:hull_t3"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "naval_warfare:hull_t4"
+        }
+      ]
+    }
+  ]
+}

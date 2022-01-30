@@ -1,0 +1,23 @@
+{
+    "variants": {
+        "facing=north,controller_state=inactive": { "model": "naval_warfare:block/game_controller_inactive" },
+        "facing=south,controller_state=inactive": { "model": "naval_warfare:block/game_controller_inactive", "y": 180 },
+        "facing=west,controller_state=inactive":  { "model": "naval_warfare:block/game_controller_inactive", "y": 270 },
+        "facing=east,controller_state=inactive":  { "model": "naval_warfare:block/game_controller_inactive", "y": 90 },
+		
+		"facing=north,controller_state=edit_config": { "model": "naval_warfare:block/game_controller_edit" },
+        "facing=south,controller_state=edit_config": { "model": "naval_warfare:block/game_controller_edit", "y": 180 },
+        "facing=west,controller_state=edit_config":  { "model": "naval_warfare:block/game_controller_edit", "y": 270 },
+        "facing=east,controller_state=edit_config":  { "model": "naval_warfare:block/game_controller_edit", "y": 90 },
+		
+		"facing=north,controller_state=searching": { "model": "naval_warfare:block/game_controller_searching" },
+        "facing=south,controller_state=searching": { "model": "naval_warfare:block/game_controller_searching", "y": 180 },
+        "facing=west,controller_state=searching":  { "model": "naval_warfare:block/game_controller_searching", "y": 270 },
+        "facing=east,controller_state=searching":  { "model": "naval_warfare:block/game_controller_searching", "y": 90 },
+		
+        "facing=north,controller_state=playing_game": { "model": "naval_warfare:block/game_controller_battle" },
+        "facing=south,controller_state=playing_game": { "model": "naval_warfare:block/game_controller_battle", "y": 180 },
+        "facing=west,controller_state=playing_game":  { "model": "naval_warfare:block/game_controller_battle", "y": 270 },
+        "facing=east,controller_state=playing_game":  { "model": "naval_warfare:block/game_controller_battle", "y": 90 }
+    }
+}

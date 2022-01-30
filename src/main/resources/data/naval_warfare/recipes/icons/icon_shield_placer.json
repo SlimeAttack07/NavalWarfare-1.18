@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:shield"
+		},
+		{
+			"tag": "forge:dyes/blue"
+		},
+		{
+			"tag": "forge:dyes/light_blue"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_shield_placer",
+		"count": 1
+	}
+}

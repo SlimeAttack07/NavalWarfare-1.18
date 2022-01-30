@@ -1,0 +1,17 @@
+{
+	"parent": "naval_warfare:block/template_tyrant_four",
+	"textures": {
+		"0": "block/spruce_planks",
+		"1": "block/dark_oak_planks",
+		"2": "block/cyan_terracotta",
+		"3": "block/brown_concrete",
+		"4": "block/dark_oak_log",
+		"5": "block/dark_oak_log",
+		"6": "block/dark_oak_log",
+		"7": "block/light_gray_terracotta",
+		"8": "block/sandstone_top",
+		"9": "block/black_concrete",
+		"10": "block/gray_concrete",
+		"particle": "block/spruce_planks"
+	}
+}

@@ -1,0 +1,46 @@
+{
+    "name": "Ephira",
+    "icon": "naval_warfare:ephira",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Impractical Airship"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Ephira is a large, heavily armed airship. Its many backwards facing cannons make it almost impossible to chase it without sustaining heavy damage. The ship often flies above its targets, dropping several bombs from above.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Bomb Hatch/$$(br)The bottom hatch opens, releasing all bombs. This targets a $(l)6 by 6 area/$, damaging $(l)12 random tiles/$. This ability has $(l)1 Use/$ and costs $(l)16 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Counterfire/$$(br)$(l)When Ephira is hit/$, it fires several of its cannons, $(l)damaging 3 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["  0", "123", "  4"]
+				],
+				"mapping": {
+					"0": "naval_warfare:ephira[ship_part=one]",
+					"1": "naval_warfare:ephira[ship_part=five]",
+					"2": "naval_warfare:ephira[ship_part=four]",
+					"3": "naval_warfare:ephira[ship_part=two]",
+					"4": "naval_warfare:ephira[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:ephira": 2
+		}
+}

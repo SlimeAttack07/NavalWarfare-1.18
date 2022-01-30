@@ -1,0 +1,44 @@
+{
+    "name": "Submarine",
+    "icon": "naval_warfare:submarine",
+    "category": "naval_warfare:ship_types/submarines",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Underwater adventures"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A basic submarine carrying a few torpedoes to destroy enemy ships. This is one of the few ships that has no abilities at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:submarine[ship_part=three]",
+					"1": "naval_warfare:submarine[ship_part=two]",
+					"2": "naval_warfare:submarine[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:submarine": 2
+		}
+}

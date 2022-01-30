@@ -1,0 +1,22 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+
+		{
+			"tag": "forge:dyes/green"
+		},
+		{
+			"tag": "forge:dyes/green"
+		},
+		{
+			"item": "minecraft:clay_ball"
+		},
+		{
+			"item": "minecraft:clay_ball"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_paste",
+		"count": 1
+	}
+}

@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.win_50.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.win_50.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "minecraft:gold_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "win_50": {
+            "trigger": "win_50"
+         }
+    },
+    "parent": "naval_warfare:win_10"
+}

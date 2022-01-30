@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_equilibrium_five",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/spruce_planks",
+		"2": "block/dark_oak_log",
+		"3": "block/green_concrete",
+		"4": "block/light_gray_concrete",
+		"particle": "block/gray_concrete"
+	}
+}

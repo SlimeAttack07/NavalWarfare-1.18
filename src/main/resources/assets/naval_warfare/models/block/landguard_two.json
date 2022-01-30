@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_landguard_two",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/green_concrete",
+		"2": "block/light_gray_concrete",
+		"3": "block/black_concrete",
+		"particle": "block/gray_concrete"
+	}
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Vervain",
+    "icon": "naval_warfare:vervain",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "An unfair battle"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Vervain is a military ship that has a VLS with 2 missile cells, two heavy caliber guns, two side guns and a shield generator. Using its shield it can take on multiple ships at once without sustaining any damage at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/missile)$(l)Missile/$$(br)The VLS launches one of the missiles, $(l)dealing 2 damage to the selected tile/$. This ability has $(l)2 Uses/$ and costs $(l)7 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_shield)$(l)Shield Generator/$$(br)The shield generator provides a $(l)3 HP surrounding the ship/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:vervain[ship_part=three]",
+					"1": "naval_warfare:vervain[ship_part=two]",
+					"2": "naval_warfare:vervain[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:vervain": 2
+		}
+}

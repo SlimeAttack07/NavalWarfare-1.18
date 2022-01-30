@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_salvo"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_counterfire",
+		"count": 1
+	}
+}

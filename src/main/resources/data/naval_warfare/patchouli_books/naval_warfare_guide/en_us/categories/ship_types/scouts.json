@@ -1,0 +1,6 @@
+{
+	"name": "Scouts",
+	"parent": "naval_warfare:ships",
+	"description": "I spy with my little eye..",
+	"icon": "naval_warfare:icon_scout"
+}

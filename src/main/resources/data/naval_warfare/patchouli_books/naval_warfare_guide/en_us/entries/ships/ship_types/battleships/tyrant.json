@@ -1,0 +1,46 @@
+{
+    "name": "Tyrant",
+    "icon": "naval_warfare:tyrant",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "When you start to run out of unique ship ideas.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Tyrant is a medieval ship powered by a large dual water wheel and 18 oars. It carries 8 cannons and a massive trebuchet capable of launching several heavy projectiles towards the enemy. Tyrant requires a crew of at least 32 to run at full capacity.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Trebuchet/$$(br)Tyrant's trebuchet a launces crude leather sack filled with cannonballs. It rips open mid-air, spreading the cannonballs and $(l)damaging 6 tiles/$ in a $(l)4 by 4/$ area. This ability has $(l)2 Uses/$ and costs $(l)9 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Tit-for-tat/$$(br)Tyrant refuses to lose a single battle. $(l)Upon being hit/$, tyrant will immediatly fire its cannons, $(l)damaging 3 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01234"]
+				],
+				"mapping": {
+					"0": "naval_warfare:tyrant[ship_part=five]",
+					"1": "naval_warfare:tyrant[ship_part=four]",
+					"2": "naval_warfare:tyrant[ship_part=three]",
+					"3": "naval_warfare:tyrant[ship_part=two]",
+					"4": "naval_warfare:tyrant[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:tyrant": 2
+		}
+}

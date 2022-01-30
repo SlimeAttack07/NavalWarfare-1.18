@@ -1,0 +1,21 @@
+{
+    "name": "Apocalypse",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "A ship all about mutually assured destruction."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Target an opponent tile. The next turn the ship fires a nuclear missile at it, insta-killing anything in a 5x5 area.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Only triggers if you've used your active ability. The ship's core overloads, violently detonating and insta-killing anything adjacent to the ship. Shrapnell will damage an additional 5 of your tiles at random.",
+			"title": "Passive Ability"
+		}
+    ]
+}

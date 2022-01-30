@@ -1,0 +1,27 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.root.title",
+            "color": "aqua",
+            "bold": true
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.root.description",
+            "color": "blue",
+			"bold": false
+        },
+        "icon": {
+            "item": "naval_warfare:battleship"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/block/cyan_concrete_powder.png"
+    },
+    "criteria": {
+		"tick": {
+			"trigger": "minecraft:tick"
+		}
+    }
+}

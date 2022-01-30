@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:bow"
+		},
+		{
+			"tag": "minecraft:arrows"
+		},
+		{
+			"item": "minecraft:firework_rocket"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_anti_air",
+		"count": 1
+	}
+}

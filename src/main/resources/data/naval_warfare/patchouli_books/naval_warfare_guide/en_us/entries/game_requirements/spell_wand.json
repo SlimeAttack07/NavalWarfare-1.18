@@ -1,0 +1,24 @@
+{
+    "name": "Spell Wand",
+    "icon": "naval_warfare:spell_wand",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 3,
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "The spell wand is an optional tool you may use during your battles. Each game, you are allowed to use a single spell at any point during any of your turns. You may cycle the selected spell by $(thing)Right Clicking/$ the air with the wand. All spells are free to use, but you can only use one spell per game so choose wisely!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "With a spell selected, you may need to first select a location to cast it on since most spells need a board tile to target. Selecting a target can be done by going to a board tile (either one of your own tiles or an opponent tile depending on the spell), and use the spell wand on the tile. This will highlight the area that"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "the spell will target. Once the spell (and possibly target area) are selected, you can then $(thing)Right click$(clear) the $(l:game_requirements/game_controller)$(item)Game Controller$(clear) to cast the spell. Note that if your chosen spell is one that will attack opponent tiles, then your turn will be ended if the spell does not hit any ships. If the spell does not attack any opponent tiles, then you may continue your turn."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:items/spell_wand"
+		}
+    ]
+}

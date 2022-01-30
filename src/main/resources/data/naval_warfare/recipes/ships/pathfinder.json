@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t2"
+		},
+		{
+			"item": "naval_warfare:hull_triple"
+		},
+		{
+			"item": "naval_warfare:icon_spyglass"
+		},
+		{
+			"item": "naval_warfare:icon_spyglass"
+		},
+		{
+			"item": "naval_warfare:icon_spyglass"
+		},
+		{
+			"item": "naval_warfare:icon_seaworthy"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:pathfinder",
+		"count": 1
+	}
+}

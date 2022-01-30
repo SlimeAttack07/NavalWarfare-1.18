@@ -1,0 +1,45 @@
+{
+    "name": "Poole",
+    "icon": "naval_warfare:poole",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Full of energy"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Poole travels the world, healing and helping all those who encounter it. A pool full of healing water sits inside the ship, along with a few palm trees to form a calming oasis.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/energy_gain)$(l)Healing Burst/$$(br)The water in the oasis swirls around, $(l)restoring 3 Energy/$. This ability has $(l)2 Uses/$ and costs $(l)no Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_start)$(l)Energized Water/$$(br)The healing aura around Poole provides you with $(l)4 extra Energy/$ when $(l)the game starts/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", "23"]
+				],
+				"mapping": {
+					"0": "naval_warfare:poole[ship_part=two]",
+					"1": "naval_warfare:poole[ship_part=one]",
+					"2": "naval_warfare:poole[ship_part=three]",
+					"3": "naval_warfare:poole[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:poole": 2
+		}
+}

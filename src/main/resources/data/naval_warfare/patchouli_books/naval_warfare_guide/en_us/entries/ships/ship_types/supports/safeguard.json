@@ -1,0 +1,45 @@
+{
+    "name": "Safeguard",
+    "icon": "naval_warfare:safeguard",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "I will be your shield!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Safeguard is an old cruiser with modern tech crudely soldered to each sides, providing it with the capability of generating shields. Its shield generators hover above the ocean.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/shield_placer)$(l)Shield Projector/$$(br)Safeguard projects a $(l)2 HP shield/$ at the given location, which covers $(l)3 by 3 tiles/$. The ability has $(l)1 Use/$ and costs $(l)12 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_shield)$(l)Mini Shield Dome/$$(br)Safeguard projects a shield around itself, covering $(l)3 by 3 tiles/$. This shield has $(l)3 HP/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0", "12", " 3"]
+				],
+				"mapping": {
+					"0": "naval_warfare:safeguard[ship_part=one]",
+					"1": "naval_warfare:safeguard[ship_part=four]",
+					"2": "naval_warfare:safeguard[ship_part=two]",
+					"3": "naval_warfare:safeguard[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:safeguard": 2
+		}
+}

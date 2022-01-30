@@ -1,0 +1,21 @@
+{
+    "name": "Annihilation",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "A ship about patience and sacrifice. Wait until all conduits are active, or sacrifice some of your own ships instead."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "When used on your own board, place an energy conduit. When used on your opponent's board, fire an orbital strike that deals 2 damage to 4 random ships. Requires all 4 conduits. For each one missing/destroyed, one of your ships receives 2 damage instead. Your own ships are damaged first.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		}
+    ]
+}

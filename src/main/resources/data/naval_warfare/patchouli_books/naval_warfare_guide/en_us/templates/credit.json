@@ -1,0 +1,34 @@
+{
+	"components": [
+		{
+			"type": "patchouli:header",
+			"text": "#item->iname",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "patchouli:separator",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "patchouli:item",
+			"item": "#item",
+			"x": 50,
+			"y": 20,
+			"framed": true,
+			"link_recipe": true
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Texture above made by $(3)$(l)#author#/$. Click the link below to go to their author page on FlatIcon.",
+			"y": 40
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:#url#)$(l)FlatIcon",
+			"x": 40,
+			"y": 130
+		}
+	]
+}

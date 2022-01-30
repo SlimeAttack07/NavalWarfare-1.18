@@ -1,0 +1,15 @@
+{
+	"parent": "naval_warfare:block/template_psyche_one",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/brown_concrete_powder",
+		"2": "block/stripped_dark_oak_log",
+		"3": "block/black_concrete_powder",
+		"4": "block/sand",
+		"5": "block/gray_concrete_powder",
+		"6": "block/yellow_concrete_powder",
+		"7": "block/light_gray_concrete_powder",
+		"8": "block/pink_concrete_powder",
+		"particle": "block/brown_concrete_powder"
+	}
+}

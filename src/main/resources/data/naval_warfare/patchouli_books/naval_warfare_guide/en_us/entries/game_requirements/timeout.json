@@ -1,0 +1,20 @@
+{
+    "name": "Timeout",
+    "icon": "minecraft:clock",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 8,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "To prevent AFK people ruining games, there is a timeout system in place. By default, you have $(thing)60 seconds to complete your turn/$. Every time an action occurs that forces you to wait, your timer will pause. If you don't miss or hit at least one tile before the time runs out, it'll count as a timeout. This serves as a dual purpose to decrease the odds of destroying the whole fleet in one turn."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Every game, $(thing)you are allowed to timeout 3 times in a row/$. Every time you complete a turn within the time limit, this counter is reset. However, $(thing)you're only allowed to timeout a total of 5 times per game/$. Exceed either limit and you'll automatically lose the game. The timer and timeout values can be changed in the config (requires restart)."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Just to be clear, if you run out of time but have hit at least one ship, your timeout count will not increase but your turn will still be ended. Your consecutive timeout counter will be reset as well./$"
+		}
+    ]
+}

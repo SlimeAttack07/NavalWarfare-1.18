@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_small_l"
+		},
+		{
+			"item": "naval_warfare:icon_energy_overloader"
+		},
+		{
+			"item": "naval_warfare:icon_energy_overloader"
+		},
+		{
+			"item": "naval_warfare:icon_guardian"
+		},
+		{
+			"item": "naval_warfare:icon_guardian"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:leopards_whelp",
+		"count": 1
+	}
+}

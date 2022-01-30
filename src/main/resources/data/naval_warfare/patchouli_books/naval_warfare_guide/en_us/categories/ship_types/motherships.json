@@ -1,0 +1,6 @@
+{
+	"name": "Motherships",
+	"parent": "naval_warfare:ships",
+	"description": "(FUTURE UPDATE) The final boss",
+	"icon": "naval_warfare:icon_mothership"
+}

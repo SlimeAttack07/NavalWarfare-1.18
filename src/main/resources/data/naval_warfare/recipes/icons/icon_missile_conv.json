@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_heatseaker"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_missile",
+		"count": 1
+	}
+}

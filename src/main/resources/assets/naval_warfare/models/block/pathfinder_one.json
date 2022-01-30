@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_pathfinder_one",
+	"textures": {
+		"0": "block/brown_concrete",
+		"1": "block/dark_oak_planks",
+		"2": "block/sandstone_top",
+		"3": "block/gray_concrete",
+		"4": "block/light_blue_concrete",
+		"5": "block/blue_concrete",
+		"particle": "block/brown_concrete"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_ephira_three",
+	"textures": {
+		"0": "block/light_gray_concrete_powder",
+		"1": "block/sandstone",
+		"2": "block/brown_concrete_powder",
+		"3": "block/purple_concrete_powder",
+		"particle": "block/light_gray_concrete_powder"
+	}
+}

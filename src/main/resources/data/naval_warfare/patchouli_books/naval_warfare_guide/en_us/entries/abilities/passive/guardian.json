@@ -1,0 +1,26 @@
+{
+    "name": "Guardians",
+    "icon": "naval_warfare:icon_guardian",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipDestroyed)/$Guardians are similar to $(l:naval_warfare:abilities/passive/energy_shield)Energy Shields/$, with a few differences. Instead of being deployed at the start of a game, they're deployed on top of random ships when the ship that has the ability is destroyed. Each Guardian has two stats: Amount and HP. Amount determines how many of your ships get a shield, and HP determines the health of those shields."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Note that these shields will only cover undamaged parts of the chosen ships, and will never target ships that are destroyed. So for example, if you have a ship that is three long and has taken 1 damage, then you'll see that the provied shield only protects the two undamaged parts."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(br)$(li)Remember that this type of ability doesn't trigger if the ship is taken out by another passive ability! If you're lucky, one of your passive abilities may take out a ship with this ability, preventing it from being deployed!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/leopards_whelp"
+			]
+		}
+    ]
+}

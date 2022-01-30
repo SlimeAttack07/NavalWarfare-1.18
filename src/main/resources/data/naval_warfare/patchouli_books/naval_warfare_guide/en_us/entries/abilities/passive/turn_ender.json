@@ -1,0 +1,27 @@
+{
+    "name": "Turn Ender",
+    "icon": "naval_warfare:icon_end_turn",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipHit/$$(br)As the name suggests, Turn Ender will instantly end the opponent's turn as soon as its owner ship is damaged."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)If you ever face a ship with this ability, remember that 'ShipHit' abilities only trigger once per hit regardless of how much damage the hit did. This means that you can use abilities like $(l:naval_warfare:abilities/active/missile)Missiles/$ to deal more damage whilst only triggering the passive once."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Remember that passive abilities can't trigger other passive abilities. If you're lucky, one of your own ship's passive abilities may end up taking out a ship that has this passive ability, in which case this passive doesn't trigger!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/destroyers/the_ultimatum",
+				"naval_warfare:ships/ship_types/destroyers/sterling"
+			]
+		}
+    ]
+}

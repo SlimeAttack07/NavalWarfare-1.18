@@ -1,0 +1,5 @@
+{
+	"name": "Spells",
+	"description": "These are all spells that you may encounter or use during your battles. Each spell falls under one of two categories:$(li)Offensive: Must be used on the opponent's board.$(li)Defensive: Must be used on your own board.",
+	"icon": "naval_warfare:spell_wand"
+}

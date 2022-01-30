@@ -1,0 +1,9 @@
+{
+	"parent": "naval_warfare:block/template_wirnpa_three",
+	"textures": {
+		"0": "block/gray_terracotta",
+		"1": "block/yellow_terracotta",
+		"2": "block/gray_concrete",
+		"particle": "block/gray_terracotta"
+	}
+}

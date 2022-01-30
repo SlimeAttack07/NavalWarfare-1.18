@@ -1,0 +1,6 @@
+{
+	"name": "Passive Abilities",
+	"parent": "naval_warfare:abilities",
+	"description": "Abilities that are automatically activated",
+	"icon": "naval_warfare:ability_wand"
+}

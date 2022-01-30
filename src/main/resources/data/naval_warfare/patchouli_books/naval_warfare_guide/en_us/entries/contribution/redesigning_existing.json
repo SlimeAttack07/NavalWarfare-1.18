@@ -1,0 +1,26 @@
+{
+    "name": "Redesigning existing models",
+    "icon": "naval_warfare:icon_support",
+    "category": "naval_warfare:contribution",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "I'm pretty happy with my own models that I made for this mod, but there are a few here and there that could be improved. If you want, you're allowed to redesign anything listed here. If I like your redesign enough, it'll replace the original design and the original design will become a T1 ship with no abilities. The names and lore can't be changed."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "If you really want to redesign a ship that is not on this list, feel free to do so. I might end up using it for a new ship or add it as a T1 ship, but no guarantees."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Redesigns",
+			"entries": [
+				"naval_warfare:ships/ship_types/submarines/submarine",
+				"naval_warfare:ships/ship_types/supports/paradox",
+				"naval_warfare:ships/ship_types/destroyers/meeanne",
+				"naval_warfare:ships/ship_types/destroyers/ignition",
+				"naval_warfare:ships/ship_types/battleships/arethuse"
+			]
+		}
+    ]
+}

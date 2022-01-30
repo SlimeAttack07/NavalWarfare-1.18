@@ -1,0 +1,44 @@
+{
+    "name": "Cruiser",
+    "icon": "naval_warfare:cruiser",
+    "category": "naval_warfare:ship_types/supports",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Cruising along"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A simple cruiser carrying a missile and a few torpedo tubes. This is one of the few ships with no abilities at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:cruiser[ship_part=three]",
+					"1": "naval_warfare:cruiser[ship_part=two]",
+					"2": "naval_warfare:cruiser[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:cruiser": 2
+		}
+}

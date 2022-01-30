@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_t4"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:hull_t5",
+		"count": 1
+	}
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Barcross",
+    "icon": "naval_warfare:barcross",
+    "category": "naval_warfare:ship_types/submarines",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Spy Submarine"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Barcross is a military submarine that provides its fleet with intel on enemy positions. It is equipped with a highly advanced sonar system that takes up so much room that the ship has no offensive weaponry. Because of this, Barcross never travels alone...",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/torpedo_decoy)$(l)Torpedo Decoy/$$(br)Barcross $(l)deploys a torpedo decoy at the selected tile/$. Any $(l:naval_warfare:abilities/active/torpedo)Torpedoes/$ that hit it, are $(l)nullified/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/major_insight)$(l)Intel Share/$$(br)$(l)As Barcross sinks/$, it uploads all its data to the fleet, $(l)revealing the location of an opponent ship/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:barcross[ship_part=four]",
+					"1": "naval_warfare:barcross[ship_part=three]",
+					"2": "naval_warfare:barcross[ship_part=two]",
+					"3": "naval_warfare:barcross[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:barcross": 2
+		}
+}

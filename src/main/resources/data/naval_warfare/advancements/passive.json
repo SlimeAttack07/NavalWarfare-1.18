@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.passive.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.passive.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:ability_wand"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "passive": {
+            "trigger": "passive"
+         }
+    },
+    "parent": "naval_warfare:ship_configuration"
+}

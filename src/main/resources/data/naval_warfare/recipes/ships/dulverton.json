@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_large_l"
+		},
+		{
+			"item": "naval_warfare:icon_mortar"
+		},
+		{
+			"item": "naval_warfare:icon_mortar"
+		},
+		{
+			"item": "naval_warfare:icon_counterfire"
+		},
+		{
+			"item": "naval_warfare:icon_counterfire"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:dulverton",
+		"count": 1
+	}
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Kilgobnet",
+    "icon": "naval_warfare:kilgobnet",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Yarrhh!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Kilgobnet is a pirate ship with 12 cannons. (It is the first ship I designed as a structure, and it has been used as a base for most of the other pirate ships.)",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)Burst Fire/$$(br)Kilgobnet targets a $(l)line of 3 tiles, damaging all of them/$. This ability has $(l)2 Uses/$ and costs $(l)5 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Counter Fire/$$(br)$(l)Upon being hit/$, Kilgobnet will $(l)fire at 3 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:kilgobnet[ship_part=three]",
+					"1": "naval_warfare:kilgobnet[ship_part=two]",
+					"2": "naval_warfare:kilgobnet[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:kilgobnet": 2
+		}
+}

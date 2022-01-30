@@ -1,0 +1,21 @@
+{
+    "name": "Tsunami",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "This ship may need some rebalancing, but it's main idea is to make it harder to find your ships. But once this ship is destroyed, you're in trouble.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)Seaworthy/$ with 100 extra tiles. Anytime one of your ships is hit, reveal 3 of your empty tiles. When destroyed, reveal 80 empty tiles if possible. If the enemy falls below 5 HP and this ship is alive, reveal the ship.",
+			"title": "Passive Ability"
+		}
+    ]
+}

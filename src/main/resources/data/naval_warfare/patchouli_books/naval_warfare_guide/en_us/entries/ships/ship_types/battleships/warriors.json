@@ -1,0 +1,46 @@
+{
+    "name": "Warriors",
+    "icon": "naval_warfare:warriors",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Strength in numbers"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Warriors is a fleet of 5 ships, consisting of four small ships and one larger ship. The larger ship servers as the captain's ship, while the four smaller ships protect it. During battles, the smaller ships will try to surround their target, forcing it to either surrender or face certain death.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/frag_bomb)$(l)Shrapnel Bomb/$$(br)The captain's ship fires a red hot cannonball towards a tile. $(l)If it hits a ship/$, the cannonball shatters and $(l)damages an additional 3 tiles at random/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/suppression)$(l)Final Honor/$$(br)$(l)When the small fleet goes down/$, its taking their opponents with them. The fleet fires all their cannons together, shattering their own ships and damaging $(l)8 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", " 2", " 3", " 4"]
+				],
+				"mapping": {
+					"0": "naval_warfare:warriors[ship_part=one]",
+					"1": "naval_warfare:warriors[ship_part=two]",
+					"2": "naval_warfare:warriors[ship_part=three]",
+					"3": "naval_warfare:warriors[ship_part=four]",
+					"4": "naval_warfare:warriors[ship_part=five]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:warriors": 2
+		}
+}

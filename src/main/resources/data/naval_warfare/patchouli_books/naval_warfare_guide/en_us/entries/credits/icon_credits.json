@@ -1,0 +1,309 @@
+{
+    "name": "Icon Credits",
+    "icon": "naval_warfare:icon_battleship",
+    "category": "naval_warfare:credits",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "All credits for used textures can be found in this entry. All icon textures are taken from$(l:https://www.flaticon.com) FlatIcon/$ (with minor adjustments by me). FlatIcon offers icons that are free to use for personal and commercial purposes with attribution."
+		},
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_torpedo",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_salvo",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_raft",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_mothership",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_scout",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_support",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_missile",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_retaliation",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_counterfire",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_suppression",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_mortar",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_energy_start",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_energy_gain",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_energy_grant",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_minor_insight",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_major_insight",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_heatseaker",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_energy_shield",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_seaworthy",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+				{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_deployable_aa",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+	
+	
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_bomber",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_flare",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_energy_overloader",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_guardian",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_sea_mine",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_turret",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_ghost_ship",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_torpedo_net",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_sonar",
+			"author": "SmashIcons",
+			"url": "https://www.flaticon.com/authors/smashicons"
+		},
+		
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_fire_damage",
+			"author": "surang",
+			"url": "https://www.flaticon.com/authors/surang"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_ship_sunk_own",
+			"author": "surang",
+			"url": "https://www.flaticon.com/authors/surang"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_ship_sunk_opponent",
+			"author": "surang",
+			"url": "https://www.flaticon.com/authors/surang"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_frag_bomb",
+			"author": "surang",
+			"url": "https://www.flaticon.com/authors/surang"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_submarine",
+			"author": "smalllikeart",
+			"url": "https://www.flaticon.com/authors/smalllikeart"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_battleship",
+			"author": "smalllikeart",
+			"url": "https://www.flaticon.com/authors/smalllikeart"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_spyglass",
+			"author": "Good Ware",
+			"url": "https://www.flaticon.com/authors/good-ware"
+		},
+				{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_torpedo_decoy",
+			"author": "Good Ware",
+			"url": "https://www.flaticon.com/authors/good-ware"
+		},
+		
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_carrier",
+			"author": "Eucalyp",
+			"url": "https://www.flaticon.com/authors/eucalyp"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_destroyer",
+			"author": "iconixar",
+			"url": "https://www.flaticon.com/authors/iconixar"
+		},	
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_end_turn",
+			"author": "Pixel perfect",
+			"url": "https://www.flaticon.com/authors/pixel-perfect"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_whirlpool",
+			"author": "mynamepong",
+			"url": "https://www.flaticon.com/authors/mynamepong"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_shield_placer",
+			"author": "Creatype",
+			"url": "https://www.flaticon.com/authors/createtype"
+		},
+		
+		
+		
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_napalm",
+			"author": "photo3idea_studio",
+			"url": "https://www.flaticon.com/authors/photo3idea-studio"
+		},
+
+
+
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_anti_air",
+			"author": "max.icons",
+			"url": "https://www.flaticon.com/authors/maxicons"
+		}
+    ]
+}

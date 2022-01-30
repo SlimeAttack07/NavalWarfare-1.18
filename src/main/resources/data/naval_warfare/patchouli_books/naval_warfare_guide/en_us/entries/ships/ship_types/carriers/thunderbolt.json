@@ -1,0 +1,45 @@
+{
+    "name": "Thunderbolt",
+    "icon": "naval_warfare:thunderbolt",
+    "category": "naval_warfare:ship_types/carriers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "A shocking amount of potential"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Thunderbolt is an experimental aircraft carrier made of strong carbon fiber alloys. Its back and front can open and close, completely hiding the planes and runways. The ship carries fast and nimble airplanes capable of performing precision strikes on enemy ships far away.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/bomber)$(l)Precision Strike/$$(br)Thunderbolt launches several airplanes, ready to bomb up to $(l)5 random tiles/$ in a $(l)2 by 6 area/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/anti_air)$(l)Anti-Air Guns/$$(br)Thunderbolt $(l)automatically shoots down any aircraft that comes close/$ to it. The protected area extends one tile around the ship, protecting a total of $(l)18 tiles./$",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:thunderbolt[ship_part=four]",
+					"1": "naval_warfare:thunderbolt[ship_part=three]",
+					"2": "naval_warfare:thunderbolt[ship_part=two]",
+					"3": "naval_warfare:thunderbolt[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:thunderbolt": 2
+		}
+}

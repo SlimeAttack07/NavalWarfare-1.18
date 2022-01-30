@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_gustav_three",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/light_gray_wool",
+		"2": "block/black_wool",
+		"3": "block/gray_wool",
+		"particle": "block/gray_concrete"
+	}
+}

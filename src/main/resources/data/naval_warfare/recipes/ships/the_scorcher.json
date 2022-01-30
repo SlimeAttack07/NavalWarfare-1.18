@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t3"
+		},
+		{
+			"item": "naval_warfare:hull_triple"
+		},
+		{
+			"item": "naval_warfare:icon_napalm"
+		},
+		{
+			"item": "naval_warfare:icon_napalm"
+		},
+		{
+			"item": "naval_warfare:icon_seaworthy"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:the_scorcher",
+		"count": 1
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_kilgobnet_two",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/gray_concrete_powder",
+		"2": "block/stripped_dark_oak_log",
+		"3": "block/brown_concrete_powder",
+		"4": "block/black_concrete_powder",
+		"6": "block/green_concrete_powder",
+		"7": "block/sand",
+		"particle": "block/brown_concrete_powder"
+	}
+}

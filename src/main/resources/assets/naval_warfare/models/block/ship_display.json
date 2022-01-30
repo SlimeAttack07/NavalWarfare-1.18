@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "naval_warfare:block/ship_display",
+    "north": "naval_warfare:block/ship_display",
+    "south": "naval_warfare:block/ship_display",
+    "east": "naval_warfare:block/ship_display",
+    "west": "naval_warfare:block/ship_display",
+    "up": "naval_warfare:block/ship_display_top",
+    "down": "naval_warfare:block/ship_display"
+  }
+}

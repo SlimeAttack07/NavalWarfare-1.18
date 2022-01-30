@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t2"
+		},
+		{
+			"item": "naval_warfare:hull_triple"
+		},
+		{
+			"item": "naval_warfare:icon_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_end_turn"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:sterling",
+		"count": 1
+	}
+}

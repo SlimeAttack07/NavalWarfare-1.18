@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_narvik_two",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/green_concrete",
+		"2": "block/light_gray_concrete",
+		"3": "block/cyan_terracotta",
+		"4": "block/black_concrete",
+		"5": "block/red_concrete",
+		"particle": "block/gray_concrete"
+	}
+}

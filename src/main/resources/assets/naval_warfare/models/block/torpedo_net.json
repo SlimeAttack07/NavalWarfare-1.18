@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "naval_warfare:block/torpedo_net"
+    }
+}

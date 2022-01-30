@@ -1,0 +1,72 @@
+{
+    "name": "Game Controller",
+    "icon": "naval_warfare:game_controller",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This block, as the name already suggests, controls most of the Naval Warfare games you'll be playing and therefore is the most important block you'll need. Upon placing it down, it will $(thing)face away from you/$. It has four possible display colors. Only the placer is able to interact with it."
+        },
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:game_controller[controller_state=inactive]"
+				}
+			},
+			"text": "An $(l)$(#00477E)inactive/$ game controller."
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:game_controller[controller_state=edit_config]"
+				}
+			},
+			"text": "This game controller wants to $(l)$(#52341C)load/$ or $(l)$(#52341C)edit/$ a ship configuration."
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:game_controller[controller_state=searching]"
+				}
+			},
+			"text": "This game controller is $(l)$(#224F2D)searching for a game/$. Breaking it will cancel the search."
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:game_controller[controller_state=playing_game]"
+				}
+			},
+			"text": "A game controller that is $(l)$(#7E0034)playing a game/$. Breaking it will make you instantly forfeit the game."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:blocks/game_controller"
+		}
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Raider",
+    "icon": "naval_warfare:raider",
+    "category": "naval_warfare:ship_types/submarines",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Underwater vikings"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "If you see the raider surface near the shore, its already too late. Its crew survives by plundering settlements near shorelines and sinking transport ships on the ocean. When inactive, it often rests at the bottom of the ocean, planning its next assault.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/torpedo)$(l)Torpedo/$$(br)A simple torpedo that $(l)travels up to 5 tiles/$ before expiring. If the torpedo hits a ship, it will explode and $(l)deal 1 damage/$ to it. This ability has $(l)2 Uses/$ and costs $(l)6 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Shattering Hull/$$(br)Although the Raider is dangerous, it's made of a rather course material. $(l)Upon damaging the Raider/$, parts of the hull shatter into large segments and fly outwards, $(l)damaging 2 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:raider[ship_part=three]",
+					"1": "naval_warfare:raider[ship_part=two]",
+					"2": "naval_warfare:raider[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:raider": 2
+		}
+}

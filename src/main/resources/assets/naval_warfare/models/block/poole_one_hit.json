@@ -1,0 +1,17 @@
+{
+	"parent": "naval_warfare:block/template_poole_one",
+	"textures": {
+		"0": "block/light_blue_wool",
+		"1": "block/spruce_planks",
+		"2": "block/blue_wool",
+		"3": "block/green_wool",
+		"4": "block/green_concrete",
+		"5": "block/brown_wool",
+		"6": "block/gray_wool",
+		"7": "block/spruce_log",
+		"8": "block/black_wool",
+		"9": "block/sandstone",
+		"10": "block/cyan_wool",
+		"particle": "block/light_blue_wool"
+	}
+}

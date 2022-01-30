@@ -1,0 +1,26 @@
+{
+    "name": "Whirlpool",
+    "icon": "naval_warfare:icon_whirlpool",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipDestroyed)/$$(br)Whirlpool behaves exactly like $(l:naval_warfare:abilities/passive/suppression)Suppression/$, with only two difference: It only targets empty tiles (tiles with no ships or deployables on top of them) and it can't be blocked by $(l:naval_warfare:abilities/passive/energy_shield)Energy Shields/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)You don't need to take out ships with this ability straight away. You can wait to avoid having to deal with this passive, and may decide to take it out as late as possible unless you want to remove the ship's active ability."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Remember that passive abilities can't trigger other passive abilities. If you're lucky, one of your own ship's passive abilities may end up taking out a ship that has this passive ability, in which case this passive doesn't trigger!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/equilibrium"
+			]
+		}
+    ]
+}

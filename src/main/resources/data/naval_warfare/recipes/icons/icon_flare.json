@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "forge:gunpowder"
+		},
+		{
+			"tag": "forge:dusts/glowstone"
+		},
+		{
+			"tag": "forge:dusts/glowstone"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_flare",
+		"count": 1
+	}
+}

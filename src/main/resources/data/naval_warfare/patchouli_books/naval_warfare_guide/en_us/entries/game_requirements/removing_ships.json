@@ -1,0 +1,20 @@
+{
+    "name": "Removing Ships",
+    "icon": "naval_warfare:icon_battleship",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 6,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "To make it harder for games to break, ships are unbreakable in survival. To remove a ship, $(thing)Right Click the ship with any Pickaxe/$. The ship will be returned to your inventory unless it was sitting on top of a board tile, in which case the ship will also automatically deregister itself from the controller the board belongs to."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Please do not break ships during games in creative mode/$. There's nothing I can do to prevent it, but doing so will guarantee that you'll run into problems. You should also read $(l:naval_warfare:misc/seaworthy_limitations)Seaworthy Limitations/$ if the ship you want to remove has the $(l:naval_warfare:abilities/passive/seaworthy)Seaworhty/$ passive ability."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)WARNING/$: If you place multiple of the same ship next to eachother, breaking it will cause only one of them to drop!!! If you want to place multiple of the same ship, leave at least one block between them! Placing a different ship next to it is fine."
+		}
+    ]
+}

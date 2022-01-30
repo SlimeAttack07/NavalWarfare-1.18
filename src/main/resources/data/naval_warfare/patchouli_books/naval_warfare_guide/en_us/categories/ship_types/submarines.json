@@ -1,0 +1,6 @@
+{
+	"name": "Submarines",
+	"parent": "naval_warfare:ships",
+	"description": "Sneaky Assasins",
+	"icon": "naval_warfare:icon_submarine"
+}

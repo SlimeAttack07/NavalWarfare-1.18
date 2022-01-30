@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" P",
+		"S "
+	],
+
+	"key": {
+		"P": {
+			"tag": "forge:glass_panes/white"
+		},
+		"S": {
+			"tag": "forge:rods/wooden"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:info_tool",
+			"count": 1
+	}
+}

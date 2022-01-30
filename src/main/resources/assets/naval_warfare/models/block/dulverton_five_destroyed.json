@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_dulverton_five",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/light_gray_concrete_powder",
+		"2": "block/black_concrete_powder",
+		"3": "block/yellow_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+	}
+}

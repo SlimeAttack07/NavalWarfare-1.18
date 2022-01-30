@@ -1,0 +1,15 @@
+{
+	"parent": "naval_warfare:block/template_maori_two",
+	"textures": {
+		"0": "block/gray_terracotta",
+		"1": "block/gray_concrete_powder",
+		"2": "block/stripped_dark_oak_log",
+		"3": "block/red_concrete_powder",
+		"5": "block/brown_concrete_powder",
+		"6": "block/light_gray_concrete_powder",
+		"7": "block/purple_concrete_powder",
+		"8": "block/sand",
+		"9": "block/white_concrete_powder",
+		"particle": "block/gray_terracotta"
+	}
+}

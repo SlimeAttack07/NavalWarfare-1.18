@@ -1,0 +1,21 @@
+{
+    "name": "Guardian",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Extremely punishing if the opponent doesn't have any $(l:naval_warfare:abilities/active/energy_overloader)Energy Overloaders/$, but try not to lose it early on.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Shield a ship with a 2 HP shield, has 3 uses.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Only activates if you've used the active ability at least once. When destroyed, give all opponent ships a 1 HP shield.",
+			"title": "Passive Ability"
+		}
+    ]
+}

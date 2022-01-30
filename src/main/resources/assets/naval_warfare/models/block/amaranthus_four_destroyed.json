@@ -1,0 +1,9 @@
+{
+	"parent": "naval_warfare:block/template_amaranthus_four",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/red_concrete_powder",
+		"2": "block/light_gray_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+	}
+}

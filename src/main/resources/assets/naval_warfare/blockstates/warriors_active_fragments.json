@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+			{ "model": "naval_warfare:block/warriors_active_fragments" },
+			{ "model": "naval_warfare:block/warriors_active_fragments", "y": 90 },
+			{ "model": "naval_warfare:block/warriors_active_fragments", "y": 180 },
+			{ "model": "naval_warfare:block/warriors_active_fragments", "y": 270 }
+		]
+    }
+}

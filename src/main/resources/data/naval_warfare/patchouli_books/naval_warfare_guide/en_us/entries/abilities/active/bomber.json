@@ -1,0 +1,28 @@
+{
+    "name": "Bombers",
+    "icon": "naval_warfare:icon_bomber",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Bombers are similar to $(l:naval_warfare:abilities/active/mortar)Mortars/$, with three differences: Their Length is longer, their Width is smaller and they can be countered by $(l:naval_warfare:abilities/passive/anti_air)Anti-Air/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Be aware that if you select a tile too close to the edge of the board, the ability may target less tiles than its stats indicate.$(br2)$(l)Tips & Tricks:/$$(li)Bombers can be useful for scouting early on.$(li)When a bomber hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, it will only deal one damage to the shield regardless of how much of the ability hits the shield."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)A bomber will be nullified by Anti-Air if any of the selected tiles include an Anti-Air tile, even if the tiles that are actually targeted by the bomber don't include one."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/carriers/nighthawk",
+				"naval_warfare:ships/ship_types/carriers/thunderbolt",
+				"naval_warfare:ships/ship_types/carriers/glenearn"
+			]
+		}
+    ]
+}

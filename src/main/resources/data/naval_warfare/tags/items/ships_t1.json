@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "naval_warfare:battleship",
+	"naval_warfare:destroyer",
+	"naval_warfare:aircraft_carrier",
+	"naval_warfare:submarine",
+	"naval_warfare:cruiser"
+  ]
+}

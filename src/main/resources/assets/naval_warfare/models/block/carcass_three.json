@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_carcass_three",
+		"textures": {
+		"0": "block/light_gray_terracotta",
+		"1": "block/white_concrete",
+		"2": "block/red_concrete",
+		"3": "block/black_concrete",
+		"particle": "block/light_gray_terracotta"
+	}
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Ghost Ships",
+    "icon": "naval_warfare:icon_ghost_ship",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Defensive)/$$(br)Ghost Ships are deployed on your own board $(l)on unknown tiles/$. They act like normal ships, tricking the opponent into thinking they've found one of your ships. Each ghost ship has one stat: Shape. It determines the shape of the deployed ship."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Try to place ghost ships where you think the opponent will fire. This way, if they end up hitting it they might waste several turns trying to destroy it only to figure out that it was a ghost ship.$(li)Ghost ships don't have to be destroyed to win the game."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Ghost ships must be placed on unknown tiles, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place a ghost ship on a known tile, then nothing happens and the ability is wasted./$$(li)Don't place ghost ships on occupied tiles, as the ability will be wasted."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)The ghost ship will choose a random rotation upon being placed. If it fails to spawn with that rotation, it will choose a new one until all four cardinal directions have been tried. Only if all four fail, will you lose the ability. This also means that you can sometimes force a certain rotation by deploying on a specific tile."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/supports/paradox"
+			]
+		}
+    ]
+}

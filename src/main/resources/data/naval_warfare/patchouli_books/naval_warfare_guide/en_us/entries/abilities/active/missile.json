@@ -1,0 +1,27 @@
+{
+    "name": "Missiles",
+    "icon": "naval_warfare:icon_missile",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Missiles target a single tile and deal damage to it, typically at least 2. Each missile has one stat: Damage. The damage determines how much damage is done to the targeted tile (obviously)."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)High damage missiles can be used to get around nasty passive abilities, as it will only trigger them once.$(li)When a missile hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, it will only deal one damage to the shield regardless of what the missile's damage is.$(li)Try to avoid wasting high damage missiles on low health ships if you can."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/destroyers/pyrrhus",
+				"naval_warfare:ships/ship_types/destroyers/the_ultimatum",
+				"naval_warfare:ships/ship_types/destroyers/vanquisher",
+				"naval_warfare:ships/ship_types/destroyers/vendetta",
+				"naval_warfare:ships/ship_types/destroyers/vervain",
+				"naval_warfare:ships/ship_types/destroyers/wirnpa"
+			]
+		}
+    ]
+}

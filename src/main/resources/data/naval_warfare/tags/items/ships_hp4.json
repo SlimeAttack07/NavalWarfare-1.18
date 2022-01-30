@@ -1,0 +1,19 @@
+{
+	"replace": false,
+	"values": [
+		"naval_warfare:battleship",
+		"naval_warfare:thunderbolt",
+		"naval_warfare:gallant",
+		"naval_warfare:landguard",
+		"naval_warfare:meeanne",
+		"naval_warfare:safeguard",
+		"naval_warfare:narvik",
+		"naval_warfare:nighthawk",
+		"naval_warfare:poole",
+		"naval_warfare:boundless",
+		"naval_warfare:castlereagh",
+		"naval_warfare:barcross",
+		"naval_warfare:wirnpa",
+		"naval_warfare:vanquisher"
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "minecraft:planks"
+		},
+		{
+			"tag": "forge:feathers"
+		},
+		{
+			"item": "minecraft:tnt"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_bomber",
+		"count": 1
+	}
+}

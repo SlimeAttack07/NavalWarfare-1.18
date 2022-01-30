@@ -1,0 +1,32 @@
+{
+    "name": "Torpedoes",
+    "icon": "naval_warfare:icon_torpedo",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Torpedoes will travel in a straight line until they hit something, at which point they will deal damage. They will always start at the beginning of the board, which is the side that your controller is attached to. Torpedoes will be nullified if they hit a $(l:abilities/passive/torpedo_net)$(thing)Torpedo Net/$. Each torpedo has three stats: Range, Damage and Health."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The range determines how far the torpedo can travel until it runs out of fuel and detonates. If the torpedo reaches the end of the board, it will also detonate. When this ability has finished casting, all tiles it has travelled through will be revealed.$(br2)The damage determines how much damage is dealt to anything the torpedo hits. For example, a damage of 3 will instantly destroy any ship with 3 or less HP upon contact."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The health determines how many times a torpedo is allowed to hit something before being fully destroyed, allowing it to potentially hit multiple ships if casted in the right spot. Yes, I know this is not how torpedos work and no I don't care.$(br2)$(l)Tips & Tricks:/$$(li)Torpedoes can be useful for scouting early on.$(li)Torpedoes that can deal more than 1 damage can be used to get around nasty passive abilities,"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "as it will only trigger them once.$(li)If you know your opponent has a ship with a $(l:abilities/passive/torpedo_net)$(thing)Torpedo Net/$, try to destroy the ship first before using torpedoes to avoid wasting them."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/submarines/carcass",
+				"naval_warfare:ships/ship_types/submarines/raider",
+				"naval_warfare:ships/ship_types/destroyers/ghostnova"
+			]
+		}
+    ]
+}

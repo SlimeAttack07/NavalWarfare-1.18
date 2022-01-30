@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "naval_warfare:nighthawk",
+	"naval_warfare:kilgobnet",
+	"naval_warfare:pathfinder",
+	"naval_warfare:maori",
+	"naval_warfare:cybele",
+	"naval_warfare:poole",
+	"naval_warfare:sterling"
+  ]
+}

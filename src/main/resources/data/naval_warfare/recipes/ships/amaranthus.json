@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_large_t"
+		},
+		{
+			"item": "naval_warfare:icon_deployable_aa"
+		},
+		{
+			"item": "naval_warfare:icon_deployable_aa"
+		},
+		{
+			"item": "naval_warfare:icon_suppression"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:amaranthus",
+		"count": 1
+	}
+}

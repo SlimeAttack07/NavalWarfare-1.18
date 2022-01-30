@@ -1,0 +1,14 @@
+{
+	"parent": "naval_warfare:block/template_castlereagh_two",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/spruce_planks",
+		"2": "block/dark_oak_planks",
+		"3": "block/dark_oak_log",
+		"4": "block/light_gray_concrete",
+		"5": "block/white_concrete",
+		"6": "block/green_terracotta",
+		"7": "block/cyan_terracotta",
+		"particle": "block/gray_concrete"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#naval_warfare:icons_t1",
+	"#naval_warfare:icons_t2",
+	"#naval_warfare:icons_t3"
+  ]
+}

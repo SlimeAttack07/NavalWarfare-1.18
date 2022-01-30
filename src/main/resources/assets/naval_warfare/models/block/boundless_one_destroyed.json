@@ -1,0 +1,16 @@
+{
+	"parent": "naval_warfare:block/template_boundless_one",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/brown_concrete_powder",
+		"2": "block/black_concrete_powder",
+		"3": "block/stripped_dark_oak_log",
+		"4": "block/light_gray_concrete_powder",
+		"5": "block/stripped_dark_oak_log",
+		"6": "block/brown_concrete_powder",
+		"7": "block/gray_concrete_powder",
+		"8": "block/red_concrete_powder",
+		"9": "block/sandstone",
+		"particle": "block/brown_concrete_powder"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"tag": "forge:ingots/iron"
+		},
+		{
+			"item": "minecraft:fire_charge"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_missile",
+		"count": 1
+	}
+}

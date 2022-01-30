@@ -1,0 +1,46 @@
+{
+    "name": "Glenearn",
+    "icon": "naval_warfare:glenearn",
+    "category": "naval_warfare:ship_types/carriers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Weaponized stunt planes"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Glenearn is a ship carrying two large ramps and two small planes. Each plane is armed with several bombs and typically stay in the air during battle, only landing to restock on bombs.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/bomber)$(l)Bombardment/$$(br)One of the planes drops its payload, bombing up to $(l)7 Tiles/$ in a $(l)3 by 4 area/$. This ability has $(l)2 Uses/$ and costs $(l)12 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/suppression)$(l)Crash Landing/$$(br)$(l)When Glenearn is destroyed/$, the planes have no way to land anymore. They crash into the battlefield, $(l)damaging 2 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012", " 34"]
+				],
+				"mapping": {
+					"0": "naval_warfare:glenearn[ship_part=one]",
+					"1": "naval_warfare:glenearn[ship_part=two]",
+					"2": "naval_warfare:glenearn[ship_part=three]",
+					"3": "naval_warfare:glenearn[ship_part=five]",
+					"4": "naval_warfare:glenearn[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:glenearn": 2
+		}
+}

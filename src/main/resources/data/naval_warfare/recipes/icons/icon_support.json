@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_scout"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_support",
+		"count": 1
+	}
+}

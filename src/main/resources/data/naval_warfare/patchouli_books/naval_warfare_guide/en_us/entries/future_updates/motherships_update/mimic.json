@@ -1,0 +1,21 @@
+{
+    "name": "Mimic",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "A great ship if you're fighting a unique loadout, but a terrible ship if you're fighting a clone of your own loadout."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Place a hex on an opponent ship. If they use that ship's active ability in the next two rounds, reveal one of its tiles.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Will activate once for each active hex. If you sink a ship that also exists in your fleet, then it sinks too unless it's the last ship. This still triggers even if mimic itself is destroyed.",
+			"title": "Passive Ability"
+		}
+    ]
+}

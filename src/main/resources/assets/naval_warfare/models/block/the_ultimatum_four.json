@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_the_ultimatum_four",
+	"textures": {
+		"0": "block/cyan_terracotta",
+		"1": "block/light_gray_concrete",
+		"2": "block/black_concrete",
+		"3": "block/green_concrete",
+		"4": "block/gray_concrete",
+		"5": "block/lime_concrete",
+		"particle": "block/cyan_terracotta"
+	}
+}

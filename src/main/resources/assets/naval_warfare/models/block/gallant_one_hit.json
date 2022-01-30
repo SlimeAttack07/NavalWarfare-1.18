@@ -1,0 +1,9 @@
+{
+	"parent": "naval_warfare:block/template_gallant_one",
+	"textures": {
+		"0": "block/sandstone",
+		"1": "block/spruce_planks",
+		"2": "block/spruce_log",
+		"particle": "block/sandstone"
+	}
+}

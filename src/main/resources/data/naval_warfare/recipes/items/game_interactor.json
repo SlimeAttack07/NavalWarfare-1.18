@@ -1,0 +1,28 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"CCR",
+		"CGB",
+		"CCC"
+	],
+
+	"key": {
+		"C": {
+			"item": "minecraft:cyan_terracotta"
+		},
+		"R": {
+			"tag": "forge:dusts/redstone"
+		},
+		"G": {
+			"tag": "forge:glass_panes/blue"
+		},
+		"B": {
+			"item": "minecraft:stone_button"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:game_interactor",
+			"count": 1
+	}
+}

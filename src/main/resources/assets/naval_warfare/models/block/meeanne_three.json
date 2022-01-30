@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_meeanne_three",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/red_concrete",
+		"2": "block/light_gray_concrete",
+		"3": "block/black_concrete",
+		"4": "block/green_concrete",
+		"particle": "block/gray_concrete"
+	}
+}

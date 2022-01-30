@@ -1,0 +1,31 @@
+{
+    "name": "Torpedo Nets",
+    "icon": "naval_warfare:icon_torpedo_net",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-GameStart)/$$(br)Torpedo nets are always deployed at the start of the round, at the beginning of your board (the side your controller is attached to). As long as the ship that the net belongs to is not destroyed, the torpedo net will nullify any and all incoming $(l:abilities/active/torpedo)$(thing)Torpedoes./$ Upon destruction of the ship that the net belongs to, the entire net will be destroyed as well. Note that"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "if multiple nets overlap with eachother, any pieces overlapping with the destroyed net will remain, so don't worry too much if your nets overlap. Torpedo nets only have one stat, which is their length. Nets are always an uneven length and use the 'middle' of the ship they belong to as their own center when deploying."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks/$$(li)Try not to overlap torpedo nets, as there is no benefit in doing so. $(li)Torpedo nets will generally protect more tiles when the deploying ship is placed close to the center of your loadout. However, this may make the ship easier to track down.$(li)Your opponent will be notified when they hit your net, and will see a net tile appear on their targeting board above the tile they fired at. This gives them a"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "reasonable indication of which side of the board your important ships likely are, so expect scouting and high damage abiities to be fired at that area soon!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/gallant",
+				"naval_warfare:ships/ship_types/destroyers/narvik"
+			]
+		}
+    ]
+}

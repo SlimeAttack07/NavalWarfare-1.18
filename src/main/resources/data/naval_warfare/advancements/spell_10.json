@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.spell_10.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.spell_10.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:spell_wand"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "spell_10": {
+            "trigger": "spell_10"
+         }
+    },
+    "parent": "naval_warfare:spell"
+}

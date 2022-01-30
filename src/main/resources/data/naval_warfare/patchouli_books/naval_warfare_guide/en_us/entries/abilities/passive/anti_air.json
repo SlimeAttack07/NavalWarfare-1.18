@@ -1,0 +1,32 @@
+{
+    "name": "Anti Air Weapons",
+    "icon": "naval_warfare:icon_anti_air",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-GameStart)/$$(br)Anti Air Weapons are always deployed at the start of the round, centered around their corresponding ships. As long as the ship it belongs to is not destroyed, AA-Weapons will nullify any and all incoming $(thing)aircraft based/$ attacks. These are attacks that deployed from aircraft, such as $(thing)Bombers/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "When the ship that an AA-Weapon belongs to is destroyed, the AA will be disabled. Note that if multiple AA-Weapons overlap and one AA-Weapon is disabled, then the overlapping pieces will remain, so don't worry too much about overlapping AA-Weapons. AA weapons have two stats: Length and Width. Note that the length and width rotate with your ship's placement, where the length is always in the direction that the ship faces."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks/$$(li)Try not to overlap AA Weapons, as there is no benefit in doing so. $(li)Most AA Weapons can protect multiple ships if your ships are close together. However, remember that you're still vulnerable to non-aircraft based attacks that may wreak havoc around the AA zone.$(li)Your opponent will be notified when your AA-Weapon nullifies their ability, and will see an AA-Weapon tile appear on their targeting board above" 
+		},
+		{
+			"type": "patchouli:text",
+			"text": "the tile they fired at. They will likely start targeting the general area around that tile to destroy the AA, so keep in mind that any ship located there may only live for a few more rounds (remember that you will lose access to its ability when the ship is destroyed)!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/landguard",
+				"naval_warfare:ships/ship_types/carriers/thunderbolt",
+				"naval_warfare:ships/ship_types/batleships/arethuse"
+			]
+		}
+    ]
+}

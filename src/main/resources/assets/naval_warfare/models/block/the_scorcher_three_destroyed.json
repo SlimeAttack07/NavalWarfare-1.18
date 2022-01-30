@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_the_scorcher_three",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/light_gray_concrete_powder",
+		"2": "block/gray_concrete_powder",
+		"3": "block/black_concrete_powder",
+		"4": "block/orange_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+	}
+}

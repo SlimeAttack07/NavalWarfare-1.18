@@ -1,0 +1,46 @@
+{
+    "name": "Ghostnova",
+    "icon": "naval_warfare:ghostnova",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Plane unfair"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Ghostnova is a large, heavy cargoplane that soars at high altitudes. It is often used to carry heavy cargo used for military purposes. The plane features three expirimental super thrusters that allow to to travel over 200 km/h even when fully loaded.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/torpedo)$(l)Thruster Drill/$$(br)Ghostnova opens its cargo bay door, dropping a broken, expirimental thruster drill salvaged from a giant mech. The device $(l)targets the entire column, breaking through everything in it/$. This ability has $(l)1 Uses/$ and costs $(l)16 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/retaliation)$(l)Kamikaze/$$(br)$(l)When Ghostnova goes down/$, the pilots know there's no way they'll survive. They steer the plane $(l)into a random opponent ship/$. The violent impact and explosion deals $(l)2 damage to the ship/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 " , "123", " 4 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:ghostnova[ship_part=one]",
+					"1": "naval_warfare:ghostnova[ship_part=five]",
+					"2": "naval_warfare:ghostnova[ship_part=two]",
+					"3": "naval_warfare:ghostnova[ship_part=four]",
+					"4": "naval_warfare:ghostnova[ship_part=three]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:ghostnova": 2
+		}
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Destroyer",
+    "icon": "naval_warfare:destroyer",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "The tiniest destroyer you'll ever see"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A simple destroyer with two missiles and a helicopter. This is one of the few ships with no abilities at all.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01"]
+				],
+				"mapping": {
+					"0": "naval_warfare:destroyer[ship_part=two]",
+					"1": "naval_warfare:destroyer[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:destroyer": 2
+		}
+}

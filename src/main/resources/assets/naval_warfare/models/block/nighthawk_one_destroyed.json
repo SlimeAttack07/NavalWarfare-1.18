@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_nighthawk_one",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/brown_concrete_powder",
+		"2": "block/oak_planks",
+		"3": "block/gray_concrete_powder",
+		"4": "block/stripped_dark_oak_log",
+		"particle": "block/brown_concrete_powder"
+	}
+}

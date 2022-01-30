@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_small_zig"
+		},
+		{
+			"item": "naval_warfare:icon_sea_mine"
+		},
+		{
+			"item": "naval_warfare:icon_sea_mine"
+		},
+		{
+			"item": "naval_warfare:icon_seaworthy"
+		},
+		{
+			"item": "naval_warfare:icon_seaworthy"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:meeanne",
+		"count": 1
+	}
+}

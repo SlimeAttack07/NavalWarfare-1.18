@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"item": "minecraft:tnt"
+		},
+		{
+			"tag": "forge:dyes/red"
+		},
+		{
+			"item": "minecraft:flint"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_frag_bomb",
+		"count": 1
+	}
+}

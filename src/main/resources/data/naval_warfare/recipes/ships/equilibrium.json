@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t3"
+		},
+		{
+			"item": "naval_warfare:hull_cross"
+		},
+		{
+			"item": "naval_warfare:icon_energy_gain"
+		},
+		{
+			"item": "naval_warfare:icon_energy_gain"
+		},
+		{
+			"item": "naval_warfare:icon_whirlpool"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:equilibrium",
+		"count": 1
+	}
+}

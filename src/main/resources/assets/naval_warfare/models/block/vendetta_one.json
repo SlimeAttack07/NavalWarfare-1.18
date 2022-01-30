@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_vendetta_one",
+	"textures": {
+		"0": "block/spruce_planks",
+		"1": "block/gray_concrete",
+		"2": "block/black_concrete",
+		"3": "block/cyan_terracotta",
+		"4": "block/dark_oak_log",
+		"5": "block/brown_concrete",
+		"6": "block/white_concrete",
+		"particle": "block/spruce_planks"
+	}
+}

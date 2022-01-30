@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "naval_warfare:boundless",
+	"naval_warfare:paradox",
+	"naval_warfare:equilibrium",
+	"naval_warfare:warriors",
+	"naval_warfare:raider",
+	"naval_warfare:thunderbolt",
+	"naval_warfare:narvik",
+	"naval_warfare:gallant",
+	"naval_warfare:vendetta",
+	"naval_warfare:ignition",
+	"naval_warfare:the_scorcher",
+	"naval_warfare:wirnpa"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Heatseaker",
+    "icon": "naval_warfare:icon_heatseaker",
+    "category": "naval_warfare:spells",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Offensive)/$$(br)The heatseaker spell $(l)selects a 3x3 tile area/$ and fires a missile at it. If there is a ship in that area, then the heatseaker will $(l)home in on it and deal 1 damage to it/$. Heatseaker will ignore $(l:naval_warfare:abilities/passive/energy_shield)Energy Shields/$, passing right through them."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Heatseaker is a great counter to deployables, such as $(l:naval_warfare:spells/crude_raft)Raft/$ or $(l:naval_warfare:abilities/active/turret)Turrets/$, able to scout up to 9 tiles for you.$(li)Try not to use this ability as an early scouting tool, as you'll probably regret it later on in the game...$(li)Don't use this spell near damaged ships, as it'll likely just home in on another part of that ship. Unless that's what you're going for of course.$(li)Heatseaker won't target damaged tiles."
+		}
+    ]
+}

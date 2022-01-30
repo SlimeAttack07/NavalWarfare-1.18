@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_ghostnova_four",
+	"textures": {
+		"0": "block/green_concrete",
+		"1": "block/blue_concrete",
+		"2": "block/cyan_concrete",
+		"3": "block/light_blue_concrete",
+		"4": "block/black_concrete",
+		"5": "block/gray_concrete",
+		"particle": "block/green_concrete"
+	}
+}

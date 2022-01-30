@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_quadruple"
+		},
+		{
+			"item": "naval_warfare:icon_missile"
+		},
+		{
+			"item": "naval_warfare:icon_missile"
+		},
+		{
+			"item": "naval_warfare:icon_missile"
+		},
+		{
+			"item": "naval_warfare:icon_suppression"
+		},
+		{
+			"item": "naval_warfare:icon_suppression"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:vanquisher",
+		"count": 1
+	}
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+			{ "model": "naval_warfare:block/glenearn_passive" },
+			{ "model": "naval_warfare:block/glenearn_passive", "y": 90 },
+			{ "model": "naval_warfare:block/glenearn_passive", "y": 180 },
+			{ "model": "naval_warfare:block/glenearn_passive", "y": 270 }
+		]
+    }
+}

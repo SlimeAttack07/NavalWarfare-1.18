@@ -1,0 +1,45 @@
+{
+    "name": "Wirnpa",
+    "icon": "naval_warfare:wirnpa",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Steampunk Destroyer"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Wirnpa is an old, steam powered destroyer. It's made mostly of copper, rusted metal and brass, featuring two small cannons and one large cannon.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/missile)$(l)Spikeball/$$(br)Wirnpa $(l)targets a tile/$ and fires a large spikeball at it, $(l)dealing 2 damage to the tile/$. This ability has $(l)2 Use/$ and costs $(l)10 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Old But Gold/$$(br)Although the ship is old, it's strong build has stood the test of time just fine, $(l)providing 6 extra tiles/$ for your fleet to use.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0123"]
+				],
+				"mapping": {
+					"0": "naval_warfare:wirnpa[ship_part=four]",
+					"1": "naval_warfare:wirnpa[ship_part=three]",
+					"2": "naval_warfare:wirnpa[ship_part=two]",
+					"3": "naval_warfare:wirnpa[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:wirnpa": 2
+		}
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Meeanne",
+    "icon": "naval_warfare:meeanne",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "The cutest sea monster you'll ever meet"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Meeanne is a large, mutated sea snake, who travels the seas with her young. She's very protective of them, and will do anything to keep them out of harms way.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/sea_mine)$(l)Create Protected Area/$$(br)Meeanne will twist her body, forming a few rings over $(l)the selected tile/$ where she'll let her young play. $(l)When this area is hit/$, Meeanne becomes enraged, retrieving her young and wildly striking around her, $(l)damaging 7 random opponent tiles/$. This ability has $(l)2 Uses/$ and costs $(l)14 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Endangered Species/$$(br)Meeanne and her young are the only ones of her kind. Due to this, wildlife preservative efforts grant your fleet $(l)10 extra tiles/$ to use.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0", "12", "3 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:meeanne[ship_part=one]",
+					"1": "naval_warfare:meeanne[ship_part=three]",
+					"2": "naval_warfare:meeanne[ship_part=two]",
+					"3": "naval_warfare:meeanne[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:meeanne": 2
+		}
+}

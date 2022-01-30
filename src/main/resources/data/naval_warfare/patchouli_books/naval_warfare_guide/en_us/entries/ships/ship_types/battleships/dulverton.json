@@ -1,0 +1,46 @@
+{
+    "name": "Dulverton",
+    "icon": "naval_warfare:dulverton",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Royal Battleship"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Dulverton is a royal battleship with three large caliber guns and a large cannon. Whenever the royal family needs to travel by sea, they'll travel in this ship together with over 100 servants.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Large Cannon/$$(br)Dulverton targets a $(l)4 by 4 tile area/$ and fire's its large cannon, damaging $(l)7 random tiles/$. This ability has $(l)2 Uses/$ and costs $(l)13 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Counterfire/$$(br)$(l)When Dulverton is hit/$, it fires its front cannons, damaging $(l)3 random opponent tiles/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", " 2", " 3", " 4"]
+				],
+				"mapping": {
+					"0": "naval_warfare:dulverton[ship_part=one]",
+					"1": "naval_warfare:dulverton[ship_part=two]",
+					"2": "naval_warfare:dulverton[ship_part=three]",
+					"3": "naval_warfare:dulverton[ship_part=four]",
+					"4": "naval_warfare:dulverton[ship_part=five]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:dulverton": 2
+		}
+}

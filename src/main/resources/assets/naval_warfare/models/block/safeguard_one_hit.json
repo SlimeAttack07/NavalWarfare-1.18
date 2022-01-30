@@ -1,0 +1,14 @@
+{
+	"parent": "naval_warfare:block/template_safeguard_one",
+	"textures": {
+		"0": "block/yellow_wool",
+		"1": "block/orange_wool",
+		"2": "block/red_wool",
+		"3": "block/gray_concrete",
+		"4": "block/gray_wool",
+		"5": "block/light_gray_wool",
+		"6": "block/light_blue_wool",
+		"7": "block/blue_wool",
+		"particle": "block/yellow_wool"
+	}
+}

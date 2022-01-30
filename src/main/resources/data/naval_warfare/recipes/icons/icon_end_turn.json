@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:icon_paste"
+		},
+		{
+			"tag": "forge:ender_pearls"
+		},
+		{
+			"tag": "forge:slimeballs"
+		},
+		{
+			"tag": "forge:dyes/black"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:icon_end_turn",
+		"count": 1
+	}
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Designing Animations",
+    "icon": "naval_warfare:icon_support",
+    "category": "naval_warfare:contribution",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Animations can be made in the same way as $(l:naval_warfare:contribution/designing_ships)ships/$. Animations are used during games of Naval Warfare, and you'll see them when targeting tiles or using abilities. If you build a ship with abilities, it would be nice (but not required) to make animations for the abilities too. If you don't, I'll try to design them myself."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)You must build the animation facing north.$(li)You must specify what the animation is for.$(li)The animation must fit exactly in a chunk and may be at most 16x16x16 (xzy). You're allowed to extend this to at most 17x17x17 if needed, but please don't go beyond that as it makes it harder for players to see what tile the animation is on.",
+			"title": "Instructions"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Only use vanilla full blocks in your build. The conversion programs used later on will treat every block as a full block, so you'll lose those details. $(li)Keep the amount of empty space inside the ships as low as possible, as this will end up creating fewer pieces in the model which leads to better performance. If the empty space serves no purpose,"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "fill it up with the same block that is next to it. Don't use random blocks for this as it will prevent the optimization.$(br2)$(l)Follow the instructions, or else I likely won't use the animation design."
+		}
+    ]
+}

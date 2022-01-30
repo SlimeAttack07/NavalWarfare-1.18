@@ -1,0 +1,12 @@
+{
+	"name": "Naval Warfare Guide",
+	"landing_text": "Welcome to Naval Warfare! Please read the Intro entry in the Miscellaneous section if you haven't yet!",
+	"version": 1,
+	"book_texture": "naval_warfare:textures/gui/book_cyan_altered.png",
+	"filler_texture": "naval_warfare:textures/gui/page_filler.png",
+	"model": "naval_warfare:guide",
+	"progress_bar_color": "00F2FF",
+	"progress_bar_background": "218CFF",
+	"creative_tab": "naval_warfare",
+	"show_progress": false
+}

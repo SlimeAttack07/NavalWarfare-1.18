@@ -1,0 +1,15 @@
+{
+    "name": "Retired Captain",
+    "icon": "minecraft:villager_spawn_egg",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Often found living in $(l:naval_warfare:misc/captains_cabin)Captain's Cabins/$, these captains have retired from battle. They usually have some icons for trade, as well as a few ship hulls. Trade with them enough, and they'll trade you a ship!"
+		},
+		{
+			"type": "patchouli:entity",
+			"entity": "minecraft:villager{VillagerData: {profession: 'naval_warfare:retired_captain', level: 1, type: 'minecraft:plains'}}"
+		}
+    ]
+}

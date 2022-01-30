@@ -1,0 +1,23 @@
+{
+    "name": "Frag Bombs",
+    "icon": "naval_warfare:icon_frag_bomb",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Frag Bombs target a single tile and deal 1 damage to it. If that tile contains a ship, then up to 8 surrounding tiles are also damaged. Each Frag Bomb has one stat: Fragments. It determines how many extra tiles are damaged if the ability hit a ship. $(l)Fragments can't be blocked./$"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)If the frag bomb hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, the ability is nullified. However, if fragments from the frag bomb hit an Energy Shield after the initial ability hit a ship, those fragments will ignore the shield! (The shield won't be damaged by them either)"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/warriors",
+				"naval_warfare:ships/ship_types/battleships/gustav"
+			]
+		}
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Napalm",
+    "icon": "naval_warfare:icon_napalm",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Napalm targets a single tile and deals 1 damage to it. If there is a ship on that tile, it will be set on fire. The ship will then take 1 damage each round at the start of your turn until destroyed. The fire damage does not trigger passive abilities."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Napalm can be used to get around nasty passive abilities, as it will only trigger them once.$(li)When napalm hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, it will only deal one damage to the shield. It will not be set on fire.$(li)Try to avoid wasting napalm on low health ships if you can."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/destroyers/ignition",
+				"naval_warfare:ships/ship_types/destroyers/the_scorcher"
+			]
+		}
+    ]
+}

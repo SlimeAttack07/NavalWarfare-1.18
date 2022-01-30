@@ -1,0 +1,6 @@
+{
+	"name": "Motherships Update",
+	"parent": "naval_warfare:future_updates",
+	"description": "Motherships are large, 3x3 Tier 6 ships, of which you may have at most 1 per fleet (default). These ships have powerfull abilities, typically with some kind of drawback to balance things out.",
+	"icon": "naval_warfare:icon_mothership"
+}

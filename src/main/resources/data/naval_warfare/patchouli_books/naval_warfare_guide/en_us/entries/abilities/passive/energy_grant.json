@@ -1,0 +1,28 @@
+{
+    "name": "Energy Grant",
+    "icon": "naval_warfare:icon_energy_grant",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipDestroyed)/$$(br)Energy Grant behaves exactly like $(l:naval_warfare:abilities/passive/energy_start)Energy Start/$, with only one difference: It triggers when its owner ship sinks instead of when the game starts."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Although this passive isn't necessarily dangerous on its own, you must not forgot that it gives your opponent energy. This means that it is quite possible that you may face dangerous, high energy cost abilities or several small energy cost abilities in their next turn!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Remember that passive abilities can't trigger other passive abilities. If you're lucky, one of your own ship's passive abilities may end up taking out a ship that has this passive ability, in which case this passive doesn't trigger!"
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/boundless",
+				"naval_warfare:ships/ship_types/supports/paradox",
+				"naval_warfare:ships/ship_types/battleships/castlereagh"
+			]
+		}
+    ]
+}

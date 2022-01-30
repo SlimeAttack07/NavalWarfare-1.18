@@ -1,0 +1,26 @@
+{
+    "name": "Turrets",
+    "icon": "naval_warfare:icon_sea_mine",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Defensive)/$$(br)Turrets are deployed on your own board $(l)on unknown tiles/$. As long as they are not destroyed, they grant access to an infinite amount of $(l:naval_warfare:abilities/active/salvo)Salvoes/$."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Try to place turrets where you think the opponent won't fire, such as far away from damaged ships. This forces the opponent to either leave it there for you to use, or waste turns trying to find it."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Turrets must be placed on unknown tiles, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place a turret on a known tile, then nothing happens and the ability is wasted./$$(li)Don't place turret on occupied tiles, as the ability will be wasted."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/landguard"
+			]
+		}
+    ]
+}

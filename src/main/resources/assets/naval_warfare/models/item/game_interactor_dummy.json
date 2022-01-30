@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "naval_warfare:item/game_interactor_dummy"
+    }
+}

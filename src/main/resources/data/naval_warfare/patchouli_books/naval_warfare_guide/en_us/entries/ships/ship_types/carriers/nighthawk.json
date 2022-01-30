@@ -1,0 +1,45 @@
+{
+    "name": "Nighthawk",
+    "icon": "naval_warfare:nighthawk",
+    "category": "naval_warfare:ship_types/carriers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Prepare for trouble... And make it double!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Nighthawk consists of two old ships that always travel together. Each one is powered by a dual water wheel and 6 oars, needing a crew of at least 8 to run. Each one carriers an old bi-plane and 4 cannons.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/bomber)$(l)Bombing Run/$$(br)One of the old bi-planes takes of and prepares to drop its payload, bombing up to $(l)3 Tiles/$ in a $(l)2 by 4 area/$. This ability has $(l)2 Uses/$ and costs $(l)6 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Old But Gold/$$(br)The two ships have always had each others back. Their strong bond and long history provide a whopping $(l)10 extra tiles/$ for your fleet to use.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", "23"]
+				],
+				"mapping": {
+					"0": "naval_warfare:nighthawk[ship_part=two]",
+					"1": "naval_warfare:nighthawk[ship_part=one]",
+					"2": "naval_warfare:nighthawk[ship_part=three]",
+					"3": "naval_warfare:nighthawk[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:nighthawk": 2
+		}
+}

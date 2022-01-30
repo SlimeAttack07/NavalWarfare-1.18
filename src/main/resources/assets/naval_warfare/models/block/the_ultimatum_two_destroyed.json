@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_the_ultimatum_two",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/black_concrete_powder",
+		"2": "block/green_concrete_powder",
+		"3": "block/light_gray_concrete_powder",
+		"4": "block/lime_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+	}
+}

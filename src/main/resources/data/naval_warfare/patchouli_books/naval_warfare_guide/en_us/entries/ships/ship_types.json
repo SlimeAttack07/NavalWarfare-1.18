@@ -1,0 +1,46 @@
+{
+    "name": "Ship Types",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:ships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Each ship belongs to one or more ship types, which you can use to quickly guess what to expect from a ship's abilities without having to read into each ship to determine which ships you want to use. These ship types are inspired by real life ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_battleship",
+			"text": "Battleships are fitted with a vast amount of weaponry, allowing them to damage many tiles at once and provide cover fire for their allies. These ships will often damage multiple ships at once. You'll typically find abilities like $(l:naval_warfare:abilities/active/salvo)Salvoes/$ and $(l:naval_warfare:abilities/active/mortar)Mortars/$ on these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_destroyer",
+			"text": "Destroyers are fitted with heavy weaponry, allowing them to deal massive damage to tiles. These ships can easily obliterate any ship caught in its abilities. You'll typically find abilities like $(l:naval_warfare:abilities/active/missile)Missiles/$ and $(l:naval_warfare:abilities/active/sea_mine)Sea Mines/$ on these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_submarine",
+			"text": "Submarines are versatile ships that can fight both undersea and on sea. You'll typically find abilities like $(l:naval_warfare:abilities/active/torpedo)Torpedoes/$ on these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_scout",
+			"text": "Scouts excel at spotting enemies, revealing them to their allies. You'll typically find abilities like $(l:naval_warfare:abilities/active/spyglass)Spyglasses/$ and $(l:naval_warfare:abilities/active/flare)Flares/$ on these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_support",
+			"text": "Supports provide a variety of utilities, ranging from providing extra energy to shielding other ships. You'll typically find abilities like $(l:naval_warfare:abilities/active/energy_gain)Energy Gain/$ and $(l:naval_warfare:abilities/passive/energy_shield)Energy Shields/$ on these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_carrier",
+			"text": "Carriers typically have one or more aircraft on board, ready to rain doom upon the enemy. You'll typically find abilities like $(l:naval_warfare:abilities/active/bomber)Bombers/$ these ships."
+		},
+		{
+			"type": "patchouli:spotlight",
+			"item": "naval_warfare:icon_mothership",
+			"text": "(FUTURE UPDATE) Motherships are massive ships, of which you'll only ever find at most one per fleet. These beasts have incredibly strong abilities, but typically also have some sort of drawback to keep them from becoming too overpowered."
+		}
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Intro",
+    "icon": "naval_warfare:icon_battleship",
+    "category": "naval_warfare:misc",
+	"priority": true,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Thanks for downloading/playing this mod! To get started, it would be smart to read the entries in the Game Requirements category, which will explain how to use this mod. It is not necessary to read the entries in the other categories to understand the game, although it will definitly help you play better in the long run."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Keep in mind that some values mentioned in this book might not be accurate depending on your configs, as patchouli currently does not have a way to load config values into entries. All values found in this guide refer to the default values set by this mod."
+		}
+    ]
+}

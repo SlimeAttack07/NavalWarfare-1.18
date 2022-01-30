@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" GS",
+		"DSD",
+		"SG "
+	],
+
+	"key": {
+		"S": {
+			"tag": "forge:rods/wooden"
+		},
+		"D": {
+			"tag": "forge:dyes/green"
+		},
+		"G": {
+			"tag": "forge:dusts/glowstone"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:utility_tool",
+			"count": 1
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "naval_warfare:pyrrhus",
+	"naval_warfare:meeanne",
+	"naval_warfare:vervain",
+	"naval_warfare:psyche",
+	"naval_warfare:landguard",
+	"naval_warfare:carcass",
+	"naval_warfare:tyrant",
+	"naval_warfare:castlereagh",
+	"naval_warfare:barcross",
+	"naval_warfare:amaranthus",
+	"naval_warfare:glenearn",
+	"naval_warfare:dulverton",
+	"naval_warfare:ephira"
+  ]
+}

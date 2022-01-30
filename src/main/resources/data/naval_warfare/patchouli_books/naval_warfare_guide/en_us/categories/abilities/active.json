@@ -1,0 +1,6 @@
+{
+	"name": "Active Abilities",
+	"parent": "naval_warfare:abilities",
+	"description": "Abilities that must be manually activated",
+	"icon": "naval_warfare:ability_wand"
+}

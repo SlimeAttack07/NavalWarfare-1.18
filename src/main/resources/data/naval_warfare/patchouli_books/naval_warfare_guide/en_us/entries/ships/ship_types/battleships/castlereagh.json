@@ -1,0 +1,45 @@
+{
+    "name": "Castlereagh",
+    "icon": "naval_warfare:castlereagh",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Castle on a hill"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Castlereagh is a castle located on a remote, rocky island near the shore. It is frequently resupplied by merchant ships.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Mega Mortar/$$(br)Castlereagh's rooftop houses a massive mortar, which will $(l)fire 9 cannonballs at a 5x5 area/$. This ability has $(l)1 Use/$ and costs $(l)16 Energy to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_grant)$(l)Energetic Release/$$(br)$(l)Upon being destroyed/$, Castlereagh's stored artefacts break and $(l)restore 4 Energy/$ to your fleet.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", "23"]
+				],
+				"mapping": {
+					"0": "naval_warfare:castlereagh[ship_part=two]",
+					"1": "naval_warfare:castlereagh[ship_part=one]",
+					"2": "naval_warfare:castlereagh[ship_part=three]",
+					"3": "naval_warfare:castlereagh[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:castlereagh": 2
+		}
+}

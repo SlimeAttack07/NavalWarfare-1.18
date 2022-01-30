@@ -1,0 +1,15 @@
+{
+    "name": "Sonar",
+    "icon": "naval_warfare:icon_sonar",
+    "category": "naval_warfare:spells",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Offensive)/$$(br)The sonar spell $(l)selects a 5x5 tile area/$ and $(l)reveals all deployables/$ in that area $(l)except the $(l:naval_warfare:spells/crude_raft)Crude Raft/$. WARNING: This includes $(l:naval_warfare:abilities/active/sea_mine)Sea Mines/$, so be carefull! Not all revealed deployables are ones you want to destroy..."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Sonar is a great counter to deployables such as $(l:naval_warfare:abilities/active/turret)Turrets/$, able to scout up to 25 tiles for you.$(li)Try to only use this if absolutely necessary. This is probably the least useful of all spells.$(li)The raft is not revealed by the sonar, as this would make the raft useless."
+		}
+    ]
+}

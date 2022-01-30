@@ -1,0 +1,20 @@
+{
+    "name": "Ship Placement",
+    "icon": "naval_warfare:hull_large_zig",
+    "category": "naval_warfare:game_requirements",
+	"sortnum": 5,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "When placing ships, each ship will always want to use a specific arrangement of blocks to match its hull shape. To see how your ship will be placed, simply look at the texture of its hull component. In each texture, a blue part represents the block you place the ship on. For example, if you look at the $(l:naval_warfare:ships/ship_types/destroyers/destroyer)Destroyer/$, you'll see its shape is a double line."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "If you look at the texture for $(thing)Empty Hull (Double Line)/$, you'll see two small cubes: A blue one and a gray one. The blue one indicates the block you place the ship on, so the gray part above it shows that the second part of the ship will try to spawn behind the first part of the ship. Ships will always face in the same direction that you're facing, rotating their shape placement accordingly to match the hull shape's texture."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "If you're ever unsure how your ship will be placed, just place it in the middle of a large tile area or $(l:naval_warfare:misc/ship_display)Ship Display/$ area to see for yourself."
+		}
+    ]
+}

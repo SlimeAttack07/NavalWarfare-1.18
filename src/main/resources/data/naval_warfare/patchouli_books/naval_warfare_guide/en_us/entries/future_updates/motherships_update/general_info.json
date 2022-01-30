@@ -1,0 +1,20 @@
+{
+    "name": "General Info",
+    "icon": "naval_warfare:icon_mothership",
+    "category": "naval_warfare:future_updates/motherships_update",
+	"priority": true,
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Motherships are large, 3x3 Tier 6 ships (9 HP), of which you may have at most 1 per fleet (default). These ships have powerfull abilities, typically with some kind of drawback to balance things out. You don't have to add a mothership to your fleet if you don't want to."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "For most motherships that have a passive drawback, the passive will only trigger if you've used the active ability. This way, should someone hit/destroy your mothership early on in the game, you won't have to spend the rest of the game at a disadvantage."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "I don't know yet how I'll adjust the total fleet hp for this update. I'll either keep it the same, exclude the mothership from it, or raise it by a few points (probably to about 30 HP instead of 24 HP). You'll find all planned motherships in this chapter. $(l)Ship/ability names may change. Abilities are not final yet, adjustments may be made to create a better balance./$"
+		}
+    ]
+}

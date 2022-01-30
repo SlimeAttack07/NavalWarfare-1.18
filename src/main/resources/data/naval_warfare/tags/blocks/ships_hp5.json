@@ -1,0 +1,19 @@
+{
+	"replace": false,
+	"values": [
+		"naval_warfare:aircraft_carrier",
+		"naval_warfare:the_ultimatum",
+		"naval_warfare:goliath",
+		"naval_warfare:tyrant",
+		"naval_warfare:warriors",
+		"naval_warfare:paradox",
+		"naval_warfare:equilibrium",
+		"naval_warfare:amaranthus",
+		"naval_warfare:gustav",
+		"naval_warfare:glenearn",
+		"naval_warfare:dulverton",
+		"naval_warfare:ephira",
+		"naval_warfare:ghostnova",
+		"naval_warfare:arethuse"
+	]
+}

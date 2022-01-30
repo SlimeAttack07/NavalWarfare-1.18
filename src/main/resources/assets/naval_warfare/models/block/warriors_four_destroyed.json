@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_warriors_four",
+	"textures": {
+		"0": "block/brown_concrete_powder",
+		"1": "block/stripped_dark_oak_log",
+		"2": "block/gray_concrete_powder",
+		"3": "block/brown_concrete_powder",
+		"4": "block/sandstone",
+		"5": "block/black_concrete_powder",
+		"particle": "block/brown_concrete_powder"
+	}
+}

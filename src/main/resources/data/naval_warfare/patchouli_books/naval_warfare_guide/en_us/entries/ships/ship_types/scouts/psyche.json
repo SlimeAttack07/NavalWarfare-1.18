@@ -1,0 +1,43 @@
+{
+    "name": "Psyche",
+    "icon": "naval_warfare:psyche",
+    "category": "naval_warfare:ship_types/scouts",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Psychic"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A small scout ship that often travels with other ships to scout the area. It only has two cannons on board to defend itself and therefore often hides behind its companions when an enemy is spotted.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/flare)$(l)Glowstone powder/$$(br)The ship fires a small ball of glowstone and gunpowder towards an area. Upon detonation, the glowstone powder is scattered around. If a ship was covered by the powder, Psyche will be able to use the reflected sunlight to narrow down the ship's location to a $(l)3 by 3 area/$ centered around the reflection. This ability has $(l)2 uses/$ and costs $(l)6 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/minor_insight)$(l)Blinding Explosion/$$(br)When Psyche is destroyed, the glowstone residu left on the ship reflects the light of onboard fires and explosions all around, blinding all nearby ships. This always causes $(l)1 opponent ship/$ to panic and fire a shot to Psyche's location. Although everyone is temporarily blinded, the sound of the shot gives an indication of where the ship is. $(l)This has the same effect as the active ability/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01"]
+				],
+				"mapping": {
+					"0": "naval_warfare:psyche[ship_part=two]",
+					"1": "naval_warfare:psyche[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:psyche": 2
+		}
+}

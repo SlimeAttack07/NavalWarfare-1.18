@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_destroyer_two",
+	"textures": {
+		"0": "block/cyan_terracotta",
+		"1": "block/light_gray_concrete",
+		"2": "block/black_concrete",
+		"3": "block/red_concrete",
+		"4": "block/white_concrete",
+		"particle": "block/cyan_terracotta"
+	}
+}

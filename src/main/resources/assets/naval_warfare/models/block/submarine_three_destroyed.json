@@ -1,0 +1,7 @@
+{
+	"parent": "naval_warfare:block/template_submarine_three",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+	}
+}

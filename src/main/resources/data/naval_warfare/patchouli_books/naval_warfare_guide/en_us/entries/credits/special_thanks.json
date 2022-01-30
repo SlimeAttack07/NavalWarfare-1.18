@@ -1,0 +1,55 @@
+{
+    "name": "Special Thanks",
+    "icon": "naval_warfare:icon_battleship",
+    "category": "naval_warfare:credits",
+    "pages": [
+		{
+			"type": "patchouli:link",
+			"url": "https://www.youtube.com/c/TurtyWurty",
+			"link_text": "Youtube",
+			"text": "TurtyWurty, for his modding tutorials that helped me understand the basics of modding."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.youtube.com/c/Cy4sTutorials",
+			"link_text": "Youtube",
+			"text": "Cy4's Modding, for his modding tutorials that helped me understand the basics of networking in mods and setting up configs."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.youtube.com/channel/UCp4F1-OoGuhRa-iOYAg_mOQ",
+			"link_text": "Youtube",
+			"text": "Cryness Forge Tutorials, for his modding tutorials that helped me implement custom villagers & trades."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://github.com/TelepathicGrunt/StructureTutorialMod/tree/1.18.x-Forge-Jigsaw/src/main",
+			"link_text": "GitHub",
+			"text": "TelepathicGrunt for their structure tutorial that helped me implement custom structures."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://jabelarminecraft.blogspot.com/p/minecraft-modding-custom-triggers-aka.html",
+			"link_text": "Blogspot",
+			"text": "Jabelar for their advancement triggers tutorial that helped me implement custom advancement triggers."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.youtube.com/channel/UC1mpArWJ3YGa6-KD-fgaL_Q",
+			"link_text": "Youtube",
+			"text": "GhostRider2507 for helping me test the mod during development."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.youtube.com/channel/UCOFdxS-jxH_ytnW9k-KFRsg",
+			"link_text": "Youtube",
+			"text": "Sailcraft and its developers for inspiring this mod and for making what I still find to be the best mobile game I ever played. The game shut down on 28/08/2018, but I'm still hoping they'll one day make the game playable again."
+		},
+		{
+			"type": "patchouli:link",
+			"url": "https://www.curseforge.com/minecraft/mc-mods/patchouli",
+			"link_text": "CurseForge",
+			"text": "Vazkii (and associates) for creating Patchouli, which allowed me to save extensive documentation for my mod with very little effort."
+		}
+    ]
+}

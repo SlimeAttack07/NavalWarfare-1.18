@@ -1,0 +1,43 @@
+{
+    "name": "Ignition",
+    "icon": "naval_warfare:ignition",
+    "category": "naval_warfare:ship_types/destroyers",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "When you order a hell ship on wish"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Ignition is a ship originally built in the nether and is capable of sailing both on water and on lava. It carries two large cannons, capable of blasting through even the toughest of ships.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/napalm)$(l)Fireball/$$(br)Ignition $(l)fires a fireball at the selected tile/$, damaging it. If there is ship on that tile, then it will $(l)take 1 damage each round until destroyed/$. The ability has $(l)1 Use/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/seaworthy)$(l)Seaworthy/$$(br)The ship's strong build provides an $(l)additional 8 tiles/$ for your fleet to use.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01"]
+				],
+				"mapping": {
+					"0": "naval_warfare:ignition[ship_part=two]",
+					"1": "naval_warfare:ignition[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:ignition": 2
+		}
+}

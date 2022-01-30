@@ -1,0 +1,32 @@
+{
+    "name": "Counterfire",
+    "icon": "naval_warfare:icon_counterfire",
+    "category": "naval_warfare:abilities/passive",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Passive-ShipHit)/$$(br)Counterfire will damage a certain amount of random unknown opponent tiles whenever its owner ship is hit. Each Counterfire has one stat: Amount. It determines how many tiles are damaged. Each tile will receive 1 damage."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)If you ever face a ship with this ability, remember that 'ShipHit' abilities only trigger once per hit regardless of how much damage the hit did. This means that you can use abilities like $(l:naval_warfare:abilities/active/missile)Missiles/$ to deal more damage whilst only triggering the passive once."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Remember that passive abilities can't trigger other passive abilities. If you're lucky, one of your own ship's passive abilities may end up taking out a ship that has this passive ability, in which case this passive doesn't trigger!$(li)Just like $(l:naval_warfare:abilities/active/salvo)Salvos/$, Counterfire only deals 1 damage to $(l:naval_warfare:abilities/passive/energy_shield)Energy Shields/$ regardless of how much of the ability actually hit the shield."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/submarines/carcass",
+				"naval_warfare:ships/ship_types/supports/cybele",
+				"naval_warfare:ships/ship_types/battleships/kilgobnet",
+				"naval_warfare:ships/ship_types/submarines/raider",
+				"naval_warfare:ships/ship_types/battleships/tyrant",
+				"naval_warfare:ships/ship_types/battleships/dulverton",
+				"naval_warfare:ships/ship_types/battleships/ephira"
+			]
+		}
+    ]
+}

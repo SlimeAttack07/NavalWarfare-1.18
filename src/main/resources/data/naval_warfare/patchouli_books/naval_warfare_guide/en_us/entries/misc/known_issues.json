@@ -1,0 +1,11 @@
+{
+    "name": "Known Issues",
+    "icon": "minecraft:barrier",
+    "category": "naval_warfare:misc",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Some statistics show up an additional time everytime it increases in the stats tab for some reason. Until I find a fix, restarting the game seems to fix it.$(li)During testing, the utility tool spawned an additional ship on rare occasions, exceeding the max hp and thus causing the game to end before all ships were destroyed. I haven't been able to reproduce this though and have no clue what triggers it."
+		}
+    ]
+}

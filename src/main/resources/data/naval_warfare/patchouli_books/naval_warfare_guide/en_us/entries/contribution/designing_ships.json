@@ -1,0 +1,41 @@
+{
+    "name": "Designing Ships",
+    "icon": "naval_warfare:icon_support",
+    "category": "naval_warfare:contribution",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "There are two main ways to design a ship: In modeling software like BlockBench or converting from structures. I personally used the second method for almost all ships in the mod. If you use modeling software, you'll need to ensure your model looks right in-game first before sending it in."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Converting from structures can be done as follows:$(li)Build the ship in a minecraft world ($(l:naval_warfare:contribution/designing_ships#instructions)Instructions/$).$(li)Upload the world somewhere where I can download it, preferably on a trusted world sharing website.$(li)Make sure I can see images or a video of the ship(s) on the website.$(li)If I like the ship enough to include it, I'll do the remaining conversions myself as the process involves a self-made program."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)If you want to add ship lore, tier, abilities or recipe, put them either as a book or signs in the world or as text where you uploaded the world.$(li)You should clearly state whether or not I'm allowed to use your design as a ship model. You will be credited on the curseforge page, the ship entry in the Naval Warfare Guide and in the credits section in the guide."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)You must build the ship facing north.$(li)You must specify the shape of the ship and build the parts in the correct way (see $(l:naval_warfare:game_requirements/ship_placement)Ship Placement/$).$(li)Each part may be at most 16x16x32 (xzy) and should fill up enough of the chunk so that the ship shape is clearly visible. For most ships, sticking to 16x16x24 is preferred unless your ship is floating/flying or a $(l:naval_warfare:future_updates/motherships_update/general_info)Mothership/$.",
+			"title": "Instructions",
+			"anchor": "instructions"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Only use vanilla full blocks in your build. The conversion programs used later on will treat every block as a full block, so any details made with non-full blocks are lost. Each part ends up taking up at most 2 blocks, so you won't see any of those details anyways due to the small scale. This is why you shouldn't bother making interiours, because the player will never be able to see them anyways since they can't fit inside.."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Keep the amount of empty space inside the ships as low as possible, as this will end up creating fewer pieces in the model which leads to better performance. If the empty space serves no purpose, fill it up with the same block that is next to it. Don't use random blocks for this as it will prevent the optimization.$(br)$(l)Follow the instructions, or else I likely won't use the ship design."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)This should be obvious, but only design things that could make sense in an ocean environment. Ships, islands, airships, planes, sea creatures etc are all fine, but don't build a car and expect me to call it a ship. Try to build ships in a way that they seem like they could actually move in/under/above water. Avoid big, blunt fronts as they'd just block the water and slow down the ship (unless your design/lore fixes it somehow)."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)You can build any ship shape you want as long as it consists of either 2, 3, 4, 5 or 9 parts and each part is connected to at least one other part (so no unconnected diagonals). If the specific shape does not exist yet in Naval Warfare but I like the ship design, I'll add the shape to the game. You can build ships that consists of a different number of parts than listed here, but there's no guarantee that I'll add it as they're likely too easy for people to find and destroy."
+		}
+    ]
+}

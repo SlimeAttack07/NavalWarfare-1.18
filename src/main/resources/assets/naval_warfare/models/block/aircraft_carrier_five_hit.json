@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_aircraft_carrier_five",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/white_wool",
+		"2": "block/light_gray_wool",
+		"3": "block/black_wool",
+		"4": "block/birch_planks",
+		"particle": "block/gray_concrete"
+	}
+}

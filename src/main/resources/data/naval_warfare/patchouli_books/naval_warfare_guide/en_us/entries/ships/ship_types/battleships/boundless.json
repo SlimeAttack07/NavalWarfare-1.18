@@ -1,0 +1,45 @@
+{
+    "name": "Boundless",
+    "icon": "naval_warfare:boundless",
+    "category": "naval_warfare:ship_types/battleships",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Testing the boundaries"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Boundless is a large ship carrying a long row boat and a small life boat, which it can deploy to aid it in battle. The row boat is often used to carry additional supplies, and is then stored back on the ship once they're used up.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Mortar/$$(br)Boundless fires its small mortar, $(l)damaging 4 tiles in a 3 by 3 area/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy to use/$.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/energy_grant)$(l)Lifesaver/$$(br)$(l)Upon being destroyed/$, the crew escapes on the small life boat. They will be rescued by your other ships, $(l)restoring 6 Energy/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["01", "23"]
+				],
+				"mapping": {
+					"0": "naval_warfare:boundless[ship_part=two]",
+					"1": "naval_warfare:boundless[ship_part=one]",
+					"2": "naval_warfare:boundless[ship_part=three]",
+					"3": "naval_warfare:boundless[ship_part=four]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:boundless": 2
+		}
+}

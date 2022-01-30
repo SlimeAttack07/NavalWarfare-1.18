@@ -1,0 +1,26 @@
+{
+    "name": "Salvoes",
+    "icon": "naval_warfare:icon_salvo",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Offensive)/$$(br)Salvoes fire multiple shots in a line at once, dealing 1 damage to each targeted grid. They always fire perpendicular to the direction your controller faces in (left to right, never up/down). Each salvo has one stat: Length. The length determines how many tiles are targeted by the ability. When selecting the deployment tile, be aware that this length is centered around"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "that tile. This means that if you select a tile too close to the edge of the board, the ability may target less tiles than its length indicates.$(br2)$(l)Tips & Tricks:/$$(li)Salvoes can be useful for scouting early on.$(li)When a salvo hits an $(l:abilities/passive/energy_shield)$(thing)Energy Shield/$, it will only deal one damage to the shield regardless of how much of the salvo hits the shield."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/gallant",
+				"naval_warfare:ships/ship_types/battleships/goliath",
+				"naval_warfare:ships/ship_types/battleships/kilgobnet",
+				"naval_warfare:ships/ship_types/battleships/sterling",
+				"naval_warfare:ships/ship_types/battleships/arethuse"
+			]
+		}
+    ]
+}

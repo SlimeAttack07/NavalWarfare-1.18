@@ -1,0 +1,38 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.ship_display.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.ship_display.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:ship_display"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+     "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+							"naval_warfare:ship_display"
+						]
+                    }
+                ]
+            }
+        }
+    },
+	"requirements": [
+		[
+			"item"
+		]
+	],
+    "parent": "naval_warfare:root"
+}

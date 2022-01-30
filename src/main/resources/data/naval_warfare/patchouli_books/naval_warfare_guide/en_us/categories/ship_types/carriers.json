@@ -1,0 +1,6 @@
+{
+	"name": "Carriers",
+	"parent": "naval_warfare:ships",
+	"description": "Death from above",
+	"icon": "naval_warfare:icon_carrier"
+}
