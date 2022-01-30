@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(li)If you want to add ship lore, tier, abilities or recipe, put them either as a book or signs in the world or as text where you uploaded the world.$(li)You should clearly state whether or not I'm allowed to use your design as a ship model. You will be credited on the curseforge page, the ship entry in the Naval Warfare Guide and in the credits section in the guide."
+			"text": "$(li)If you want to add ship lore, tier, abilities or recipe, put them either as a book or signs in the world or as text where you uploaded the world.$(li)You should clearly state whether or not I'm allowed to use your design as a ship model. You will be credited on the curseforge page, the github page, the ship entry in the Naval Warfare Guide and in the credits section in the guide."
 		},
 		{
 			"type": "patchouli:text",
