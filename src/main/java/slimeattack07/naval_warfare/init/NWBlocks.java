@@ -12,6 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slimeattack07.naval_warfare.NavalWarfare;
+import slimeattack07.naval_warfare.objects.blocks.BattleRecorder;
 import slimeattack07.naval_warfare.objects.blocks.BigLShip;
 import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.BoardFiller;
@@ -101,7 +102,10 @@ public class NWBlocks {
 		new Block(Properties.copy(Blocks.DARK_OAK_PLANKS)));
 	
 	public static final RegistryObject<Block> RANDOM_SHIP = NW_BLOCKS.register("random_ship", () ->
-			new RandomShipBlock());
+		new RandomShipBlock());
+	
+	public static final RegistryObject<Block> BATTLE_RECORDER = NW_BLOCKS.register("battle_recorder", () ->
+		new BattleRecorder());
 	
 	// Animations
 	public static final RegistryObject<Block> SHIP_CLOSE = NW_BLOCKS.register("ship_close", () -> 

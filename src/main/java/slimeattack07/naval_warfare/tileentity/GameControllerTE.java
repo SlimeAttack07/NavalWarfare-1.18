@@ -60,8 +60,10 @@ import slimeattack07.naval_warfare.util.TargetType;
 import slimeattack07.naval_warfare.util.abilities.Ability;
 import slimeattack07.naval_warfare.util.abilities.Napalm;
 import slimeattack07.naval_warfare.util.abilities.Seaworthy;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
+import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
 import slimeattack07.naval_warfare.util.helpers.TargetResultHelper;
 
 public class GameControllerTE extends BlockEntity{
@@ -570,6 +572,10 @@ public class GameControllerTE extends BlockEntity{
 
 			board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, cah.target_type, cah.multi_ability, 
 					action_number, null, cah.triggers_passives, false);
+			
+			BattleLogHelper blh = BattleLogHelper.createBoardState(te.getId(), cah.multi_ability, board.getBoardState(tile.getBlockState()));
+			recordOnRecorder(blh);
+			recordOnOppRecorder(blh);
 		}
 		
 		removeFirstAction();
@@ -994,7 +1000,6 @@ public class GameControllerTE extends BlockEntity{
 		removeFirstTurnAction();
 	}
 	
-	
 	private void doMultiTarget(ControllerActionHelper cah) {
 		BlockEntity tile = level.getBlockEntity(cah.board_te);
 		
@@ -1397,6 +1402,57 @@ public class GameControllerTE extends BlockEntity{
 			removeFirstAction();
 			break;
 		}
+		
+//		recordOnRecorder(cah);
+	}
+	
+	private void recordOnOppRecorder(BattleLogHelper blh) {
+		if(opponent == null)
+			return;
+		
+		BlockEntity tile = level.getBlockEntity(opponent);
+		
+		if(tile instanceof GameControllerTE) {
+			GameControllerTE te = (GameControllerTE) tile;
+			
+			BattleLogHelper new_blh = blh.copy();
+			new_blh.opponent = !new_blh.opponent;
+			
+			NavalWarfare.LOGGER.info("Asking opponent to record with opponent = " + new_blh.opponent + " on pos " + te.getBlockPos());
+			te.recordOnRecorder(new_blh);
+		}
+	}
+	
+	public void recordOnRecorder(BattleLogHelper blh) {
+		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		
+		if(tile instanceof BattleRecorderTE) {
+			BattleRecorderTE te = (BattleRecorderTE) tile;
+			te.addAction(blh);
+			NavalWarfare.LOGGER.info("Recording opponent = " + blh.opponent + " on pos " + te.getBlockPos().below());
+		}
+	}
+	
+	public void recordOnRecorder(ArrayList<ShipSaveHelper> own_ships, ArrayList<ShipSaveHelper> opp_ships, int own_size, int opp_size) {
+		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		
+		if(tile instanceof BattleRecorderTE) {
+			BattleRecorderTE te = (BattleRecorderTE) tile;
+			te.setOwnShips(own_ships);
+			te.setOppShips(opp_ships);
+			te.setOwnSize(own_size);
+			te.setOppSize(opp_size);
+		}
+	}
+	
+	private void saveRecorder() {
+		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		
+		if(tile instanceof BattleRecorderTE) {
+			BattleRecorderTE te = (BattleRecorderTE) tile;
+			te.copyToClipboard(getPlayer());
+			te.reset();
+		}
 	}
 	
 	/** Notify the controller of the result obtained by executing the previous action
@@ -1549,7 +1605,6 @@ public class GameControllerTE extends BlockEntity{
 				NavalWarfare.LOGGER.error("Failed to fetch the games played statistic.");
 			}
 		}
-		
 	}
 
 	public boolean checkTurn() {	
@@ -1805,6 +1860,7 @@ public class GameControllerTE extends BlockEntity{
 				if(turn_time < CLEAR_BOARD_TIME)
 					turn_time++;
 				else {
+					saveRecorder();
 					clear_board = false;
 					turn_time = -1;
 					GameController controller = (GameController) getBlockState().getBlock();

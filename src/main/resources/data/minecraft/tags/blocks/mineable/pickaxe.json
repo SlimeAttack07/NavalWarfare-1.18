@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "naval_warfare:game_controller"
+    "naval_warfare:game_controller",
+	"naval_warfare:battle_recorder"
   ]
 }

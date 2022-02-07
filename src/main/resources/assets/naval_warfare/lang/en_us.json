@@ -102,6 +102,7 @@
 	"block.naval_warfare.anti_air": "Anti-Air",
 	"block.naval_warfare.energy_shield": "Energy Shield",
 	"block.naval_warfare.random_ship": "Random Ship",
+	"block.naval_warfare.battle_recorder": "Battle Recorder",
 	
 	
 	"_ANIMATIONS": "__ANIMATIONS__",

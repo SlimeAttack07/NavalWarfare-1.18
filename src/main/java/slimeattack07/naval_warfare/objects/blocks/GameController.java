@@ -79,7 +79,7 @@ public class GameController extends Block implements EntityBlock{
 	}
 
 	public GameController() {
-		super(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(0.8f, 2));
+		super(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(0.8f, 2).explosionResistance(1000));
 		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(STATE, ControllerState.INACTIVE));
 	}
 
@@ -425,6 +425,25 @@ public class GameController extends Block implements EntityBlock{
 				opp_p.playNotifySound(NWSounds.GAME_FOUND.get(), SoundSource.MASTER, 1, 1);
 			}
 		}
+		
+		ArrayList<ShipSaveHelper> own_ships = collectShips(level, own_te.zero);
+		ArrayList<ShipSaveHelper> opp_ships = collectShips(level, opp_te.zero);
+		
+		own_te.recordOnRecorder(own_ships, opp_ships, own_te.board_size, opp_te.board_size);
+		opp_te.recordOnRecorder(opp_ships, own_ships, opp_te.board_size, own_te.board_size);
+	}
+	
+	private ArrayList<ShipSaveHelper> collectShips(Level level, BlockPos zero) {
+		BlockEntity tile = level.getBlockEntity(zero);
+		
+		if(tile instanceof BoardTE) {
+			BoardTE bte = (BoardTE) tile;
+			Board board = (Board) bte.getBlockState().getBlock();
+			
+			return bte.collectShips(level, zero, board.getControllerFacing(level, bte.getBlockPos()), null);
+		}
+		
+		return new ArrayList<>();
 	}
 	
 	private boolean requestGame(Level level, Player player, BlockPos pos) {		

@@ -5,6 +5,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slimeattack07.naval_warfare.NavalWarfare;
+import slimeattack07.naval_warfare.tileentity.BattleRecorderTE;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.DisappearingTE;
 import slimeattack07.naval_warfare.tileentity.EnergyShieldTE;
@@ -45,4 +46,8 @@ public class NWTileEntityTypes {
 	public static final RegistryObject<BlockEntityType<RandomShipTE>> RANDOM_SHIP = TILE_ENTITY_TYPES
 			.register("random_ship", () -> BlockEntityType.Builder
 					.of(RandomShipTE::new, NWBlocks.RANDOM_SHIP.get()).build(null));
+	
+	public static final RegistryObject<BlockEntityType<BattleRecorderTE>> BATTLE_RECORDER = TILE_ENTITY_TYPES
+			.register("battle_recorder", () -> BlockEntityType.Builder
+					.of(BattleRecorderTE::new, NWBlocks.BATTLE_RECORDER.get()).build(null));
 }

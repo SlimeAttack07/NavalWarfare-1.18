@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "naval_warfare:block/battle_recorder"}
+    }
+}

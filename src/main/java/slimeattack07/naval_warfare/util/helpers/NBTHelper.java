@@ -2,7 +2,6 @@ package slimeattack07.naval_warfare.util.helpers;
 
 import java.util.ArrayList;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
@@ -14,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeattack07.naval_warfare.NavalWarfare;
+import slimeattack07.naval_warfare.tileentity.BattleRecorderTE;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.DisappearingTE;
 import slimeattack07.naval_warfare.tileentity.EnergyShieldTE;
@@ -21,6 +21,7 @@ import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.tileentity.PassiveAbilityTE;
 import slimeattack07.naval_warfare.tileentity.RandomShipTE;
 import slimeattack07.naval_warfare.tileentity.ShipTE;
+import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.ControllerAction;
 import slimeattack07.naval_warfare.util.HitResult;
 import slimeattack07.naval_warfare.util.Spell;
@@ -56,6 +57,12 @@ public class NBTHelper {
 		
 		if(o instanceof RandomShipTE)
 			return writeRandomShip((RandomShipTE) o);
+		
+		if(o instanceof BattleRecorderTE)
+			return writeBattleRecorder((BattleRecorderTE) o);
+		
+		if(o instanceof BattleLogHelper)
+			return writeBLH((BattleLogHelper) o);
 		
 		return null;
 	}
@@ -314,28 +321,82 @@ public class NBTHelper {
 		return compound;
 	}
 	
-	@Nullable
-	public static Object fromNBT(@Nonnull CompoundTag compound) {
-		switch (compound.getByte("type")) {
-		case 0:
-			return readItemStack(compound);
-		default:
-			return null;
+	private static CompoundTag writeBattleRecorder(BattleRecorderTE o) {
+		CompoundTag compound = new CompoundTag();
+		
+		compound = safePutInt("own_size", o.own_size, compound);
+		compound = safePutInt("opp_size", o.opp_size, compound);
+		
+		ArrayList<BattleLogHelper> actions = o.getActions();
+		
+		if(actions != null) {
+			ListTag list = new ListTag();
+			
+			for(BattleLogHelper blh : actions)
+				list.add(writeBLH(blh));
+
+			compound.put("actions", list);
 		}
+		
+		ArrayList<ShipSaveHelper> ships = o.getOwnShips();
+		
+		if(ships != null) {
+			ListTag list = new ListTag();
+			
+			for(ShipSaveHelper ssh : ships)
+				list.add(writeSSH(ssh));
+
+			compound.put("own_ships", list);
+		}
+		
+		ships = o.getOppShips();
+		
+		if(ships != null) {
+			ListTag list = new ListTag();
+			
+			for(ShipSaveHelper ssh : ships)
+				list.add(writeSSH(ssh));
+
+			compound.put("opp_ships", list);
+		}
+		
+		return compound;
 	}
 	
-	private static ItemStack readItemStack(CompoundTag compound) {
-		if(compound.contains("iamempty"))
-			return ItemStack.EMPTY;
+	private static CompoundTag writeBLH(BattleLogHelper helper) {
+		CompoundTag compound = new CompoundTag();
 		
-		Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(compound.getString("item")));
-		int count = compound.getInt("count");
-		ItemStack stack = new ItemStack(item, count);
+		if(helper == null) {
+			NavalWarfare.LOGGER.warn("Encountered corrupt BLH, skipping. BLH = " + helper);
+			return compound;
+		}
 		
-		if(compound.contains("nbt")) 
-			stack.setTag(compound.getCompound("nbt"));
+		compound = safePutInt("id", helper.id, compound);
+		compound = safePutBoolean("opponent", helper.opponent, compound);
+		compound = safePutString("board_state", helper.board_state.name(), compound);
 		
-		return stack;
+		return compound;
+	}
+	
+	private static CompoundTag writeSSH(ShipSaveHelper helper) {
+		CompoundTag compound = new CompoundTag();
+		
+		compound = safePutString("name", helper.getShip().toString(), compound);
+		compound = safePutInt("pos", helper.getPos(), compound);
+		compound = safePutString("dir", helper.getDir().getName(), compound);
+		// Note that we don't save the HP, since we only use this for the battle log system right now, which doesn't need the hp.
+
+		return compound;
+	}
+	
+	@Nullable
+	public static ShipSaveHelper readSSH(CompoundTag compound) {
+		try {
+			return new ShipSaveHelper(compound.getString("name"), compound.getInt("pos"), compound.getString("dir"), 0);
+		} catch(NullPointerException e) {
+			NavalWarfare.LOGGER.warn("Received a null compound when reading SSH, skipping");
+			return null;
+		}
 	}
 	
 	@Nullable
@@ -427,6 +488,22 @@ public class NBTHelper {
 		HitResult result = HitResult.valueOf(nbt.getString("result"));
 		
 		return new TargetResultHelper(id, result);
+	}
+	
+	public static BattleLogHelper readBLH(CompoundTag tag) {
+		try {
+			BattleLogHelper blh = new BattleLogHelper();
+			
+			blh.id = tag.getInt("id");
+			blh.opponent = tag.getBoolean("opponent");
+			blh.board_state = BoardState.valueOf(tag.getString("board_state"));
+			
+			return blh;
+			
+		} catch(Exception e) {
+			NavalWarfare.LOGGER.warn("Tried reading corrupt BLH: " + tag);
+			return new BattleLogHelper();
+		}
 	}
 	
 	private static CompoundTag safePutBoolean(String name, boolean value, boolean default_val, CompoundTag compound) {

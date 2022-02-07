@@ -5,6 +5,11 @@
 	"#naval_warfare:ships_t2",
 	"#naval_warfare:ships_t3",
 	"#naval_warfare:ships_t4",
-	"#naval_warfare:ships_t5"
+	"#naval_warfare:ships_t5",
+	"naval_warfare:game_controller",
+	"naval_warfare:board",
+	"naval_warfare:board_redirect",
+	"naval_warfare:board_filler",
+	"naval_warfare:battle_recorder"
   ]
 }
