@@ -65,7 +65,7 @@ public class EnergyOverloader implements Ability{
 			
 			if(matching != null) {				
 				ControllerActionHelper cah = ControllerActionHelper.createTargetAction(20, matching.getBlockPos(), playername, matching.getBlockPos(), 
-						te.getBlockPos(), 1, TargetType.OVERLOADER, false, true);
+						te.getBlockPos(), 1, TargetType.OVERLOADER, false, true, ANIMATION);
 				
 				controller.addAction(cah);
 				

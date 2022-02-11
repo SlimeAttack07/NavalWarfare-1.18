@@ -21,12 +21,12 @@ import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 public class Whirlpool implements Ability {
 	private final String NAME;
 	private final int AMOUNT;
-	private final Block BLOCK;
+	private final Block ANIMATION;
 	
-	public Whirlpool(String name, int amount, Block block) {
+	public Whirlpool(String name, int amount, Block animation) {
 		NAME = name;
 		AMOUNT = amount;
-		BLOCK = block;
+		ANIMATION = animation;
 	}
 	
 	@Override
@@ -66,13 +66,13 @@ public class Whirlpool implements Ability {
 			
 			if(matching != null) {			
 				ControllerActionHelper cah = ControllerActionHelper.createTargetAction(delay, matching.getBlockPos(), playername, 
-						matching.getBlockPos(), te.getBlockPos(), 1, TargetType.REVEAL, true, false);
+						matching.getBlockPos(), te.getBlockPos(), 1, TargetType.REVEAL, true, false, ANIMATION);
 				
 				controller.addAction(cah);
 				delay = 0;
 								
-				NWBasicMethods.dropBlock(level, te.getBlockPos(), BLOCK);
-				NWBasicMethods.dropBlock(level, matching.getBlockPos(), BLOCK);
+				NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
+				NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
 			}
 		}
 		

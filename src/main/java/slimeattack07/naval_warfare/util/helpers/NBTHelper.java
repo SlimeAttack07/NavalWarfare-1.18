@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.tileentity.BattleRecorderTE;
+import slimeattack07.naval_warfare.tileentity.BattleViewerTE;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.DisappearingTE;
 import slimeattack07.naval_warfare.tileentity.EnergyShieldTE;
@@ -63,6 +64,9 @@ public class NBTHelper {
 		
 		if(o instanceof BattleLogHelper)
 			return writeBLH((BattleLogHelper) o);
+		
+		if(o instanceof BattleViewerTE)
+			return writeBattleViewer((BattleViewerTE) o);
 		
 		return null;
 	}
@@ -363,6 +367,28 @@ public class NBTHelper {
 		return compound;
 	}
 	
+	private static CompoundTag writeBattleViewer(BattleViewerTE o) {
+		CompoundTag compound = new CompoundTag();
+		
+		compound = safePutBoolean("playing", o.isPlaying(), compound);
+		compound = safePutInt("timer", o.timer, compound);
+		compound.put("zero", writeBlockPos(o.zero));
+		compound.put("opponent_zero", writeBlockPos(o.opponent_zero));
+		
+		ArrayList<BattleLogHelper> actions = o.getActions();
+		
+		if(actions != null) {
+			ListTag list = new ListTag();
+			
+			for(BattleLogHelper blh : actions)
+				list.add(writeBLH(blh));
+
+			compound.put("actions", list);
+		}
+		
+		return compound;
+	}
+	
 	private static CompoundTag writeBLH(BattleLogHelper helper) {
 		CompoundTag compound = new CompoundTag();
 		
@@ -374,6 +400,8 @@ public class NBTHelper {
 		compound = safePutInt("id", helper.id, compound);
 		compound = safePutBoolean("opponent", helper.opponent, compound);
 		compound = safePutString("board_state", helper.board_state.name(), compound);
+		compound = helper.animation == null? compound : safePutString("animation", helper.animation.toString(), compound);
+		compound = safePutInt("delay", helper.delay, compound);
 		
 		return compound;
 	}
@@ -401,12 +429,10 @@ public class NBTHelper {
 	
 	@Nullable
 	public static BlockPos readBlockPos(CompoundTag compound) {
-		try {
-			return new BlockPos(compound.getInt("x"), compound.getInt("y"), compound.getInt("z"));
-		} catch(NullPointerException e) {
-			NavalWarfare.LOGGER.warn("Received a null compound when reading BlockPos, skipping");
+		if(compound == null || compound.contains("no_pos"))
 			return null;
-		}
+		
+		return new BlockPos(compound.getInt("x"), compound.getInt("y"), compound.getInt("z"));
 	}
 	
 	@Nullable
@@ -444,7 +470,7 @@ public class NBTHelper {
 					return ControllerActionHelper.createSpell(spell, board_te, player);
 			case TARGET:
 					return ControllerActionHelper.createTargetAction(delay, pos, player, board_te, matching, damage, type, multi_ability, 
-							triggers_passives);
+							triggers_passives, animation);
 			case TORPEDO:
 					return ControllerActionHelper.createTorpedoTarget(pos, player, board_te, matching, damage, health, animation);
 			case ANNOUNCE:
@@ -483,25 +509,28 @@ public class NBTHelper {
 		
 	}
 	
-	public static TargetResultHelper readTRH(CompoundTag nbt) {
-		int id = nbt.getInt("id");
-		HitResult result = HitResult.valueOf(nbt.getString("result"));
+	public static TargetResultHelper readTRH(CompoundTag compound) {
+		int id = compound.getInt("id");
+		HitResult result = HitResult.valueOf(compound.getString("result"));
 		
 		return new TargetResultHelper(id, result);
 	}
 	
-	public static BattleLogHelper readBLH(CompoundTag tag) {
+	public static BattleLogHelper readBLH(CompoundTag compound) {
 		try {
 			BattleLogHelper blh = new BattleLogHelper();
 			
-			blh.id = tag.getInt("id");
-			blh.opponent = tag.getBoolean("opponent");
-			blh.board_state = BoardState.valueOf(tag.getString("board_state"));
+			blh.id = compound.getInt("id");
+			blh.opponent = compound.getBoolean("opponent");
+			blh.board_state = BoardState.valueOf(compound.getString("board_state"));
+			blh.delay = compound.getInt("delay");
+			String animation = compound.getString("animation");
+			blh.animation = animation.isBlank() ? null : new ResourceLocation(animation);
 			
 			return blh;
 			
 		} catch(Exception e) {
-			NavalWarfare.LOGGER.warn("Tried reading corrupt BLH: " + tag);
+			NavalWarfare.LOGGER.warn("Tried reading corrupt BLH: " + compound);
 			return new BattleLogHelper();
 		}
 	}

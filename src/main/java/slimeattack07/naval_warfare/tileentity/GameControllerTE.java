@@ -573,7 +573,8 @@ public class GameControllerTE extends BlockEntity{
 			board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, cah.target_type, cah.multi_ability, 
 					action_number, null, cah.triggers_passives, false);
 			
-			BattleLogHelper blh = BattleLogHelper.createBoardState(te.getId(), cah.multi_ability, board.getBoardState(tile.getBlockState()));
+			BattleLogHelper blh = BattleLogHelper.createBoardTarget(te.getId(), !cah.multi_ability, board.getBoardState(tile.getBlockState()), cah.delay,
+					cah.animation.getRegistryName());
 			recordOnRecorder(blh);
 			recordOnOppRecorder(blh);
 		}
@@ -1418,26 +1419,21 @@ public class GameControllerTE extends BlockEntity{
 			BattleLogHelper new_blh = blh.copy();
 			new_blh.opponent = !new_blh.opponent;
 			
-			NavalWarfare.LOGGER.info("Asking opponent to record with opponent = " + new_blh.opponent + " on pos " + te.getBlockPos());
 			te.recordOnRecorder(new_blh);
 		}
 	}
 	
 	public void recordOnRecorder(BattleLogHelper blh) {
-		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		BattleRecorderTE te = getRecorder();
 		
-		if(tile instanceof BattleRecorderTE) {
-			BattleRecorderTE te = (BattleRecorderTE) tile;
+		if(te != null) 
 			te.addAction(blh);
-			NavalWarfare.LOGGER.info("Recording opponent = " + blh.opponent + " on pos " + te.getBlockPos().below());
-		}
 	}
 	
 	public void recordOnRecorder(ArrayList<ShipSaveHelper> own_ships, ArrayList<ShipSaveHelper> opp_ships, int own_size, int opp_size) {
-		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		BattleRecorderTE te = getRecorder();
 		
-		if(tile instanceof BattleRecorderTE) {
-			BattleRecorderTE te = (BattleRecorderTE) tile;
+		if(te != null) {
 			te.setOwnShips(own_ships);
 			te.setOppShips(opp_ships);
 			te.setOwnSize(own_size);
@@ -1446,13 +1442,22 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	private void saveRecorder() {
-		BlockEntity tile = level.getBlockEntity(worldPosition.above());
+		BattleRecorderTE te = getRecorder();
 		
-		if(tile instanceof BattleRecorderTE) {
-			BattleRecorderTE te = (BattleRecorderTE) tile;
-			te.copyToClipboard(getPlayer());
+		if(te != null) {
+			te.generateLog(getPlayer());
 			te.reset();
 		}
+	}
+	
+	private BattleRecorderTE getRecorder() {
+		GameController controller = (GameController) getBlockState().getBlock();
+		BlockEntity tile = level.getBlockEntity(worldPosition.offset(controller.getFacing(getBlockState()).getOpposite().getNormal()));
+		
+		if(tile instanceof BattleRecorderTE)
+			return (BattleRecorderTE) tile;
+		
+		return null;
 	}
 	
 	/** Notify the controller of the result obtained by executing the previous action

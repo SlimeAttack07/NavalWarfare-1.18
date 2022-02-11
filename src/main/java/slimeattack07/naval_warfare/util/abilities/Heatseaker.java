@@ -62,7 +62,7 @@ public class Heatseaker implements Ability{
 			
 			if(matching != null) {				
 				ControllerActionHelper cah = ControllerActionHelper.createTargetAction(20, matching.getBlockPos(), playername, matching.getBlockPos(), 
-						te.getBlockPos(), NavalWarfareConfig.heatseaker_damage.get(), type, false, true);
+						te.getBlockPos(), NavalWarfareConfig.heatseaker_damage.get(), type, false, true, NWBlocks.HEATSEAKER.get());
 				
 				controller.addAction(cah);
 				

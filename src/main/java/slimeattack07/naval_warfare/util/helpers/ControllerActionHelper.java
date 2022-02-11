@@ -61,7 +61,7 @@ public class ControllerActionHelper {
 	}
 	
 	public static ControllerActionHelper createTargetAction(int delay, BlockPos pos, String player, BlockPos board_te, BlockPos matching, int damage,
-			TargetType type, boolean multi_ability, boolean triggers_passives) {
+			TargetType type, boolean multi_ability, boolean triggers_passives, Block animation) {
 		ControllerActionHelper cah  = new ControllerActionHelper();
 		
 		cah.action = ControllerAction.TARGET;
@@ -74,6 +74,7 @@ public class ControllerActionHelper {
 		cah.target_type = type;
 		cah.multi_ability = multi_ability;
 		cah.triggers_passives = triggers_passives;
+		cah.animation = animation;
 		
 		return cah;
 	}

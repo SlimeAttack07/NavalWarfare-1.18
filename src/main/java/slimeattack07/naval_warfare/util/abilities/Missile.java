@@ -92,7 +92,7 @@ public class Missile implements Ability{
 			
 			if(matching != null) {				
 				ControllerActionHelper cah = ControllerActionHelper.createTargetAction(delay, matching.getBlockPos(), playername, matching.getBlockPos(), 
-						te.getBlockPos(), DAMAGE, TargetType.NORMAL, PASSIVE, !PASSIVE);
+						te.getBlockPos(), DAMAGE, TargetType.NORMAL, PASSIVE, !PASSIVE, ANIMATION);
 				
 				controller.addAction(cah);
 				delay = 0;

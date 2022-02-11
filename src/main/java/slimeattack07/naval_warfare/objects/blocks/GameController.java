@@ -771,20 +771,6 @@ public class GameController extends Block implements EntityBlock{
 			level.setBlockAndUpdate(pos, NWBlocks.BOARD_FILLER.get().defaultBlockState());
 	}
 	
-//	public void surroundTiles(ArrayList<knLevel level, BlockPos pos) {
-//		for(Direction dir : new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST}) {
-//			for(int i = 0; i < 10000; i++) {
-//				BlockPos offset =  pos.offset(dir, i);
-//				BlockState state = level.getBlockState(offset);
-//				
-//				if(state.getBlock() instanceof Board)
-//					surroundTiles(level, offset);
-//				
-//				level.setBlockAndUpdate(offset, NWBlocks.BOARD_FILLER.get().defaultBlockState());
-//			}
-//		}
-//	}
-	
 	public Direction getFacing(BlockState state) {
 		try {
 			return state.getValue(FACING);

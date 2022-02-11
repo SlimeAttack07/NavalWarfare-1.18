@@ -1,6 +1,7 @@
 package slimeattack07.naval_warfare.util.helpers;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import slimeattack07.naval_warfare.NavalWarfare;
@@ -12,6 +13,8 @@ public class BattleLogHelper {
 	public int id;
 	public boolean opponent;
 	public BoardState board_state;
+	public int delay;
+	public ResourceLocation animation;
 	
 	public BattleLogHelper() {
 	}
@@ -22,6 +25,17 @@ public class BattleLogHelper {
 		blh.id = id;
 		blh.opponent = opponent;
 		blh.board_state = board_state;
+		blh.delay = delay;
+		blh.animation = animation;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createBoardTarget(int id, boolean opponent, BoardState state, int delay, ResourceLocation animation) {
+		BattleLogHelper blh = createBoardState(id, opponent, state);
+		
+		blh.delay = delay;
+		blh.animation = animation;
 		
 		return blh;
 	}

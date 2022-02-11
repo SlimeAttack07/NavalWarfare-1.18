@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "naval_warfare:block/battle_viewer" },
+        "facing=south": { "model": "naval_warfare:block/battle_viewer", "y": 180 },
+        "facing=west":  { "model": "naval_warfare:block/battle_viewer", "y": 270 },
+        "facing=east":  { "model": "naval_warfare:block/battle_viewer", "y": 90 }
+    }
+}

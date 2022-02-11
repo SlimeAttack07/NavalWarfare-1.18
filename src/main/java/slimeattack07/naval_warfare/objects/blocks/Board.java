@@ -223,7 +223,7 @@ public class Board extends Block implements EntityBlock{
 			player_uuid = player.getStringUUID();
 		
 		ControllerActionHelper cah = ControllerActionHelper.createTargetAction(20, pos, player_uuid, te.getBlockPos(), matching, 
-				damage, type, false, true);
+				damage, type, false, true, NWBlocks.SHELL.get());
 		
 		selectTile(level, pos, matching);
 		

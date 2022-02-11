@@ -6,6 +6,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.network.message.BattleLogMessage;
 import slimeattack07.naval_warfare.network.message.ItemAnimationMessage;
+import slimeattack07.naval_warfare.network.message.UpdateBattleLogMessage;
 
 public class NavalNetwork {
 	// Massive thanks to Cy4's Modding for his tutorial video explaining how to network!
@@ -20,5 +21,6 @@ public class NavalNetwork {
 		// Note to self: increment index value for each new message type.
 		CHANNEL.registerMessage(0, ItemAnimationMessage.class, ItemAnimationMessage::encode, ItemAnimationMessage::decode, ItemAnimationMessage::handle);
 		CHANNEL.registerMessage(1, BattleLogMessage.class, BattleLogMessage::encode, BattleLogMessage::decode, BattleLogMessage::handle);
+		CHANNEL.registerMessage(2, UpdateBattleLogMessage.class, UpdateBattleLogMessage::encode, UpdateBattleLogMessage::decode, UpdateBattleLogMessage::handle);
 	}
 }

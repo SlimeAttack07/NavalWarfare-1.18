@@ -6,15 +6,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.PacketDistributor;
 import slimeattack07.naval_warfare.NavalWarfare;
+import slimeattack07.naval_warfare.init.NWItems;
 import slimeattack07.naval_warfare.init.NWTileEntityTypes;
-import slimeattack07.naval_warfare.network.NavalNetwork;
-import slimeattack07.naval_warfare.network.message.BattleLogMessage;
+import slimeattack07.naval_warfare.objects.items.BattleLog;
+import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
 import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
@@ -79,10 +79,12 @@ public class BattleRecorderTE extends BlockEntity{
 	}
 	
 	// TODO: Just for testing, this function will move to BattleLog item once that's been implemented.
-	public void copyToClipboard(Player player) {
-		if(player instanceof ServerPlayer && !actions.isEmpty()) {
-			NavalNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) player), new BattleLogMessage(
-					NBTHelper.toNBT(this)));
+	public void generateLog(Player player) {
+		if(!actions.isEmpty()) {
+			ItemStack stack = new ItemStack(NWItems.BATTLE_LOG.get());
+			BattleLog log = (BattleLog) stack.getItem();
+			log.setLog(stack, NBTHelper.toNBT(this));
+			NWBasicMethods.addOrSpawn(player, stack, level, worldPosition.above());
 		}
 	}
 	

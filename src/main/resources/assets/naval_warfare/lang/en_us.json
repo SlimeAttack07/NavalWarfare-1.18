@@ -14,6 +14,7 @@
 	"item.naval_warfare.ship_configuration": "Ship Configuration",
 	"item.naval_warfare.starter_kit": "Starter Kit",
 	"item.naval_warfare.utility_tool": "Utility Tool",
+	"item.naval_warfare.battle_log": "Battle Log",
 	
 	"item.naval_warfare.icon_paste": "Icon Paste",
 	
@@ -103,6 +104,7 @@
 	"block.naval_warfare.energy_shield": "Energy Shield",
 	"block.naval_warfare.random_ship": "Random Ship",
 	"block.naval_warfare.battle_recorder": "Battle Recorder",
+	"block.naval_warfare.battle_viewer": "Battle Viewer",
 	
 	
 	"_ANIMATIONS": "__ANIMATIONS__",
@@ -331,6 +333,15 @@
 	"message.naval_warfare.utility_tool.only_in_edit": "You can only use this tool when your controller is in load/edit mode",
 	"message.naval_warfare.utility_tool.failed_ship_gen": "Failed to generate a random ship to place",
 	"message.naval_warfare.utility_tool.no_valid_ships": "You don't have any valid ships in your inventory!",
+	
+	"message.naval_warfare.battle_log.no_log": "No log stored.",
+	"message.naval_warfare.battle_log.right_click": "Right click in the air to copy the stored log to your clipboard.",
+	"message.naval_warfare.battle_log.shift_right_click": "Shift-Right click in the air to load a log from your clipboard.",
+	"message.naval_warfare.battle_log.invalid": "The provided log is invalid",
+	"message.naval_warfare.battle_log.load_fail": "Failed to load the battle log into the battle viewer",
+	"message.naval_warfare.battle_log.load_success": "Successfully loaded the battle log into the battle viewer",
+	"message.naval_warfare.battle_log.copy": "Successfully copied the battle log to your clipboard",
+	"message.naval_warfare.battle_log.paste": "Successfully pasted your clipboard into the battle log",
 
 
 	"_MISC": "__MISC__",

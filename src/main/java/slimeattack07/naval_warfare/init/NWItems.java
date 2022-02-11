@@ -9,6 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.objects.items.AbilityWand;
+import slimeattack07.naval_warfare.objects.items.BattleLog;
 import slimeattack07.naval_warfare.objects.items.GameInteractor;
 import slimeattack07.naval_warfare.objects.items.InfoTool;
 import slimeattack07.naval_warfare.objects.items.ShipConfiguration;
@@ -36,6 +37,8 @@ public class NWItems {
 		new StarterKit());
 	public static final RegistryObject<Item> UTILITY_TOOL = NW_ITEMS.register("utility_tool", () ->
 		new UtilityTool());
+	public static final RegistryObject<Item> BATTLE_LOG = NW_ITEMS.register("battle_log", () ->
+		new BattleLog());
 	
 	// Icons
 	public static final RegistryObject<Item> SHIP_SUNK_OPPONENT = NW_ITEMS.register("icon_ship_sunk_opponent", () -> misc());
