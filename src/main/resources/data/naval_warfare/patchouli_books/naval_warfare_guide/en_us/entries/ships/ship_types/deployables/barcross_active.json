@@ -1,0 +1,42 @@
+{
+    "name": "Torpedo Decoy",
+    "icon": "naval_warfare:barcross_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Fooling torpedoes"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A floating torpedo decoy, deployed by $(l:naval_warfare:ships/ship_types/submarines/barcross)Barcross/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/torpedo_net)$(l)Torpedo Decoy/$$(br)This decoy $(l)protects the tile it is deployed on/$ from $(l:naval_warfare:abilities/active/torpedo)Torpedoes/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:barcross_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:barcross_active": 2
+		}
+}

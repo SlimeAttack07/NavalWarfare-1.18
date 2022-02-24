@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/ghost_ship)$(l)Haunting Past/$$(br)Paradox's wizard focuses his magic, summoning a large $(l)3 tile long/$ ghost ship. This ship has no abilities and behaves excactly like a normal ship would, except for that the opponent does not have to destroy it to win the game. This ability has $(l)1 Use/$ and costs $(l)14 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/ghost_ship)$(l)Haunting Past/$$(br)Paradox's wizard focuses his magic, summoning a large $(l)3 tile long/$ ghost ship. This ship has no abilities and behaves excactly like a normal ship would, except for that the opponent does not have to destroy it to win the game. This ability has $(l)1 Use/$ and costs $(l)14 Energy/$ to use. ($(l:naval_warfare:ships/ship_types/deployables/paradox_active)Ghost Ship)",
 			"title": "Active Ability"
 		},
 		{

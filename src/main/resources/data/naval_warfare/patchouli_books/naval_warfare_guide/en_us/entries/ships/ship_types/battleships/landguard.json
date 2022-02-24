@@ -14,13 +14,8 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/turret)$(l)Deploy E-54/$$(br)One of Landguard's cranes $(l)deploys a 1 HP turret/$, which floats towards the chosen destination. This ability has $(l)2 Uses/$ and costs $(l)10 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/turret)$(l)Deploy E-54/$$(br)One of Landguard's cranes $(l)deploys a 1 HP turret/$, which floats towards the chosen destination. This ability has $(l)2 Uses/$ and costs $(l)10 Energy/$ to use. ($(l:naval_warfare:ships/ship_types/deployables/landguard_active)E-54 Siege Automaton)",
 			"title": "Active Ability"
-		},
-		{
-			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)E-54 Salvo/$$(br)The deployed E-54 Siege Automaton will $(l)target a line of 4 tiles/$ and damage all of them. This ability has $(l)Infinite Uses/$ and costs $(l)8 Energy/$ to use.",
-			"title": "Deployable"
 		},
 		{
 			"type": "patchouli:text",

@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/torpedo_decoy)$(l)Torpedo Decoy/$$(br)Barcross $(l)deploys a torpedo decoy at the selected tile/$. Any $(l:naval_warfare:abilities/active/torpedo)Torpedoes/$ that hit it, are $(l)nullified/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/torpedo_decoy)$(l)Torpedo Decoy/$$(br)Barcross $(l)deploys a torpedo decoy at the selected tile/$. Any $(l:naval_warfare:abilities/active/torpedo)Torpedoes/$ that hit it, are $(l)nullified/$. This ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use. ($(l:naval_warfare:ships/ship_types/deployables/barcross_active)Torpedo Decoy)",
 			"title": "Active Ability"
 		},
 		{

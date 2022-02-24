@@ -1,0 +1,42 @@
+{
+    "name": "Crude Raft",
+    "icon": "naval_warfare:raft",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Lifeline"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A crude raft, deployed by $(l:naval_warfare:spells/crude_raft)Crude Raft Spell/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:raft[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:raft": 2
+		}
+}

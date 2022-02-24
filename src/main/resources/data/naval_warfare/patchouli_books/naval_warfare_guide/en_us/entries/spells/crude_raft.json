@@ -5,7 +5,7 @@
     "pages": [
         {
 			"type": "patchouli:text",
-			"text": "$(l)(Defensive)/$$(br)The raft spell $(l)summons a 1 HP raft on your board/$. As long as the raft is not destroyed, you will not lose the game. $(l)The raft will fail and sink 3 turns after being summoned/$."
+			"text": "$(l)(Defensive)/$$(br)The raft spell $(l)summons a 1 HP $(l:naval_warfare:ships/ship_types/deployables/crude_raft)Crude Raft/$$(l) on your board/$. As long as the raft is not destroyed, you will not lose the game. $(l)The raft will fail and sink 3 turns after being summoned/$."
 		},
 		{
 			"type": "patchouli:text",

@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/sea_mine)$(l)Create Protected Area/$$(br)Meeanne will twist her body, forming a few rings over $(l)the selected tile/$ where she'll let her young play. $(l)When this area is hit/$, Meeanne becomes enraged, retrieving her young and wildly striking around her, $(l)damaging 7 random opponent tiles/$. This ability has $(l)2 Uses/$ and costs $(l)14 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/sea_mine)$(l)Create Protected Area/$$(br)Meeanne will twist her body, forming a few rings over $(l)the selected tile/$ where she'll let her young play. $(l)When this area is hit/$, Meeanne becomes enraged, retrieving her young and wildly striking around her, $(l)damaging 7 random opponent tiles/$. This ability has $(l)2 Uses/$ and costs $(l)14 Energy/$ to use. ($(l:naval_warfare:ships/ship_types/deployables/meeanne_active)Protected Area)",
 			"title": "Active Ability"
 		},
 		{

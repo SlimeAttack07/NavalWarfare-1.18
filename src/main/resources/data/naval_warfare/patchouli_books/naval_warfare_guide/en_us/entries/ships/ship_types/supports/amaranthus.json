@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/deployable_aa)$(l)SAM Hovercraft/$$(br)One of the hovercrafts is released, which moves to the target location. Once there, $(l)it shoots down any aircraft that cross the tile/$. The ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/deployable_aa)$(l)SAM Hovercraft/$$(br)One of the hovercrafts is released, which moves to the target location. Once there, $(l)it shoots down any aircraft that cross the tile/$. The ability has $(l)2 Uses/$ and costs $(l)8 Energy/$ to use. ($(l:naval_warfare:ships/ship_types/deployables/amaranthus_active)SAM Hovercraft)",
 			"title": "Active Ability"
 		},
 		{

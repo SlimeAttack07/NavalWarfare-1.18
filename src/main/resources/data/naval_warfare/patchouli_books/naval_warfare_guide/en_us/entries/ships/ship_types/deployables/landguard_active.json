@@ -1,0 +1,42 @@
+{
+    "name": "E-54 Siege Automaton",
+    "icon": "naval_warfare:landguard_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "A floating turret"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A small, floating turret deployed by $(l:naval_warfare:ships/ship_types/battleships/landguard)Landguard/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/active/salvo)$(l)E-54 Salvo/$$(br)The deployed E-54 Siege Automaton will $(l)target a line of 4 tiles/$ and damage all of them. This ability has $(l)1000 Uses/$ and costs $(l)8 Energy/$ to use.",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:landguard_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:landguard_active": 2
+		}
+}

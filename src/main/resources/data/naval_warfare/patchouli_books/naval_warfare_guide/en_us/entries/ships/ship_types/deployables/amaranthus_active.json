@@ -1,0 +1,42 @@
+{
+    "name": "SAM Hovercraft",
+    "icon": "naval_warfare:amaranthus_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Impractical air defenses"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A hovercraft carrying an experimental SAM system, deployed by $(l:naval_warfare:ships/ship_types/supports/amaranthus)Amaranthus/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/anti_air)$(l)SAM Hovercraft/$$(br)This hovercraft $(l)protects the tile it is deployed on/$ from $(l:naval_warfare:abilities/active/bomber)Bombers/$.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:amaranthus_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:amaranthus_active": 2
+		}
+}

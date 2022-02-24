@@ -1,0 +1,44 @@
+{
+    "name": "Ghost Ship",
+    "icon": "naval_warfare:paradox_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Spoopy!"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A ghost ship, deployed by $(l:naval_warfare:ships/ship_types/supports/paradox)Paradox/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["012"]
+				],
+				"mapping": {
+					"0": "naval_warfare:paradox_active[ship_part=three]",
+					"1": "naval_warfare:paradox_active[ship_part=two]",
+					"2": "naval_warfare:paradox_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:paradox_active": 2
+		}
+}

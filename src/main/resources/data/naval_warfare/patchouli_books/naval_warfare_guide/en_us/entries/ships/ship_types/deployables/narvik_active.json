@@ -1,0 +1,42 @@
+{
+    "name": "Bait Ship",
+    "icon": "naval_warfare:narvik_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "Here shelly shelly"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A bait ship filled with explosive flares, deployed by $(l:naval_warfare:ships/ship_types/destroyers/narvik)Narvik/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Explosive Flares/$$(br)When hit, this will $(l)target 4 random opponent tiles/$ and damage all of them.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:narvik_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:narvik_active": 2
+		}
+}

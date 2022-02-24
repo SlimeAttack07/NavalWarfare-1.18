@@ -1,0 +1,42 @@
+{
+    "name": "Protected Area",
+    "icon": "naval_warfare:meeanne_active",
+    "category": "naval_warfare:ship_types/deployables",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "A safe zone for some, a danger zone for others"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "A protected area, deployed by $(l:naval_warfare:ships/ship_types/destroyers/meeanne)Meeanne/$.",
+			"title": "Description"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "None",
+			"title": "Active Ability"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l:naval_warfare:abilities/passive/counterfire)$(l)Protected Area/$$(br)When hit, this will $(l)target 7 random opponent tiles/$ and damage all of them.",
+			"title": "Passive Ability"
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					["0"]
+				],
+				"mapping": {
+					"0": "naval_warfare:meeanne_active[ship_part=one]"
+				}
+			}
+		}
+    ],
+	"extra_recipe_mappings": {
+			"naval_warfare:meeanne_active": 2
+		}
+}
