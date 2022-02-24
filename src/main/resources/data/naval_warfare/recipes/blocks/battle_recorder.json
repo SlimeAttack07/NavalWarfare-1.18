@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" B ",
+		"GLG",
+		" G "
+	],
+
+	"key": {
+		"L": {
+			"tag": "forge:storage_blocks/lapis"
+		},
+		"B": {
+			"item": "minecraft:book"
+		},
+		"G": {
+			"tag": "forge:dyes/gray"
+		}
+	},
+	
+	"result": {
+			"item": "naval_warfare:battle_recorder",
+			"count": 1
+	}
+}

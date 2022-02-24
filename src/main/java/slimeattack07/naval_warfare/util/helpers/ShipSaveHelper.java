@@ -12,7 +12,7 @@ public class ShipSaveHelper {
 	public ShipSaveHelper(String ship, int pos, String dir, int hp) {
 		this.SHIP = new ResourceLocation(ship);
 		this.POS = pos;
-		this.DIR = Direction.valueOf(dir);
+		this.DIR = Direction.valueOf(dir.toUpperCase());
 		this.HP = hp;
 	}
 	

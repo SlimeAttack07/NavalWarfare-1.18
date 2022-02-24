@@ -1,8 +1,10 @@
 package slimeattack07.naval_warfare.objects.items;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
@@ -25,6 +27,8 @@ import slimeattack07.naval_warfare.network.message.BattleLogMessage;
 import slimeattack07.naval_warfare.objects.blocks.BattleViewer;
 import slimeattack07.naval_warfare.tileentity.BattleViewerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.NBTHelper;
+import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
 
 public class BattleLog extends Item{
 
@@ -104,13 +108,33 @@ public class BattleLog extends Item{
 			boolean spawned = viewer.spawnBoards(level, player, te, log.getInt("own_size"), log.getInt("opp_size"));
 			
 			if(spawned) {
-				// TODO: Add ship spawning here
+				viewer.spawnShips(level, getDir(log, false), pos, getShips(log, false), viewer.getFacing(level.getBlockState(pos)), false);
+				viewer.spawnShips(level, getDir(log, true), pos, getShips(log, true), viewer.getFacing(level.getBlockState(pos)), true);
 				te.setPlaying(true);
 				NWBasicMethods.messagePlayerActionbar(player, "message.naval_warfare.battle_log.load_success");
 			}
 		}
 			
 		return InteractionResult.SUCCESS;
+	}
+	
+	private Direction getDir(CompoundTag log, boolean opponent) {
+		return opponent ? Direction.valueOf(log.getString("opp_dir").toUpperCase()) : Direction.valueOf(log.getString("own_dir").toUpperCase());
+	}
+	
+	private ArrayList<ShipSaveHelper> getShips(CompoundTag log, boolean opponent){
+		ArrayList<ShipSaveHelper> ships = new ArrayList<>();
+		ListTag list = opponent ? log.getList("opp_ships", Tag.TAG_COMPOUND) : log.getList("own_ships", Tag.TAG_COMPOUND);
+		
+		for(Tag tag : list) {
+			CompoundTag ctag = (CompoundTag) tag;
+			ShipSaveHelper ssh = NBTHelper.readSSH(ctag);
+			
+			if(ssh != null)
+				ships.add(ssh);
+		}
+		
+		return ships;
 	}
 	
 	private boolean validateLog(CompoundTag log) {

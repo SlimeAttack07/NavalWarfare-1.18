@@ -24,8 +24,7 @@ public class BattleLogMessage {
 	public boolean load;
 	public ItemStack stack;
 	
-	public BattleLogMessage() {
-		
+	public BattleLogMessage() {	
 	}
 	
 	public BattleLogMessage(@Nullable CompoundTag log_in, boolean do_load, @Nullable ItemStack itemstack) {
@@ -86,10 +85,16 @@ public class BattleLogMessage {
 		String s = NbtUtils.prettyPrint(tag);
 		
 		s = s.replaceAll("(list\\<TAG_Compound\\>\\[)\\d+(])", "");
+		s = s.replaceAll("(list\\<TAG_Int\\>\\[)\\d+(])", "");
 		s = s.replace("1 b", "true");
 		s = s.replace("0 b", "false");
 		s = s.replace("1b", "true");
 		s = s.replace("0b", "false");
+		s = s.replace("north", "NORTH");
+		s = s.replace("east", "EAST");
+		s = s.replace("south", "SOUTH");
+		s = s.replace("west", "WEST");
+		s = s.replace("f,", "");
 		
 		return s;
 	}

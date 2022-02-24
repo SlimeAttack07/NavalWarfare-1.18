@@ -1,11 +1,15 @@
 package slimeattack07.naval_warfare.tileentity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -25,6 +29,8 @@ public class BattleRecorderTE extends BlockEntity{
 	public int opp_size = 0;
 	public ArrayList<ShipSaveHelper> own_ships = new ArrayList<>();
 	public ArrayList<ShipSaveHelper> opp_ships = new ArrayList<>();
+	public Direction own_dir = Direction.NORTH;
+	public Direction opp_dir = Direction.NORTH;
 
 	public BattleRecorderTE(BlockPos pos, BlockState state) {
 		super(NWTileEntityTypes.BATTLE_RECORDER.get(), pos, state);
@@ -70,18 +76,30 @@ public class BattleRecorderTE extends BlockEntity{
 		opp_size = size;
 	}
 	
+	public void setOwnDir(Direction dir) {
+		own_dir = dir;
+	}
+	
+	public void setOppDir(Direction dir) {
+		opp_dir = dir;
+	}
+	
 	public void reset() {
 		actions.clear();
 		own_ships.clear();
 		opp_ships.clear();
 		own_size = 0;
 		opp_size = 0;
+		own_dir = Direction.NORTH;
+		opp_dir = Direction.NORTH;
 	}
 	
-	// TODO: Just for testing, this function will move to BattleLog item once that's been implemented.
-	public void generateLog(Player player) {
+	public void generateLog(Player player, String p1, String p2) {
 		if(!actions.isEmpty()) {
 			ItemStack stack = new ItemStack(NWItems.BATTLE_LOG.get());
+		    Date now = new Date();
+		    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+			stack.setHoverName(new TextComponent(p1 + " vs " + p2 + " (" + format.format(now) + ")"));
 			BattleLog log = (BattleLog) stack.getItem();
 			log.setLog(stack, NBTHelper.toNBT(this));
 			NWBasicMethods.addOrSpawn(player, stack, level, worldPosition.above());
@@ -101,6 +119,8 @@ public class BattleRecorderTE extends BlockEntity{
 		if(initvalues != null) {
 			own_size = initvalues.getInt("own_size");
 			opp_size = initvalues.getInt("opp_size");
+			own_dir = Direction.valueOf(initvalues.getString("own_dir"));
+			opp_dir = Direction.valueOf(initvalues.getString("opp_dir"));
 			
 			actions = new ArrayList<>();
 			

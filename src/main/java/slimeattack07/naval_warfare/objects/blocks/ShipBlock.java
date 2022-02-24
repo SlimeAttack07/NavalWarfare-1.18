@@ -14,6 +14,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.StatFormatter;
@@ -61,6 +62,7 @@ import slimeattack07.naval_warfare.util.ShipState;
 import slimeattack07.naval_warfare.util.abilities.Ability;
 import slimeattack07.naval_warfare.util.abilities.PassiveType;
 import slimeattack07.naval_warfare.util.abilities.Seaworthy;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 import slimeattack07.naval_warfare.util.helpers.ShipRevealHelper;
 import slimeattack07.naval_warfare.util.properties.ShipPartProperty;
@@ -590,7 +592,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 					Direction dir = board.getControllerFacing(level, otile.getBlockPos());
 					BlockPos location = otile.locateId(matching, te.getId(), dir, true);
 					
-					int hitresult = hitShip(level, player, shippos, controller, state, id, location, multi_ability);
+					int hitresult = hitShip(level, player, shippos, controller, state, te.getId(), location, multi_ability);
 					
 					if(hitresult >= 0) {
 						if(triggers_passives && hasPassiveAbility() && (PASSIVE_ABILITY.getPassiveType().equals(PassiveType.HIT) || 
@@ -721,21 +723,67 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 			notifyOwnerOfHit(shipname, controller, level, id, multi_ability);
 			
 			if(!multi_ability)
-				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOpponentShipHitMessage(posToId(level, pos.below())));	
+				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOpponentShipHitMessage(id));	
 			
 			if(isDestroyed(level, parts)) {
 				destroyShip(level, pos, parts, matching, player);
 				notifyOwnerOfDestruction(shipname, controller, level);
 				
+				for(BlockPos bp : parts)
+					recordOnRecorders(level, bp, controller, posToId(level, bp.below()), true, bp.equals(pos));
+				
 				return 1;
 			}
 			else {
 				hit(level, pos, matching);
+				recordOnRecorders(level, pos, controller, id, false, true);
 				return 0;
 			}
 		}
 	
 		return -1;
+	}
+	
+	private boolean causedByOpponent(Level level, BlockPos pos, GameControllerTE te) {
+		BlockEntity tile = level.getBlockEntity(pos.below());
+		boolean opponent = true;
+		
+		if(tile instanceof BoardTE) {
+			BoardTE bte = (BoardTE) tile;
+			tile = level.getBlockEntity(bte.getController());
+			
+			if(tile instanceof GameControllerTE) {
+				GameControllerTE cte = (GameControllerTE) tile;
+				
+				return cte.equals(te);
+			}
+		}
+		
+		return opponent;
+	}
+	
+	private void recordOnRecorders(Level level, BlockPos pos, BlockPos controller, int id, boolean destroyed, boolean set_board) {
+		BlockEntity tile = level.getBlockEntity(controller);
+		
+		if(tile instanceof GameControllerTE) {
+			GameControllerTE te = (GameControllerTE) tile;	
+			// Sounds weird, but opponent boolean indicates if the hit occurred on the opponents board. Therefore, if caused by opponent, it occurred on
+			// your own board and hence opponent should be false.
+			boolean opponent = !causedByOpponent(level, pos, te);
+			ShipState state = destroyed ? ShipState.DESTROYED : ShipState.DAMAGED;
+			SoundEvent sound = destroyed ? NWSounds.DESTROY.get() : NWSounds.HIT.get();
+			float pitch = destroyed ? 0.6f : 1f;
+			BattleLogHelper blh = BattleLogHelper.createShipState(id, opponent, state);
+			te.recordOnRecorders(blh);
+			
+			if(set_board) {
+				BattleLogHelper blh_board = BattleLogHelper.createBoardState(id, opponent, BoardState.HIT);
+				te.recordOnRecorders(blh_board);
+				
+				BattleLogHelper blh_sound = BattleLogHelper.createSound(id, opponent, sound, 2f, pitch);
+				te.recordOnRecorders(blh_sound);
+			}	
+		}
 	}
 	
 	public void notifyOwnerOfHit(String ship, BlockPos pos, Level level, int id, boolean multi_ability) {

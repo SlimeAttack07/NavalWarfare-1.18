@@ -1,5 +1,7 @@
 package slimeattack07.naval_warfare.objects.blocks;
 
+import java.util.ArrayList;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
@@ -16,11 +18,13 @@ import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.registries.ForgeRegistries;
 import slimeattack07.naval_warfare.init.NWBlocks;
 import slimeattack07.naval_warfare.init.NWTileEntityTypes;
 import slimeattack07.naval_warfare.tileentity.BattleViewerTE;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
 
 public class BattleViewer extends Block implements EntityBlock{
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -182,5 +186,55 @@ public class BattleViewer extends Block implements EntityBlock{
 	
 	public boolean spawnBoards(Level level, Player player, BattleViewerTE te, int own_size, int opp_size) {
 		return spawnBoard(level, player, te, te.getBlockPos(), own_size, false) ? spawnOpponentBoard(level, player, te, own_size, opp_size) : false;
+	}
+	
+	public void spawnShips(Level level, Direction dir, BlockPos pos, ArrayList<ShipSaveHelper> ships, Direction facing, boolean opponent) {
+		for(ShipSaveHelper ssh : ships) {
+			Direction new_facing = NWBasicMethods.rotateToMatch(dir, facing, ssh.getDir());
+			
+			Block block = ForgeRegistries.BLOCKS.getValue(ssh.getShip());
+			
+			if(block == null || !(block instanceof ShipBlock))
+				continue;
+			
+			ShipBlock ship = (ShipBlock) block;
+			BlockPos spos = findBoard(level, pos, ssh.getPos(), opponent);
+			
+			if(spos != null) {
+				ship.summonShip(level, spos.above(), ship.defaultBlockState().setValue(ShipBlock.FACING, new_facing), true, false);
+				ship.propagateAbilityAmount(level, spos.above(), 0);
+			}
+		}	
+	}
+	
+	public BlockPos findBoard(Level level, BlockPos pos, int id, boolean opponent) {
+		BlockEntity tile = level.getBlockEntity(pos);
+		
+		if(tile instanceof BattleViewerTE) {
+			BattleViewerTE te = (BattleViewerTE) tile;
+			
+			return te.findBoard(id, opponent);
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+		if(level.isClientSide())
+			return;
+		
+		if(newState.getBlock() instanceof BattleViewer)
+			return;
+		
+		Direction dir = getFacing(state);
+		BlockPos board_pos = pos.relative(dir);
+		BlockState board = level.getBlockState(board_pos);
+		
+		if(board.getBlock() instanceof Board)
+			level.removeBlock(board_pos, false);
+		
+		if(state.hasBlockEntity())
+			level.removeBlockEntity(pos);
 	}
 }

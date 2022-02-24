@@ -21,6 +21,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class MortarBomber implements Ability{
@@ -57,9 +58,7 @@ public class MortarBomber implements Ability{
 		
 		String playername = "dummy";
 		int delay = BOMBER ? 10 : 20;
-		
-		if(tiles.isEmpty())
-			return;
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		BlockPos pos = tiles.get(0).getController();
 		BlockState state = level.getBlockState(pos);
@@ -105,6 +104,7 @@ public class MortarBomber implements Ability{
 							ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), playername, matching.getBlockPos(), te.getBlockPos(), true, false);
 				
 				controller.addAction(cah);
+				ids.add(te.getId());
 				
 				if(!BOMBER) {
 					level.playSound(null, te.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 0.75f);
@@ -115,6 +115,13 @@ public class MortarBomber implements Ability{
 					delay = 0;
 				}
 			}
+		}
+		
+		if(!ids.isEmpty()) {
+			BattleLogHelper blh_drops = BattleLogHelper.createDropBlocks(ids, true, ANIMATION.getRegistryName());
+			BattleLogHelper blh_sounds = BattleLogHelper.createSounds(ids, true, NWSounds.SHOT.get(), 1f, 0.75f);
+			controller.recordOnRecorders(blh_sounds);
+			controller.recordOnRecorders(blh_drops);
 		}
 	}
 

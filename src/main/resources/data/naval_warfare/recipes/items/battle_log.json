@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:writable_book"
+		},
+		{
+			"tag": "forge:dyes/cyan"
+		},
+		{
+			"tag": "forge:dyes/gray"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:battle_log",
+		"count": 1
+	}
+}

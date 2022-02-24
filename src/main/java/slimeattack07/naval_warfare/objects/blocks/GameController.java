@@ -426,11 +426,19 @@ public class GameController extends Block implements EntityBlock{
 			}
 		}
 		
+		recordOnRecorders(level, own_te, opp_te);
+	}
+	
+	private void recordOnRecorders(Level level, GameControllerTE own_te, GameControllerTE opp_te) {
 		ArrayList<ShipSaveHelper> own_ships = collectShips(level, own_te.zero);
 		ArrayList<ShipSaveHelper> opp_ships = collectShips(level, opp_te.zero);
 		
-		own_te.recordOnRecorder(own_ships, opp_ships, own_te.board_size, opp_te.board_size);
-		opp_te.recordOnRecorder(opp_ships, own_ships, opp_te.board_size, own_te.board_size);
+		GameController c = (GameController) own_te.getBlockState().getBlock();
+		
+		own_te.recordOnRecorder(own_ships, opp_ships, own_te.board_size, opp_te.board_size, c.getFacing(own_te.getBlockState()), 
+				c.getFacing(opp_te.getBlockState()));
+		opp_te.recordOnRecorder(opp_ships, own_ships, opp_te.board_size, own_te.board_size, c.getFacing(opp_te.getBlockState()), 
+				c.getFacing(own_te.getBlockState()));
 	}
 	
 	private ArrayList<ShipSaveHelper> collectShips(Level level, BlockPos zero) {

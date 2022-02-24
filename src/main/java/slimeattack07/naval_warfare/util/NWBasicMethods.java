@@ -231,23 +231,13 @@ public class NWBasicMethods {
 	}
 	
 	public static Direction rotateToMatch(Direction dir1, Direction dir2, Direction dir3) {
-		Direction new_dir = dir1;
-		int times = 0;
-		
-		while(!new_dir.equals(dir2)) {
-			times++;
-			new_dir = new_dir.getClockWise();
-			
-			if(times > 10) // deals with cases where the axes don't match.
-				return dir3;
-		}
-		
-		new_dir = dir3;
-		
-		for (int i = times; i > 0; i--)
-			new_dir = new_dir.getClockWise();
-		
-		return new_dir;
+		if(dir1.equals(dir2))
+			return dir3;
+		else if(dir1.equals(dir2.getOpposite()))
+			return dir3.getOpposite();
+		else if(dir1.equals(dir2.getClockWise()))
+			return dir3.getCounterClockWise();
+		else return dir3.getClockWise();
 	}
 	
 	public static void animateItemUse(Player player, Item item) {

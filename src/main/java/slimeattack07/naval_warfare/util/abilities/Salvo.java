@@ -20,6 +20,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Salvo implements Ability {
@@ -59,12 +60,13 @@ public class Salvo implements Ability {
 		return AMOUNT;
 	}
 
-	private boolean fire(Level level, Player player, ArrayList<BoardTE> positions) {		
+	private void fire(Level level, Player player, ArrayList<BoardTE> positions) {		
 		GameControllerTE controller = null;
 		GameController control = null;
 		
-		boolean hit = false;
 		int delay = 20;
+		Block block = SHELLS ? NWBlocks.SHELL.get() : NWBlocks.CANNONBALL.get();
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : positions) {
 			if(controller == null) {
@@ -77,10 +79,10 @@ public class Salvo implements Ability {
 					if(control.validateController(level, pos))
 						controller = (GameControllerTE) level.getBlockEntity(pos);
 					else
-						return false;
+						return;
 				}
 				else
-					return false;
+					return;
 			}
 			
 			BoardTE matching = control.getOpponentBoardTile(level, controller, te.getId(), false);
@@ -94,10 +96,8 @@ public class Salvo implements Ability {
 				ControllerActionHelper cah = ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), p, matching.getBlockPos(), te.getBlockPos(), true,
 						false);
 				delay = 0;
-				
-				controller.addAction(cah);
-				
-				Block block = SHELLS ? NWBlocks.SHELL.get() : NWBlocks.CANNONBALL.get();
+				ids.add(te.getId());
+				controller.addAction(cah);				
 				
 				level.playSound(null, te.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1.25f);
 				level.playSound(null, matching.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1.25f);
@@ -107,7 +107,12 @@ public class Salvo implements Ability {
 			}
 		}
 		
-		return hit;
+		if(!ids.isEmpty()) {
+			BattleLogHelper blh_drops = BattleLogHelper.createDropBlocks(ids, true, block.getRegistryName());
+			BattleLogHelper blh_sounds = BattleLogHelper.createSounds(ids, true, NWSounds.SHOT.get(), 1f, 1.25f);
+			controller.recordOnRecorders(blh_sounds);
+			controller.recordOnRecorders(blh_drops);
+		}
 	}
 	
 	@Override

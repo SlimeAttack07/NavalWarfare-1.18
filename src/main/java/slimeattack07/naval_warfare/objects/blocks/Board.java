@@ -35,6 +35,7 @@ import slimeattack07.naval_warfare.util.ControllerState;
 import slimeattack07.naval_warfare.util.HitResult;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 import slimeattack07.naval_warfare.util.helpers.ShipRevealHelper;
 import slimeattack07.naval_warfare.util.properties.BoardStateProperty;
@@ -233,7 +234,7 @@ public class Board extends Block implements EntityBlock{
 		level.playSound(null, pos, NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1);
 		level.playSound(null, matching, NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1);
 		
-		addActionToController(level, matching, cah);
+		addActionToController(level, matching, cah, te.getId());
 	}
 	
 	/** Target a board tile. Should be called only by the game controller.
@@ -579,11 +580,15 @@ public class Board extends Block implements EntityBlock{
 		return Direction.NORTH;
 	}
 
-	public void addActionToController(Level level, BlockPos pos, ControllerActionHelper cah) {
+	public void addActionToController(Level level, BlockPos pos, ControllerActionHelper cah, int id) {
 		GameControllerTE te = getController(level, pos);
 		
-		if(te != null) 
-			te.addAction(cah);		
+		if(te != null) {
+			te.addAction(cah);
+			
+			BattleLogHelper blh = BattleLogHelper.createSound(id, true, NWSounds.SHOT.get(), 1f, 1f);
+			te.recordOnRecorders(blh);
+		}
 	}
 	
 	@Override

@@ -51,6 +51,7 @@ import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.objects.blocks.ShipMarkerBlock;
 import slimeattack07.naval_warfare.objects.items.ShipConfiguration;
 import slimeattack07.naval_warfare.objects.items.SpellWand;
+import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.ControllerAction;
 import slimeattack07.naval_warfare.util.ControllerState;
 import slimeattack07.naval_warfare.util.HitResult;
@@ -569,14 +570,26 @@ public class GameControllerTE extends BlockEntity{
 			
 			if(!cah.player.equals("dummy"))
 				player = level.getPlayerByUUID(UUID.fromString(cah.player));
-
-			board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, cah.target_type, cah.multi_ability, 
-					action_number, null, cah.triggers_passives, false);
 			
-			BattleLogHelper blh = BattleLogHelper.createBoardTarget(te.getId(), !cah.multi_ability, board.getBoardState(tile.getBlockState()), cah.delay,
-					cah.animation.getRegistryName());
-			recordOnRecorder(blh);
-			recordOnOppRecorder(blh);
+			if(cah.animation != null) {
+				BattleLogHelper blh_drop = BattleLogHelper.createDropBlock(te.getId(), !cah.multi_ability, cah.animation.getRegistryName());
+				recordOnRecorders(blh_drop); //TODO: Once all actions are implemented, check what happens with the timings if cah.animation == null.
+			}
+			
+			BattleLogHelper blh_delay = BattleLogHelper.createDelay(cah.delay);
+			
+			recordOnRecorders(blh_delay);
+
+			HitResult result = board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, cah.target_type, 
+					cah.multi_ability, action_number, null, cah.triggers_passives, false);
+			
+			if(result.equals(HitResult.MISS)) {
+				BattleLogHelper blh_board = BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY);
+				recordOnRecorders(blh_board);
+				
+				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), !cah.multi_ability, NWSounds.MISS.get(), 1f, 1f);
+				recordOnRecorders(blh_sound);
+			}
 		}
 		
 		removeFirstAction();
@@ -1022,6 +1035,14 @@ public class GameControllerTE extends BlockEntity{
 				consumeResults(player, true, false, !cah.multi_ability, cah.multi_ability);
 				action_number++;
 			}
+			
+			if(result.equals(HitResult.MISS)) {
+				BattleLogHelper blh_board = BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY);
+				recordOnRecorders(blh_board);
+				
+				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), !cah.multi_ability, NWSounds.MISS.get(), 1f, 1f);
+				recordOnRecorders(blh_sound);
+			}
 		}
 		
 		removeFirstAction();
@@ -1407,7 +1428,7 @@ public class GameControllerTE extends BlockEntity{
 //		recordOnRecorder(cah);
 	}
 	
-	private void recordOnOppRecorder(BattleLogHelper blh) {
+	public void recordOnOppRecorder(BattleLogHelper blh) {
 		if(opponent == null)
 			return;
 		
@@ -1430,7 +1451,13 @@ public class GameControllerTE extends BlockEntity{
 			te.addAction(blh);
 	}
 	
-	public void recordOnRecorder(ArrayList<ShipSaveHelper> own_ships, ArrayList<ShipSaveHelper> opp_ships, int own_size, int opp_size) {
+	public void recordOnRecorders(BattleLogHelper blh) {
+		recordOnRecorder(blh);
+		recordOnOppRecorder(blh);
+	}
+	
+	public void recordOnRecorder(ArrayList<ShipSaveHelper> own_ships, ArrayList<ShipSaveHelper> opp_ships, int own_size, int opp_size, Direction own_dir,
+			Direction opp_dir) {
 		BattleRecorderTE te = getRecorder();
 		
 		if(te != null) {
@@ -1438,6 +1465,8 @@ public class GameControllerTE extends BlockEntity{
 			te.setOppShips(opp_ships);
 			te.setOwnSize(own_size);
 			te.setOppSize(opp_size);
+			te.setOwnDir(own_dir);
+			te.setOppDir(opp_dir);
 		}
 	}
 	
@@ -1445,7 +1474,11 @@ public class GameControllerTE extends BlockEntity{
 		BattleRecorderTE te = getRecorder();
 		
 		if(te != null) {
-			te.generateLog(getPlayer());
+			Player oplayer = getOpponentPlayer();
+			String opstring = oplayer == null ? "dummy" : oplayer.getName().getString();
+			Player player = getPlayer();
+			String pstring = player == null ? "dummy" : player.getName().getString();
+			te.generateLog(getPlayer(), pstring, opstring);
 			te.reset();
 		}
 	}
@@ -1647,7 +1680,7 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	private Player getPlayer() {
-		if(!owner.equals("dummy")) 
+		if(hasOwner() && !owner.equals("dummy")) 
 			return level.getPlayerByUUID(UUID.fromString(owner));
 			
 		return null;

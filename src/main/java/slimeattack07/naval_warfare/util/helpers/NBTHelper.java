@@ -6,7 +6,9 @@ import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,9 +24,11 @@ import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.tileentity.PassiveAbilityTE;
 import slimeattack07.naval_warfare.tileentity.RandomShipTE;
 import slimeattack07.naval_warfare.tileentity.ShipTE;
+import slimeattack07.naval_warfare.util.BattleLogAction;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.ControllerAction;
 import slimeattack07.naval_warfare.util.HitResult;
+import slimeattack07.naval_warfare.util.ShipState;
 import slimeattack07.naval_warfare.util.Spell;
 import slimeattack07.naval_warfare.util.TargetType;
 
@@ -270,7 +274,7 @@ public class NBTHelper {
 		CompoundTag compound = new CompoundTag();
 		
 		if(helper == null || helper.action == null) {
-			NavalWarfare.LOGGER.warn("Encountered corrupt CAH, skipping. CAH = " + helper);
+			NavalWarfare.LOGGER.warn("Encountered corrupt CAH, skipping. CAH or CAH.action == null");
 			return compound;
 		}
 		
@@ -330,6 +334,8 @@ public class NBTHelper {
 		
 		compound = safePutInt("own_size", o.own_size, compound);
 		compound = safePutInt("opp_size", o.opp_size, compound);
+		compound = safePutString("own_dir", o.own_dir.name(), compound);
+		compound = safePutString("opp_dir", o.opp_dir.name(), compound);
 		
 		ArrayList<BattleLogHelper> actions = o.getActions();
 		
@@ -392,16 +398,31 @@ public class NBTHelper {
 	private static CompoundTag writeBLH(BattleLogHelper helper) {
 		CompoundTag compound = new CompoundTag();
 		
-		if(helper == null) {
-			NavalWarfare.LOGGER.warn("Encountered corrupt BLH, skipping. BLH = " + helper);
+		if(helper == null || helper.action == null) {
+			NavalWarfare.LOGGER.warn("Encountered corrupt BLH, skipping. BLH or BLH.action == null");
 			return compound;
 		}
 		
-		compound = safePutInt("id", helper.id, compound);
+		compound = safePutString("action", helper.action.name(), compound);
+		// No need to save id 0 since compounds default to it when trying to fetch an int with a non-existing key.
+		compound = helper.id > 0 ? safePutInt("id", helper.id, compound) : compound; 
 		compound = safePutBoolean("opponent", helper.opponent, compound);
-		compound = safePutString("board_state", helper.board_state.name(), compound);
-		compound = helper.animation == null? compound : safePutString("animation", helper.animation.toString(), compound);
-		compound = safePutInt("delay", helper.delay, compound);
+		compound = helper.board_state == null ? compound : safePutString("board_state", helper.board_state.name(), compound);
+		compound = helper.animation == null ? compound : safePutString("animation", helper.animation.toString(), compound);
+		compound = helper.delay > 0 ? safePutInt("delay", helper.delay, compound) : compound;
+		compound = helper.ship_state == null ? compound : safePutString("ship_state", helper.ship_state.name(), compound);
+		compound = helper.sound == null ? compound : safePutString("sound", helper.sound.getRegistryName().toString(), compound);
+		compound = helper.volume > 0 ? safePutFloat("volume", helper.volume, compound) : compound;
+		compound = helper.pitch > 0 ? safePutFloat("pitch", helper.pitch, compound) : compound;
+		
+		if(helper.positions != null && !helper.positions.isEmpty()) {
+			ListTag list = new ListTag();
+			
+			for(int i : helper.positions)
+				list.add(IntTag.valueOf(i));
+			
+			compound.put("positions", list);
+		}
 		
 		return compound;
 	}
@@ -411,7 +432,7 @@ public class NBTHelper {
 		
 		compound = safePutString("name", helper.getShip().toString(), compound);
 		compound = safePutInt("pos", helper.getPos(), compound);
-		compound = safePutString("dir", helper.getDir().getName(), compound);
+		compound = safePutString("dir", helper.getDir().name(), compound);
 		// Note that we don't save the HP, since we only use this for the battle log system right now, which doesn't need the hp.
 
 		return compound;
@@ -498,7 +519,7 @@ public class NBTHelper {
 			case TURN_DAMAGE:
 				return ControllerActionHelper.createForcedTarget(pos, player, board_te, matching);
 			default:
-				NavalWarfare.LOGGER.warn("I don't know how to load this action type! Please report this to the mod developer! (Type is " +
+				NavalWarfare.LOGGER.warn("I don't know how to read this action type! Please report this to the mod developer! (Type is " +
 						action + ")");
 				return new ControllerActionHelper();
 			}
@@ -520,12 +541,26 @@ public class NBTHelper {
 		try {
 			BattleLogHelper blh = new BattleLogHelper();
 			
+			blh.action = BattleLogAction.valueOf(compound.getString("action")); // No check here since we want it to fail if the action is invalid
 			blh.id = compound.getInt("id");
 			blh.opponent = compound.getBoolean("opponent");
-			blh.board_state = BoardState.valueOf(compound.getString("board_state"));
+			blh.board_state = compound.contains("board_state") ? BoardState.valueOf(compound.getString("board_state")) : null;
 			blh.delay = compound.getInt("delay");
-			String animation = compound.getString("animation");
-			blh.animation = animation.isBlank() ? null : new ResourceLocation(animation);
+			blh.animation = compound.contains("animation") ? new ResourceLocation(compound.getString("animation")) : null;
+			blh.ship_state = compound.contains("ship_state") ? ShipState.valueOf(compound.getString("ship_state")) : null;
+			blh.sound = compound.contains("sound") ? ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(compound.getString("sound"))) : null;
+			blh.volume = compound.getFloat("volume");
+			blh.pitch = compound.getFloat("pitch");
+			
+			if(compound.contains("positions")) {
+				ListTag list = compound.getList("positions", Tag.TAG_INT);
+				blh.positions = new ArrayList<>();
+				
+				for(Tag tag : list) {
+					IntTag itag = (IntTag) tag;
+					blh.positions.add(itag.getAsInt());
+				}
+			}
 			
 			return blh;
 			
@@ -561,6 +596,20 @@ public class NBTHelper {
 	
 	private static CompoundTag safePutInt(String name, int value, CompoundTag compound) {
 		return safePutInt(name, value, 0, compound);
+	}	
+	
+	private static CompoundTag safePutFloat(String name, float value, float default_val, CompoundTag compound) {
+		try {
+			compound.putFloat(name, value);
+		} catch (NullPointerException e) {
+			compound.putFloat(name, default_val);
+		}
+		
+		return compound;
+	}
+	
+	private static CompoundTag safePutFloat(String name, float value, CompoundTag compound) {
+		return safePutFloat(name, value, 0f, compound);
 	}	
 	
 	private static CompoundTag safePutString(String name, String value, String default_val, CompoundTag compound) {
