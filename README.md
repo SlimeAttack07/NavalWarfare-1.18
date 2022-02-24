@@ -31,7 +31,7 @@ These are people whose tutorials I've used to help me develop this mod.
 * TurtyWurty: https://www.youtube.com/c/TurtyWurty (Basics of modding)
 * Cy4's Modding: https://www.youtube.com/c/Cy4sTutorials (Networking and Configs)
 * Cryness Forge Tutorials: https://www.youtube.com/channel/UCp4F1-OoGuhRa-iOYAg_mOQ (Custom villagers and trades)
-* TelepathicGrunt: https://github.com/TelepathicGrunt/StructureTutorialMod/tree/1.18.x-Forge-Jigsaw/src/main (Custom Structures)
+* TelepathicGrunt: https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.18.x-Forge-Jigsaw/LICENSE.txt (Custom Structures)
 * Jabelar: https://jabelarminecraft.blogspot.com/p/minecraft-modding-custom-triggers-aka.html (Custom advancement triggers)
 
 ### Sounds
