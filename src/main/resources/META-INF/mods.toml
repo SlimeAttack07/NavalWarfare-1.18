@@ -11,7 +11,6 @@ displayName="Naval Warfare" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 logoFile="logo.png" #optional
-credits="TurtyWurty, Cy4's Modding & Cryness Forge Tutorials for their modding tutorials, Sailcraft developers for my inspiration, many authors on flaticon.com for their icon textures." #optional
 authors="SlimeAttack07" #optional
 description='''
 This mod allows players to play the board game battleship with a twist. There are new ship shapes to confuse your opponents,
