@@ -32,7 +32,7 @@ import slimeattack07.naval_warfare.util.helpers.NBTHelper;
 
 public class BattleViewerTE extends BlockEntity{
 	public ArrayList<BattleLogHelper> actions = new ArrayList<>();
-	public boolean playing = false; // TODO: Add way to pause / cancel viewing
+	public boolean playing = false;
 	public int timer = 0;
 	public BlockPos zero = null;
 	public BlockPos opponent_zero = null;

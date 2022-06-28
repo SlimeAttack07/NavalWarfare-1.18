@@ -17,8 +17,8 @@ import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
 
 public class PassiveAbilityTE extends BlockEntity{
-	protected ArrayList<String> owners;
-	private BlockPos matching;
+	protected ArrayList<String> owners = new ArrayList<>();
+	private BlockPos matching = null;
 
 	public PassiveAbilityTE(BlockPos pos, BlockState state) {
 		super(NWTileEntityTypes.PASSIVE_BLOCK.get(), pos, state);
@@ -26,11 +26,6 @@ public class PassiveAbilityTE extends BlockEntity{
 	
 	public PassiveAbilityTE(BlockPos pos, BlockState state, boolean shield) {
 		super(NWTileEntityTypes.ENERGY_SHIELD.get(), pos, state);
-	}
-	
-	protected void init() {
-		owners = new ArrayList<>();
-		matching = null;
 	}
 	
 	public BlockPos getMatching() {
@@ -59,43 +54,28 @@ public class PassiveAbilityTE extends BlockEntity{
 	}
 	
 	public ArrayList<String> getOwners(){
-		if(owners == null)
-			init();
-		
 		return owners;
 	}
 	
 	public void addOwner(String owner) {
-		if(owners == null)
-			init();
-		
 		if(!owners.contains(owner))
 			owners.add(owner);
 	}
 	
 	public void removeOwner(String owner) {
-		if(owners == null)
-			init();
-		else
-			owners.remove(owner);
+		owners.remove(owner);
 	}
 	
 	public int ownerAmount() {
-		if(owners == null)
-			init();
-		
 		return owners.size();
 	}
 	
 	public boolean hasOwner() {
-		return owners != null && !owners.isEmpty();
+		return !owners.isEmpty();
 	}
 	
-	public void destroy(Level level, BlockPos pos, String owned, GameControllerTE controller, int offset) {
-		if(owners == null)
-			init();
-		
-		else if(owners.contains(owned)) {
+	public void destroy(Level level, BlockPos pos, String owned, GameControllerTE controller, int offset) {		
+		if(owners.contains(owned)) {
 			ArrayList<BlockPos> positions = destroyPropagate(level, pos, owned, new ArrayList<>(), controller);
 			ArrayList<Integer> ids = new ArrayList<>();
 			
@@ -169,7 +149,5 @@ public class PassiveAbilityTE extends BlockEntity{
 			else
 				matching = null;
 		}
-		else
-			init();
 	}
 }

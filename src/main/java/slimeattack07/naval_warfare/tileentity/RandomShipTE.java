@@ -31,10 +31,6 @@ public class RandomShipTE extends BlockEntity{
 		super(NWTileEntityTypes.RANDOM_SHIP.get(), pos, state);
 	}
 	
-	public void init() {
-		can_spawn = true;
-	}
-	
 	private ArrayList<BlockPos> spawnDisplays(Level level, BlockPos pos) {
 		ArrayList<BlockPos> locations = new ArrayList<>();
 		
@@ -141,10 +137,8 @@ public class RandomShipTE extends BlockEntity{
 		
 		CompoundTag initvalues = compound.getCompound(NavalWarfare.MOD_ID);
 		
-		if(initvalues != null) {
+		if(initvalues != null)
 			can_spawn = initvalues.getBoolean("can_spawn");
-		} else
-			init();
 	}
 	
 	@Override

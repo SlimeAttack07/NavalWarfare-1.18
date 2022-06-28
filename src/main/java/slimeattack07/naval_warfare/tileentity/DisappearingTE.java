@@ -15,10 +15,6 @@ public class DisappearingTE extends BlockEntity{
 		super(NWTileEntityTypes.DISAPPEAR.get(), pos, state);
 	}
 	
-	public void init() {
-		time = 5;
-	}
-	
 	public void setTime(int ticks) {
 		time = ticks;
 	}
@@ -41,10 +37,8 @@ public class DisappearingTE extends BlockEntity{
 		
 		CompoundTag initvalues = compound.getCompound(NavalWarfare.MOD_ID);
 		
-		if(initvalues != null) {
+		if(initvalues != null)
 			time = initvalues.getInt("time");
-		} else
-			init();
 	}
 	
 	@Override

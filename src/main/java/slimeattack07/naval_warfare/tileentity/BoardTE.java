@@ -29,16 +29,11 @@ import slimeattack07.naval_warfare.util.helpers.ShipInfoHelper;
 import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
 
 public class BoardTE extends BlockEntity {
-	public BlockPos controller;
-	public int board_id;
+	public BlockPos controller = null;
+	public int board_id = -1;
 	
 	public BoardTE(BlockPos pos, BlockState state) {
 		super(NWTileEntityTypes.BOARD.get(), pos, state);
-	}
-	
-	private void init() {
-		controller = null;
-		board_id = -1;
 	}
 	
 	public boolean hasController() {
@@ -537,8 +532,6 @@ public class BoardTE extends BlockEntity {
 			
 			board_id = initvalues.getInt("board_id");
 		}
-		else
-			init();
 	}
 
 	@Override

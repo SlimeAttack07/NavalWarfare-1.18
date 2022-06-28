@@ -18,12 +18,6 @@ public class ShipTE extends BlockEntity{
 		super(NWTileEntityTypes.SHIP.get(), pos, state);
 	}
 	
-	private void init() {
-		active_amount = 0;
-		passive_amount = 0;
-		action_number = -1;
-	}
-	
 	public void boardBelow() {
 		if(!(level.getBlockState(worldPosition.below()).getBlock() instanceof Board)){
 			active_amount = 0;
@@ -70,7 +64,5 @@ public class ShipTE extends BlockEntity{
 			passive_amount = initvalues.getInt("passive_amount");
 			action_number = initvalues.getInt("action_number");
 		}
-		else
-			init();
 	}
 }

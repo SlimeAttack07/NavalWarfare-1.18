@@ -10,18 +10,11 @@ import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
 
 public class EnergyShieldTE extends PassiveAbilityTE{
-	private int hp;
+	private int hp = -1;
 	private int last_action = -1;
 
 	public EnergyShieldTE(BlockPos pos, BlockState state) {
 		super(pos, state, true);
-	}
-	
-	@Override
-	protected void init() {
-		hp = 0;
-		last_action = -1;
-		super.init();
 	}
 	
 	public int getHP() {
@@ -94,7 +87,5 @@ public class EnergyShieldTE extends PassiveAbilityTE{
 			hp = initvalues.getInt("hp");
 			last_action = initvalues.getInt("last_action");
 		}
-		else
-			init();
 	}
 }

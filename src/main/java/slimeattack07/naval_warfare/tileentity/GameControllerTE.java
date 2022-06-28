@@ -75,65 +75,38 @@ public class GameControllerTE extends BlockEntity{
 	public static final int MAX_TURN_TIME = NavalWarfareConfig.max_turn_time.get(); // Default: 600
 	public static final int CLEAR_BOARD_TIME = NavalWarfareConfig.clear_board_time.get(); // Default: 100
 	
-	public String owner;
-	public BlockPos zero;
-	public boolean playing_game;
-	public boolean clear_board;
-	public BlockPos opponent;
-	public BlockPos opponent_zero;
-	public boolean has_turn;
-	public int turn_time;
-	public int board_size;
-	public int hp;
-	public String config_name;
-	public int action_time;
-	public ArrayList<ControllerActionHelper> actions;
-	public ArrayList<ControllerActionHelper> turn_actions;
-	public int action_number;
-	public ArrayList<TargetResultHelper> results;
-	public ArrayList<String> registered;
-	public ArrayList<String> register_buffer;
-	public int energy;
-	public boolean do_turn_actions;
-	public int turn_action_amount;
-	public boolean has_spell;
-	public int timeout_times;
-	public int cons_timeout_times;
-	public int reg_buffer_time;
-	public boolean hit_once;
-	public int streak;
+	public String owner = null;
+	public BlockPos zero = null;
+	public boolean playing_game = false;
+	public boolean clear_board = false;
+	public BlockPos opponent = null;
+	public BlockPos opponent_zero = null;
+	public boolean has_turn = false;
+	public int turn_time = 0;
+	public int board_size = 0;
+	public int hp = 0;
+	public String config_name = null;
+	public int action_time = 0;
+	public ArrayList<ControllerActionHelper> actions = new ArrayList<>();
+	public ArrayList<ControllerActionHelper> turn_actions = new ArrayList<>();
+	public int action_number = 0;
+	public ArrayList<TargetResultHelper> results = new ArrayList<>();
+	public ArrayList<String> registered = new ArrayList<>();
+	public ArrayList<String> register_buffer = new ArrayList<>();
+	public int energy = -1;
+	public boolean do_turn_actions = false;
+	public int turn_action_amount = 0;
+	public boolean has_spell = true;
+	public int timeout_times = 0;
+	public int cons_timeout_times = 0;
+	public int reg_buffer_time = 0;
+	public boolean hit_once = false;
+	public int streak = 0;
 
 	public GameControllerTE(BlockPos pos, BlockState state) {
 		super(NWTileEntityTypes.GAME_CONTROLLER.get(), pos, state);
 	}
-	
-	private void init() {
-		owner = "";
-		playing_game = false;
-		clear_board = false;
-		has_turn = false;
-		turn_time = -1;
-		board_size = -1;
-		hp = -1;
-		config_name = "";
-		action_time = -1;
-		actions = new ArrayList<>();
-		results = new ArrayList<>();
-		registered = new ArrayList<>();
-		register_buffer = new ArrayList<>();
-		action_number = 0;
-		energy = 0;
-		do_turn_actions = true;
-		turn_actions = new ArrayList<>();
-		turn_action_amount = 0;
-		has_spell = false;
-		timeout_times = 0;
-		reg_buffer_time = 0;
-		hit_once = false;
-		streak = 0;
-		setChanged();
-	}
-	
+
 	public boolean hasOwner() {
 		return owner != null && !owner.isEmpty();
 	}
@@ -202,11 +175,8 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public void resetActions() {
-		if(actions != null)
-			actions.clear();
-		
-		if(turn_actions != null)
-			turn_actions.clear();
+		actions.clear();
+		turn_actions.clear();
 	}
 	
 	public void resetTurnTime() {
@@ -335,70 +305,41 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public ArrayList<ControllerActionHelper> getActions(){
-		if(actions == null)
-			actions = new ArrayList<>();
-		
 		return actions;
 	}
 	
 	public ArrayList<ControllerActionHelper> getTurnActions(){
-		if(turn_actions == null)
-			turn_actions = new ArrayList<>();
-		
 		return turn_actions;
 	}
 	
 	public ArrayList<TargetResultHelper> getResults(){
-		if(results == null)
-			results = new ArrayList<>();
-		
 		return results;
 	}
 	
 	public ArrayList<String> getRegistered(){
-		if(registered == null)
-			registered = new ArrayList<>();
-		
 		return registered;
 	}
 	
 	public ArrayList<String> getRegisterBuffer(){
-		if(register_buffer == null)
-			register_buffer = new ArrayList<>();
-		
 		return register_buffer;
 	}
 	
 	public void addTurnAction(ControllerActionHelper action) {
-		if(turn_actions == null)
-			turn_actions = new ArrayList<>();
-		
 		turn_actions.add(action);
 		setChanged();
 	}
 	
 	public void addAction(ControllerActionHelper action) {		
-		if(actions == null)
-			actions = new ArrayList<>();
-		
 		actions.add(action);
 		setChanged();
 	}
 	
-	public void addResult(TargetResultHelper result) {
-		if(results == null)
-			results = new ArrayList<>();
-		
+	public void addResult(TargetResultHelper result) {	
 		results.add(result);
 		setChanged();
 	}
 	
 	public boolean register(String ship, Player player, ShipBlock block) {		
-		if(registered == null) {
-			registered = new ArrayList<>();
-			setChanged();
-		}
-		
 		if(registered.contains(ship))
 			return false;
 		
@@ -423,11 +364,6 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public void register(String ship) {
-		if(registered == null) {
-			registered = new ArrayList<>();
-			setChanged();
-		}
-		
 		if(!registered.contains(ship)) {
 			registered.add(ship);
 			setChanged();
@@ -435,9 +371,6 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public boolean deregister(String ship, Player player, ShipBlock block) {
-		if(registered == null)
-			return false;
-		
 		if(!registered.contains(ship))
 			return false;
 		
@@ -473,11 +406,6 @@ public class GameControllerTE extends BlockEntity{
 			NWBasicMethods.messagePlayer(player, "message.naval_warfare.deregistered_seaworthy");
 		}
 		else {
-			if(registered == null) {
-				registered = new ArrayList<>();
-				setChanged();
-			}
-			
 			if(registered.contains(ship)) {
 				registered.remove(ship);
 				setChanged();
@@ -488,29 +416,20 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public boolean isRegistered(String ship) {
-		return registered == null ? false : registered.contains(ship);
+		return registered.contains(ship);
 	}
 	
 	public void clearRegistered() {
-		if(registered != null) {
-			registered.clear();
-			setChanged();
-		}
+		registered.clear();
+		setChanged();
 	}
 	
 	public void clearRegisterBuffer() {
-		if(register_buffer!= null) {
-			register_buffer.clear();
-			setChanged();
-		}
+		register_buffer.clear();
+		setChanged();
 	}
 	
 	public void addRegisterToBuffer(String ship) {
-		if(register_buffer == null) {
-			register_buffer = new ArrayList<>();
-			setChanged();
-		}
-		
 		if(!register_buffer.contains(ship)) {
 			register_buffer.add(ship);
 			setChanged();
@@ -518,7 +437,7 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public boolean hasRegInBuffer() {
-		return register_buffer != null && !register_buffer.isEmpty();
+		return !register_buffer.isEmpty();
 	}
 	
 	public boolean hasBoard() {
@@ -526,7 +445,7 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	private boolean hasTurnWork() {
-		return (do_turn_actions || turn_action_amount > 0) && turn_actions != null && !turn_actions.isEmpty();
+		return (do_turn_actions || turn_action_amount > 0) && !turn_actions.isEmpty();
 	}
 	
 	private boolean shouldDoTurnWork() {
@@ -534,7 +453,7 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	private boolean hasWork() {
-		return actions != null && !actions.isEmpty();
+		return !actions.isEmpty();
 	}
 	
 	private boolean shouldDoWork() {
@@ -542,12 +461,12 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	private void removeFirstAction() {
-		if(actions != null && !actions.isEmpty())
+		if(!actions.isEmpty())
 			actions.remove(0);
 	}
 	
 	private void removeFirstTurnAction() {
-		if(turn_actions != null && !turn_actions.isEmpty())
+		if(!turn_actions.isEmpty())
 			turn_actions.remove(0);
 	}
 	
@@ -1904,8 +1823,6 @@ public class GameControllerTE extends BlockEntity{
 			streak = initvalues.getInt("streak");
 			setChanged();
 		}
-		else
-			init();
 	}
 
 	public void tick() {
