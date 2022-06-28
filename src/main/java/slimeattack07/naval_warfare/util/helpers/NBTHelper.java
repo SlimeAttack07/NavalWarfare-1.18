@@ -277,14 +277,20 @@ public class NBTHelper {
 			return compound;
 		}
 		
+		if(helper.board_te != null)
+			compound.put("board_te", writeBlockPos(helper.board_te));
+		
+		if(helper.matching != null) 
+			compound.put("matching", writeBlockPos(helper.matching));
+		
+		if(helper.pos != null)
+			compound.put("pos", writeBlockPos(helper.pos));
+		
 		compound = helper.delay > 0 ? safePutInt("delay", helper.delay, compound) : compound;
 		compound = safePutString("action", helper.action.name().toUpperCase(), compound);
-		compound = helper.board_te == null ? compound : (CompoundTag) compound.put("board_te", writeBlockPos(helper.board_te));
 		compound = helper.damage > 0 ? safePutInt("damage", helper.damage, compound) : compound;
-		compound = helper.matching == null ? compound : (CompoundTag) compound.put("matching", writeBlockPos(helper.matching));
 		compound = helper.player == null ? compound : safePutString("player", helper.player.toString(), compound);
 		compound = helper.opponent == null ? compound : safePutString("player", helper.opponent.toString(), compound);
-		compound = helper.pos == null ? compound : (CompoundTag) compound.put("pos", writeBlockPos(helper.pos));
 		compound = helper.target_type == null ? compound : safePutString("target_type", helper.target_type.toString(), compound);
 		compound = helper.health > 0 || helper.health == -1 ? safePutInt("health", helper.health, compound) : compound;
 		compound = helper.animation == null? compound : safePutString("animation", helper.animation.getRegistryName().toString(), compound);
