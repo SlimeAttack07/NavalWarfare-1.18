@@ -51,12 +51,14 @@ public class SpellWand extends Item{
 		if(level.isClientSide())
 			return InteractionResultHolder.success(stack);
 		
-		cycleMode(stack);
+		boolean backwards = playerIn == null ? false : playerIn.isCrouching();
+		
+		cycleMode(stack, backwards);
 		NWBasicMethods.messagePlayerActionbarBack(playerIn, "descriptions.naval_warfare.spell", ": " + getSpell(stack).getName());
 		return InteractionResultHolder.success(stack);
 	}
 	
-	private void cycleMode(ItemStack stack) {
+	private void cycleMode(ItemStack stack, boolean backwards) {
 		if(stack.getItem() instanceof SpellWand) {
 			prepare(stack);
 			CompoundTag nbt = stack.getOrCreateTag();
@@ -66,7 +68,7 @@ public class SpellWand extends Item{
 				Spell spell = Spell.valueOf(nw.getString("spell").toUpperCase());
 				
 				if(spell != null) {
-					spell = spell.cycle();
+					spell = spell.cycle(backwards);
 					nw.remove("spell");
 					nw.putString("spell", spell.toString());
 				}

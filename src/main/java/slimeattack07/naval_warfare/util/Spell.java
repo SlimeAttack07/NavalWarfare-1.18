@@ -18,6 +18,10 @@ public enum Spell {
 		return new TranslatableComponent(name).getString();
 	}
 	
+	public Spell cycle(boolean backwards) {
+		return backwards ? cycleBackwards() : cycle();
+	}
+	
 	public Spell cycle() {
 		switch(this) {
 		case RAFT:
@@ -28,6 +32,21 @@ public enum Spell {
 			return SONAR;
 		case SONAR:
 			return RAFT;
+		default:
+			return RAFT;
+		}
+	}
+	
+	public Spell cycleBackwards() {
+		switch(this) {
+		case RAFT:
+			return SONAR;
+		case HEATSEAKER:
+			return RAFT;
+		case SHIELD:
+			return HEATSEAKER;
+		case SONAR:
+			return SHIELD;
 		default:
 			return RAFT;
 		}

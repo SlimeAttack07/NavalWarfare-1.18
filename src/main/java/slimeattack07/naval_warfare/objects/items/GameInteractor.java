@@ -77,7 +77,9 @@ public class GameInteractor extends Item{
 		if(level.isClientSide())
 			return InteractionResultHolder.success(stack);
 		
-		cycleMode(stack);
+		boolean backwards = playerIn == null ? false : playerIn.isCrouching();
+		
+		cycleMode(stack, backwards);
 		NWBasicMethods.messagePlayerActionbarBack(playerIn, "descriptions.naval_warfare.tool_mode", ": " + getMode(stack).getName());
 		
 		return InteractionResultHolder.success(stack);
@@ -116,7 +118,7 @@ public class GameInteractor extends Item{
 		return InteractorMode.NEW_SHIP_CONFIG;
 	}
 	
-	private void cycleMode(ItemStack stack) {
+	private void cycleMode(ItemStack stack, boolean backwards) {
 		if(stack.getItem() instanceof GameInteractor) {
 			prepare(stack);
 			CompoundTag nbt = stack.getOrCreateTag();
@@ -125,7 +127,7 @@ public class GameInteractor extends Item{
 			InteractorMode mode = InteractorMode.valueOf(old_mode);
 			
 			if(mode != null)
-				mode = mode.cycle();
+				mode = mode.cycle(backwards);
 			nw.remove("mode");
 			nw.putString("mode", mode.toString());
 		}

@@ -21,6 +21,10 @@ public enum InteractorMode {
 		return new TranslatableComponent(name).getString();
 	}
 	
+	public InteractorMode cycle(boolean backwards) {
+		return backwards ? cycleBackwards() : cycle();
+	}
+	
 	public InteractorMode cycle() {
 		switch(this) {
 		case LOAD_SHIP_CONFIG:
@@ -37,6 +41,27 @@ public enum InteractorMode {
 			return LOAD_SHIP_CONFIG;
 		case TARGET_TILE:
 			return NEW_SHIP_CONFIG;
+		default:
+			return NEW_SHIP_CONFIG;
+		}
+	}
+	
+	public InteractorMode cycleBackwards() {
+		switch(this) {
+		case LOAD_SHIP_CONFIG:
+			return NEW_SHIP_CONFIG;
+		case SAVE_CONFIG:
+			return LOAD_SHIP_CONFIG;
+		case REQUEST_GAME:
+			return SAVE_CONFIG;
+		case CANCEL_REQUEST_GAME:
+			return REQUEST_GAME;
+		case FORFEIT_GAME:
+			return CANCEL_REQUEST_GAME;
+		case NEW_SHIP_CONFIG:
+			return TARGET_TILE;
+		case TARGET_TILE:
+			return FORFEIT_GAME;
 		default:
 			return NEW_SHIP_CONFIG;
 		}

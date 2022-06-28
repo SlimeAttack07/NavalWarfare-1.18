@@ -11,9 +11,7 @@ import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.tileentity.BattleRecorderTE;
@@ -279,53 +277,23 @@ public class NBTHelper {
 			return compound;
 		}
 		
-		compound = safePutInt("delay", helper.delay, compound);
+		compound = helper.delay > 0 ? safePutInt("delay", helper.delay, compound) : compound;
 		compound = safePutString("action", helper.action.name().toUpperCase(), compound);
-		
-		if(helper.board_te != null)
-			compound.put("board_te", writeBlockPos(helper.board_te));
-		
-		if(helper.damage > 0)
-			compound = safePutInt("damage", helper.damage, compound);
-		
-		if(helper.matching != null)
-			compound.put("matching", writeBlockPos(helper.matching));
-		
-		if(helper.player != null)
-			compound = safePutString("player", helper.player.toString(), compound);
-		
-		if(helper.opponent != null)
-			compound = safePutString("player", helper.opponent.toString(), compound);
-		
-		if(helper.pos != null)
-			compound.put("pos", writeBlockPos(helper.pos));
-		
-		if(helper.target_type != null)
-			compound = safePutString("target_type", helper.target_type.toString(), compound);
-		
-		if(helper.health > 0 || helper.health == -1)
-			compound = safePutInt("health", helper.health, compound);
-		
-		if(helper.animation != null)
-			compound = safePutString("animation", helper.animation.getRegistryName().toString(), compound);
-		
-		if(helper.multi_ability)
-			compound = safePutBoolean("multi_ability", true, compound);
-		
-		if(helper.item != null)
-			compound = safePutString("item", helper.item.getRegistryName().toString(), compound);
-		
-		if(helper.hover != null)
-			compound = safePutString("hover", helper.hover, compound);
-		
-		if(helper.translation != null)
-			compound = safePutString("translation", helper.translation, compound);
-		
-		if(helper.triggers_passives)
-			compound = safePutBoolean("triggers_passives", true, compound);
-		
-		if(helper.spell != null)
-			compound = safePutString("spell", helper.spell.toString(), compound);
+		compound = helper.board_te == null ? compound : (CompoundTag) compound.put("board_te", writeBlockPos(helper.board_te));
+		compound = helper.damage > 0 ? safePutInt("damage", helper.damage, compound) : compound;
+		compound = helper.matching == null ? compound : (CompoundTag) compound.put("matching", writeBlockPos(helper.matching));
+		compound = helper.player == null ? compound : safePutString("player", helper.player.toString(), compound);
+		compound = helper.opponent == null ? compound : safePutString("player", helper.opponent.toString(), compound);
+		compound = helper.pos == null ? compound : (CompoundTag) compound.put("pos", writeBlockPos(helper.pos));
+		compound = helper.target_type == null ? compound : safePutString("target_type", helper.target_type.toString(), compound);
+		compound = helper.health > 0 || helper.health == -1 ? safePutInt("health", helper.health, compound) : compound;
+		compound = helper.animation == null? compound : safePutString("animation", helper.animation.getRegistryName().toString(), compound);
+		compound = helper.multi_ability ? safePutBoolean("multi_ability", true, compound) : compound;
+		compound = helper.item == null ? compound : safePutString("item", helper.item.getRegistryName().toString(), compound);
+		compound = helper.hover == null ? compound : safePutString("hover", helper.hover, compound);
+		compound = helper.translation == null ? compound : safePutString("translation", helper.translation, compound);
+		compound = helper.triggers_passives ? safePutBoolean("triggers_passives", true, compound) : compound;
+		compound = helper.spell == null ? compound : safePutString("spell", helper.spell.toString(), compound);
 		
 		return compound;
 	}
@@ -469,71 +437,32 @@ public class NBTHelper {
 			return null;
 		}
 		try {
-			ControllerAction action = ControllerAction.valueOf(compound.getString("action"));
-			BlockPos pos = readBlockPos(compound.getCompound("pos"));
-			BlockPos board_te = readBlockPos(compound.getCompound("board_te"));
-			String player = compound.getString("player");
-			Spell spell = compound.contains("spell") ? Spell.valueOf(compound.getString("spell")) : null;
-			BlockPos matching = readBlockPos(compound.getCompound("matching"));
-			int damage = compound.getInt("damage");
-			int delay = compound.getInt("delay");
-			TargetType type = compound.contains("target_type") ? TargetType.valueOf(compound.getString("target_type")) : null;
-			boolean multi_ability = compound.getBoolean("multi_ability");
-			boolean triggers_passives = compound.getBoolean("triggers_passives");
-			int health = compound.getInt("health");
-			Block animation = compound.contains("animation") ? ForgeRegistries.BLOCKS.getValue(new ResourceLocation(compound.getString("animation"))) : 
-				null;
-			String opponent = compound.getString("opponent");
-			Item item = compound.contains("item") ? ForgeRegistries.ITEMS.getValue(new ResourceLocation(compound.getString("item"))) : null;
-			String translation = compound.getString("translation");
-			String hover = compound.getString("hover");
+			ControllerActionHelper cah = new ControllerActionHelper();
 			
-			switch(action) {
-			case ACTIVE_ABILITY:
-					return ControllerActionHelper.createAbility(pos, board_te, player, true);
-			case PASSIVE_ABILITY:		
-					return ControllerActionHelper.createAbility(pos, board_te, player, false);
-			case SPELL:				
-					return ControllerActionHelper.createSpell(spell, board_te, player);
-			case TARGET:
-					return ControllerActionHelper.createTargetAction(delay, pos, player, board_te, matching, damage, type, multi_ability, 
-							triggers_passives, animation);
-			case TORPEDO:
-					return ControllerActionHelper.createTorpedoTarget(pos, player, board_te, matching, damage, health, animation);
-			case ANNOUNCE:
-					return ControllerActionHelper.createAnnounce(player, opponent, item, translation, hover);
-			case FLARE:				
-					return ControllerActionHelper.createFlareTarget(pos, player, board_te, matching, delay, multi_ability);
-			case SPYGLASS:
-				return ControllerActionHelper.createSpyglassTarget(pos, player, board_te, matching, delay, multi_ability);
-			case MULTI_TARGET:
-				return ControllerActionHelper.createMultiTarget(delay, pos, player, board_te, matching, damage, type, triggers_passives, multi_ability);
-			case VALIDATE:
-					return ControllerActionHelper.createValidate();
-			case END_TURN:
-					return ControllerActionHelper.createEndTurn();
-			case GAIN_ENERGY:
-					return ControllerActionHelper.createEnergyGain(health, multi_ability);
-			case FRAGBOMB:
-					return ControllerActionHelper.createFragbombTarget(delay, pos, player, board_te, matching, type, animation, multi_ability);
-			case BOMBER:
-					return ControllerActionHelper.createBomberTarget(delay, pos, player, board_te, matching, animation);
-			case RAFT:	
-					return ControllerActionHelper.createRaft(pos, player, board_te, matching, health);
-			case NAPALM:
-					return ControllerActionHelper.createNapalmAction(pos, player, board_te, matching);
-			case TURN_DAMAGE:
-				return ControllerActionHelper.createForcedTarget(pos, player, board_te, matching);
-			default:
-				NavalWarfare.LOGGER.warn("I don't know how to read this action type! Please report this to the mod developer! (Type is " +
-						action + ")");
-				return new ControllerActionHelper();
-			}
+			cah.action = ControllerAction.valueOf(compound.getString("action"));
+			cah.pos = readBlockPos(compound.getCompound("pos"));
+			cah.board_te = readBlockPos(compound.getCompound("board_te"));
+			cah.player = compound.contains("player") ? compound.getString("player") : null;
+			cah.spell = compound.contains("spell") ? Spell.valueOf(compound.getString("spell")) : null;
+			cah.matching = readBlockPos(compound.getCompound("matching"));
+			cah.damage = compound.getInt("damage");
+			cah.delay = compound.getInt("delay");
+			cah.target_type = compound.contains("target_type") ? TargetType.valueOf(compound.getString("target_type")) : null;
+			cah.multi_ability = compound.getBoolean("multi_ability");
+			cah.triggers_passives = compound.getBoolean("triggers_passives");
+			cah.health = compound.getInt("health");
+			cah.animation = compound.contains("animation") ? ForgeRegistries.BLOCKS.getValue(new ResourceLocation(compound.getString("animation"))) : 
+				null;
+			cah.opponent = compound.contains("opponent") ? compound.getString("opponent") : null;
+			cah.item = compound.contains("item") ? ForgeRegistries.ITEMS.getValue(new ResourceLocation(compound.getString("item"))) : null;
+			cah.translation = compound.contains("translation") ? compound.getString("translation") : null;
+			cah.hover = compound.contains("hover") ? compound.getString("hover") : null;
+			
+			return cah;
 		} catch(Exception e) {
 			NavalWarfare.LOGGER.warn("Tried reading corrupt action type: " + compound.getString("action").toUpperCase());
 			return new ControllerActionHelper();
 		}
-		
 	}
 	
 	public static TargetResultHelper readTRH(CompoundTag compound) {
