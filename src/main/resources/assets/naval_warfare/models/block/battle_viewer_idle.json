@@ -3,7 +3,7 @@
     "textures": 
     {
 		"particle": "naval_warfare:block/battle_recorder",
-        "top": "naval_warfare:block/battle_viewer_top",
+        "top": "naval_warfare:block/battle_viewer_top_idle",
 		"front": "naval_warfare:block/battle_viewer_front",
 		"side": "naval_warfare:block/battle_recorder"
     }

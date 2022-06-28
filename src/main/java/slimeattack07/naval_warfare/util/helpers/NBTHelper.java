@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.ListTag;
@@ -376,10 +377,12 @@ public class NBTHelper {
 	private static CompoundTag writeBattleViewer(BattleViewerTE o) {
 		CompoundTag compound = new CompoundTag();
 		
-		compound = safePutBoolean("playing", o.isPlaying(), compound);
+		compound = safePutBoolean("playing", o.playing, compound);
 		compound = safePutInt("timer", o.timer, compound);
 		compound.put("zero", writeBlockPos(o.zero));
 		compound.put("opponent_zero", writeBlockPos(o.opponent_zero));
+		compound = safePutFloat("speed", o.speed, compound);
+		compound = safePutString("uuid", o.uuid.toString(), compound);
 		
 		ArrayList<BattleLogHelper> actions = o.getActions();
 		
@@ -399,7 +402,7 @@ public class NBTHelper {
 		CompoundTag compound = new CompoundTag();
 		
 		if(helper == null || helper.action == null) {
-			NavalWarfare.LOGGER.warn("Encountered corrupt BLH, skipping. BLH or BLH.action == null");
+			NavalWarfare.LOGGER.warn("Encountered corrupt BLH, skipping. BLH = " + helper);
 			return compound;
 		}
 		
@@ -408,12 +411,15 @@ public class NBTHelper {
 		compound = helper.id > 0 ? safePutInt("id", helper.id, compound) : compound; 
 		compound = safePutBoolean("opponent", helper.opponent, compound);
 		compound = helper.board_state == null ? compound : safePutString("board_state", helper.board_state.name(), compound);
-		compound = helper.animation == null ? compound : safePutString("animation", helper.animation.toString(), compound);
+		compound = helper.resource == null ? compound : safePutString("resource", helper.resource.toString(), compound);
 		compound = helper.delay > 0 ? safePutInt("delay", helper.delay, compound) : compound;
 		compound = helper.ship_state == null ? compound : safePutString("ship_state", helper.ship_state.name(), compound);
 		compound = helper.sound == null ? compound : safePutString("sound", helper.sound.getRegistryName().toString(), compound);
 		compound = helper.volume > 0 ? safePutFloat("volume", helper.volume, compound) : compound;
 		compound = helper.pitch > 0 ? safePutFloat("pitch", helper.pitch, compound) : compound;
+		compound = helper.dir == null ? compound : safePutString("dir", helper.dir.getName(), compound);
+		compound = helper.offset > 0 ? safePutInt("offset", helper.offset, compound) : compound;
+		compound = helper.message == null ? compound : safePutString("message", helper.message, compound);
 		
 		if(helper.positions != null && !helper.positions.isEmpty()) {
 			ListTag list = new ListTag();
@@ -501,7 +507,7 @@ public class NBTHelper {
 			case SPYGLASS:
 				return ControllerActionHelper.createSpyglassTarget(pos, player, board_te, matching, delay, multi_ability);
 			case MULTI_TARGET:
-				return ControllerActionHelper.createMultiTarget(delay, pos, player, board_te, matching, triggers_passives, multi_ability);
+				return ControllerActionHelper.createMultiTarget(delay, pos, player, board_te, matching, damage, type, triggers_passives, multi_ability);
 			case VALIDATE:
 					return ControllerActionHelper.createValidate();
 			case END_TURN:
@@ -546,11 +552,14 @@ public class NBTHelper {
 			blh.opponent = compound.getBoolean("opponent");
 			blh.board_state = compound.contains("board_state") ? BoardState.valueOf(compound.getString("board_state")) : null;
 			blh.delay = compound.getInt("delay");
-			blh.animation = compound.contains("animation") ? new ResourceLocation(compound.getString("animation")) : null;
+			blh.resource = compound.contains("resource") ? new ResourceLocation(compound.getString("resource")) : null;
 			blh.ship_state = compound.contains("ship_state") ? ShipState.valueOf(compound.getString("ship_state")) : null;
 			blh.sound = compound.contains("sound") ? ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(compound.getString("sound"))) : null;
 			blh.volume = compound.getFloat("volume");
 			blh.pitch = compound.getFloat("pitch");
+			blh.offset = compound.getInt("offset");
+			blh.dir = compound.contains("dir") ? Direction.byName(compound.getString("dir")) : null;
+			blh.message = compound.contains("message") ? compound.getString("message") : null;
 			
 			if(compound.contains("positions")) {
 				ListTag list = compound.getList("positions", Tag.TAG_INT);

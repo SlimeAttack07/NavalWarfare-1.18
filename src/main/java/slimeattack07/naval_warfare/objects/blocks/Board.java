@@ -234,6 +234,8 @@ public class Board extends Block implements EntityBlock{
 		level.playSound(null, pos, NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1);
 		level.playSound(null, matching, NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1);
 		
+		recordOnController(level, pos, BattleLogHelper.createSound(te.getId(), false, NWSounds.SHOT.get(), 1, 1), damage);
+		
 		addActionToController(level, matching, cah, te.getId());
 	}
 	
@@ -258,9 +260,10 @@ public class Board extends Block implements EntityBlock{
 		if(animation != null) {
 			NWBasicMethods.dropBlock(level, pos, 6, 30, animation);
 			NWBasicMethods.dropBlock(level, matching, 6, 30, animation);
+			recordOnController(level, pos, BattleLogHelper.createDropBlock(te.getId(), false, animation.getRegistryName()), damage);
 		}
 		
-		HitResult result = attackBlocked(level, player, pos, matching, te.getController(), type, action);
+		HitResult result = attackBlocked(level, player, pos, matching, te.getController(), type, action, te.getId());
 
 		if(result.isBlocked()) {
 			if(!multi_ability)
@@ -292,7 +295,8 @@ public class Board extends Block implements EntityBlock{
 					multi_ability, triggers_passives, action);			
 			
 			if(destroyed) {
-				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOpponentShipDestroyedMessage(NWBasicMethods.getTranslation(ship)));
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, te.getBlockPos()), player, 
+						NWBasicMethods.getOpponentShipDestroyedMessage(NWBasicMethods.getTranslation(ship)), true);
 				NWBasicMethods.animateItemUse(player, NWItems.SHIP_SUNK_OPPONENT.get());
 				ShipRevealHelper srh = ship.getBaseState(level, pos.above());
 				
@@ -304,10 +308,12 @@ public class Board extends Block implements EntityBlock{
 			newstate = BoardState.EMPTY;
 			level.playSound(null, pos, NWSounds.MISS.get(), SoundSource.MASTER, 1, 1);
 			level.playSound(null, matching, NWSounds.MISS.get(), SoundSource.MASTER, 1, 1);
+			recordOnController(level, pos, BattleLogHelper.createSound(te.getId(), false, NWSounds.MISS.get(), 1, 1), te.getId());
 			
 			if(!multi_ability) {		
 				notifyOwnerOfMiss(te.getController(), level, te.getId());
-				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOpponentShipMissedMessage(te.getId()) + " ");
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, te.getBlockPos()), player, 
+						NWBasicMethods.getOpponentShipMissedMessage(te.getId()) + " ", true);
 			}
 		}
 		
@@ -322,6 +328,7 @@ public class Board extends Block implements EntityBlock{
 		if(level.getBlockState(pos.above(2)).getBlock() instanceof ShipMarkerBlock) {
 			level.setBlockAndUpdate(pos.above(2), Blocks.AIR.defaultBlockState());
 			level.setBlockAndUpdate(matching.above(2), Blocks.AIR.defaultBlockState());
+			recordOnController(level, pos, BattleLogHelper.createSetBlock(te.getId(), Blocks.AIR.getRegistryName(), 2, false), te.getId());
 		}
 		
 		return cont;
@@ -343,7 +350,7 @@ public class Board extends Block implements EntityBlock{
 			TargetType type, int action) {
 		HitResult result = HitResult.MISS;
 
-		if(attackBlocked(level, player, pos, matching, te.getController(), type, action).isBlocked())
+		if(attackBlocked(level, player, pos, matching, te.getController(), type, action, te.getId()).isBlocked())
 			result = HitResult.BLOCKED;
 		
 		else if(getBoardState(state).isKnown())
@@ -365,12 +372,47 @@ public class Board extends Block implements EntityBlock{
 	}
 	
 	private HitResult attackBlocked(Level level, Player player, BlockPos pos, BlockPos matching, BlockPos owner, TargetType type,
-			int action) {
+			int action, int id) {
 		switch(type) {
+		case NORMAL:
+			if(level.getBlockState(pos.above(4)).getBlock().equals(NWBlocks.ENERGY_SHIELD.get())) {
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+						NWBasicMethods.getTranslation("message.naval_warfare.attack_blocked"), true);
+				messageOwner(owner, level, "message.naval_warfare.attack_blocked");
+				
+				NWBasicMethods.animateItemUse(player, NWItems.ENERGY_SHIELD.get().asItem());
+				showOwnerAnimation(owner, level, NWItems.ENERGY_SHIELD.get().asItem());
+				
+				
+				
+				boolean result = EnergyShieldBlock.hit(level, pos.above(4), action, 1);
+				
+				if(result) {
+					level.setBlockAndUpdate(matching.above(4), NWBlocks.ENERGY_SHIELD.get().defaultBlockState());
+					PassiveAbilityBlock.setMatching(level, pos.above(4), matching.above(4));
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 1), id);
+					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
+					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
+				}
+				else {
+					NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"), true);
+					messageOwner(owner, level, "ability.naval_warfare.shield_destroyed");
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 0.5f), id);
+					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
+					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
+				}
+				
+				return HitResult.BLOCKED;
+			}
+				
+			return HitResult.HIT;
 		case TORPEDO: 
 			if(level.getBlockState(pos.above(3)).getBlock().equals(NWBlocks.TORPEDO_NET.get())) {
-				NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-						NWBasicMethods.getTranslation("message.naval_warfare.torpedo_destroyed"));
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+						NWBasicMethods.getTranslation("message.naval_warfare.torpedo_destroyed"), true);
 				messageOwner(owner, level, "message.naval_warfare.torpedo_destroyed");
 				
 				NWBasicMethods.animateItemUse(player, NWItems.TORPEDO_NET.get().asItem());
@@ -381,37 +423,9 @@ public class Board extends Block implements EntityBlock{
 				level.setBlockAndUpdate(matching.above(3), NWBlocks.TORPEDO_NET.get().defaultBlockState());
 				PassiveAbilityBlock.setMatching(level, pos.above(3), matching.above(3));
 				
+				recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.TORPEDO_NET.get(), 1, 1), id);
+				
 				return HitResult.NULLIFIED;
-			}
-			
-			return HitResult.HIT;
-		case NORMAL:
-			if(level.getBlockState(pos.above(4)).getBlock().equals(NWBlocks.ENERGY_SHIELD.get())) {
-				NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-						NWBasicMethods.getTranslation("message.naval_warfare.attack_blocked"));
-				messageOwner(owner, level, "message.naval_warfare.attack_blocked");
-				
-				NWBasicMethods.animateItemUse(player, NWItems.ENERGY_SHIELD.get().asItem());
-				showOwnerAnimation(owner, level, NWItems.ENERGY_SHIELD.get().asItem());
-				
-				level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
-				level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
-				
-				boolean result = EnergyShieldBlock.hit(level, pos.above(4), action, 1);
-				
-				if(result) {
-					level.setBlockAndUpdate(matching.above(4), NWBlocks.ENERGY_SHIELD.get().defaultBlockState());
-					PassiveAbilityBlock.setMatching(level, pos.above(4), matching.above(4));
-				}
-				else {
-					NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"));
-					messageOwner(owner, level, "ability.naval_warfare.shield_destroyed");
-					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
-					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
-				}
-				
-				return HitResult.BLOCKED;
 			}
 			
 			return HitResult.HIT;
@@ -422,11 +436,17 @@ public class Board extends Block implements EntityBlock{
 				if(result) {
 					level.setBlockAndUpdate(matching.above(4), NWBlocks.ENERGY_SHIELD.get().defaultBlockState());
 					PassiveAbilityBlock.setMatching(level, pos.above(4), matching.above(4));
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 1), id);
+					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
+					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
 				}
 				else {
-					NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"));
+					NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"), true);
 					messageOwner(owner, level, "ability.naval_warfare.shield_destroyed");
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 0.5f), id);
 					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
 					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
 				}
@@ -435,8 +455,8 @@ public class Board extends Block implements EntityBlock{
 			return HitResult.HIT;
 		case AIRCRAFT: 
 			if(level.getBlockState(pos.above(5)).getBlock().equals(NWBlocks.ANTI_AIR.get())) {
-				NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-						NWBasicMethods.getTranslation("message.naval_warfare.aircraft_shot_down"));
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+						NWBasicMethods.getTranslation("message.naval_warfare.aircraft_shot_down"), true);
 				messageOwner(owner, level, "message.naval_warfare.aircraft_shot_down");
 				
 				NWBasicMethods.animateItemUse(player, NWItems.ANTI_AIR.get().asItem());
@@ -447,36 +467,41 @@ public class Board extends Block implements EntityBlock{
 				level.setBlockAndUpdate(matching.above(5), NWBlocks.ANTI_AIR.get().defaultBlockState());
 				PassiveAbilityBlock.setMatching(level, pos.above(5), matching.above(5));
 				
+				recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ANTI_AIR.get(), 1, 1), id);
+				
 				return HitResult.NULLIFIED;
 			}
 			else if(level.getBlockState(pos.above(4)).getBlock().equals(NWBlocks.ENERGY_SHIELD.get())) {
-				NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-						NWBasicMethods.getTranslation("message.naval_warfare.attack_blocked"));
+				NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+						NWBasicMethods.getTranslation("message.naval_warfare.attack_blocked"), true);
 				messageOwner(owner, level, "message.naval_warfare.attack_blocked");
 				
 				NWBasicMethods.animateItemUse(player, NWItems.ENERGY_SHIELD.get().asItem());
 				showOwnerAnimation(owner, level, NWItems.ENERGY_SHIELD.get().asItem());
-				
-				level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
-				level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
 				
 				boolean result = EnergyShieldBlock.hit(level, pos.above(4), action, 1);
 				
 				if(result) {
 					level.setBlockAndUpdate(matching.above(4), NWBlocks.ENERGY_SHIELD.get().defaultBlockState());
 					PassiveAbilityBlock.setMatching(level, pos.above(4), matching.above(4));
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 1), id);
+					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
+					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 1);
 				}
 				else {
-					NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED +
-							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"));
+					NWBasicMethods.messagePlayerCustomRecord(getController(level, pos), player, ChatFormatting.DARK_RED +
+							NWBasicMethods.getTranslation("ability.naval_warfare.shield_destroyed"), true);
 					messageOwner(owner, level, "ability.naval_warfare.shield_destroyed");
-					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 0.5F);
-					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, 0.5F);
+					
+					recordOnController(level, pos, BattleLogHelper.createSound(id, false, NWSounds.ENERGY_SHIELD.get(), 1, 0.5f), id);
+					level.playSound(null, pos, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
+					level.playSound(null, matching, NWSounds.ENERGY_SHIELD.get(), SoundSource.MASTER, 1, .5f);
 				}
 				
 				return HitResult.BLOCKED;
 			}
-			
+				
 			return HitResult.HIT;
 		
 		default: return HitResult.HIT;
@@ -583,12 +608,15 @@ public class Board extends Block implements EntityBlock{
 	public void addActionToController(Level level, BlockPos pos, ControllerActionHelper cah, int id) {
 		GameControllerTE te = getController(level, pos);
 		
-		if(te != null) {
+		if(te != null)
 			te.addAction(cah);
-			
-			BattleLogHelper blh = BattleLogHelper.createSound(id, true, NWSounds.SHOT.get(), 1f, 1f);
+	}
+	
+	public void recordOnController(Level level, BlockPos pos, BattleLogHelper blh, int id) {
+		GameControllerTE te = getController(level, pos);
+		
+		if(te != null) 
 			te.recordOnRecorders(blh);
-		}
 	}
 	
 	@Override
@@ -709,7 +737,7 @@ public class Board extends Block implements EntityBlock{
 				Player player = level.getPlayerByUUID(UUID.fromString(owner));
 				
 				if(player != null) {
-					NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOwnShipMissedMessage(id));
+					NWBasicMethods.messagePlayerCustomRecord(te, player, NWBasicMethods.getOwnShipMissedMessage(id), false);
 				}
 			}
 		}
@@ -729,7 +757,7 @@ public class Board extends Block implements EntityBlock{
 				Player player = level.getPlayerByUUID(UUID.fromString(owner));
 				
 				if(player != null)
-					NWBasicMethods.messagePlayerCustom(player, ChatFormatting.DARK_RED + NWBasicMethods.getTranslation(message));
+					NWBasicMethods.messagePlayerCustomRecord(te, player, ChatFormatting.DARK_RED + NWBasicMethods.getTranslation(message), false);
 			}
 		}
 	}

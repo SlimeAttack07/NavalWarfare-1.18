@@ -17,6 +17,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Spyglass implements Ability {
@@ -60,6 +61,7 @@ public class Spyglass implements Ability {
 		
 		boolean hit = false;
 		int delay = 20;
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : positions) {
 			if(controller == null) {
@@ -91,11 +93,15 @@ public class Spyglass implements Ability {
 				delay = 0;
 				
 				controller.addAction(cah);
+				ids.add(te.getId());
 				
 				NWBasicMethods.dropBlock(level, te.getBlockPos(), NWBlocks.SPYGLASS.get());
 				NWBasicMethods.dropBlock(level, matching.getBlockPos(), NWBlocks.SPYGLASS.get());
 			}
 		}
+		
+		if(!ids.isEmpty())
+			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, true, NWBlocks.SPYGLASS.get().getRegistryName()));
 		
 		return hit;
 	}

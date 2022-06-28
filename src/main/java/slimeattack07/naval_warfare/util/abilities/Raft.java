@@ -18,6 +18,7 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Raft extends Deployable{
@@ -51,6 +52,7 @@ public class Raft extends Deployable{
 					String p = player == null ? "dummy" : player.getStringUUID();
 					GameController controller = (GameController) gc.getBlockState().getBlock();
 					BoardTE ote = controller.getOpponentBoardTile(level, gc, te.getId(), true);
+					gc.recordOnRecorders(BattleLogHelper.createDeployable(board.getId(), SHIP.getRegistryName(), dir));
 					
 					if(ote != null) {
 						gc.addHP(1);

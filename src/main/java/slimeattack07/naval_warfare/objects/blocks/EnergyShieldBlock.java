@@ -18,6 +18,14 @@ public class EnergyShieldBlock extends PassiveAbilityBlock{
 		return NWTileEntityTypes.ENERGY_SHIELD.get().create(pos, state);
 	}
 	
+	/** Deal damage to an Energy Shield
+	 * 
+	 * @param level The level
+	 * @param pos The position of the Energy Shield
+	 * @param action The action number. Used to stop attacks like Salvo's or Mortar's from instantly destroying shields.
+	 * @param amount The amount of damage to deal.
+	 * @return Whether or not the shield survived the hit.
+	 */
 	public static boolean hit(Level level, BlockPos pos, int action, int amount) {
 		BlockEntity tile = level.getBlockEntity(pos);
 		
@@ -31,7 +39,7 @@ public class EnergyShieldBlock extends PassiveAbilityBlock{
 			String owner = te.getOwner();
 			
 			if(!te.alive()) {
-				destroy(level, pos, owner);
+				destroy(level, pos, owner, 4);
 				return false;
 			}
 			else

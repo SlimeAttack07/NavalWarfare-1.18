@@ -19,6 +19,7 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class FragBomb implements Ability{
@@ -94,6 +95,7 @@ public class FragBomb implements Ability{
 					level.playSound(null, matching.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1);
 					NWBasicMethods.dropBlock(level, te.getBlockPos(), animation);
 					NWBasicMethods.dropBlock(level, matching.getBlockPos(), animation);
+					controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), true, animation.getRegistryName()));
 				}
 				
 				type = TargetType.UNBLOCKABLE;

@@ -1,5 +1,7 @@
 package slimeattack07.naval_warfare.objects.blocks;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements.Type;
@@ -12,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import slimeattack07.naval_warfare.init.NWTileEntityTypes;
+import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.PassiveAbilityTE;
 
 public class PassiveAbilityBlock extends Block implements EntityBlock{
@@ -46,13 +49,28 @@ public class PassiveAbilityBlock extends Block implements EntityBlock{
 		return Block.box(0.1D, 0, 0.1D, 15.9D, 8, 15.9D);
 	}
 	
-	public static void destroy(Level level, BlockPos pos, String owner) {
+	public static void destroy(Level level, BlockPos pos, String owner, int offset) {
 		BlockEntity tile = level.getBlockEntity(pos);
 		
 		if(tile instanceof PassiveAbilityTE) {
 			PassiveAbilityTE te = (PassiveAbilityTE) tile;
-			te.destroy(level, pos, owner);
+			BoardTE bte = findBoard(level, pos.below(offset));
+			
+			if(bte != null) {
+				Board b = (Board) bte.getBlockState().getBlock();
+				te.destroy(level, pos, owner, b.getController(level, bte.getBlockPos()), offset);
+			}
 		}
+	}
+	
+	@Nullable
+	private static BoardTE findBoard(Level level, BlockPos pos) {
+		BlockEntity tile = level.getBlockEntity(pos);
+		
+		if(tile instanceof BoardTE)
+			return (BoardTE) tile;
+		
+		return null;
 	}
 	
 	public static void setMatching(Level level, BlockPos pos, BlockPos matching) {

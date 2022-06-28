@@ -11,7 +11,6 @@ import net.minecraft.nbt.NbtUtils;
 import net.minecraft.nbt.TagParser;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkEvent;
@@ -22,22 +21,19 @@ import slimeattack07.naval_warfare.util.NWBasicMethods;
 public class BattleLogMessage {
 	public CompoundTag log;
 	public boolean load;
-	public ItemStack stack;
 	
 	public BattleLogMessage() {	
 	}
 	
-	public BattleLogMessage(@Nullable CompoundTag log_in, boolean do_load, @Nullable ItemStack itemstack) {
+	public BattleLogMessage(@Nullable CompoundTag log_in, boolean do_load) {
 		log = log_in;
 		load = do_load;
-		stack = itemstack;
 	}
 	
 	public static void encode(BattleLogMessage message, FriendlyByteBuf buffer) {
 		try {
 			buffer.writeNbt(message.log);
 			buffer.writeBoolean(message.load);
-			buffer.writeItemStack(message.stack, true);
 		} catch (EncoderException e) {
 			NavalWarfare.LOGGER.warn("Failed to encode message");
 			e.printStackTrace();
@@ -46,7 +42,7 @@ public class BattleLogMessage {
 	
 	public static BattleLogMessage decode(FriendlyByteBuf buffer) {
 		try {	
-			return new BattleLogMessage(buffer.readNbt(), buffer.readBoolean(), buffer.readItem());
+			return new BattleLogMessage(buffer.readNbt(), buffer.readBoolean());
 		} catch(EncoderException e) {
 			NavalWarfare.LOGGER.warn("Failed to decode message");
 			e.printStackTrace();
@@ -73,7 +69,7 @@ public class BattleLogMessage {
 			if(tag.isEmpty())
 				return;
 			
-			NavalNetwork.CHANNEL.sendToServer(new UpdateBattleLogMessage(message.stack, tag));
+			NavalNetwork.CHANNEL.sendToServer(new UpdateBattleLogMessage(tag));
 			NWBasicMethods.messagePlayerActionbar(mc.player, "message.naval_warfare.battle_log.paste");
 		}else {
 			mc.keyboardHandler.setClipboard(compoundToString(message.log));
@@ -94,7 +90,8 @@ public class BattleLogMessage {
 		s = s.replace("east", "EAST");
 		s = s.replace("south", "SOUTH");
 		s = s.replace("west", "WEST");
-		s = s.replace("f,", "");
+		s = s.replace("f,", ",");
+		s = s.replaceAll("f\n", "\n");
 		
 		return s;
 	}

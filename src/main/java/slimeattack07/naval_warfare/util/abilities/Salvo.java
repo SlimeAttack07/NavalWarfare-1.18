@@ -20,6 +20,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.TargetType;
 import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
@@ -93,8 +94,8 @@ public class Salvo implements Ability {
 				if(player != null)
 					p = player.getStringUUID();
 				
-				ControllerActionHelper cah = ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), p, matching.getBlockPos(), te.getBlockPos(), true,
-						false);
+				ControllerActionHelper cah = ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), p, matching.getBlockPos(), te.getBlockPos(), 1,
+						TargetType.NORMAL, true, false);
 				delay = 0;
 				ids.add(te.getId());
 				controller.addAction(cah);				
@@ -108,10 +109,8 @@ public class Salvo implements Ability {
 		}
 		
 		if(!ids.isEmpty()) {
-			BattleLogHelper blh_drops = BattleLogHelper.createDropBlocks(ids, true, block.getRegistryName());
-			BattleLogHelper blh_sounds = BattleLogHelper.createSounds(ids, true, NWSounds.SHOT.get(), 1f, 1.25f);
-			controller.recordOnRecorders(blh_sounds);
-			controller.recordOnRecorders(blh_drops);
+			controller.recordOnRecorders(BattleLogHelper.createSounds(ids, true, NWSounds.SHOT.get(), 1f, 1.25f));
+			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, true, block.getRegistryName()));
 		}
 	}
 	

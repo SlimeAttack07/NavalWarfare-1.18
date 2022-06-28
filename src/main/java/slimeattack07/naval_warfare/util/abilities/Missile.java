@@ -19,6 +19,7 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Missile implements Ability{
@@ -102,6 +103,8 @@ public class Missile implements Ability{
 				
 				NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
 				NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
+
+				controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), !PASSIVE, ANIMATION.getRegistryName()));
 			}
 		}
 		

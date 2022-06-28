@@ -16,6 +16,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Napalm implements Ability{
@@ -69,6 +70,7 @@ public class Napalm implements Ability{
 				
 				NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
 				NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
+				controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), true, ANIMATION.getRegistryName()));
 			}
 		}
 	}

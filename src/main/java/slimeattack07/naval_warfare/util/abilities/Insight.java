@@ -15,6 +15,7 @@ import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Insight implements Ability{
@@ -72,6 +73,7 @@ public class Insight implements Ability{
 				if(!HINT) {
 					NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
 					NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
+					controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), false, ANIMATION.getRegistryName()));
 				}
 			}
 		}

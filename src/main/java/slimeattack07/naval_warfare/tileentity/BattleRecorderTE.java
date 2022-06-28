@@ -9,7 +9,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -99,9 +98,12 @@ public class BattleRecorderTE extends BlockEntity{
 			ItemStack stack = new ItemStack(NWItems.BATTLE_LOG.get());
 		    Date now = new Date();
 		    SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-			stack.setHoverName(new TextComponent(p1 + " vs " + p2 + " (" + format.format(now) + ")"));
-			BattleLog log = (BattleLog) stack.getItem();
-			log.setLog(stack, NBTHelper.toNBT(this));
+		    String name = p1 + " vs " + p2 + " (" + format.format(now) + ")";
+		    CompoundTag tag = NBTHelper.toNBT(this);
+		    BattleLog log = (BattleLog) stack.getItem();
+		    
+		    tag.putString("info", name);
+			log.setLog(stack, tag);
 			NWBasicMethods.addOrSpawn(player, stack, level, worldPosition.above());
 		}
 	}

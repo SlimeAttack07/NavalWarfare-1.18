@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -59,10 +60,10 @@ public class BattleLog extends Item{
 	
 	private void prepare(ItemStack stack) {
 		CompoundTag nbt = stack.getOrCreateTag();
+		
 		if(!nbt.contains(NavalWarfare.MOD_ID)) {
 			CompoundTag nw = new CompoundTag();
 			nbt.put(NavalWarfare.MOD_ID, nw);
-			stack.setTag(nbt);
 		}
 	}
 	
@@ -75,8 +76,10 @@ public class BattleLog extends Item{
 		
 		boolean load = playerIn.isCrouching();
 		
-		NavalNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) playerIn), new BattleLogMessage(
-				getLog(stack), load, stack));
+		CompoundTag nbt = getLog(stack);
+		nbt.putString("info", stack.getHoverName().getString());
+		
+		NavalNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) playerIn), new BattleLogMessage(nbt, load));
 		
 		return InteractionResultHolder.success(stack);
 	}
@@ -110,7 +113,8 @@ public class BattleLog extends Item{
 			if(spawned) {
 				viewer.spawnShips(level, getDir(log, false), pos, getShips(log, false), viewer.getFacing(level.getBlockState(pos)), false);
 				viewer.spawnShips(level, getDir(log, true), pos, getShips(log, true), viewer.getFacing(level.getBlockState(pos)), true);
-				te.setPlaying(true);
+				te.uuid = player == null ? null : player.getUUID();
+				te.playing = true;
 				NWBasicMethods.messagePlayerActionbar(player, "message.naval_warfare.battle_log.load_success");
 			}
 		}
@@ -159,10 +163,16 @@ public class BattleLog extends Item{
 	public void setLog(ItemStack stack, CompoundTag log) {
 		if(stack.getItem() instanceof BattleLog) {
 			prepare(stack);
+			setName(stack, log.getString("info"));
+			log.remove("info");
 			CompoundTag nbt = stack.getOrCreateTag();
 			CompoundTag nw = nbt.getCompound(NavalWarfare.MOD_ID);
 			nw.remove("log");
 			nw.put("log", log);
 		}
+	}
+	
+	public void setName(ItemStack stack, String name) {
+		stack.setHoverName(new TextComponent(name));
 	}
 }

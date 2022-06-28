@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -18,19 +20,24 @@ import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.ForgeRegistries;
 import slimeattack07.naval_warfare.init.NWBlocks;
 import slimeattack07.naval_warfare.init.NWTileEntityTypes;
 import slimeattack07.naval_warfare.tileentity.BattleViewerTE;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.ViewerState;
 import slimeattack07.naval_warfare.util.helpers.ShipSaveHelper;
+import slimeattack07.naval_warfare.util.properties.ViewerStateProperty;
 
 public class BattleViewer extends Block implements EntityBlock{
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final ViewerStateProperty VIEWER_STATE = ViewerStateProperty.create();
 
 	public BattleViewer() {
 		super(Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(0.8f, 2));
+		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(VIEWER_STATE, ViewerState.IDLE));
 	}
 	
 	@Override
@@ -40,6 +47,7 @@ public class BattleViewer extends Block implements EntityBlock{
 
 	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
 		builder.add(FACING);
+		builder.add(VIEWER_STATE);
 	}
 	
 	@Override
@@ -59,6 +67,55 @@ public class BattleViewer extends Block implements EntityBlock{
 		} catch(IllegalArgumentException e){
 			return Direction.NORTH;
 		}
+	}
+	
+	public ViewerState getViewerState(BlockState state) {
+		try {
+			return state.getValue(VIEWER_STATE);
+		} catch(IllegalArgumentException e){
+			return ViewerState.IDLE;
+		}
+	}
+	
+	@Override
+	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+		if(level.isClientSide())
+			return InteractionResult.SUCCESS;
+		
+		if(player == null || !player.getItemInHand(hand).isEmpty())
+			return InteractionResult.PASS;
+		
+		BlockEntity tile = level.getBlockEntity(pos);
+		
+		if(tile instanceof BattleViewerTE) {
+			BattleViewerTE te = (BattleViewerTE) tile;
+			
+			if(player.isCrouching()) {
+				switch(te.speed + "") {
+				case "0.0": te.speed = 1; break; // In case something goes wrong with storing the speed.
+				case "0.25": te.speed = 0.5f; break;
+				case "0.5": te.speed = 1; break;
+				case "1.0": te.speed = 2; break;
+				case "2.0": te.speed = 5; break;
+				case "5.0": te.speed = 10; break;
+				case "10.0": te.speed = 0.25f; break;
+				}
+				
+				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getTranslation("message.naval_warfare.viewer_speed").
+						replace("MARKER1", te.speed + "x"));
+			}
+			else {
+				te.playing = !te.playing;
+				String s = te.playing ? "unpaused" : "paused";
+				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getTranslation("message.naval_warfare.viewer_status_toggled").
+						replace("MARKER1", s));
+				
+				if(!te.playing && state.getBlock() instanceof BattleViewer)
+					level.setBlockAndUpdate(pos, state.setValue(BattleViewer.VIEWER_STATE, ViewerState.IDLE));
+			}
+		}
+		
+		return InteractionResult.SUCCESS;
 	}
 	
 	private BlockPos nextPosToCheck(Direction dir, BlockPos origin, int x, int z) {
@@ -201,8 +258,10 @@ public class BattleViewer extends Block implements EntityBlock{
 			BlockPos spos = findBoard(level, pos, ssh.getPos(), opponent);
 			
 			if(spos != null) {
-				ship.summonShip(level, spos.above(), ship.defaultBlockState().setValue(ShipBlock.FACING, new_facing), true, false);
-				ship.propagateAbilityAmount(level, spos.above(), 0);
+				boolean success = ship.summonShip(level, spos.above(), ship.defaultBlockState().setValue(ShipBlock.FACING, new_facing), true, false);
+				
+				if(success)
+					ship.propagateAbilityAmount(level, spos.above(), 0);
 			}
 		}	
 	}

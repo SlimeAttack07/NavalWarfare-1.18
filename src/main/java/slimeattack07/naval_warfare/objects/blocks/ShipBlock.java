@@ -77,7 +77,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 	
 	public ShipBlock(Ability active_ability, Ability passive_ability, int tier) {
 		super(Properties.of(Material.STONE).strength(200).destroyTime(99999999).noDrops().color(MaterialColor.COLOR_BLACK));
-		this.registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(SHIP_STATE, ShipState.UNDAMAGED));
+		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(SHIP_STATE, ShipState.UNDAMAGED));
 		ACTIVE_ABILITY = active_ability;
 		PASSIVE_ABILITY = passive_ability;
 		TIER = Math.min(Math.max(tier, 1), 6); // Limit tier between 1 and 6
@@ -563,7 +563,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 					NWTriggers.DESTROY_100.trigger(sp);
 
 			} catch(NullPointerException e) {
-				NavalWarfare.LOGGER.error("Failed to fetch the ships destroyed statistic.");
+				NavalWarfare.LOGGER.error("Naval Warfare: Failed to fetch the ships destroyed statistic.");
 			}
 		}
 	}
@@ -671,7 +671,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 								NWTriggers.PASSIVE_100.trigger(sp);
 
 						} catch(NullPointerException e) {
-							NavalWarfare.LOGGER.error("Failed to fetch the passives triggered statistic.");
+							NavalWarfare.LOGGER.error("Naval Warfare: Failed to fetch the passives triggered statistic.");
 						}
 					}
 				}
@@ -722,8 +722,12 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 			
 			notifyOwnerOfHit(shipname, controller, level, id, multi_ability);
 			
-			if(!multi_ability)
-				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOpponentShipHitMessage(id));	
+			if(!multi_ability) {
+				String message = NWBasicMethods.getOpponentShipHitMessage(id);
+				NWBasicMethods.messagePlayerCustom(player, message);	
+				recordOnRecorders(level, pos, controller, id, multi_ability, multi_ability);
+				recordMessage(level, pos, controller, message, true);
+			}
 			
 			if(isDestroyed(level, parts)) {
 				destroyShip(level, pos, parts, matching, player);
@@ -773,16 +777,27 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 			ShipState state = destroyed ? ShipState.DESTROYED : ShipState.DAMAGED;
 			SoundEvent sound = destroyed ? NWSounds.DESTROY.get() : NWSounds.HIT.get();
 			float pitch = destroyed ? 0.6f : 1f;
-			BattleLogHelper blh = BattleLogHelper.createShipState(id, opponent, state);
-			te.recordOnRecorders(blh);
+			
+			te.recordOnRecorders(BattleLogHelper.createShipState(id, opponent, state));
 			
 			if(set_board) {
-				BattleLogHelper blh_board = BattleLogHelper.createBoardState(id, opponent, BoardState.HIT);
-				te.recordOnRecorders(blh_board);
-				
-				BattleLogHelper blh_sound = BattleLogHelper.createSound(id, opponent, sound, 2f, pitch);
-				te.recordOnRecorders(blh_sound);
+				te.recordOnRecorders(BattleLogHelper.createBoardState(id, opponent, BoardState.HIT));
+				te.recordOnRecorders(BattleLogHelper.createSound(id, opponent, sound, 2f, pitch));
 			}	
+		}
+	}
+	
+	private void recordMessage(Level level, BlockPos pos, BlockPos controller, String message, boolean opponent) {
+		BlockEntity tile = level.getBlockEntity(controller);
+		
+		if(tile instanceof GameControllerTE) {
+			GameControllerTE te = (GameControllerTE) tile;	
+			BattleLogHelper blh = BattleLogHelper.createMessage(Component.Serializer.toJson(new TextComponent(message)));
+		
+			if(opponent)
+				te.recordOnOppRecorder(blh);
+			else
+				te.recordOnRecorder(blh);
 		}
 	}
 	
@@ -800,7 +815,9 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 				
 				if(!multi_ability && !owner.equals("dummy")) {
 					Player player = level.getPlayerByUUID(UUID.fromString(owner));
-					NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOwnShipHitMessage(ship, id));
+					String message = NWBasicMethods.getOwnShipHitMessage(ship, id);
+					NWBasicMethods.messagePlayerCustom(player, message);
+					recordMessage(level, pos, pos, message, false);
 				}
 			}
 		}
@@ -818,7 +835,8 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 					return;
 				
 				Player player = level.getPlayerByUUID(UUID.fromString(owner));
-				NWBasicMethods.messagePlayerCustom(player, NWBasicMethods.getOwnShipDestroyedMessage(ship));
+				String message = NWBasicMethods.getOwnShipDestroyedMessage(ship);
+				NWBasicMethods.messagePlayerCustom(player, message);
 				NWBasicMethods.animateItemUse(player, NWItems.SHIP_SUNK_OWN.get());
 			}
 		}
@@ -839,11 +857,11 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 				else {
 					Player player2 = level.getPlayerByUUID(UUID.fromString(owner));
 					user = player2.getName().getString();
-					NWBasicMethods.messagePlayerAbilityUsed(player2, "ability.naval_warfare.passive_disabled", user, ability);
+					NWBasicMethods.messagePlayerAbilityUsed(null, player2, "ability.naval_warfare.passive_disabled", user, ability);
 				}
 				
 				if(player1 != null)
-					NWBasicMethods.messagePlayerAbilityUsed(player1, "ability.naval_warfare.passive_disabled", user, ability);
+					NWBasicMethods.messagePlayerAbilityUsed(te, player1, "ability.naval_warfare.passive_disabled", user, ability);
 			}
 		}
 	}

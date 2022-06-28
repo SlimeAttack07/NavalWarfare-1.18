@@ -216,9 +216,9 @@ public class GameController extends Block implements EntityBlock{
 				
 				String translation = spell ? "spell.naval_warfare.activated" : "ability.naval_warfare.activated";
 				
-				NWBasicMethods.messagePlayerAbilityUsed(player, translation, player.getName().getString(), 
+				NWBasicMethods.messagePlayerAbilityUsed(te, player, translation, player.getName().getString(), 
 						ability.hoverableInfo());
-				NWBasicMethods.messagePlayerTitle(pos, player, level, translation, "dark_green", 
+				NWBasicMethods.messagePlayerTitle(player, level, translation, "dark_green", 
 						ability.getTranslation(), "green");
 				NWBasicMethods.animateItemUse(player, ability.getAnimationItem());
 				
@@ -231,9 +231,9 @@ public class GameController extends Block implements EntityBlock{
 					if(!oowner.equals("dummy")) {
 						UUID uuid = UUID.fromString(oowner);
 						Player opponent = level.getPlayerByUUID(uuid);
-						NWBasicMethods.messagePlayerAbilityUsed(opponent, translation, player.getName().getString(), 
+						NWBasicMethods.messagePlayerAbilityUsed(null, opponent, translation, player.getName().getString(), 
 								ability.hoverableInfo());
-						NWBasicMethods.messagePlayerTitle(opos, opponent, level, translation, "dark_green", 
+						NWBasicMethods.messagePlayerTitle(opponent, level, translation, "dark_green", 
 								ability.getTranslation(), "green");
 						NWBasicMethods.animateItemUse(opponent, ability.getAnimationItem());
 					}
@@ -397,31 +397,36 @@ public class GameController extends Block implements EntityBlock{
 		own_te.setTurn(you_start, false);
 		opp_te.setTurn(!you_start, false);
 		
-		String energy = NWBasicMethods.getTranslation("message.naval_warfare.energy_start").replace("MARKER1", "" + GameControllerTE.BASE_ENERGY);
+		String energy_own = NWBasicMethods.getTranslation("message.naval_warfare.energy_start_own").replace("MARKER1", "" + GameControllerTE.BASE_ENERGY);
+		
+		String energy_opp = NWBasicMethods.getTranslation("message.naval_warfare.energy_start_opponent").
+				replace("MARKER1", "" + GameControllerTE.BASE_ENERGY);
 		
 		if(you_start) {
 			if(own_p != null) {
-				NWBasicMethods.sendGameStatusToPlayer(level, own_te.getBlockPos(), own_te.getOwner(), "message.naval_warfare.game_found", "blue",
+				NWBasicMethods.sendGameStatusToPlayer(level, own_te.getOwner(), "message.naval_warfare.game_found", "blue",
 					"message.naval_warfare.your_turn_first", "aqua");
-				NWBasicMethods.messagePlayerCustom(own_p, ChatFormatting.YELLOW + energy);
+				NWBasicMethods.messagePlayerCustomRecord(own_te, own_p, ChatFormatting.YELLOW + energy_own, false);
 				own_p.playNotifySound(NWSounds.GAME_FOUND.get(), SoundSource.MASTER, 1, 1);
 			}
 			if(opp_p != null) {
-				NWBasicMethods.sendGameStatusToPlayer(level, opp_te.getBlockPos(), opp_te.getOwner(), "message.naval_warfare.game_found", "blue",
+				NWBasicMethods.sendGameStatusToPlayer(level, opp_te.getOwner(), "message.naval_warfare.game_found", "blue",
 					"message.naval_warfare.opponent_turn_first", "aqua");
+				NWBasicMethods.messagePlayerCustomRecord(opp_te, opp_p, ChatFormatting.YELLOW + energy_opp, false);
 				opp_p.playNotifySound(NWSounds.GAME_FOUND.get(), SoundSource.MASTER, 1, 1);
 			}
 		}
 		else {
 			if(own_p != null) {
-				NWBasicMethods.sendGameStatusToPlayer(level, own_te.getBlockPos(), own_te.getOwner(), "message.naval_warfare.game_found", "blue",
+				NWBasicMethods.sendGameStatusToPlayer(level, own_te.getOwner(), "message.naval_warfare.game_found", "blue",
 					"message.naval_warfare.opponent_turn_first", "aqua");
 				own_p.playNotifySound(NWSounds.GAME_FOUND.get(), SoundSource.MASTER, 1, 1);
+				NWBasicMethods.messagePlayerCustomRecord(own_te, own_p, ChatFormatting.YELLOW + energy_opp, false);
 			}
 			if(opp_p != null) {
-				NWBasicMethods.sendGameStatusToPlayer(level, opp_te.getBlockPos(), opp_te.getOwner(), "message.naval_warfare.game_found", "blue",
+				NWBasicMethods.sendGameStatusToPlayer(level, opp_te.getOwner(), "message.naval_warfare.game_found", "blue",
 					"message.naval_warfare.your_turn_first", "aqua");
-				NWBasicMethods.messagePlayerCustom(opp_p, ChatFormatting.YELLOW + energy);
+				NWBasicMethods.messagePlayerCustomRecord(opp_te, opp_p, ChatFormatting.YELLOW + energy_own, false);
 				opp_p.playNotifySound(NWSounds.GAME_FOUND.get(), SoundSource.MASTER, 1, 1);
 			}
 		}
@@ -504,8 +509,8 @@ public class GameController extends Block implements EntityBlock{
 		String op_string = te_opp.getOwner();
 		Player opp_player = op_string.equals("dummy") ? null : level.getPlayerByUUID(UUID.fromString(op_string));
 		
-		NWBasicMethods.messagePlayer(player, "message.naval_warfare.forfeit_own");
-		NWBasicMethods.messagePlayer(opp_player, "message.naval_warfare.forfeit_opponent");
+		NWBasicMethods.messagePlayerCustomRecord(te_own, player, NWBasicMethods.getTranslation("message.naval_warfare.forfeit_own"), false);
+		NWBasicMethods.messagePlayerCustomRecord(te_opp, player, NWBasicMethods.getTranslation("message.naval_warfare.forfeit_opponent"), false);
 		
 		te_own.endGame(level, te_own, false, player, false);
 		te_opp.endGame(level, te_opp, true, opp_player, true);

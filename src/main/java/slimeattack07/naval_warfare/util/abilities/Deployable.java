@@ -16,8 +16,10 @@ import net.minecraftforge.registries.RegistryObject;
 import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
+import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 
 public class Deployable implements Ability {
 	private final int AMOUNT;
@@ -55,6 +57,12 @@ public class Deployable implements Ability {
 			if(success) {
 				if(SHIP.hasPassiveAbility() && SHIP.PASSIVE_ABILITY.getPassiveType().equals(PassiveType.DEPLOYED))
 					SHIP.PASSIVE_ABILITY.activate(level, player, board);
+				
+				Board b = (Board) board.getBlockState().getBlock();
+				GameControllerTE controller = b.getController(level, board.getBlockPos());
+				
+				if(controller != null)
+					controller.recordOnRecorders(BattleLogHelper.createDeployable(board.getId(), SHIP.getRegistryName(), dir));
 				
 				break;
 			}

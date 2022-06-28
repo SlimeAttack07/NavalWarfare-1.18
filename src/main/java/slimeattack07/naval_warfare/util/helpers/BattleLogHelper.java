@@ -2,6 +2,7 @@ package slimeattack07.naval_warfare.util.helpers;
 
 import java.util.ArrayList;
 
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -15,12 +16,15 @@ public class BattleLogHelper {
 	public boolean opponent;
 	public BoardState board_state;
 	public int delay;
-	public ResourceLocation animation;
+	public ResourceLocation resource;
 	public ShipState ship_state;
 	public ArrayList<Integer> positions;
 	public SoundEvent sound;
 	public float pitch;
 	public float volume;
+	public Direction dir;
+	public int offset;
+	public String message;
 	
 	public BattleLogHelper() {
 	}
@@ -33,12 +37,65 @@ public class BattleLogHelper {
 		blh.opponent = opponent;
 		blh.board_state = board_state;
 		blh.delay = delay;
-		blh.animation = animation;
+		blh.resource = resource;
 		blh.ship_state = ship_state;
 		blh.positions = positions;
 		blh.sound = sound;
 		blh.pitch = pitch;
 		blh.volume = volume;
+		blh.dir = dir;
+		blh.offset = offset;
+		blh.message = message;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createSetBlock(int id, ResourceLocation block, int offset, boolean opponent) {
+		BattleLogHelper blh = new BattleLogHelper();
+		
+		blh.action = BattleLogAction.SET_BLOCK;
+		blh.id = id;
+		blh.offset = offset;
+		blh.opponent = opponent;
+		blh.resource = block;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createSetBlocks(ArrayList<Integer> positions, ResourceLocation block, int offset, boolean opponent) {
+		BattleLogHelper blh = new BattleLogHelper();
+		
+		blh.action = BattleLogAction.SET_BLOCKS;
+		blh.positions = positions;
+		blh.offset = offset;
+		blh.opponent = opponent;
+		blh.resource = block;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createSetDisBlock(int id, ResourceLocation block, int offset, boolean opponent, Direction dir, int time) {
+		BattleLogHelper blh = new BattleLogHelper();
+		
+		blh.action = BattleLogAction.SET_DIS_BLOCK;
+		blh.id = id;
+		blh.offset = offset;
+		blh.opponent = opponent;
+		blh.dir = dir;
+		blh.pitch = time; // Repurposing pitch for now, may rename rework this system later on.
+		blh.resource = block;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createDeployable(int id, ResourceLocation ship, Direction dir) {
+		BattleLogHelper blh = new BattleLogHelper();
+		
+		blh.action = BattleLogAction.SUMMON_DEPLOYABLE;
+		blh.id = id;
+		blh.dir = dir;
+		blh.opponent = false;
+		blh.resource = ship;
 		
 		return blh;
 	}
@@ -56,7 +113,7 @@ public class BattleLogHelper {
 		BattleLogHelper blh = new BattleLogHelper();
 		
 		blh.action = BattleLogAction.DROP_BLOCK;
-		blh.animation = animation;
+		blh.resource = animation;
 		blh.id = id;
 		blh.opponent = opponent;
 		
@@ -67,7 +124,7 @@ public class BattleLogHelper {
 		BattleLogHelper blh = new BattleLogHelper();
 		
 		blh.action = BattleLogAction.DROP_BLOCKS;
-		blh.animation = animation;
+		blh.resource = animation;
 		blh.positions = positions;
 		blh.opponent = opponent;
 		
@@ -118,6 +175,15 @@ public class BattleLogHelper {
 		blh.opponent = opponent;
 		blh.pitch = pitch;
 		blh.volume = volume;
+		
+		return blh;
+	}
+	
+	public static BattleLogHelper createMessage(String message) {
+		BattleLogHelper blh = new BattleLogHelper();
+		
+		blh.action = BattleLogAction.MESSAGE;
+		blh.message = message;
 		
 		return blh;
 	}

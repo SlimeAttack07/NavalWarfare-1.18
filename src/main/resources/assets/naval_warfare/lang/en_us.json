@@ -296,7 +296,8 @@
 	"message.naval_warfare.contains_double": "Configuration invalid: Only one of each unique ship allowed",
 	"message.naval_warfare.empty_config": "Configuration invalid: No ships registerd",
 	"message.naval_warfare.no_room_for_ship": "Not enough room to spawn ship in this location with this rotation!",
-	"message.naval_warfare.energy_start": "You start with MARKER1 energy",
+	"message.naval_warfare.energy_start_own": "You start with MARKER1 energy",
+	"message.naval_warfare.energy_start_opponent": "Your opponent starts with MARKER1 energy",
 	"message.naval_warfare.target_offensive": "This ability needs to target the opponent's board!",
 	"message.naval_warfare.target_defensive": "This ability needs to target your own board!",
 	"message.naval_warfare.failed_deploy": "Failed to deploy ability, you have lost it. Please make sure the area you select can actually spawn the deployable!",
@@ -313,6 +314,8 @@
 	"message.naval_warfare.dont_place": "Please don't place this block manually. It is only allowed to be spawned by the game controller. Manually placing it may cause issues when interacting with it.",
 	"message.naval_warfare.streak": "MARKER1 hit streak!",
 	"message.naval_warfare.different_controller": "This ship belongs to a different controller!",
+	"message.naval_warfare.viewer_status_toggled": "The Battle Viewer is now MARKER1",
+	"message.naval_warfare.viewer_speed": "The Battle Viewer speed is now MARKER1",
 
 	"message.naval_warfare.info_tool.error": "An error occured whilest trying to load the selected block. Please try again.",
 	"message.naval_warfare.info_tool.opponent": "Your opponent is using the following ships",
@@ -433,7 +436,7 @@
 
 	"_SPELL_DETAILS": "_SPELL DETAILS_",
 	
-	"spell.naval_warfare.activated": "Spell activated!",
+	"spell.naval_warfare.activated": "Spell activated",
 	"spell.naval_warfare.corrupt": "ERROR: It seems your spell wand got corrupted somehow...",
 
 	"_ABILITY_DETAILS": "_ABILITY DETAILS_",

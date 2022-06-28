@@ -17,9 +17,11 @@ import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.EnergyShieldTE;
+import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.tileentity.PassiveAbilityTE;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 
 public class EnergyShield implements Ability {
 	private final int AMOUNT;
@@ -62,6 +64,7 @@ public class EnergyShield implements Ability {
 	@Override
 	public void activate(Level level, Player player, BoardTE board) {
 		ArrayList<BoardTE> tiles = getTiles(level, board);
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : tiles) {
 			BlockPos pos = te.getBlockPos().above(4);
@@ -82,6 +85,16 @@ public class EnergyShield implements Ability {
 				BoardState bstate = b.getBoardState(te.getBlockState());
 				level.setBlockAndUpdate(te.getBlockPos(), te.getBlockState().setValue(Board.STATE, bstate.deselect()));
 			}
+			
+			ids.add(te.getId());
+		}
+		
+		if(!ids.isEmpty()) {
+			Board b = (Board) board.getBlockState().getBlock();
+			GameControllerTE controller = b.getController(level, board.getBlockPos());
+			
+			if(controller != null)
+				controller.recordOnRecorders(BattleLogHelper.createSetBlocks(ids, NWBlocks.ENERGY_SHIELD.get().getRegistryName(), 4, false));
 		}
 	}
 
@@ -127,7 +140,8 @@ public class EnergyShield implements Ability {
 			
 			if(tile instanceof PassiveAbilityTE) {
 				PassiveAbilityTE pte = (PassiveAbilityTE) tile;
-				pte.destroy(level, pos, OWNER);
+				Board b = (Board) board.getBlockState().getBlock();
+				pte.destroy(level, pos, OWNER, b.getController(level, board.getBlockPos()), 4);
 			}
 		}
 	}

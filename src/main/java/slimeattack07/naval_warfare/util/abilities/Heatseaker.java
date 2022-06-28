@@ -20,6 +20,7 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Heatseaker implements Ability{
@@ -71,6 +72,7 @@ public class Heatseaker implements Ability{
 				
 				NWBasicMethods.dropBlock(level, te.getBlockPos(), NWBlocks.HEATSEAKER.get());
 				NWBasicMethods.dropBlock(level, matching.getBlockPos(), NWBlocks.HEATSEAKER.get());
+				controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), true, NWBlocks.HEATSEAKER.get().getRegistryName()));
 			}
 		}
 	}

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.init.NWTileEntityTypes;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
 
 public class PassiveAbilityTE extends BlockEntity{
@@ -90,15 +91,27 @@ public class PassiveAbilityTE extends BlockEntity{
 		return owners != null && !owners.isEmpty();
 	}
 	
-	public void destroy(Level level, BlockPos pos, String owned) {
+	public void destroy(Level level, BlockPos pos, String owned, GameControllerTE controller, int offset) {
 		if(owners == null)
 			init();
 		
-		else if(owners.contains(owned))
-			destroyPropagate(level, pos, owned, new ArrayList<>());
+		else if(owners.contains(owned)) {
+			ArrayList<BlockPos> positions = destroyPropagate(level, pos, owned, new ArrayList<>(), controller);
+			ArrayList<Integer> ids = new ArrayList<>();
+			
+			for(BlockPos p : positions) {
+				if(level.getBlockState(p).getBlock().equals(Blocks.AIR) && level.getBlockEntity(p.below(offset)) instanceof BoardTE) {
+					BoardTE te = (BoardTE) level.getBlockEntity(p.below(offset));
+					ids.add(te.getId());
+				}
+			}
+			
+			if(!ids.isEmpty() && controller != null)
+				controller.recordOnRecorders(BattleLogHelper.createSetBlocks(ids, Blocks.AIR.getRegistryName(), offset, false));
+		}
 	}
 	
-	public ArrayList<BlockPos> destroyPropagate(Level level, BlockPos pos, String owned, ArrayList<BlockPos> known) {
+	public ArrayList<BlockPos> destroyPropagate(Level level, BlockPos pos, String owned, ArrayList<BlockPos> known, GameControllerTE controller) {
 		if(known.contains(pos))
 			return known;
 		
@@ -110,19 +123,19 @@ public class PassiveAbilityTE extends BlockEntity{
 			te.removeOwner(owned);
 			
 			if(!te.hasOwner()) {
-				if(te.hasMatching()) {
+				if(te.hasMatching())
 					level.setBlockAndUpdate(te.getMatching(), Blocks.AIR.defaultBlockState());
-				}
+				
 				level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 			}
 		}
 		else
 			return known;
 		
-		ArrayList<BlockPos> new_known = destroyPropagate(level, pos.north(), owned, known);
-		new_known = destroyPropagate(level, pos.east(), owned, new_known);
-		new_known = destroyPropagate(level, pos.south(), owned, new_known);
-		new_known = destroyPropagate(level, pos.west(), owned, new_known);
+		ArrayList<BlockPos> new_known = destroyPropagate(level, pos.north(), owned, known, controller);
+		new_known = destroyPropagate(level, pos.east(), owned, new_known, controller);
+		new_known = destroyPropagate(level, pos.south(), owned, new_known, controller);
+		new_known = destroyPropagate(level, pos.west(), owned, new_known, controller);
 		
 		return new_known;
 	}

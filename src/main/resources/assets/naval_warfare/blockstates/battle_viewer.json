@@ -1,8 +1,18 @@
 {
     "variants": {
-        "facing=north": { "model": "naval_warfare:block/battle_viewer" },
-        "facing=south": { "model": "naval_warfare:block/battle_viewer", "y": 180 },
-        "facing=west":  { "model": "naval_warfare:block/battle_viewer", "y": 270 },
-        "facing=east":  { "model": "naval_warfare:block/battle_viewer", "y": 90 }
+        "facing=north,viewer_state=idle": { "model": "naval_warfare:block/battle_viewer_idle" },
+        "facing=south,viewer_state=idle": { "model": "naval_warfare:block/battle_viewer_idle", "y": 180 },
+        "facing=west,viewer_state=idle":  { "model": "naval_warfare:block/battle_viewer_idle", "y": 270 },
+        "facing=east,viewer_state=idle":  { "model": "naval_warfare:block/battle_viewer_idle", "y": 90 },
+		
+		"facing=north,viewer_state=own": { "model": "naval_warfare:block/battle_viewer_own" },
+        "facing=south,viewer_state=own": { "model": "naval_warfare:block/battle_viewer_own", "y": 180 },
+        "facing=west,viewer_state=own":  { "model": "naval_warfare:block/battle_viewer_own", "y": 270 },
+        "facing=east,viewer_state=own":  { "model": "naval_warfare:block/battle_viewer_own", "y": 90 },
+		
+		"facing=north,viewer_state=opponent": { "model": "naval_warfare:block/battle_viewer_opponent" },
+        "facing=south,viewer_state=opponent": { "model": "naval_warfare:block/battle_viewer_opponent", "y": 180 },
+        "facing=west,viewer_state=opponent":  { "model": "naval_warfare:block/battle_viewer_opponent", "y": 270 },
+        "facing=east,viewer_state=opponent":  { "model": "naval_warfare:block/battle_viewer_opponent", "y": 90 }
     }
 }

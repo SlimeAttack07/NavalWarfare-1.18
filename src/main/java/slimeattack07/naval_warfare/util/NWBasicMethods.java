@@ -33,6 +33,8 @@ import slimeattack07.naval_warfare.NavalWarfare;
 import slimeattack07.naval_warfare.network.NavalNetwork;
 import slimeattack07.naval_warfare.network.message.ItemAnimationMessage;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
+import slimeattack07.naval_warfare.tileentity.GameControllerTE;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 
 public class NWBasicMethods {
 	
@@ -81,6 +83,19 @@ public class NWBasicMethods {
 	public static void messagePlayerCustom(Player player, String message) {
 		if(player != null)
 			player.sendMessage(new TextComponent(message), Util.NIL_UUID);
+	}
+	
+	public static void messagePlayerCustomRecord(@Nullable GameControllerTE controller, Player player, String message, boolean opponent) {
+		TextComponent component = new TextComponent(message);
+		if(player != null)
+			player.sendMessage(component, Util.NIL_UUID);
+		
+		if(controller != null) {
+			if(opponent)
+				controller.recordOnOppRecorder(BattleLogHelper.createMessage(Component.Serializer.toJson(component)));
+			else
+				controller.recordOnRecorder(BattleLogHelper.createMessage(Component.Serializer.toJson(component)));
+		}
 	}
 	
 	public static void messagePlayerActionbarCustom(Player player, String message) {
@@ -196,7 +211,7 @@ public class NWBasicMethods {
 		
 	}
 	
-	public static void messagePlayerTitle(BlockPos pos, Player player, Level level, String title, String title_color, 
+	public static void messagePlayerTitle(Player player, Level level, String title, String title_color, 
 			String subtitle, String subtitle_color) {
 		if(player == null)
 			return;
@@ -215,7 +230,7 @@ public class NWBasicMethods {
 		level.getServer().getCommands().performCommand(source, title_text);
 	}
 	
-	public static void sendGameStatusToPlayer(Level level, BlockPos pos, String owner, String title, String title_color, String subtitle, 
+	public static void sendGameStatusToPlayer(Level level, String owner, String title, String title_color, String subtitle, 
 			String subtitle_color) {
 		if(owner.equals("dummy"))
 			return;
@@ -223,13 +238,21 @@ public class NWBasicMethods {
 		Player player = level.getPlayerByUUID(UUID.fromString(owner));
 		
 		if(player != null)
-			messagePlayerTitle(pos, player, level, title, title_color, subtitle, subtitle_color);
+			messagePlayerTitle(player, level, title, title_color, subtitle, subtitle_color);
 	}
 	
-	public static void sendGameStatusToPlayer(Level level, BlockPos pos, String owner, String title, String title_color) {
-		sendGameStatusToPlayer(level, pos, owner, title, title_color, "", "");
+	public static void sendGameStatusToPlayer(Level level, String owner, String title, String title_color) {
+		sendGameStatusToPlayer(level, owner, title, title_color, "", "");
 	}
 	
+	/** Rotates dir3 so that it matches the orientation it had in dir 1 on dir2. 
+	 * Eg: rotateToMatch(North, South, East): South is opposite of North, so dir3 is set to the opposite: West.
+	 * 
+	 * @param dir1 The base direction on which dir3 was used.
+	 * @param dir2 The new direction where dir3 should be used.
+	 * @param dir3 The direction to rotate.
+	 * @return
+	 */
 	public static Direction rotateToMatch(Direction dir1, Direction dir2, Direction dir3) {
 		if(dir1.equals(dir2))
 			return dir3;
@@ -253,7 +276,7 @@ public class NWBasicMethods {
 		return Component.Serializer.fromJson(json);
 	}
 	
-	public static void messagePlayerAbilityUsed(Player player, String front, String user, MutableComponent hover) {
+	public static void messagePlayerAbilityUsed(@Nullable GameControllerTE controller, Player player, String front, String user, MutableComponent hover) {
 		if(player == null)
 			return;
 		
@@ -265,6 +288,9 @@ public class NWBasicMethods {
 		MutableComponent component = new TextComponent(part_a + ": ");
 		component.append(hover);
 		player.sendMessage(component, Util.NIL_UUID);
+		
+		if(controller != null)
+			controller.recordOnRecorders(BattleLogHelper.createMessage(Component.Serializer.toJson(component)));
 	}
 	
 	public static void dropBlock(Level level, BlockPos pos, Block block) {

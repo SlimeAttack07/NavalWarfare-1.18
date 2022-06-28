@@ -51,6 +51,7 @@ import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.objects.blocks.ShipMarkerBlock;
 import slimeattack07.naval_warfare.objects.items.ShipConfiguration;
 import slimeattack07.naval_warfare.objects.items.SpellWand;
+import slimeattack07.naval_warfare.util.BattleLogAction;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.ControllerAction;
 import slimeattack07.naval_warfare.util.ControllerState;
@@ -228,14 +229,14 @@ public class GameControllerTE extends BlockEntity{
 		energy = Math.max(0, energy - amount);
 		String message = ChatFormatting.YELLOW + NWBasicMethods.getTranslation("ability.naval_warfare.energy") + ": " + energy + " (-" + 
 				(amount) + ")";
-		NWBasicMethods.messagePlayerCustom(getPlayer(), message);
+		NWBasicMethods.messagePlayerCustomRecord(this, getPlayer(), message, false);
 	}
 	
 	public void gainEnergy(int amount) {
 		energy = Math.min(MAX_ENERGY, energy + amount);
 		String message = ChatFormatting.YELLOW + NWBasicMethods.getTranslation("ability.naval_warfare.energy") + ": " + energy + " (+" + 
 				(amount) + ")";
-		NWBasicMethods.messagePlayerCustom(getPlayer(), message);
+		NWBasicMethods.messagePlayerCustomRecord(this, getPlayer(), message, false);
 	}
 	
 	public int getHP() {
@@ -265,7 +266,7 @@ public class GameControllerTE extends BlockEntity{
 			energy = Math.min(energy + ENERGY_GAIN_RATE, MAX_ENERGY);
 			String message = ChatFormatting.YELLOW + NWBasicMethods.getTranslation("ability.naval_warfare.energy") + ": " + energy + " (+" +
 					(energy - old) + ")";
-			NWBasicMethods.messagePlayerCustom(getPlayer(), message);
+			NWBasicMethods.messagePlayerCustomRecord(this, getPlayer(), message, false);
 		}
 	}
 	
@@ -292,7 +293,7 @@ public class GameControllerTE extends BlockEntity{
 					NWTriggers.STREAK_12.trigger(sp);
 
 			} catch(NullPointerException e) {
-				NavalWarfare.LOGGER.error("Failed to fetch the streak statistic.");
+				NavalWarfare.LOGGER.error("Naval Warfare: Failed to fetch the streak statistic.");
 			}
 		}
 	}
@@ -573,23 +574,16 @@ public class GameControllerTE extends BlockEntity{
 			
 			if(cah.animation != null) {
 				BattleLogHelper blh_drop = BattleLogHelper.createDropBlock(te.getId(), !cah.multi_ability, cah.animation.getRegistryName());
-				recordOnRecorders(blh_drop); //TODO: Once all actions are implemented, check what happens with the timings if cah.animation == null.
+				recordOnRecorders(blh_drop);
 			}
 			
-			BattleLogHelper blh_delay = BattleLogHelper.createDelay(cah.delay);
-			
-			recordOnRecorders(blh_delay);
+			recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
 
 			HitResult result = board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, cah.target_type, 
 					cah.multi_ability, action_number, null, cah.triggers_passives, false);
 			
-			if(result.equals(HitResult.MISS)) {
-				BattleLogHelper blh_board = BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY);
-				recordOnRecorders(blh_board);
-				
-				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), !cah.multi_ability, NWSounds.MISS.get(), 1f, 1f);
-				recordOnRecorders(blh_sound);
-			}
+			if(result.equals(HitResult.MISS))
+				recordOnRecorders(BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY));
 		}
 		
 		removeFirstAction();
@@ -653,18 +647,18 @@ public class GameControllerTE extends BlockEntity{
 		
 		if(cah.player != null && !cah.player.equals("dummy")) {
 			Player player = level.getPlayerByUUID(UUID.fromString(cah.player));
-			NWBasicMethods.messagePlayerAbilityUsed(player, "ability.naval_warfare.triggered", player.getName().getString(), 
+			NWBasicMethods.messagePlayerAbilityUsed(this, player, "ability.naval_warfare.triggered", player.getName().getString(), 
 					component);
-			NWBasicMethods.messagePlayerTitle(player.blockPosition(), player, level, "ability.naval_warfare.triggered", "dark_green", 
+			NWBasicMethods.messagePlayerTitle(player, level, "ability.naval_warfare.triggered", "dark_green", 
 					cah.translation, "green");
 			NWBasicMethods.animateItemUse(player, cah.item);
 		}
 		
 		if(cah.opponent != null && !cah.opponent.equals("dummy")) {
 			Player opponent = level.getPlayerByUUID(UUID.fromString(cah.opponent));
-			NWBasicMethods.messagePlayerAbilityUsed(opponent, "ability.naval_warfare.triggered", opponent.getName().getString(), 
+			NWBasicMethods.messagePlayerAbilityUsed(null, opponent, "ability.naval_warfare.triggered", opponent.getName().getString(), 
 					component);
-			NWBasicMethods.messagePlayerTitle(opponent.blockPosition(), opponent, level, "ability.naval_warfare.triggered", "dark_green", 
+			NWBasicMethods.messagePlayerTitle(opponent, level, "ability.naval_warfare.triggered", "dark_green", 
 					cah.translation, "green");
 			NWBasicMethods.animateItemUse(opponent, cah.item);
 		}
@@ -675,6 +669,8 @@ public class GameControllerTE extends BlockEntity{
 			removeFirstAction();
 		
 		action_number++;
+		
+		recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
 	}
 	
 	private void cancelActions(ControllerAction action) {
@@ -708,7 +704,7 @@ public class GameControllerTE extends BlockEntity{
 		actions = keep;
 	}
 	
-	private void messageOpponent(Level level, Component message) {	
+	private void messageOpponent(Component message) {	
 		BlockEntity tile = level.getBlockEntity(opponent);
 		
 		if(tile instanceof GameControllerTE) {
@@ -818,10 +814,11 @@ public class GameControllerTE extends BlockEntity{
 					player.sendMessage(text, Util.NIL_UUID);
 				
 			}else {
-				messageOpponent(level, text);
+				messageOpponent(text);
 			}
 			
 			notifyResult(cont, false, cont);
+			recordOnRecorders(BattleLogHelper.createMessage(Component.Serializer.toJson(text)));
 			
 			results.clear();			
 		}
@@ -859,6 +856,9 @@ public class GameControllerTE extends BlockEntity{
 				level.playSound(null, te.getBlockPos(), NWSounds.TORPEDO.get(), SoundSource.MASTER, 1, 1);
 				level.playSound(null, cah.matching, NWSounds.TORPEDO.get(), SoundSource.MASTER, 1, 1);
 				
+				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), true, NWSounds.TORPEDO.get(), 1, 1);
+				recordOnRecorders(blh_sound);
+				
 				if(cah.health == 1) {
 					cancelActions(ControllerAction.TORPEDO);
 					consumeResults(player, true);
@@ -883,6 +883,11 @@ public class GameControllerTE extends BlockEntity{
 						Direction opp_dir = board.getControllerFacing(level, cah.matching);
 						own_state = own_state.setValue(DirectionalDisBlock.FACING, own_dir);
 						opp_state = opp_state.setValue(DirectionalDisBlock.FACING, opp_dir);
+						
+						recordOnRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 1, true, 
+								own_dir, cah.delay));
+						recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 1, false, 
+								opp_dir, cah.delay));
 					}
 					
 					level.setBlockAndUpdate(te.getBlockPos().above(), own_state);
@@ -897,7 +902,7 @@ public class GameControllerTE extends BlockEntity{
 			if(actions.size() == 1 || (actions.size() > 1 && !actions.get(1).action.equals(ControllerAction.TORPEDO))) 
 				consumeResults(player, true);
 		}
-		
+		recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
 		removeFirstAction();
 	}
 	
@@ -921,6 +926,7 @@ public class GameControllerTE extends BlockEntity{
 			
 			switch(result) {
 			case HIT:
+				streak++;
 				break;
 			default:
 				if(cah.target_type.equals(TargetType.NORMAL)) {
@@ -932,6 +938,9 @@ public class GameControllerTE extends BlockEntity{
 			
 			if(actions.size() == 1 || (actions.size() > 1 && !actions.get(1).action.equals(ControllerAction.FRAGBOMB))) 
 				consumeResults(player, true);
+			
+			if(result.equals(HitResult.MISS))
+				recordOnRecorders(BattleLogHelper.createBoardState(te.getId(), true, BoardState.EMPTY));
 		}
 		
 		removeFirstAction();
@@ -1032,17 +1041,12 @@ public class GameControllerTE extends BlockEntity{
 			addResult(new TargetResultHelper(te.getId(), result));
 			
 			if(actions.size() == 1 || (actions.size() > 1 && (!actions.get(1).action.equals(ControllerAction.MULTI_TARGET)))) {
-				consumeResults(player, true, false, !cah.multi_ability, cah.multi_ability);
+				consumeResults(player, true, !cah.target_type.equals(TargetType.REVEAL), !cah.multi_ability, cah.multi_ability);
 				action_number++;
 			}
 			
-			if(result.equals(HitResult.MISS)) {
-				BattleLogHelper blh_board = BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY);
-				recordOnRecorders(blh_board);
-				
-				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), !cah.multi_ability, NWSounds.MISS.get(), 1f, 1f);
-				recordOnRecorders(blh_sound);
-			}
+			if(result.equals(HitResult.MISS))
+				recordOnRecorders(BattleLogHelper.createBoardState(te.getId(), !cah.multi_ability, BoardState.EMPTY));
 		}
 		
 		removeFirstAction();
@@ -1062,6 +1066,7 @@ public class GameControllerTE extends BlockEntity{
 			
 			level.playSound(null, te.getBlockPos(), NWSounds.BOMBER.get(), SoundSource.MASTER, 1, 1);
 			level.playSound(null, cah.matching, NWSounds.BOMBER.get(), SoundSource.MASTER, 1, 1);
+			recordOnRecorders(BattleLogHelper.createSound(te.getId(), true, NWSounds.BOMBER.get(), 1, 1));
 
 			HitResult result = board.targetTileAction(level, player, te.getBlockState(), te.getBlockPos(), te, cah.matching, cah.damage, 
 					cah.target_type, true, action_number, NWBlocks.BOMB.get(), true, false);
@@ -1075,12 +1080,19 @@ public class GameControllerTE extends BlockEntity{
 					Direction opp_dir = board.getControllerFacing(level, cah.matching);
 					own_state = own_state.setValue(DirectionalDisBlock.FACING, own_dir);
 					opp_state = opp_state.setValue(DirectionalDisBlock.FACING, opp_dir);
+					
+					recordOnRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 6, true, 
+							own_dir, cah.delay));
+					recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 6, false, 
+							opp_dir, cah.delay));
 				}
 				
 				level.setBlockAndUpdate(te.getBlockPos().above(6), own_state);
 				level.setBlockAndUpdate(cah.matching.above(6), opp_state);
 				setAnimationTime(te.getBlockPos().above(6), cah.delay);
 				setAnimationTime(cah.matching.above(6), cah.delay);
+				
+				
 			}
 			
 			addResult(new TargetResultHelper(te.getId(), result));
@@ -1097,7 +1109,8 @@ public class GameControllerTE extends BlockEntity{
 			if(actions.size() == 1 || (actions.size() > 1 && !actions.get(1).action.equals(ControllerAction.BOMBER))) 
 				consumeResults(player, true);
 		}
-	
+		
+		recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
 		removeFirstAction();
 	}	
 	
@@ -1164,13 +1177,14 @@ public class GameControllerTE extends BlockEntity{
 							
 						level.setBlockAndUpdate(matching.above(2), NWBlocks.SHIP_CLOSE.get().defaultBlockState().setValue(ShipMarkerBlock.FACING, 
 								dir_own.getOpposite()));
+						level.setBlockAndUpdate(hint_te.getBlockPos().above(2), NWBlocks.SHIP_CLOSE.get().defaultBlockState().setValue(ShipMarkerBlock.FACING, 
+								dir_opp.getOpposite()));
+						
+						results = new ArrayList<>();
+						results.add(trh);
+						
+						recordOnRecorders(BattleLogHelper.createSetBlock(hint_te.getId(), NWBlocks.SHIP_CLOSE.get().getRegistryName(), 2, !passive));
 					}
-					
-					level.setBlockAndUpdate(hint_te.getBlockPos().above(2), NWBlocks.SHIP_CLOSE.get().defaultBlockState().setValue(ShipMarkerBlock.FACING, 
-							dir_opp.getOpposite()));
-					
-					results = new ArrayList<>();
-					results.add(trh);
 				}
 				else {
 					results = new ArrayList<>();
@@ -1212,6 +1226,7 @@ public class GameControllerTE extends BlockEntity{
 				level.setBlockAndUpdate(te.getBlockPos().above(2), NWBlocks.SHIP_HERE.get().defaultBlockState().setValue(ShipMarkerBlock.FACING, 
 						dir.getOpposite()));
 				BlockEntity opp = level.getBlockEntity(cah.matching);
+				recordOnRecorders(BattleLogHelper.createSetBlock(te.getId(), NWBlocks.SHIP_HERE.get().getRegistryName(), 2, !cah.multi_ability));
 				
 				if(opp instanceof BoardTE) {
 					BoardTE oppte = (BoardTE) opp;
@@ -1290,29 +1305,25 @@ public class GameControllerTE extends BlockEntity{
 		if(streak > 2) {
 			String message = ChatFormatting.GOLD + NWBasicMethods.getTranslation("message.naval_warfare.streak").replace("MARKER1", "" + streak);
 			Player player = getPlayer();
+			SoundEvent sound = NWSounds.STREAK1.get();
+			
+			if(streak > 8)
+				sound = NWSounds.STREAK3.get();
+			else if(streak > 5)
+				sound = NWSounds.STREAK2.get();
 			
 			if(player != null) {
-				if(streak > 8)
-					player.playNotifySound(NWSounds.STREAK3.get(), SoundSource.MASTER, 1, 1);
-				else if(streak > 5)
-					player.playNotifySound(NWSounds.STREAK2.get(), SoundSource.MASTER, 1, 1);
-				else
-					player.playNotifySound(NWSounds.STREAK1.get(), SoundSource.MASTER, 1, 1);
+				NWBasicMethods.messagePlayerCustomRecord(this, player, message, false);
+				player.playNotifySound(sound, SoundSource.MASTER, 1, 1);
 				
-				NWBasicMethods.messagePlayerCustom(player, message);	
+				recordOnRecorders(BattleLogHelper.createSound((int) Math.ceil(board_size) / 2, true, sound, 1, 1));
 			}
 			
 			player = getOpponentPlayer();
 			
 			if(player != null) {
-				if(streak > 8)
-					player.playNotifySound(NWSounds.STREAK3.get(), SoundSource.MASTER, 1, 1);
-				else if(streak > 5)
-					player.playNotifySound(NWSounds.STREAK2.get(), SoundSource.MASTER, 1, 1);
-				else
-					player.playNotifySound(NWSounds.STREAK1.get(), SoundSource.MASTER, 1, 1);
-				
-				NWBasicMethods.messagePlayerCustom(player, message);	
+				player.playNotifySound(sound, SoundSource.MASTER, 1, 1);
+				NWBasicMethods.messagePlayerCustomRecord(this, player, message, true);	
 			}
 		}
 		
@@ -1452,6 +1463,9 @@ public class GameControllerTE extends BlockEntity{
 	}
 	
 	public void recordOnRecorders(BattleLogHelper blh) {
+		if(blh.action.equals(BattleLogAction.DELAY) && blh.delay <= 0)
+			return;
+		
 		recordOnRecorder(blh);
 		recordOnOppRecorder(blh);
 	}
@@ -1525,22 +1539,22 @@ public class GameControllerTE extends BlockEntity{
 					if(hit_once)
 						cons_timeout_times = 0;
 					
-					NWBasicMethods.messagePlayerCustom(ownp, NWBasicMethods.createRedText("message.naval_warfare.time_up_own").
-							getString());
+					NWBasicMethods.messagePlayerCustomRecord(this, ownp, NWBasicMethods.createRedText("message.naval_warfare.time_up_own").
+							getString(), false);
 				}
 				else
 					cons_timeout_times = 0;
 				
-				NWBasicMethods.messagePlayerCustom(ownp, NWBasicMethods.createRedText("message.naval_warfare.opponent_turn").getString());
+				NWBasicMethods.messagePlayerCustomRecord(this, ownp, NWBasicMethods.createRedText("message.naval_warfare.opponent_turn").getString(), false);
 				ownp.playNotifySound(NWSounds.OPPONENT_TURN.get(), SoundSource.MASTER, 1, 1.5f);
 			}
 			
 			if(oppp != null) {
 				if(timeout) 
-					NWBasicMethods.messagePlayerCustom(oppp, NWBasicMethods.createGreenText("message.naval_warfare.time_up_opponent").
-							getString());
+					NWBasicMethods.messagePlayerCustomRecord(this, oppp, NWBasicMethods.createGreenText("message.naval_warfare.time_up_opponent").
+							getString(), true);
 				
-				NWBasicMethods.messagePlayerCustom(oppp, NWBasicMethods.createGreenText("message.naval_warfare.your_turn").getString());
+				NWBasicMethods.messagePlayerCustomRecord(this, oppp, NWBasicMethods.createGreenText("message.naval_warfare.your_turn").getString(), true);
 				oppp.playNotifySound(NWSounds.YOUR_TURN.get(), SoundSource.MASTER, 1, 0.5f);
 			}
 			
@@ -1548,11 +1562,11 @@ public class GameControllerTE extends BlockEntity{
 				endGame(level, this, false, ownp, false);
 				endGame(level, ote, true, oppp, true);
 				
-				NWBasicMethods.messagePlayerCustom(ownp, NWBasicMethods.createRedText("message.naval_warfare.timed_out_own").
-						getString());
+				NWBasicMethods.messagePlayerCustomRecord(this, ownp, NWBasicMethods.createRedText("message.naval_warfare.timed_out_own").
+						getString(), false);
 				
-				NWBasicMethods.messagePlayerCustom(oppp, NWBasicMethods.createGreenText("message.naval_warfare.timed_out_opponent").
-						getString());
+				NWBasicMethods.messagePlayerCustomRecord(this, oppp, NWBasicMethods.createGreenText("message.naval_warfare.timed_out_opponent").
+						getString(), true);
 			}
 			else {
 				hit_once = false;
@@ -1605,9 +1619,12 @@ public class GameControllerTE extends BlockEntity{
 			genFromLootTable(won, false, player);
 		
 		if(won) {
-			NWBasicMethods.sendGameStatusToPlayer(level, te.getBlockPos(), te.getOwner(), "message.naval_warfare.game_won_main", "dark_green", 
+			NWBasicMethods.sendGameStatusToPlayer(level, te.getOwner(), "message.naval_warfare.game_won_main", "dark_green", 
 					"message.naval_warfare.game_won_sub", "green");
 			player.playNotifySound(NWSounds.VICTORY.get(), SoundSource.MASTER, 1, 0.8f);
+			
+			NWBasicMethods.messagePlayerCustomRecord(te, player, NWBasicMethods.createGreenText("message.naval_warfare.game_won_main").
+					getString(), false);
 			
 			if(player instanceof ServerPlayer) {
 				try {
@@ -1624,13 +1641,15 @@ public class GameControllerTE extends BlockEntity{
 						NWTriggers.WIN_50.trigger(sp);
 
 				} catch(NullPointerException e) {
-					NavalWarfare.LOGGER.error("Failed to fetch the wins statistic.");
+					NavalWarfare.LOGGER.error("Naval Warfare: Failed to fetch the wins statistic.");
 				}
 			}
 		}
 		else {
-			NWBasicMethods.sendGameStatusToPlayer(level, te.getBlockPos(), te.getOwner(), "message.naval_warfare.game_lost_main", "dark_red", 
+			NWBasicMethods.sendGameStatusToPlayer(level, te.getOwner(), "message.naval_warfare.game_lost_main", "dark_red", 
 					"message.naval_warfare.game_lost_sub", "red");
+			NWBasicMethods.messagePlayerCustomRecord(te, player, NWBasicMethods.createRedText("message.naval_warfare.game_won_main").
+					getString(), false);
 			player.playNotifySound(NWSounds.DEFEAT.get(), SoundSource.MASTER, 1, 0.75f);
 		}
 		
@@ -1640,7 +1659,7 @@ public class GameControllerTE extends BlockEntity{
 				sp.awardStat(NWStats.GAMES_PLAYED);
 				
 			} catch(NullPointerException e) {
-				NavalWarfare.LOGGER.error("Failed to fetch the games played statistic.");
+				NavalWarfare.LOGGER.error("Naval Warfare: Failed to fetch the games played statistic.");
 			}
 		}
 	}

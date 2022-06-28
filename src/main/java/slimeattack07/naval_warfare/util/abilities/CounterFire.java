@@ -12,11 +12,14 @@ import net.minecraft.world.level.block.Block;
 import slimeattack07.naval_warfare.config.NavalWarfareConfig;
 import slimeattack07.naval_warfare.init.NWBlocks;
 import slimeattack07.naval_warfare.init.NWItems;
+import slimeattack07.naval_warfare.init.NWSounds;
 import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.GameController;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class CounterFire implements Ability {
@@ -39,6 +42,7 @@ public class CounterFire implements Ability {
 		ArrayList<BoardTE> tiles = getTiles(level, board);
 		int delay = 20;
 		String playername = "dummy";
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		if(!tiles.isEmpty()) {
 			Board b = (Board) tiles.get(0).getBlockState().getBlock();
@@ -68,8 +72,9 @@ public class CounterFire implements Ability {
 			
 			if(matching != null) {			
 				ControllerActionHelper cah = ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), playername, 
-						matching.getBlockPos(), te.getBlockPos(), false, true);
+						matching.getBlockPos(), te.getBlockPos(), 1, TargetType.NORMAL, false, true);
 				
+				ids.add(te.getId());
 				controller.addAction(cah);
 				delay = 0;
 								
@@ -79,6 +84,11 @@ public class CounterFire implements Ability {
 		}
 		
 		controller.addAction(ControllerActionHelper.createValidate());
+		
+		if(!ids.isEmpty()) {
+			controller.recordOnRecorders(BattleLogHelper.createSounds(ids, false, NWSounds.SHOT.get(), 1f, 1.25f));
+			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, false, BLOCK.getRegistryName()));
+		}
 	}
 
 	@Override

@@ -16,7 +16,9 @@ import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.EnergyShieldTE;
+import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 
 public class Guardian implements Ability {
 	private final String NAME;
@@ -34,8 +36,10 @@ public class Guardian implements Ability {
 	@Override
 	public void activate(Level level, Player player, BoardTE board) {
 		ArrayList<BoardTE> tiles = getTiles(level, board);
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : tiles) {
+			ids.add(te.getId());
 			BlockPos pos = te.getBlockPos().above(4);
 			
 			if(!level.getBlockState(pos).getBlock().equals(NWBlocks.ENERGY_SHIELD.get()))
@@ -48,6 +52,14 @@ public class Guardian implements Ability {
 				ete.addOwner(OWNER);
 				ete.initHP(HP);
 			}
+		}
+		
+		if(!ids.isEmpty()) {
+			Board b = (Board) board.getBlockState().getBlock();
+			GameControllerTE controller = b.getController(level, board.getBlockPos());
+			
+			if(controller != null)
+				controller.recordOnRecorders(BattleLogHelper.createSetBlocks(ids, NWBlocks.ENERGY_SHIELD.get().getRegistryName(), 4, true));
 		}
 	}
 

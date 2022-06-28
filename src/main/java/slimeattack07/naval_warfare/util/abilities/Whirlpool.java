@@ -16,6 +16,7 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.TargetType;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Whirlpool implements Ability {
@@ -36,6 +37,7 @@ public class Whirlpool implements Ability {
 		ArrayList<BoardTE> tiles = getTiles(level, board);
 		int delay = 20;
 		String playername = "dummy";
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		if(!tiles.isEmpty()) {
 			Board b = (Board) tiles.get(0).getBlockState().getBlock();
@@ -65,16 +67,20 @@ public class Whirlpool implements Ability {
 			BoardTE matching = control.getBoardTile(level, controller, te.getId());
 			
 			if(matching != null) {			
-				ControllerActionHelper cah = ControllerActionHelper.createTargetAction(delay, matching.getBlockPos(), playername, 
-						matching.getBlockPos(), te.getBlockPos(), 1, TargetType.REVEAL, true, false, ANIMATION);
+				ControllerActionHelper cah = ControllerActionHelper.createMultiTarget(delay, matching.getBlockPos(), playername, 
+						matching.getBlockPos(), te.getBlockPos(), 1, TargetType.REVEAL, false, true);
 				
 				controller.addAction(cah);
 				delay = 0;
+				ids.add(te.getId());
 								
 				NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
 				NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
 			}
 		}
+		
+		if(!ids.isEmpty())
+			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, false, ANIMATION.getRegistryName()));
 		
 		controller.addAction(ControllerActionHelper.createValidate());
 	}

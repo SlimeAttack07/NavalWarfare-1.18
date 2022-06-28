@@ -186,7 +186,7 @@ public class ControllerActionHelper {
 	}
 	
 	public static ControllerActionHelper createMultiTarget(int delay, BlockPos pos, String player, BlockPos board_te, BlockPos matching, 
-			boolean triggers_passives, boolean passive) {
+			int damage, TargetType type, boolean triggers_passives, boolean passive) {
 		ControllerActionHelper cah  = new ControllerActionHelper();
 		
 		cah.action = ControllerAction.MULTI_TARGET;
@@ -195,8 +195,8 @@ public class ControllerActionHelper {
 		cah.player = player;
 		cah.board_te = board_te;
 		cah.matching = matching;
-		cah.damage = 1;
-		cah.target_type = TargetType.NORMAL;
+		cah.damage = damage;
+		cah.target_type = type;
 		cah.triggers_passives = triggers_passives;
 		cah.multi_ability = passive;
 		

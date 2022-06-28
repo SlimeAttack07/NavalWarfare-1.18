@@ -19,6 +19,7 @@ import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
 import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Sonar implements Ability{
@@ -60,6 +61,7 @@ public class Sonar implements Ability{
 				
 				level.playSound(null, te.getBlockPos(), NWSounds.SONAR.get(), SoundSource.MASTER, 1, 1.25f);
 				level.playSound(null, matching.getBlockPos(), NWSounds.SONAR.get(), SoundSource.MASTER, 1, 1.25f);
+				controller.recordOnRecorders(BattleLogHelper.createSound(te.getId(), true, NWSounds.SONAR.get(), 1, 1.25f));
 								
 				controller.addAction(cah);
 				delay = 0;

@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable",
+    "textures": 
+    {
+		"particle": "naval_warfare:block/battle_recorder",
+        "top": "naval_warfare:block/battle_viewer_top_opponent",
+		"front": "naval_warfare:block/battle_viewer_front",
+		"side": "naval_warfare:block/battle_recorder"
+    }
+}

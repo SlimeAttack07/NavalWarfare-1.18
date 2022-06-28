@@ -11,10 +11,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import slimeattack07.naval_warfare.init.NWBlocks;
+import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
+import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.tileentity.PassiveAbilityTE;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
+import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 
 public class AntiAir implements Ability {
 	private final String NAME;
@@ -38,6 +41,7 @@ public class AntiAir implements Ability {
 	@Override
 	public void activate(Level level, Player player, BoardTE board) {
 		ArrayList<BoardTE> tiles = getTiles(level, board);
+		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : tiles) {
 			BlockPos pos = te.getBlockPos().above(5);
@@ -48,6 +52,16 @@ public class AntiAir implements Ability {
 				PassiveAbilityTE pte = (PassiveAbilityTE) ptile;
 				pte.addOwner(OWNER);
 			}
+			
+			ids.add(te.getId());
+		}
+		
+		if(!ids.isEmpty()) {
+			Board b = (Board) board.getBlockState().getBlock();
+			GameControllerTE controller = b.getController(level, board.getBlockPos());
+			
+			if(controller != null)
+				controller.recordOnRecorders(BattleLogHelper.createSetBlocks(ids, NWBlocks.ANTI_AIR.get().getRegistryName(), 5, false));
 		}
 	}
 
@@ -88,7 +102,8 @@ public class AntiAir implements Ability {
 			
 			if(tile instanceof PassiveAbilityTE) {
 				PassiveAbilityTE pte = (PassiveAbilityTE) tile;
-				pte.destroy(level, pos, OWNER);
+				Board b = (Board) board.getBlockState().getBlock();
+				pte.destroy(level, pos, OWNER, b.getController(level, board.getBlockPos()), 5);
 			}
 		}
 	}

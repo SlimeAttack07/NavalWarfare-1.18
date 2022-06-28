@@ -225,8 +225,8 @@ public class BoardTE extends BlockEntity {
 							if(board.validateBoard(level, pos)) {
 								BoardTE te = (BoardTE) level.getBlockEntity(pos);
 								ability.activate(level, player, te);
-								NWBasicMethods.messagePlayerAbilityUsed(player, "ability.naval_warfare.passive_deployed", null,
-										ability.hoverableInfo());
+								NWBasicMethods.messagePlayerAbilityUsed(board.getController(level, pos) ,player, "ability.naval_warfare.passive_deployed", 
+										null, ability.hoverableInfo());
 							}
 						}
 					}
@@ -369,9 +369,7 @@ public class BoardTE extends BlockEntity {
 			tile = level.getBlockEntity(zero);
 		}
 		
-		ArrayList<BoardTE> tiles = new ArrayList<>();
 		ArrayList<BoardTE> undamaged = new ArrayList<>();
-		ArrayList<String> known = new ArrayList<>();
 		
 		if(tile instanceof BoardTE) {
 			BoardTE te = (BoardTE) tile;
@@ -385,9 +383,10 @@ public class BoardTE extends BlockEntity {
 			
 			double l = (length + 1) / 2;
 			double w = (width + 1) / 2;
-			tiles = te.collectTileArea((int) Math.ceil(l), (int) Math.floor(l), (int) Math.ceil(w), (int) Math.floor(w), 
+			ArrayList<BoardTE> tiles = te.collectTileArea((int) Math.ceil(l), (int) Math.floor(l), (int) Math.ceil(w), (int) Math.floor(w), 
 					board.getControllerFacing(level, te.worldPosition));
 			GameController control = (GameController) controller.getBlockState().getBlock();
+			ArrayList<String> known = new ArrayList<>();
 			
 			for(BoardTE bte : tiles) {
 				
@@ -395,21 +394,44 @@ public class BoardTE extends BlockEntity {
 				BlockState state = opponent ? level.getBlockState(matching.getBlockPos().above()) : level.getBlockState(bte.getBlockPos().above());
 				
 				if(state.getBlock() instanceof ShipBlock && ShipBlock.getState(state).equals(ShipState.UNDAMAGED)) {
-					String name = state.getBlock().getRegistryName().toString();
-					
-					if(unique) {
-						if(known.contains(name))
-							continue;
-						
-						known.add(name);
-					}
-					
+					known.add(state.getBlock().getRegistryName().toString());
 					undamaged.add(bte);
 				}
 			}
+
+			if(unique)
+				undamaged = filterUnique(undamaged, known);
 		}
 		
 		return undamaged;
+	}
+	
+	public ArrayList<BoardTE> filterUnique(ArrayList<BoardTE> tiles, ArrayList<String> names){
+		ArrayList<BoardTE> filtered = new ArrayList<>();
+		ArrayList<String> unique = new ArrayList<>();
+		ArrayList<BoardTE> buffer = new ArrayList<>();
+		
+		if(tiles.size() != names.size()) 
+			return filtered;
+		
+		for(int i = 0; i < tiles.size(); i++) {
+			String name = names.get(i);
+			
+			if(unique.contains(name))
+				continue;
+			
+			buffer.clear();	
+			unique.add(name);
+			
+			for(int k = 0; k < tiles.size(); k++) {
+				if(names.get(k).equals(name))
+					buffer.add(tiles.get(k));
+			}
+
+			filtered.addAll(selectRandom(1, buffer));
+		}
+
+		return filtered;
 	}
 	
 	public ArrayList<BoardTE> collectUnknownEmptyTiles(boolean opponent){
