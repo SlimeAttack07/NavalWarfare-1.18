@@ -166,7 +166,6 @@ public class NavalWarfare {
 	
 	private void setup(final FMLCommonSetupEvent event) {
 		NavalNetwork.init();
-//		NWVillagers.registerPOI();
 		NWVillagers.fillTradeData();
 		NWStructures.setupStructures();
 		NWCStructures.registerConfiguredStructures();

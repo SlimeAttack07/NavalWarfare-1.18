@@ -837,6 +837,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 				Player player = level.getPlayerByUUID(UUID.fromString(owner));
 				String message = NWBasicMethods.getOwnShipDestroyedMessage(ship);
 				NWBasicMethods.messagePlayerCustom(player, message);
+				recordMessage(level, pos, pos, message, false);
 				NWBasicMethods.animateItemUse(player, NWItems.SHIP_SUNK_OWN.get());
 			}
 		}
