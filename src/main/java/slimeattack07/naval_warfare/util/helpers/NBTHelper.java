@@ -177,6 +177,7 @@ public class NBTHelper {
 		compound = safePutInt("active_amount", o.getActiveAmount(), compound);
 		compound = safePutInt("passive_amount", o.getPassiveAmount(), compound);
 		compound = safePutInt("action_number", o.getActionNumber(), compound);
+		compound.put("next", writeBlockPos(o.getNext()));
 		
 		return compound;
 	}
@@ -430,7 +431,7 @@ public class NBTHelper {
 	
 	@Nullable
 	public static BlockPos readBlockPos(CompoundTag compound) {
-		if(compound == null || compound.contains("no_pos"))
+		if(compound == null || compound.contains("no_pos") || compound.isEmpty())
 			return null;
 		
 		return new BlockPos(compound.getInt("x"), compound.getInt("y"), compound.getInt("z"));

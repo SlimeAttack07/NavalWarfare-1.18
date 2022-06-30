@@ -1,5 +1,7 @@
 package slimeattack07.naval_warfare.objects.blocks;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -7,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
+import slimeattack07.naval_warfare.tileentity.ShipTE;
 import slimeattack07.naval_warfare.util.ShipPart;
 import slimeattack07.naval_warfare.util.abilities.Ability;
 import slimeattack07.naval_warfare.util.properties.ShipPartProperty;
@@ -55,6 +58,32 @@ public class QuintupleLineShip extends ShipBlock {
 			level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
 		
 		return placeable;
+	}
+	
+	@Nullable
+	@Override
+	public BlockPos getNext(ShipTE te) {
+		BlockState state = te.getBlockState();
+		ShipBlock ship = (ShipBlock) state.getBlock();
+		BlockPos pos = te.getBlockPos();
+		Direction dir = getFacing(state);
+		
+		switch(ship.getShipPart(state, SHIP_PART)) {
+		case ONE:
+			return offset(dir, pos, 0, 1);
+		case TWO:
+			return offset(dir, pos, 0, 1);
+		case THREE:
+			return offset(dir, pos, 0, 1);
+		case FOUR:
+			return offset(dir, pos, 0, 1);
+		case FIVE:
+			return offset(dir, pos, 0, -4);
+		default:
+			break;	
+		}
+		
+		return null;
 	}
 
 	@Override

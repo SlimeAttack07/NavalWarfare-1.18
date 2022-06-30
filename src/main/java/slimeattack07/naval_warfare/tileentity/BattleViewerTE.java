@@ -23,7 +23,6 @@ import slimeattack07.naval_warfare.objects.blocks.BattleViewer;
 import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.DirectionalDisBlock;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
-import slimeattack07.naval_warfare.util.BattleLogAction;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.ViewerState;
 import slimeattack07.naval_warfare.util.abilities.PassiveType;
@@ -170,7 +169,7 @@ public class BattleViewerTE extends BlockEntity{
 			return;
 		}
 		
-		if(!blh.action.equals(BattleLogAction.DELAY))
+		if(blh.action.updateViewerState())
 			updateViewerState(blh.opponent);
 		
 		switch(blh.action) {

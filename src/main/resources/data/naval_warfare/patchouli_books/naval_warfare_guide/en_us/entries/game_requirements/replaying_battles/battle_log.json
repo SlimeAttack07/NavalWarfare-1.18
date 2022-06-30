@@ -1,0 +1,20 @@
+{
+    "name": "Battle Log",
+    "icon": "naval_warfare:battle_log",
+    "category": "naval_warfare:game_requirements/replaying_battles",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This item can store a recorded battle. There are two ways to obtain it: You can craft an empty log, or obtain a filled log from the $(l:naval_warfare:game_requirements/replaying_battles/battle_recorder)Battle Recorder/$. You can $(thing)Right Click in the air/$ to copy the stored log to your clipboard, which you can then share with other players. You can $(thing)Shift Right Click in the air/$ to load a log from your clipboard. It is recommended you use an empty log for this."
+        },
+		{
+            "type": "patchouli:text",
+            "text": "To replay a battle, $(thing)Right Click/$ a $(l:naval_warfare:game_requirements/replaying_battles/battle_viewer)Battle Viewer/$."
+        },
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:items/battle_log"
+		}
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Battle Recorder",
+    "icon": "naval_warfare:battle_recorder",
+    "category": "naval_warfare:game_requirements/replaying_battles",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This block will record any battles playing on your $(l:naval_warfare:game_requirements/game_controller)Game Controller/$. To do so, it $(thing)must be placed behind the Game Controller/$. At the end of a game, it will automatically generate a $(l:naval_warfare:game_requirements/replaying_battles/battle_log)Battle Log/$ in your inventory, or drop it on the ground if your inventory is full."
+        },
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 01 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:game_controller[controller_state=inactive]",
+					"1": "naval_warfare:battle_recorder"
+				}
+			},
+			"text": "The Battle Recorder must be placed behind the Game Controller."
+		},
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:blocks/battle_recorder"
+		}
+    ]
+}

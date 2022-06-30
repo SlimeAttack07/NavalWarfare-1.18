@@ -1,0 +1,15 @@
+{
+    "name": "V1.1.0",
+    "icon": "minecraft:filled_map",
+    "category": "naval_warfare:changelog",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Game Controller, board blocks and ships are now wither immune.$(li)Game Controller blast resistance is now much higher.$(li)Added info pages for deployables.$(li)Added $(l:naval_warfare:game_requirements/replaying_battles/battle_log)battlelog system./$$(li)Minor / Major Insight and Heatseaker abilities will now target a random part of their selected ship instead of the base part."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Whirlpool now also shows the affected tiles in chat like other multi-target abilities (salvo's, mortars, etc.)$(li)Crouching while using the Game Interactor or Spell Wand will now make the tool cycle to the previous mode / spell.$(li)Changed ship destruction code to fix a few issues. This now also makes it so ships only remove the parts that below to themselves instead of all connecting blocks with the same registry name."
+		}
+    ]
+}

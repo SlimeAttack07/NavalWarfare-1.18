@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(li)When a game of Naval Warfare starts, the player with the lowest fleet HP gets the first turn. If both player's have the same fleet HP, the player that was in queue longer will get the first turn. No matter who starts, both players start with the same amount of energy in their first turn."
+			"text": "$(li)When a game of Naval Warfare starts, the player with the lowest fleet HP gets the first turn. If both player's have the same fleet HP, the player that was in queue longer will get the first turn. The player that goes second will start with more energy than the first player to compensate."
 		}
     ]
 }

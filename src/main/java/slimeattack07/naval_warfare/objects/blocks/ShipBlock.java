@@ -116,6 +116,8 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 		if(ACTIVE_ABILITY != null)
 			te.setActiveAmount(ACTIVE_ABILITY.getAmount());
 		
+		te.setNext(getNext(te));
+		
 		return te;
 	}
 	
@@ -268,14 +270,11 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 
 	public abstract boolean isBase(BlockState state);
 	public abstract boolean isMiddle(BlockState state);
-	
 	public abstract int getMaxHP();
-	
 	public abstract String getShapeTranslation();
-	
 	public abstract boolean summonShip(Level level, BlockPos pos, BlockState state, boolean include_base, boolean display);
-	
 	public abstract boolean canPlace(Level level, BlockPos pos, BlockState state, boolean include_base, boolean display);
+	@Nullable public abstract BlockPos getNext(ShipTE te);
 	
 	public String getShape() {
 		return NWBasicMethods.getTranslation("shapes.naval_warfare." + getShapeTranslation());
@@ -410,28 +409,21 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 						|| board_state.getBlock() instanceof BoardRedirect);
 	}
 	
-	protected void propagateRemoval(Level level, BlockPos pos, ResourceLocation id) {
-		Direction[] dirs = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
-		
-		for(Direction dir : dirs) {
-			BlockPos offset = pos.relative(dir);
-			BlockState state = level.getBlockState(offset);
-			
-			if(state.getBlock().getRegistryName().equals(id))
-				level.removeBlock(offset, false);
-			
-			if(state.hasBlockEntity())
-				level.removeBlockEntity(offset);
-		}
-	}
-	
 	public void removeShip(Player player, BlockState state, Level level, BlockPos pos, boolean remove_board, boolean shrink_board) {
 		BlockPos board_pos = pos.below();
+		BlockPos next = null;
 		
 		if(remove_board && level.getBlockState(board_pos).getBlock() instanceof Board) 
 			level.removeBlock(board_pos, false);
 		
-		propagateRemoval(level, pos, state.getBlock().getRegistryName());
+		BlockEntity tile = level.getBlockEntity(pos);
+		
+		if(tile instanceof ShipTE) {
+			ShipTE te = (ShipTE) tile;
+			
+			if(te.hasNext())
+				next = te.getNext();
+		}
 		
 		level.removeBlock(pos, false);
 		
@@ -449,6 +441,9 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 				}
 			}
 		}
+		
+		if(next != null && level.getBlockState(next).getBlock().getRegistryName().equals(getRegistryName()))
+			level.removeBlock(next, false);
 	}
 	
 	@Override
@@ -485,21 +480,24 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 		return undamaged;
 	}
 	
-	protected ArrayList<BlockPos> collectParts(Level level, ArrayList<BlockPos> known, BlockPos current, ResourceLocation id) {
-		Direction[] dirs = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+	protected ArrayList<BlockPos> collectParts(Level level, ArrayList<BlockPos> known, BlockPos start, ResourceLocation id) {
+		BlockPos pos = start;
+		BlockEntity tile = null;
+		ShipTE te = null;
 		
-		for(Direction dir : dirs) {
-			BlockPos offset = current.relative(dir);
+		for(int i = 0; i < 20; i++) {
+			tile = level.getBlockEntity(pos);
 			
-			if(known.contains(offset))
-				continue;
+			if(!(tile instanceof ShipTE))
+				break;
 			
-			BlockState state = level.getBlockState(offset);
+			te = (ShipTE) tile;
+			pos = te.getNext();
 			
-			if(state.getBlock().getRegistryName().equals(id)) {
-				known.add(offset);
-				collectParts(level, known, offset, id);
-			}
+			if(pos == null || known.contains(pos) || !te.getBlockState().getBlock().getRegistryName().equals(id))
+				break;
+			
+			known.add(pos);
 		}
 		
 		return known;

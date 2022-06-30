@@ -1,0 +1,62 @@
+{
+    "name": "Battle Viewer",
+    "icon": "naval_warfare:battle_viewer",
+    "category": "naval_warfare:game_requirements/replaying_battles",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This block allows you to replay past battles. Upon placing it down, it will $(thing)face away from you/$. It has three possible display colors on top. To replay a battle, $(thing)Right Click/$ it with a valid $(l:naval_warfare:game_requirements/replaying_battles/battle_log)Battle Log/$. Only the person that started the replay will see the log's chat messages. You can $(thing)Right Click/$ the Battle Viewer to pause/unpause it, and $(thing)Shift Right Click/$ it to change the replay speed."
+        },
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:battle_viewer[viewer_state=idle]"
+				}
+			},
+			"text": "An $(l)$(#242424)inactive/$ battle viewer. It is either paused, or has no log to replay."
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:battle_viewer[viewer_state=opponent]"
+				}
+			},
+			"text": "This battle viewer indicates that the next action will happen on the $(l)$(#224F2D)opponent's side/$."
+		},
+		{
+			"type": "patchouli:multiblock",
+			"name": "Model",
+			"enable_visualize": false,
+			"multiblock": {
+				"pattern": [
+					[" 0 "]
+				],
+				"mapping": {
+					"0": "naval_warfare:battle_viewer[viewer_state=own]"
+				}
+			},
+			"text": "This battle viewer indicates that the next action will happen on $(l)$(#7E0034)your side/$."
+		},
+		{
+            "type": "patchouli:text",
+            "text": "The replay will automatically remove the spawned board, ships etcetera 5 seconds after the replay is finished (default). There is no way to cancel the replay and loading a replay while one is already playing will not work. You can always set the replay speed to 10x to quickly end it. Although all actions are replayed perfectly, the speed of the actions is typically faster than the original game."
+        },
+		{
+			"type": "patchouli:crafting",
+			"recipe": "naval_warfare:blocks/battle_viewer"
+		}
+    ]
+}

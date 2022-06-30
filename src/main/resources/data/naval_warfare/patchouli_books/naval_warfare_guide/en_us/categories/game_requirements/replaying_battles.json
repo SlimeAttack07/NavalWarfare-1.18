@@ -1,0 +1,6 @@
+{
+	"name": "Replaying Battles",
+	"parent": "naval_warfare:game_requirements",
+	"description": "Everything needed to record, share and replay your batles!",
+	"icon": "naval_warfare:battle_log"
+}

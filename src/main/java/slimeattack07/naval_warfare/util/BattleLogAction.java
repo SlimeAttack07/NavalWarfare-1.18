@@ -13,4 +13,10 @@ public enum BattleLogAction {
 	SET_DIS_BLOCK,
 	SET_BLOCKS,
 	MESSAGE;
+
+	public boolean updateViewerState() {
+		boolean skip = equals(DELAY) || equals(PLAY_SOUND) || equals(PLAY_SOUNDS) || equals(MESSAGE);
+		
+		return !skip;
+	}
 }

@@ -1567,7 +1567,7 @@ public class GameControllerTE extends BlockEntity{
 		else {
 			NWBasicMethods.sendGameStatusToPlayer(level, te.getOwner(), "message.naval_warfare.game_lost_main", "dark_red", 
 					"message.naval_warfare.game_lost_sub", "red");
-			NWBasicMethods.messagePlayerCustomRecord(te, player, NWBasicMethods.createRedText("message.naval_warfare.game_won_main").
+			NWBasicMethods.messagePlayerCustomRecord(te, player, NWBasicMethods.createRedText("message.naval_warfare.game_lost_main").
 					getString(), false);
 			player.playNotifySound(NWSounds.DEFEAT.get(), SoundSource.MASTER, 1, 0.75f);
 		}

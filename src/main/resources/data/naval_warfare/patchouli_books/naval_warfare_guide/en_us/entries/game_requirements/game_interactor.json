@@ -6,7 +6,7 @@
     "pages": [
         {
             "type": "patchouli:text",
-            "text": "This item is used to interact to interact with the $(l:game_requirements/game_controller)$(item)Game Controller$(clear). It has 7 modes, which can be cycled by right clicking in the air. The current modes are as follows:$(br)$(li)Create a new ship configuration by right clicking the game controller, which then spawn a 10x10 board for you to place ships on. The game interactor will switch to Save Mode afterwards."
+            "text": "This item is used to interact to interact with the $(l:game_requirements/game_controller)$(item)Game Controller$(clear). It has 7 modes, which can be cycled by (shift) right clicking in the air. The current modes are as follows:$(br)$(li)Create a new ship configuration by right clicking the game controller, which then spawn a 10x10 board for you to place ships on. The game interactor will switch to Save Mode afterwards."
         },
 		{
 			"type": "patchouli:text",

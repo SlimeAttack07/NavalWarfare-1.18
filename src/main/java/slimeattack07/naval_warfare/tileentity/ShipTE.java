@@ -1,5 +1,7 @@
 package slimeattack07.naval_warfare.tileentity;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -13,6 +15,7 @@ public class ShipTE extends BlockEntity{
 	private int active_amount = 0;
 	private int passive_amount = 0;
 	private int action_number = -1;
+	private BlockPos next = null;
 
 	public ShipTE(BlockPos pos, BlockState state) {
 		super(NWTileEntityTypes.SHIP.get(), pos, state);
@@ -49,6 +52,19 @@ public class ShipTE extends BlockEntity{
 		action_number = number;
 	}
 	
+	public void setNext(BlockPos n) {
+		next = n;
+	}
+	
+	public boolean hasNext() {
+		return next != null;
+	}
+	
+	@Nullable
+	public BlockPos getNext() {
+		return next;
+	}
+	
 	@Override
 	public void saveAdditional(CompoundTag compound) {
 		compound.put(NavalWarfare.MOD_ID, NBTHelper.toNBT(this));
@@ -63,6 +79,7 @@ public class ShipTE extends BlockEntity{
 			active_amount = initvalues.getInt("active_amount");
 			passive_amount = initvalues.getInt("passive_amount");
 			action_number = initvalues.getInt("action_number");
+			next = NBTHelper.readBlockPos(initvalues.getCompound("next"));
 		}
 	}
 }
