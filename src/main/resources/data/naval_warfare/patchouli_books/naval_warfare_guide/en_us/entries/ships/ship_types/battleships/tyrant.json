@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Trebuchet/$$(br)Tyrant's trebuchet a launces crude leather sack filled with cannonballs. It rips open mid-air, spreading the cannonballs and $(l)damaging 6 tiles/$ in a $(l)4 by 4/$ area. This ability has $(l)2 Uses/$ and costs $(l)9 Energy/$ to use.",
+			"text": "$(l:naval_warfare:abilities/active/mortar)$(l)Trebuchet/$$(br)Tyrant's trebuchet launches a crude leather sack filled with cannonballs. It rips open mid-air, spreading the cannonballs and $(l)damaging 6 tiles/$ in a $(l)4 by 4/$ area. This ability has $(l)2 Uses/$ and costs $(l)9 Energy/$ to use.",
 			"title": "Active Ability"
 		},
 		{

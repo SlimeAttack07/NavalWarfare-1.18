@@ -4,8 +4,8 @@
 		"0": "block/gray_concrete_powder",
 		"1": "block/yellow_concrete_powder",
 		"2": "block/light_gray_concrete_powder",
-		"3": "block/light_blue_concrete_powder",
-		"4": "block/black_concrete_powder",
+		"3": "block/black_concrete_powder",
+		"4": "block/light_blue_concrete_powder",
 		"particle": "block/gray_concrete_powder"
-	}
+    }
 }

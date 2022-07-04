@@ -659,12 +659,15 @@
 	"jei.naval_warfare.hulls": "Found in certain dungeons and the Captain's Cabin. Can also be obtained from Retired Captain villagers and finishing a game of Naval Warfare.",
 	"jei.naval_warfare.boards": "Deployed when starting a game of Naval Warfare, and removed when the game ends. Unobtainable.",
 	"jei.naval_warfare.animations": "Animation block used during games of Naval Warfare. Unobtainable.",
-	"jei.naval_warfare.ships": "Must be placed on board tiles or on 'Ship Display' blocks. All parts of the ship must fit on such a block to spawn the whole ship. Right click with any pickaxe to break. Placing multiple of the same ship next to eachother will cause only one of them to drop.",
+	"jei.naval_warfare.ships": "Must be placed on board tiles or on 'Ship Display' blocks. All parts of the ship must fit on such a block to spawn the whole ship. Right click with any pickaxe to break.",
 	"jei.naval_warfare.deployables": "Deployed by an ability or a spell. Unobtainable.",
 	"jei.naval_warfare.game_controller": "Controls games of Naval Warfare. Read the 'Naval Warfare Guide' for more info. (Requires that you have 'Patchouli' installed)",
 	"jei.naval_warfare.game_interactor": "Used with the 'Game Controller'. Right click in the air to cycle mode.",
 	"jei.naval_warfare.game_interactor_dummy": "Used to simulate a dummy player for testing the mod. Unobtainable.",
 	"jei.naval_warfare.random_ship": "Used by the Captain's Cabin to generate a 5x5 'Ship Display' area with a random ship on it. Unobtainable.",
 	"jei.naval_warfare.ship_configuration": "Obtained from saving ships in the game controller. Read the 'Naval Warfare Guide' for more info. (Requires that you have 'Patchouli' installed)",
-	"jei.naval_warfare.starter_kit": "Given when joining a level for the first time. Right click to receive starter ships: Kilgobnet, Maori, Nighthawk, Cybele and Raider."
+	"jei.naval_warfare.starter_kit": "Given when joining a level for the first time. Right click to receive starter ships: Kilgobnet, Maori, Nighthawk, Cybele and Raider.",
+	"jei.naval_warfare.battle_recorder": "Records games of Naval Warfare. Read the 'Naval Warfare Guide' for more info. (Requires that you have 'Patchouli' installed)",
+	"jei.naval_warfare.battle_log": "Stores games of Naval Warfare. Read the 'Naval Warfare Guide' for more info. (Requires that you have 'Patchouli' installed)",
+	"jei.naval_warfare.battle_viewer": "Replays games of Naval Warfare. Read the 'Naval Warfare Guide' for more info. (Requires that you have 'Patchouli' installed)"
 }

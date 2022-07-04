@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "naval_warfare:icon/ghost_ship"
+        "layer0": "naval_warfare:deployables/paradox_active"
     }
 }

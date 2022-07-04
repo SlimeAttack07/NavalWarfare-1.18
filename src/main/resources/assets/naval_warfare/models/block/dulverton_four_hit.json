@@ -4,8 +4,8 @@
 		"0": "block/gray_wool",
 		"1": "block/yellow_concrete",
 		"2": "block/light_gray_wool",
-		"3": "block/light_blue_concrete",
-		"4": "block/black_wool",
+		"3": "block/black_wool",
+		"4": "block/light_blue_concrete",
 		"particle": "block/gray_wool"
-	}
+    }
 }

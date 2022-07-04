@@ -317,13 +317,13 @@ public class NWBasicMethods {
 	
 	@Nullable
 	public static Block getRandomTaggedBlock(String tag, Random rand, DeferredRegister<Block> register) {
-		List<RegistryObject<Block>> items = register.getEntries().stream().filter(item -> item.get().getTags().
+		List<RegistryObject<Block>> blocks = register.getEntries().stream().filter(item -> item.get().getTags().
 				contains(new ResourceLocation(NavalWarfare.MOD_ID, tag))).collect(Collectors.toList());
 		
-		if(items == null || items.isEmpty())
+		if(blocks == null || blocks.isEmpty())
 			return null;
 		
-		return items.get(rand.nextInt(items.size())).get();
+		return blocks.get(rand.nextInt(blocks.size())).get();
 	}
 	
 	@Nullable

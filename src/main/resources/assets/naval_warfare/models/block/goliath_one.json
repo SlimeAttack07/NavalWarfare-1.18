@@ -3,11 +3,11 @@
 	"textures": {
 		"0": "block/dark_oak_planks",
 		"1": "block/dark_oak_log",
-		"2": "block/brown_concrete",
-		"3": "block/gray_concrete",
-		"4": "block/black_concrete",
+		"2": "block/black_concrete",
+		"3": "block/brown_concrete",
+		"4": "block/gray_concrete",
 		"5": "block/cyan_concrete",
 		"6": "block/blue_concrete",
 		"particle": "block/dark_oak_planks"
-	}
+    }
 }

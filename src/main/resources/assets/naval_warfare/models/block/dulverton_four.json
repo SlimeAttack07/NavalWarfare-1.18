@@ -4,8 +4,8 @@
 		"0": "block/gray_concrete",
 		"1": "block/yellow_terracotta",
 		"2": "block/light_gray_concrete",
-		"3": "block/light_blue_terracotta",
-		"4": "block/black_concrete",
+		"3": "block/black_concrete",
+		"4": "block/light_blue_terracotta",
 		"particle": "block/gray_concrete"
-	}
+    }
 }

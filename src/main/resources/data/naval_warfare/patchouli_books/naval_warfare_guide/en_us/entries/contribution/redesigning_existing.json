@@ -15,7 +15,6 @@
 			"type": "patchouli:relations",
 			"title": "Redesigns",
 			"entries": [
-				"naval_warfare:ships/ship_types/submarines/submarine",
 				"naval_warfare:ships/ship_types/supports/paradox",
 				"naval_warfare:ships/ship_types/destroyers/meeanne",
 				"naval_warfare:ships/ship_types/destroyers/ignition",

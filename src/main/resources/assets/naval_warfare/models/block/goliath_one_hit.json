@@ -3,11 +3,11 @@
 	"textures": {
 		"0": "block/spruce_planks",
 		"1": "block/spruce_log",
-		"2": "block/brown_wool",
-		"3": "block/gray_wool",
-		"4": "block/black_wool",
+		"2": "block/black_wool",
+		"3": "block/brown_wool",
+		"4": "block/gray_wool",
 		"5": "block/cyan_wool",
 		"6": "block/blue_wool",
 		"particle": "block/spruce_planks"
-	}
+    }
 }

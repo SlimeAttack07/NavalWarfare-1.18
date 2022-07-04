@@ -3,11 +3,11 @@
 	"textures": {
 		"0": "block/brown_concrete_powder",
 		"1": "block/stripped_dark_oak_log",
-		"2": "block/brown_concrete_powder",
-		"3": "block/gray_concrete_powder",
-		"4": "block/black_concrete_powder",
+		"2": "block/black_concrete_powder",
+		"3": "block/brown_concrete_powder",
+		"4": "block/gray_concrete_powder",
 		"5": "block/cyan_concrete_powder",
 		"6": "block/blue_concrete_powder",
 		"particle": "block/brown_concrete_powder"
-	}
+    }
 }

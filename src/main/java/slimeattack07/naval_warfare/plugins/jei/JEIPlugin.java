@@ -36,6 +36,9 @@ public class JEIPlugin implements IModPlugin{
 				getTranslation("jei.naval_warfare.ship_configuration"));
 		registration.addIngredientInfo(new ItemStack(NWItems.STARTER_KIT.get()), VanillaTypes.ITEM, 
 				getTranslation("jei.naval_warfare.starter_kit"));
+		registration.addIngredientInfo(new ItemStack(NWBlocks.BATTLE_RECORDER.get()), VanillaTypes.ITEM, getTranslation("jei.naval_warfare.battle_recorder"));
+		registration.addIngredientInfo(new ItemStack(NWItems.BATTLE_LOG.get()), VanillaTypes.ITEM, getTranslation("jei.naval_warfare.battle_log"));
+		registration.addIngredientInfo(new ItemStack(NWBlocks.BATTLE_VIEWER.get()), VanillaTypes.ITEM, getTranslation("jei.naval_warfare.battle_viewer"));
 	}
 	
 	private Component getTranslation(String translation) {

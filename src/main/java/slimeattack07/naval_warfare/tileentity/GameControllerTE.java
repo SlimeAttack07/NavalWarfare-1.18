@@ -329,7 +329,7 @@ public class GameControllerTE extends BlockEntity{
 		setChanged();
 	}
 	
-	public void addAction(ControllerActionHelper action) {		
+	public void addAction(ControllerActionHelper action) {					
 		actions.add(action);
 		setChanged();
 	}
@@ -745,6 +745,7 @@ public class GameControllerTE extends BlockEntity{
 	
 	private void doActionTorpedo(ControllerActionHelper cah) {
 		BlockEntity tile = level.getBlockEntity(cah.board_te);
+		boolean removed = false;
 		
 		if(tile instanceof BoardTE) {
 			BoardTE te = (BoardTE) tile;
@@ -770,18 +771,19 @@ public class GameControllerTE extends BlockEntity{
 			case NULLIFIED:
 				cancelActions(ControllerAction.TORPEDO);
 				consumeResults(player, true);
+				removed = true;
 				break;
 			case HIT:
 				level.playSound(null, te.getBlockPos(), NWSounds.TORPEDO.get(), SoundSource.MASTER, 1, 1);
 				level.playSound(null, cah.matching, NWSounds.TORPEDO.get(), SoundSource.MASTER, 1, 1);
 				
-				BattleLogHelper blh_sound = BattleLogHelper.createSound(te.getId(), true, NWSounds.TORPEDO.get(), 1, 1);
-				recordOnRecorders(blh_sound);
+				recordOnRecorders(BattleLogHelper.createSound(te.getId(), true, NWSounds.TORPEDO.get(), 1, 1));
 				
 				if(cah.health == 1) {
 					cancelActions(ControllerAction.TORPEDO);
 					consumeResults(player, true);
 					action_number++;
+					removed = true;
 				}
 				else {
 					for(ControllerActionHelper helper : actions) {
@@ -805,7 +807,7 @@ public class GameControllerTE extends BlockEntity{
 						
 						recordOnRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 1, true, 
 								own_dir, cah.delay));
-						recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 1, false, 
+						recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 1, true, 
 								opp_dir, cah.delay));
 					}
 					
@@ -821,8 +823,11 @@ public class GameControllerTE extends BlockEntity{
 			if(actions.size() == 1 || (actions.size() > 1 && !actions.get(1).action.equals(ControllerAction.TORPEDO))) 
 				consumeResults(player, true);
 		}
+		
 		recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
-		removeFirstAction();
+		
+		if(!removed)
+			removeFirstAction();
 	}
 	
 	private void doActionFragbomb(ControllerActionHelper cah) {
@@ -960,7 +965,7 @@ public class GameControllerTE extends BlockEntity{
 			addResult(new TargetResultHelper(te.getId(), result));
 			
 			if(actions.size() == 1 || (actions.size() > 1 && (!actions.get(1).action.equals(ControllerAction.MULTI_TARGET)))) {
-				consumeResults(player, true, !cah.target_type.equals(TargetType.REVEAL), !cah.multi_ability, cah.multi_ability);
+				consumeResults(player, true, false, !cah.multi_ability, cah.multi_ability);
 				action_number++;
 			}
 			
@@ -973,6 +978,7 @@ public class GameControllerTE extends BlockEntity{
 	
 	private void doActionBomber(ControllerActionHelper cah) {
 		BlockEntity tile = level.getBlockEntity(cah.board_te);
+		boolean removed = false;
 		
 		if(tile instanceof BoardTE) {
 			BoardTE te = (BoardTE) tile;
@@ -1002,7 +1008,7 @@ public class GameControllerTE extends BlockEntity{
 					
 					recordOnRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 6, true, 
 							own_dir, cah.delay));
-					recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 6, false, 
+					recordOnOppRecorder(BattleLogHelper.createSetDisBlock(te.getId(), cah.animation.getRegistryName(), 6, true, 
 							opp_dir, cah.delay));
 				}
 				
@@ -1020,6 +1026,7 @@ public class GameControllerTE extends BlockEntity{
 			case NULLIFIED:
 				cancelActions(ControllerAction.BOMBER);
 				consumeResults(player, true);
+				removed = true;
 				break;
 			default:
 				break;
@@ -1030,7 +1037,9 @@ public class GameControllerTE extends BlockEntity{
 		}
 		
 		recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
-		removeFirstAction();
+		
+		if(!removed)
+			removeFirstAction();
 	}	
 	
 	private void computeFlareTile(Player player, BoardTE te, boolean passive) {
@@ -1394,8 +1403,8 @@ public class GameControllerTE extends BlockEntity{
 		BattleRecorderTE te = getRecorder();
 		
 		if(te != null) {
-			te.setOwnShips(own_ships);
-			te.setOppShips(opp_ships);
+			te.setOwnShips(new ArrayList<>(own_ships));
+			te.setOppShips(new ArrayList<>(opp_ships));
 			te.setOwnSize(own_size);
 			te.setOppSize(opp_size);
 			te.setOwnDir(own_dir);

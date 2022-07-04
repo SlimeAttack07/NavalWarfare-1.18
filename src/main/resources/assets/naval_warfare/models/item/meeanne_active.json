@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "naval_warfare:icon/sea_mine"
+        "layer0": "naval_warfare:deployables/meeanne_active"
     }
 }

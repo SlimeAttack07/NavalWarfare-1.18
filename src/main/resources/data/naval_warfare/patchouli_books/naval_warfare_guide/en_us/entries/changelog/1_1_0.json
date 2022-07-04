@@ -10,6 +10,10 @@
 		{
 			"type": "patchouli:text",
 			"text": "$(li)Whirlpool now also shows the affected tiles in chat like other multi-target abilities (salvo's, mortars, etc.)$(li)Crouching while using the Game Interactor or Spell Wand will now make the tool cycle to the previous mode / spell.$(li)Changed ship destruction code to fix a few issues. This now also makes it so ships only remove the parts that below to themselves instead of all connecting blocks with the same registry name."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)New model for $(l:naval_warfare:ships/ship_types/submarines/submarine)Submarine/$$(li)New textures for ship items and deployable ship items.$(li)Fixed bug that caused on-hit passives to not show a popup item when hit by a torpedo."
 		}
     ]
 }

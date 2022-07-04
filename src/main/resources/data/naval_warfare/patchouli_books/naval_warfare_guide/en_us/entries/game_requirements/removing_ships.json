@@ -11,10 +11,6 @@
 		{
 			"type": "patchouli:text",
 			"text": "$(l)Please do not break ships during games in creative mode/$. There's nothing I can do to prevent it, but doing so will guarantee that you'll run into problems. You should also read $(l:naval_warfare:misc/seaworthy_limitations)Seaworthy Limitations/$ if the ship you want to remove has the $(l:naval_warfare:abilities/passive/seaworthy)Seaworhty/$ passive ability."
-		},
-		{
-			"type": "patchouli:text",
-			"text": "$(l)WARNING/$: If you place multiple of the same ship next to eachother, breaking it will cause only one of them to drop!!! If you want to place multiple of the same ship, leave at least one block between them! Placing a different ship next to it is fine."
 		}
     ]
 }
