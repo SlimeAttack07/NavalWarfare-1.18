@@ -1,0 +1,11 @@
+{
+    "name": "V1.1.1",
+    "icon": "minecraft:filled_map",
+    "category": "naval_warfare:changelog",
+    "pages": [
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Fixed issue that was preventing the mod from loading on the server, crashing it."
+		}
+    ]
+}
