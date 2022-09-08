@@ -4,7 +4,6 @@
     "naval_warfare:icon_end_turn",
     "naval_warfare:icon_torpedo",
 	"naval_warfare:icon_energy_overloader",
-	"naval_warfare:icon_torpedo_decoy",
 	"naval_warfare:icon_sonar"
   ]
 }

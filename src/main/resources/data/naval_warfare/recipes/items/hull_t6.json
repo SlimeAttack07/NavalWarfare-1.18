@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"tag": "forge:storage_blocks/diamond"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:hull_t6",
+		"count": 1
+	}
+}

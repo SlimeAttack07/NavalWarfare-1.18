@@ -67,17 +67,13 @@ public class NWItems {
 	public static final RegistryObject<Item> SHIELD_PLACER = NW_ITEMS.register("icon_shield_placer", () -> misc());
 	public static final RegistryObject<Item> GUARDIAN = NW_ITEMS.register("icon_guardian", () -> misc());
 	public static final RegistryObject<Item> NAPALM = NW_ITEMS.register("icon_napalm", () -> misc());
-	public static final RegistryObject<Item> SEA_MINE = NW_ITEMS.register("icon_sea_mine", () -> misc());
-	public static final RegistryObject<Item> TURRET = NW_ITEMS.register("icon_turret", () -> misc());
-	public static final RegistryObject<Item> GHOST_SHIP = NW_ITEMS.register("icon_ghost_ship", () -> misc());
 	public static final RegistryObject<Item> TORPEDO_NET = NW_ITEMS.register("icon_torpedo_net", () -> misc());
 	public static final RegistryObject<Item> ENERGY_SHIELD = NW_ITEMS.register("icon_energy_shield", () -> misc());
 	public static final RegistryObject<Item> ANTI_AIR = NW_ITEMS.register("icon_anti_air", () -> misc());
 	public static final RegistryObject<Item> SEAWORTHY = NW_ITEMS.register("icon_seaworthy", () -> misc());
-	public static final RegistryObject<Item> DEPLOYABLE_AA = NW_ITEMS.register("icon_deployable_aa", () -> misc());
-	public static final RegistryObject<Item> TORPEDO_DECOY = NW_ITEMS.register("icon_torpedo_decoy", () -> misc());
+	public static final RegistryObject<Item> VERTICAL_SALVO = NW_ITEMS.register("icon_vertical_salvo", () -> misc());
+	public static final RegistryObject<Item> DEPLOYABLE = NW_ITEMS.register("icon_deployable", () -> misc());
 	
-	public static final RegistryObject<Item> RAFT = NW_ITEMS.register("icon_raft", () -> misc());
 	public static final RegistryObject<Item> HEATSEAKER = NW_ITEMS.register("icon_heatseaker", () -> misc());
 	public static final RegistryObject<Item> SONAR = NW_ITEMS.register("icon_sonar", () -> misc());
 	

@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_hyperion_one",
+	"textures": {
+		"0": "block/black_wool",
+		"1": "block/blue_concrete",
+		"2": "block/light_blue_concrete",
+		"3": "block/light_blue_concrete_powder",
+		"4": "block/gray_wool",
+		"5": "block/light_blue_wool",
+		"particle": "block/black_wool"
+    }
+}

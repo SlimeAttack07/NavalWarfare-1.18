@@ -1,0 +1,400 @@
+{
+	"variants": {
+		"variator=one,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1"},
+		"variator=one,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 90},
+		"variator=one,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 180},
+		"variator=one,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 270},
+		
+		"variator=one,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1"},
+		"variator=one,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 90},
+		"variator=one,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 180},
+		"variator=one,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive1", "y": 270},
+		
+		"variator=one,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive1_destroyed"},
+		"variator=one,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 90},
+		"variator=one,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 180},
+		"variator=one,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 270},
+		
+		
+		"variator=one,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1"},
+		"variator=one,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 90},
+		"variator=one,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 180},
+		"variator=one,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 270},
+		
+		"variator=one,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1"},
+		"variator=one,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 90},
+		"variator=one,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 180},
+		"variator=one,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive1", "y": 270},
+		
+		"variator=one,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive1_destroyed"},
+		"variator=one,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 90},
+		"variator=one,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 180},
+		"variator=one,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive1_destroyed", "y": 270},
+		
+		
+		
+		"variator=two,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2"},
+		"variator=two,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 90},
+		"variator=two,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 180},
+		"variator=two,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 270},
+		
+		"variator=two,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2"},
+		"variator=two,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 90},
+		"variator=two,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 180},
+		"variator=two,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive2", "y": 270},
+		
+		"variator=two,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive2_destroyed"},
+		"variator=two,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 90},
+		"variator=two,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 180},
+		"variator=two,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 270},
+		
+		
+		"variator=two,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2"},
+		"variator=two,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 90},
+		"variator=two,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 180},
+		"variator=two,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 270},
+		
+		"variator=two,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2"},
+		"variator=two,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 90},
+		"variator=two,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 180},
+		"variator=two,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive2", "y": 270},
+		
+		"variator=two,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive2_destroyed"},
+		"variator=two,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 90},
+		"variator=two,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 180},
+		"variator=two,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive2_destroyed", "y": 270},
+		
+		
+		
+		"variator=three,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3"},
+		"variator=three,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 90},
+		"variator=three,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 180},
+		"variator=three,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 270},
+		
+		"variator=three,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3"},
+		"variator=three,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 90},
+		"variator=three,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 180},
+		"variator=three,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive3", "y": 270},
+		
+		"variator=three,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive3_destroyed"},
+		"variator=three,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 90},
+		"variator=three,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 180},
+		"variator=three,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 270},
+		
+		
+		"variator=three,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3"},
+		"variator=three,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 90},
+		"variator=three,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 180},
+		"variator=three,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 270},
+		
+		"variator=three,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3"},
+		"variator=three,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 90},
+		"variator=three,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 180},
+		"variator=three,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive3", "y": 270},
+		
+		"variator=three,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive3_destroyed"},
+		"variator=three,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 90},
+		"variator=three,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 180},
+		"variator=three,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive3_destroyed", "y": 270},
+		
+		
+		
+		
+		"variator=four,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4"},
+		"variator=four,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 90},
+		"variator=four,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 180},
+		"variator=four,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 270},
+		
+		"variator=four,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4"},
+		"variator=four,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 90},
+		"variator=four,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 180},
+		"variator=four,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive4", "y": 270},
+		
+		"variator=four,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive4_destroyed"},
+		"variator=four,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 90},
+		"variator=four,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 180},
+		"variator=four,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 270},
+		
+		
+		"variator=four,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4"},
+		"variator=four,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 90},
+		"variator=four,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 180},
+		"variator=four,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 270},
+		
+		"variator=four,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4"},
+		"variator=four,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 90},
+		"variator=four,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 180},
+		"variator=four,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive4", "y": 270},
+		
+		"variator=four,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive4_destroyed"},
+		"variator=four,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 90},
+		"variator=four,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 180},
+		"variator=four,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive4_destroyed", "y": 270},
+		
+		
+		
+		"variator=five,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5"},
+		"variator=five,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 90},
+		"variator=five,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 180},
+		"variator=five,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 270},
+		
+		"variator=five,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5"},
+		"variator=five,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 90},
+		"variator=five,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 180},
+		"variator=five,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive5", "y": 270},
+		
+		"variator=five,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive5_destroyed"},
+		"variator=five,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 90},
+		"variator=five,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 180},
+		"variator=five,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 270},
+		
+		
+		"variator=five,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5"},
+		"variator=five,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 90},
+		"variator=five,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 180},
+		"variator=five,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 270},
+		
+		"variator=five,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5"},
+		"variator=five,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 90},
+		"variator=five,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 180},
+		"variator=five,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive5", "y": 270},
+		
+		"variator=five,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive5_destroyed"},
+		"variator=five,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 90},
+		"variator=five,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 180},
+		"variator=five,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive5_destroyed", "y": 270},
+		
+		
+		
+		"variator=six,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6"},
+		"variator=six,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 90},
+		"variator=six,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 180},
+		"variator=six,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 270},
+		
+		"variator=six,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6"},
+		"variator=six,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 90},
+		"variator=six,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 180},
+		"variator=six,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive6", "y": 270},
+		
+		"variator=six,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive6_destroyed"},
+		"variator=six,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 90},
+		"variator=six,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 180},
+		"variator=six,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 270},
+		
+		
+		"variator=six,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6"},
+		"variator=six,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 90},
+		"variator=six,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 180},
+		"variator=six,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 270},
+		
+		"variator=six,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6"},
+		"variator=six,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 90},
+		"variator=six,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 180},
+		"variator=six,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive6", "y": 270},
+		
+		"variator=six,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive6_destroyed"},
+		"variator=six,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 90},
+		"variator=six,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 180},
+		"variator=six,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive6_destroyed", "y": 270},
+		
+		
+		
+		"variator=seven,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7"},
+		"variator=seven,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 90},
+		"variator=seven,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 180},
+		"variator=seven,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 270},
+		
+		"variator=seven,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7"},
+		"variator=seven,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 90},
+		"variator=seven,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 180},
+		"variator=seven,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive7", "y": 270},
+		
+		"variator=seven,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive7_destroyed"},
+		"variator=seven,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 90},
+		"variator=seven,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 180},
+		"variator=seven,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 270},
+		
+		
+		"variator=seven,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7"},
+		"variator=seven,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 90},
+		"variator=seven,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 180},
+		"variator=seven,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 270},
+		
+		"variator=seven,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7"},
+		"variator=seven,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 90},
+		"variator=seven,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 180},
+		"variator=seven,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive7", "y": 270},
+		
+		"variator=seven,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive7_destroyed"},
+		"variator=seven,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 90},
+		"variator=seven,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 180},
+		"variator=seven,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive7_destroyed", "y": 270},
+		
+		
+		
+		
+		"variator=eight,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8"},
+		"variator=eight,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 90},
+		"variator=eight,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 180},
+		"variator=eight,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 270},
+		
+		"variator=eight,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8"},
+		"variator=eight,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 90},
+		"variator=eight,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 180},
+		"variator=eight,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive8", "y": 270},
+		
+		"variator=eight,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive8_destroyed"},
+		"variator=eight,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 90},
+		"variator=eight,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 180},
+		"variator=eight,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 270},
+		
+		
+		"variator=eight,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8"},
+		"variator=eight,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 90},
+		"variator=eight,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 180},
+		"variator=eight,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 270},
+		
+		"variator=eight,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8"},
+		"variator=eight,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 90},
+		"variator=eight,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 180},
+		"variator=eight,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive8", "y": 270},
+		
+		"variator=eight,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive8_destroyed"},
+		"variator=eight,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 90},
+		"variator=eight,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 180},
+		"variator=eight,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive8_destroyed", "y": 270},
+		
+		
+		
+		"variator=nine,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9"},
+		"variator=nine,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 90},
+		"variator=nine,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 180},
+		"variator=nine,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 270},
+		
+		"variator=nine,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9"},
+		"variator=nine,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 90},
+		"variator=nine,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 180},
+		"variator=nine,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive9", "y": 270},
+		
+		"variator=nine,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive9_destroyed"},
+		"variator=nine,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 90},
+		"variator=nine,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 180},
+		"variator=nine,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 270},
+		
+		
+		"variator=nine,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9"},
+		"variator=nine,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 90},
+		"variator=nine,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 180},
+		"variator=nine,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 270},
+		
+		"variator=nine,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9"},
+		"variator=nine,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 90},
+		"variator=nine,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 180},
+		"variator=nine,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive9", "y": 270},
+		
+		"variator=nine,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive9_destroyed"},
+		"variator=nine,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 90},
+		"variator=nine,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 180},
+		"variator=nine,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive9_destroyed", "y": 270},
+		
+		
+		
+		"variator=ten,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10"},
+		"variator=ten,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 90},
+		"variator=ten,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 180},
+		"variator=ten,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 270},
+		
+		"variator=ten,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10"},
+		"variator=ten,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 90},
+		"variator=ten,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 180},
+		"variator=ten,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive10", "y": 270},
+		
+		"variator=ten,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive10_destroyed"},
+		"variator=ten,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 90},
+		"variator=ten,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 180},
+		"variator=ten,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 270},
+		
+		
+		"variator=ten,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10"},
+		"variator=ten,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 90},
+		"variator=ten,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 180},
+		"variator=ten,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 270},
+		
+		"variator=ten,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10"},
+		"variator=ten,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 90},
+		"variator=ten,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 180},
+		"variator=ten,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive10", "y": 270},
+		
+		"variator=ten,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive10_destroyed"},
+		"variator=ten,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 90},
+		"variator=ten,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 180},
+		"variator=ten,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive10_destroyed", "y": 270},
+		
+		
+		
+		"variator=eleven,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11"},
+		"variator=eleven,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 90},
+		"variator=eleven,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 180},
+		"variator=eleven,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 270},
+		
+		"variator=eleven,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11"},
+		"variator=eleven,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 90},
+		"variator=eleven,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 180},
+		"variator=eleven,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive11", "y": 270},
+		
+		"variator=eleven,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive11_destroyed"},
+		"variator=eleven,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 90},
+		"variator=eleven,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 180},
+		"variator=eleven,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 270},
+		
+		
+		"variator=eleven,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11"},
+		"variator=eleven,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 90},
+		"variator=eleven,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 180},
+		"variator=eleven,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 270},
+		
+		"variator=eleven,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11"},
+		"variator=eleven,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 90},
+		"variator=eleven,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 180},
+		"variator=eleven,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive11", "y": 270},
+		
+		"variator=eleven,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive11_destroyed"},
+		"variator=eleven,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 90},
+		"variator=eleven,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 180},
+		"variator=eleven,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive11_destroyed", "y": 270},
+		
+		
+		
+		
+		"variator=twelve,facing=north,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12"},
+		"variator=twelve,facing=east,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 90},
+		"variator=twelve,facing=south,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 180},
+		"variator=twelve,facing=west,ship_state=undamaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 270},
+		
+		"variator=twelve,facing=north,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12"},
+		"variator=twelve,facing=east,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 90},
+		"variator=twelve,facing=south,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 180},
+		"variator=twelve,facing=west,ship_state=damaged,ship_part=one": { "model": "naval_warfare:block/avernus_passive12", "y": 270},
+		
+		"variator=twelve,facing=north,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive12_destroyed"},
+		"variator=twelve,facing=east,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 90},
+		"variator=twelve,facing=south,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 180},
+		"variator=twelve,facing=west,ship_state=destroyed,ship_part=one": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 270},
+		
+		
+		"variator=twelve,facing=north,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12"},
+		"variator=twelve,facing=east,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 90},
+		"variator=twelve,facing=south,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 180},
+		"variator=twelve,facing=west,ship_state=undamaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 270},
+		
+		"variator=twelve,facing=north,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12"},
+		"variator=twelve,facing=east,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 90},
+		"variator=twelve,facing=south,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 180},
+		"variator=twelve,facing=west,ship_state=damaged,ship_part=two": { "model": "naval_warfare:block/avernus_passive12", "y": 270},
+		
+		"variator=twelve,facing=north,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive12_destroyed"},
+		"variator=twelve,facing=east,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 90},
+		"variator=twelve,facing=south,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 180},
+		"variator=twelve,facing=west,ship_state=destroyed,ship_part=two": { "model": "naval_warfare:block/avernus_passive12_destroyed", "y": 270}
+	}
+}

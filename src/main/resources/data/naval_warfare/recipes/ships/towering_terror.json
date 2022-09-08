@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_square"
+		},
+		{
+			"item": "naval_warfare:icon_vertical_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_vertical_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_energy_shield"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:towering_terror",
+		"count": 1
+	}
+}

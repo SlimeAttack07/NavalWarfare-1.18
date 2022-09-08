@@ -12,7 +12,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import slimeattack07.naval_warfare.init.NWBlocks;
 import slimeattack07.naval_warfare.init.NWItems;
 import slimeattack07.naval_warfare.init.NWSounds;
 import slimeattack07.naval_warfare.objects.blocks.Board;
@@ -30,15 +29,18 @@ public class Salvo implements Ability {
 	private final int LEFT;
 	private final int RIGHT;
 	private final String NAME;
-	private final boolean SHELLS;
+	private final Block ANIMATION;
+	private final boolean VERTICAL;
 	
-	public Salvo(int amount, int cost, int left, int right, boolean shells, String name) {
+	
+	public Salvo(int amount, int cost, int left, int right, Block animation, String name, boolean vertical) {
 		AMOUNT = amount;
 		COST = cost;
 		LEFT = left;
 		RIGHT = right;
-		SHELLS = shells;
+		ANIMATION = animation;
 		NAME = name;
+		VERTICAL = vertical;
 	}
 	
 	// May be able to turn this into void later on
@@ -66,7 +68,6 @@ public class Salvo implements Ability {
 		GameController control = null;
 		
 		int delay = 20;
-		Block block = SHELLS ? NWBlocks.SHELL.get() : NWBlocks.CANNONBALL.get();
 		ArrayList<Integer> ids = new ArrayList<>();
 		
 		for(BoardTE te : positions) {
@@ -103,14 +104,14 @@ public class Salvo implements Ability {
 				level.playSound(null, te.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1.25f);
 				level.playSound(null, matching.getBlockPos(), NWSounds.SHOT.get(), SoundSource.MASTER, 1, 1.25f);
 				
-				NWBasicMethods.dropBlock(level, te.getBlockPos(), block);
-				NWBasicMethods.dropBlock(level, matching.getBlockPos(), block);
+				NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
+				NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
 			}
 		}
 		
 		if(!ids.isEmpty()) {
 			controller.recordOnRecorders(BattleLogHelper.createSounds(ids, true, NWSounds.SHOT.get(), 1f, 1.25f));
-			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, true, block.getRegistryName()));
+			controller.recordOnRecorders(BattleLogHelper.createDropBlocks(ids, true, ANIMATION.getRegistryName()));
 		}
 	}
 	
@@ -119,12 +120,12 @@ public class Salvo implements Ability {
 		Board board = (Board) te.getBlockState().getBlock();
 		Direction dir = board.getControllerFacing(level, te.getBlockPos());
 		
-		return te.collectTileArea(1, 0, LEFT, RIGHT, dir);
+		return VERTICAL ? te.collectTileArea(LEFT, RIGHT, 0, 1, dir) : te.collectTileArea(1, 0, LEFT, RIGHT, dir);
 	}
 	
 	@Override
 	public Item getAnimationItem() {
-		return NWItems.SALVO.get();
+		return VERTICAL ? NWItems.VERTICAL_SALVO.get() : NWItems.SALVO.get();
 	}
 	
 	@Override

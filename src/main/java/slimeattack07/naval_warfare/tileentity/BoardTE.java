@@ -219,7 +219,7 @@ public class BoardTE extends BlockEntity {
 							
 							if(board.validateBoard(level, pos)) {
 								BoardTE te = (BoardTE) level.getBlockEntity(pos);
-								ability.activate(level, player, te);
+								ability.activate(level, player, te, pos.above());
 								NWBasicMethods.messagePlayerAbilityUsed(board.getController(level, pos) ,player, "ability.naval_warfare.passive_deployed", 
 										null, ability.hoverableInfo());
 							}
@@ -451,10 +451,38 @@ public class BoardTE extends BlockEntity {
 
 			for(BoardTE bte : tiles) {
 				BoardTE matching = control.getOpponentBoardTile(level, controller, bte.getId(), false);
-				Board b = (Board) matching.getBlockState().getBlock();
-				BlockState state = level.getBlockState(matching.getBlockPos().above());
 				
-				if(!(state.getBlock() instanceof ShipBlock) && !b.getBoardState(matching.getBlockState()).isKnown())
+				if(matching != null) {
+					Board b = (Board) matching.getBlockState().getBlock();
+					BlockState state = level.getBlockState(matching.getBlockPos().above());
+					
+					if(!(state.getBlock() instanceof ShipBlock) && !b.getBoardState(matching.getBlockState()).isKnown())
+						undamaged.add(bte);
+				}	
+			}
+		}
+		
+		return undamaged;
+	}
+	
+	public ArrayList<BoardTE> collectUnknownEmptyTilesNoMatch(boolean opponent){
+		BlockPos zero = locateZero(level, worldPosition, opponent);
+		BlockEntity tile = level.getBlockEntity(zero);
+		ArrayList<BoardTE> tiles = new ArrayList<>();
+		ArrayList<BoardTE> undamaged = new ArrayList<>();
+		
+		if(tile instanceof BoardTE) {
+			
+			BoardTE te = (BoardTE) tile;
+			Board board = (Board) te.getBlockState().getBlock();
+			
+			tiles = te.collectTileArea(1000, 1000, 1000, 1000, board.getControllerFacing(level, te.worldPosition));
+
+			for(BoardTE bte : tiles) {
+				BlockState state = level.getBlockState(bte.getBlockPos().above());
+				Board b = (Board) bte.getBlockState().getBlock();
+				
+				if(!(state.getBlock() instanceof ShipBlock) && !b.getBoardState(bte.getBlockState()).isKnown())
 					undamaged.add(bte);
 			}
 		}

@@ -58,7 +58,8 @@ public class ShipItem extends BlockItem{
 		case 3: return "yellow";
 		case 4: return "gray";
 		case 5: return "aqua";
-		default: return "red";
+		case 6: return "red";
+		default: return "black";
 		}
 	}
 	

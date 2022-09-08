@@ -23,8 +23,36 @@ import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Sonar implements Ability{
+	private final int AMOUNT;
+	private final int COST;
+	private final int UP;
+	private final int DOWN;
+	private final int LEFT;
+	private final int RIGHT;
+	private final String NAME;
 	
 	public Sonar() {
+		double width = (NavalWarfareConfig.sonar_width.get() + 1) / 2d;
+		double length = (NavalWarfareConfig.sonar_length.get() + 1) / 2d;
+		
+		AMOUNT = 1;
+		COST = 0;
+		
+		UP = (int) Math.ceil(length);
+		DOWN = (int) Math.floor(length);
+		LEFT = (int) Math.ceil(width);
+		RIGHT = (int) Math.floor(width);
+		NAME = "sonar";
+	}
+	
+	public Sonar(int amount, int cost, int up, int down, int left, int right, String name) {
+		AMOUNT = amount;
+		COST = cost;
+		UP = up;
+		DOWN = down;
+		LEFT = left;
+		RIGHT = right;
+		NAME = name;
 	}
 
 	@Override
@@ -94,23 +122,19 @@ public class Sonar implements Ability{
 
 	@Override
 	public int getAmount() {
-		return 1;
+		return AMOUNT;
 	}
 
 	@Override
 	public String getTranslation() {
-		return "abilities.naval_warfare.sonar";
+		return "abilities.naval_warfare." + NAME;
 	}
 
 	@Override
 	public ArrayList<BoardTE> getTiles(Level level, BoardTE te) {
 		Board board = (Board) te.getBlockState().getBlock();
 		
-		double width = (NavalWarfareConfig.sonar_width.get() + 1) / 2d;
-		double length = (NavalWarfareConfig.sonar_length.get() + 1) / 2d;
-		
-		return te.collectTileArea((int) Math.ceil(length), (int) Math.floor(length), (int) Math.ceil(width), (int) Math.floor(width), 
-				board.getControllerFacing(level, te.getBlockPos()));
+		return te.collectTileArea(UP, DOWN, LEFT, RIGHT, board.getControllerFacing(level, te.getBlockPos()));
 	}
 
 	@Override
@@ -125,5 +149,10 @@ public class Sonar implements Ability{
 	@Override
 	public Item getAnimationItem() {
 		return NWItems.SONAR.get();
+	}
+	
+	@Override
+	public int energyCost() {
+		return COST;
 	}
 }

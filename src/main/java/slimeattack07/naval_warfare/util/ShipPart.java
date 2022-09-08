@@ -11,7 +11,11 @@ public enum ShipPart implements StringRepresentable{
 	TWO("two"),
 	THREE("three"),
 	FOUR("four"),
-	FIVE("five");
+	FIVE("five"),
+	SIX("six"),
+	SEVEN("seven"),
+	EIGHT("eight"),
+	NINE("nine");
 	
 	
 	private final String name;
@@ -42,6 +46,11 @@ public enum ShipPart implements StringRepresentable{
 	
 	public static Collection<ShipPart> getSizeFive(){
 		ShipPart[] parts = new ShipPart[] {ONE, TWO, THREE, FOUR, FIVE};
+		return Lists.newArrayList(parts);
+	}
+	
+	public static Collection<ShipPart> getSizeNine(){
+		ShipPart[] parts = new ShipPart[] {ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE};
 		return Lists.newArrayList(parts);
 	}
 }

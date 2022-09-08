@@ -8,10 +8,10 @@
 			"item": "naval_warfare:hull_quadruple"
 		},
 		{
-			"item": "naval_warfare:icon_torpedo_decoy"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_torpedo_decoy"
+			"item": "naval_warfare:icon_torpedo_net"
 		},
 		{
 			"item": "naval_warfare:icon_major_insight"

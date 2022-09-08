@@ -2,5 +2,5 @@
 	"name": "Deployables",
 	"parent": "naval_warfare:ships",
 	"description": "Requesting backup now!",
-	"icon": "naval_warfare:icon_deployable_aa"
+	"icon": "naval_warfare:raft"
 }

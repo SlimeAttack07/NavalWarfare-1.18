@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(li)The raft must be placed on an unknown tile, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place the raft on a known tile, then nothing happens and the spell is wasted./$$(li)Don't place the raft on occupied tiles, as the spell will be wasted."
+			"text": "$(li)The raft must be placed on an unknown tile, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place the raft on a known tile, then the game will try to relocate it to a random valid tile. If no valid tiles remain, the spell will be wasted."
 		}
     ]
 }

@@ -8,10 +8,10 @@
 			"item": "naval_warfare:hull_small_zig"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_suppression"
 		},
 		{
 			"item": "naval_warfare:icon_seaworthy"

@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_quadruple"
+		},
+		{
+			"item": "naval_warfare:icon_missile"
+		},
+		{
+			"item": "naval_warfare:icon_missile"
+		},
+		{
+			"item": "naval_warfare:icon_end_turn"
+		},
+		{
+			"item": "naval_warfare:icon_end_turn"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:devastator",
+		"count": 1
+	}
+}

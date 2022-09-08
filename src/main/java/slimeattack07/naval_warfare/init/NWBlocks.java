@@ -29,11 +29,11 @@ import slimeattack07.naval_warfare.objects.blocks.LargeLShip;
 import slimeattack07.naval_warfare.objects.blocks.LargeTShip;
 import slimeattack07.naval_warfare.objects.blocks.LargeZigShip;
 import slimeattack07.naval_warfare.objects.blocks.MediumLShip;
+import slimeattack07.naval_warfare.objects.blocks.Mothership;
 import slimeattack07.naval_warfare.objects.blocks.PassiveAbilityBlock;
 import slimeattack07.naval_warfare.objects.blocks.QuadrupleLineShip;
 import slimeattack07.naval_warfare.objects.blocks.QuintupleLineShip;
 import slimeattack07.naval_warfare.objects.blocks.RandomShipBlock;
-import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.objects.blocks.ShipMarkerBlock;
 import slimeattack07.naval_warfare.objects.blocks.SmallBShip;
 import slimeattack07.naval_warfare.objects.blocks.SmallLShip;
@@ -41,6 +41,8 @@ import slimeattack07.naval_warfare.objects.blocks.SmallTShip;
 import slimeattack07.naval_warfare.objects.blocks.SmallZigShip;
 import slimeattack07.naval_warfare.objects.blocks.SquareShip;
 import slimeattack07.naval_warfare.objects.blocks.TripleLineShip;
+import slimeattack07.naval_warfare.objects.blocks.variators.VariatorFiveDDB;
+import slimeattack07.naval_warfare.objects.blocks.variators.VariatorTwelveShip;
 import slimeattack07.naval_warfare.util.abilities.AntiAir;
 import slimeattack07.naval_warfare.util.abilities.CounterFire;
 import slimeattack07.naval_warfare.util.abilities.Deployable;
@@ -54,14 +56,17 @@ import slimeattack07.naval_warfare.util.abilities.Guardian;
 import slimeattack07.naval_warfare.util.abilities.Insight;
 import slimeattack07.naval_warfare.util.abilities.Missile;
 import slimeattack07.naval_warfare.util.abilities.MortarBomber;
+import slimeattack07.naval_warfare.util.abilities.MultipleDeployable;
 import slimeattack07.naval_warfare.util.abilities.Napalm;
 import slimeattack07.naval_warfare.util.abilities.PassiveType;
 import slimeattack07.naval_warfare.util.abilities.Salvo;
 import slimeattack07.naval_warfare.util.abilities.Seaworthy;
+import slimeattack07.naval_warfare.util.abilities.Sonar;
 import slimeattack07.naval_warfare.util.abilities.Spyglass;
 import slimeattack07.naval_warfare.util.abilities.Torpedo;
 import slimeattack07.naval_warfare.util.abilities.TorpedoNet;
 import slimeattack07.naval_warfare.util.abilities.Whirlpool;
+import slimeattack07.naval_warfare.util.abilities.motherships.Amphion;
 
 public class NWBlocks {
 
@@ -118,6 +123,9 @@ public class NWBlocks {
 	public static final RegistryObject<Block> SHIP_HERE = NW_BLOCKS.register("ship_here", () -> 
 		new ShipMarkerBlock());
 	
+	public static final RegistryObject<Block> AMPHION_ACTIVE = NW_BLOCKS.register("amphion_active", () -> 
+		new DirectionalDisBlock(Properties.copy(Blocks.BEDROCK)));
+	
 	public static final RegistryObject<Block> SHELL = NW_ANIMATIONS.register("shell", () -> 
 		new DisappearingBlock());
 	public static final RegistryObject<Block> CANNONBALL = NW_ANIMATIONS.register("cannonball", () -> 
@@ -168,6 +176,14 @@ public class NWBlocks {
 		new DisappearingBlock());
 	public static final RegistryObject<Block> GLENEARN_PASSIVE = NW_ANIMATIONS.register("glenearn_passive", () -> 
 		new DisappearingBlock());
+	public static final RegistryObject<Block> AQUILON_ACTIVE = NW_ANIMATIONS.register("aquilon_active", () -> 
+		new DisappearingBlock());
+	public static final RegistryObject<Block> DEVASTATOR_ACTIVE = NW_ANIMATIONS.register("devastator_active", () -> 
+		new DisappearingBlock());
+	public static final RegistryObject<Block> MINI_NUKE = NW_ANIMATIONS.register("mini_nuke", () -> 
+		new DisappearingBlock());
+	public static final RegistryObject<Block> NEUTRON_ACTIVE = NW_ANIMATIONS.register("neutron_active", () -> 
+		new DisappearingBlock());
 
 	public static final RegistryObject<Block> CARCASS_ACTIVE = NW_ANIMATIONS.register("carcass_active", () -> 
 		new DirectionalDisBlock());
@@ -189,6 +205,13 @@ public class NWBlocks {
 		new DirectionalDisBlock());
 	public static final RegistryObject<Block> GHOSTNOVA_ACTIVE = NW_ANIMATIONS.register("ghostnova_active", () -> 
 		new DirectionalDisBlock());
+	public static final RegistryObject<Block> TOWERING_TERROR_ACTIVE = NW_ANIMATIONS.register("towering_terror_active", () -> 
+		new DirectionalDisBlock());
+	public static final RegistryObject<Block> HYPERION_ACTIVE_ACTIVE = NW_ANIMATIONS.register("hyperion_active_active", () -> 
+		new DirectionalDisBlock());
+	
+	public static final RegistryObject<Block> AMPHION_FRAGMENT = NW_ANIMATIONS.register("amphion_fragment", () -> 
+		new VariatorFiveDDB());
 		
 	
 	// Deployables
@@ -200,7 +223,7 @@ public class NWBlocks {
 			() -> new DotShip(null, new CounterFire("protected_area", 7, MEEANNE_ACTIVE_PASSIVE.get(), false), 3));
 	
 	public static final RegistryObject<Block> LANDGUARD_ACTIVE = NW_DEPLOYABLES.register("landguard_active",
-			() -> new DotShip(new Salvo(1000, 8, 2, 3, true, "e54_salvo"), null, 3));
+			() -> new DotShip(new Salvo(1000, 8, 2, 3, SHELL.get(), "e54_salvo", false), null, 3));
 	
 	public static final RegistryObject<Block> PARADOX_ACTIVE = NW_DEPLOYABLES.register("paradox_active",
 			() -> new TripleLineShip());
@@ -214,6 +237,12 @@ public class NWBlocks {
 	public static final RegistryObject<Block> BARCROSS_ACTIVE = NW_DEPLOYABLES.register("barcross_active",
 			() -> new DotShip(null, new TorpedoNet("torpedo_decoy", "barcross_active", 1, true), 1));
 	
+	public static final RegistryObject<Block> HYPERION_ACTIVE = NW_DEPLOYABLES.register("hyperion_active",
+			() -> new DotShip(new MortarBomber(1000, 6, 3, 1, 2, 2, 2, "tactical_bombardment", HYPERION_ACTIVE_ACTIVE.get(), true), null, 3));
+	
+	public static final RegistryObject<Block> AVERNUS_PASSIVE = NW_DEPLOYABLES.register("avernus_passive",
+			() -> new VariatorTwelveShip(null, null, 1));
+	
 	// Ships
 	public static final RegistryObject<Block> DESTROYER = NW_SHIPS.register("destroyer",
 			() -> new DoubleLineShip(null, null, 1));
@@ -222,7 +251,7 @@ public class NWBlocks {
 			() -> new TripleLineShip(null, null, 1));
 	
 	public static final RegistryObject<Block> SUBMARINE = NW_SHIPS.register("submarine",
-			() -> new TripleLineShip(null, null,1 ));
+			() -> new TripleLineShip(null, null, 1));
 	
 	public static final RegistryObject<Block> BATTLESHIP = NW_SHIPS.register("battleship",
 			() -> new QuadrupleLineShip(null, null, 1));
@@ -231,7 +260,7 @@ public class NWBlocks {
 			() -> new QuintupleLineShip(null, null, 1));
 	
 	public static final RegistryObject<Block> KILGOBNET = NW_SHIPS.register("kilgobnet",
-			() -> new TripleLineShip(new Salvo(2, 5, 2, 2, false, "burst_fire"), 
+			() -> new TripleLineShip(new Salvo(2, 5, 2, 2, CANNONBALL.get(), "burst_fire", false), 
 					new CounterFire("counter_fire", 3, CANNONBALL.get(), false), 2));
 	
 	public static final RegistryObject<Block> VANQUISHER = NW_SHIPS.register("vanquisher",
@@ -248,10 +277,10 @@ public class NWBlocks {
 	
 	public static final RegistryObject<Block> BOUNDLESS = NW_SHIPS.register("boundless",
 			() -> new SquareShip(new MortarBomber(2, 8, 4, 2, 2, 2, 2, "mortar", CANNONBALL.get(), false), 
-					new EnergyIncrease("lifesaver", 0, 6, PassiveType.DESTROYED),3 ));
+					new EnergyIncrease("lifesaver", 0, 6, PassiveType.DESTROYED), 3));
 	
 	public static final RegistryObject<Block> NARVIK = NW_SHIPS.register("narvik",
-			() -> new MediumLShip(new Deployable(4, 6, "deploy_bait_ship", NWItems.SEA_MINE, (ShipBlock) NARVIK_ACTIVE.get()), 
+			() -> new MediumLShip(new Deployable(4, 6, "deploy_bait_ship", NARVIK_ACTIVE.get(), false), 
 					new TorpedoNet("nanocarbon_net", "narvik", 3, false), 3));
 	
 	public static final RegistryObject<Block> THE_ULTIMATUM = NW_SHIPS.register("the_ultimatum",
@@ -270,7 +299,7 @@ public class NWBlocks {
 					new Whirlpool("lightshow", 10, EQUILIBRIUM_PASSIVE.get()), 3));
 	
 	public static final RegistryObject<Block> LANDGUARD = NW_SHIPS.register("landguard",
-			() -> new QuadrupleLineShip(new Deployable(2, 10, "deploy_e54", NWItems.TURRET, (ShipBlock) LANDGUARD_ACTIVE.get()), 
+			() -> new QuadrupleLineShip(new Deployable(2, 10, "deploy_e54", LANDGUARD_ACTIVE.get(), false), 
 					new AntiAir("anti_air_battery", "landguard", 4, 3, 2, 2, false), 4));
 	
 	public static final RegistryObject<Block> PSYCHE = NW_SHIPS.register("psyche",
@@ -282,7 +311,7 @@ public class NWBlocks {
 					new Seaworthy("old_but_gold", 10), 2));
 	
 	public static final RegistryObject<Block> GOLIATH = NW_SHIPS.register("goliath",
-			() -> new QuintupleLineShip(new Salvo(1, 12, 5, 6, false, "no_escape"), 
+			() -> new QuintupleLineShip(new Salvo(1, 12, 5, 6, CANNONBALL.get(), "no_escape", false), 
 					new CounterFire("sore_loser", 10, CANNONBALL.get(), true), 5));
 	
 	public static final RegistryObject<Block> PATHFINDER = NW_SHIPS.register("pathfinder",
@@ -290,12 +319,12 @@ public class NWBlocks {
 					new Seaworthy("aerial_supremacy", 6), 2));
 	
 	public static final RegistryObject<Block> PARADOX = NW_SHIPS.register("paradox",
-			() -> new BigLShip(new Deployable(1, 14, "haunting_past", NWItems.GHOST_SHIP, (ShipBlock) PARADOX_ACTIVE.get()), 
+			() -> new BigLShip(new Deployable(1, 14, "haunting_past", PARADOX_ACTIVE.get(), false), 
 					new EnergyIncrease("dying_breath", 0, 6, PassiveType.DESTROYED), 3));
 	
 	public static final RegistryObject<Block> PYRRHUS = NW_SHIPS.register("pyrrhus",
 			() -> new TripleLineShip(new Missile(2, 8, 2, "missile", MISSILE.get()), 
-					new Missile(3, "missile_barrage", NWBlocks.PYRRHUS_PASSIVE.get()), 4));
+					new Missile(3, "missile_barrage", PYRRHUS_PASSIVE.get()), 4));
 	
 	public static final RegistryObject<Block> POOLE = NW_SHIPS.register("poole",
 			() -> new SquareShip(new EnergyIncrease("healing_burst", 2, 3, PassiveType.NOT), 
@@ -326,7 +355,7 @@ public class NWBlocks {
 					new EnergyShield("shield_generator", "vervain", 3, 3, 3, 2, 2), 4));
 	
 	public static final RegistryObject<Block> MEEANNE = NW_SHIPS.register("meeanne",
-			() -> new SmallZigShip(new Deployable(2, 14, "create_protected_area", NWItems.SEA_MINE, (ShipBlock) MEEANNE_ACTIVE.get()), 
+			() -> new SmallZigShip(new Deployable(2, 14, "create_protected_area", MEEANNE_ACTIVE.get(), false), 
 					new Seaworthy("endangered_species", 10), 4));
 	
 	public static final RegistryObject<Block> IGNITION = NW_SHIPS.register("ignition",
@@ -342,27 +371,27 @@ public class NWBlocks {
 					new EnergyIncrease("energetic_release", 0, 4, PassiveType.DESTROYED), 4));
 	
 	public static final RegistryObject<Block> GALLANT = NW_SHIPS.register("gallant",
-			() -> new QuadrupleLineShip(new Salvo(2, 8, 3, 3, false, "salvo"), 
+			() -> new QuadrupleLineShip(new Salvo(2, 8, 3, 3, CANNONBALL.get(), "salvo", false), 
 					new TorpedoNet("protective_net", "gallant", 5, false), 3));
 	
 	public static final RegistryObject<Block> VENDETTA = NW_SHIPS.register("vendetta",
 			() -> new TripleLineShip(new Missile(1, 12, 3, "crude_missile", VENDETTA_ACTIVE.get()), 
-					new Missile(2, "self_destruct", NWBlocks.VENDETTA_PASSIVE.get()), 3));
+					new Missile(2, "self_destruct", VENDETTA_PASSIVE.get()), 3));
 	
 	public static final RegistryObject<Block> BARCROSS = NW_SHIPS.register("barcross",
-			() -> new QuadrupleLineShip(new Deployable(2, 8, "torpedo_decoy", NWItems.TORPEDO_DECOY, (ShipBlock) BARCROSS_ACTIVE.get()), 
-					new Insight("intel_share", NWBlocks.SPYGLASS.get(), false), 4));
+			() -> new QuadrupleLineShip(new Deployable(2, 8, "torpedo_decoy", BARCROSS_ACTIVE.get(), false), 
+					new Insight("intel_share", SPYGLASS.get(), false), 4));
 	
 	public static final RegistryObject<Block> AMARANTHUS = NW_SHIPS.register("amaranthus",
-			() -> new LargeTShip(new Deployable(2, 8, "sam_hovercraft", NWItems.DEPLOYABLE_AA, (ShipBlock) AMARANTHUS_ACTIVE.get()), 
-					new CounterFire("missile_madness", 7, NWBlocks.MISSILE.get(), true), 4));
+			() -> new LargeTShip(new Deployable(2, 8, "sam_hovercraft", AMARANTHUS_ACTIVE.get(), false), 
+					new CounterFire("missile_madness", 7, MISSILE.get(), true), 4));
 	
 	public static final RegistryObject<Block> GUSTAV = NW_SHIPS.register("gustav",
 			() -> new LargeZigShip(new FragBomb(2, 16, 8, "mega_shell", GUSTAV_ACTIVE.get() , GUSTAV_ACTIVE_FRAGMENTS.get()), 
-					new CounterFire("cover_fire", 3, NWBlocks.SHELL.get(), false), 5));
+					new CounterFire("cover_fire", 3, SHELL.get(), false), 5));
 	
 	public static final RegistryObject<Block> STERLING = NW_SHIPS.register("sterling",
-			() -> new TripleLineShip(new Salvo(4, 5, 2, 1, false, "burst_fire"), 
+			() -> new TripleLineShip(new Salvo(4, 5, 2, 1,CANNONBALL.get(), "burst_fire", true), 
 					new EndTurn("smoke_screen"), 2));
 	
 	public static final RegistryObject<Block> WIRNPA = NW_SHIPS.register("wirnpa",
@@ -386,8 +415,43 @@ public class NWBlocks {
 					new Missile(2, "kamikaze", GHOSTNOVA_PASSIVE.get()), 5));
 	
 	public static final RegistryObject<Block> ARETHUSE = NW_SHIPS.register("arethuse",
-			() -> new QuintupleLineShip(new Salvo(2, 7, 2, 3, false, "deterrent"), 
+			() -> new QuintupleLineShip(new Salvo(2, 7, 2, 3, CANNONBALL.get(), "deterrent", false), 
 					new AntiAir("upwards_fire", "arethuse", 4, 4, 2, 2, false), 5));
+	
+	public static final RegistryObject<Block> AVERNUS = NW_SHIPS.register("avernus",
+			() -> new QuintupleLineShip(new EnergyIncrease("update_position", 4, 3, PassiveType.NOT), 
+					new MultipleDeployable(1, 0, "cargo_chaos", AVERNUS_PASSIVE.get(), true, 3), 5));
+	
+	public static final RegistryObject<Block> DEVASTATOR = NW_SHIPS.register("devastator",
+			() -> new QuadrupleLineShip(new Missile(2, 16, 4, "devastate", DEVASTATOR_ACTIVE.get()), 
+					new EndTurn("speedster"), 5));
+	
+	public static final RegistryObject<Block> TOWERING_TERROR = NW_SHIPS.register("towering_terror",
+			() -> new SquareShip(new Salvo(3, 6, 2, 2, TOWERING_TERROR_ACTIVE.get(), "flyby", true), 
+					new EnergyShield("shielded", "towering_terror", 2, 2, 1, 1, 2), 4));
+	
+	public static final RegistryObject<Block> TRYPHON = NW_SHIPS.register("tryphon",
+			() -> new TripleLineShip(new Sonar(2, 6, 3, 2, 3, 2, "scanner"), 
+					new Seaworthy("hidden", 6), 3));
+	
+	public static final RegistryObject<Block> NEUTRON = NW_SHIPS.register("neutron",
+			() -> new QuintupleLineShip(new FragBomb(2, 9, 4, "scouting_fire", NEUTRON_ACTIVE.get(), SHELL.get()), 
+					new Insight("radar", null, false), 3));
+	
+	public static final RegistryObject<Block> AQUILON = NW_SHIPS.register("aquilon",
+			() -> new TripleLineShip(new Salvo(1, 16, 6, 5, AQUILON_ACTIVE.get(), "energy_railgun", true), 
+					new EnergyIncrease("energy_reserves", 1, 8, PassiveType.START_GAME), 5));
+	
+	public static final RegistryObject<Block> HYPERION = NW_SHIPS.register("hyperion",
+			() -> new QuintupleLineShip(new Deployable(2, 14, "air_support", HYPERION_ACTIVE.get(), false), 
+					new EnergyIncrease("supply_spill", 1, 6, PassiveType.DESTROYED), 4));
+	
+	// Motherships
+	
+	public static final RegistryObject<Block> AMPHION = NW_SHIPS.register("amphion",
+			() -> new Mothership(new Amphion("stealth_bomber", AMPHION_ACTIVE.get(), MINI_NUKE.get(), null, false), 
+					new Amphion("reactor_meltdown", null, null, AMPHION_FRAGMENT.get(), true)));
+	
 	
 	public static Block[] getShips(){
 		ArrayList<Block> ships = new ArrayList<>();

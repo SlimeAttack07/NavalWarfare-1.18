@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_towering_terror_four",
+	"textures": {
+		"0": "block/warped_planks",
+		"1": "block/cyan_wool",
+		"2": "block/gray_concrete",
+		"3": "block/cyan_terracotta",
+		"4": "block/light_blue_concrete",
+		"particle": "block/warped_planks"
+    }
+}

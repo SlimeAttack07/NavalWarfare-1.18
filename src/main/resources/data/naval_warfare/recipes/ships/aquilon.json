@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_triple"
+		},
+		{
+			"item": "naval_warfare:icon_vertical_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_vertical_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_vertical_salvo"
+		},
+		{
+			"item": "naval_warfare:icon_energy_start"
+		},
+		{
+			"item": "naval_warfare:icon_energy_start"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:aquilon",
+		"count": 1
+	}
+}

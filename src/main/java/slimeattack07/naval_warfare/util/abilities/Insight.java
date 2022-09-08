@@ -70,9 +70,10 @@ public class Insight implements Ability{
 								
 				controller.addAction(cah);
 				
-				if(!HINT) {
+				if(!HINT && ANIMATION != null) {
 					NWBasicMethods.dropBlock(level, te.getBlockPos(), ANIMATION);
 					NWBasicMethods.dropBlock(level, matching.getBlockPos(), ANIMATION);
+					
 					controller.recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), false, ANIMATION.getRegistryName()));
 				}
 			}

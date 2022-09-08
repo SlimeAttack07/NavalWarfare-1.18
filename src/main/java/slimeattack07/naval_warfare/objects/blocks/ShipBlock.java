@@ -80,7 +80,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH).setValue(SHIP_STATE, ShipState.UNDAMAGED));
 		ACTIVE_ABILITY = active_ability;
 		PASSIVE_ABILITY = passive_ability;
-		TIER = Math.min(Math.max(tier, 1), 6); // Limit tier between 1 and 6
+		TIER = Math.min(Math.max(tier, 1), 7); // Limit tier between 1 and 7
 	}
 	
 	public boolean hasActiveAbility() {
@@ -594,7 +594,7 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 					
 					if(hitresult >= 0) {
 						if(triggers_passives && hasPassiveAbility() && (PASSIVE_ABILITY.getPassiveType().equals(PassiveType.HIT) || 
-								(hitresult > 0 && PASSIVE_ABILITY.getPassiveType().equals(PassiveType.DESTROYED))))
+								(hitresult > 0 && PASSIVE_ABILITY.getPassiveType().triggerOnDestroyed())))
 							passive = true;
 					}
 					
@@ -646,6 +646,21 @@ public abstract class ShipBlock extends Block implements EntityBlock{
 						
 					if(gte != null) {
 						String pname = player == null ? "dummy" : player.getStringUUID();
+						
+						if(PASSIVE_ABILITY.getPassiveType().checkDestroyedCondition()) {
+							if(ste.getActiveAmount() >= ACTIVE_ABILITY.getAmount()) {
+								String message = NWBasicMethods.getTranslation("ability.naval_warfare.passive_not_triggered");
+								Player owner_player = owner.equals("dummy") ? null : level.getPlayerByUUID(UUID.fromString(owner));
+								
+								NWBasicMethods.messagePlayer(player, message);
+								NWBasicMethods.messagePlayer(owner_player, message);
+								gte.recordOnRecorders(BattleLogHelper.createMessage(Component.Serializer.toJson(new TextComponent(message))));
+								
+								return destroyed;
+							}
+						}
+						
+						
 						String translation = !NavalWarfareConfig.reveal_on_hit_passives.get() && PASSIVE_ABILITY.getPassiveType().equals(PassiveType.HIT) 
 								? PASSIVE_ABILITY.getPassiveCategory() : PASSIVE_ABILITY.getTranslation();
 						gte.addAction(ControllerActionHelper.createAnnounce(pname, owner,

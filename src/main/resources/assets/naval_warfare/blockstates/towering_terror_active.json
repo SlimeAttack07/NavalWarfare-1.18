@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "naval_warfare:block/towering_terror_active" },
+        "facing=south": { "model": "naval_warfare:block/towering_terror_active", "y": 180 },
+        "facing=west":  { "model": "naval_warfare:block/towering_terror_active", "y": 270 },
+        "facing=east":  { "model": "naval_warfare:block/towering_terror_active", "y": 90 }
+    }
+}

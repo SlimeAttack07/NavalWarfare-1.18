@@ -1,0 +1,28 @@
+{
+	"variants": {
+		"variator=one,facing=north": { "model": "naval_warfare:block/amphion_fragment1"},
+		"variator=one,facing=east": { "model": "naval_warfare:block/amphion_fragment1", "y": 90},
+		"variator=one,facing=south": { "model": "naval_warfare:block/amphion_fragment1", "y": 180},
+		"variator=one,facing=west": { "model": "naval_warfare:block/amphion_fragment1", "y": 270},
+		
+		"variator=two,facing=north": { "model": "naval_warfare:block/amphion_fragment2"},
+		"variator=two,facing=east": { "model": "naval_warfare:block/amphion_fragment2", "y": 90},
+		"variator=two,facing=south": { "model": "naval_warfare:block/amphion_fragment2", "y": 180},
+		"variator=two,facing=west": { "model": "naval_warfare:block/amphion_fragment2", "y": 270},
+		
+		"variator=three,facing=north": { "model": "naval_warfare:block/amphion_fragment3"},
+		"variator=three,facing=east": { "model": "naval_warfare:block/amphion_fragment3", "y": 90},
+		"variator=three,facing=south": { "model": "naval_warfare:block/amphion_fragment3", "y": 180},
+		"variator=three,facing=west": { "model": "naval_warfare:block/amphion_fragment3", "y": 270},
+		
+		"variator=four,facing=north": { "model": "naval_warfare:block/amphion_fragment4"},
+		"variator=four,facing=east": { "model": "naval_warfare:block/amphion_fragment4", "y": 90},
+		"variator=four,facing=south": { "model": "naval_warfare:block/amphion_fragment4", "y": 180},
+		"variator=four,facing=west": { "model": "naval_warfare:block/amphion_fragment4", "y": 270},
+		
+		"variator=five,facing=north": { "model": "naval_warfare:block/amphion_fragment5"},
+		"variator=five,facing=east": { "model": "naval_warfare:block/amphion_fragment5", "y": 90},
+		"variator=five,facing=south": { "model": "naval_warfare:block/amphion_fragment5", "y": 180},
+		"variator=five,facing=west": { "model": "naval_warfare:block/amphion_fragment5", "y": 270}
+	}
+}

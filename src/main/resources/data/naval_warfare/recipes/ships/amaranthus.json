@@ -8,10 +8,10 @@
 			"item": "naval_warfare:hull_large_t"
 		},
 		{
-			"item": "naval_warfare:icon_deployable_aa"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_deployable_aa"
+			"item": "naval_warfare:icon_anti_air"
 		},
 		{
 			"item": "naval_warfare:icon_suppression"

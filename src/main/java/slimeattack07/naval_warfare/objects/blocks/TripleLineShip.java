@@ -85,10 +85,6 @@ public class TripleLineShip extends ShipBlock {
 			return offset(dir, pos, 0, 1);
 		case THREE:
 			return offset(dir, pos, 0, -2);
-		case FOUR:
-			break;
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

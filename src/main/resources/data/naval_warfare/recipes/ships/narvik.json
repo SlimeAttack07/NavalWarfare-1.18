@@ -8,16 +8,16 @@
 			"item": "naval_warfare:hull_medium_l"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_suppression"
 		},
 		{
-			"item": "naval_warfare:icon_sea_mine"
+			"item": "naval_warfare:icon_suppression"
 		},
 		{
 			"item": "naval_warfare:icon_torpedo_net"

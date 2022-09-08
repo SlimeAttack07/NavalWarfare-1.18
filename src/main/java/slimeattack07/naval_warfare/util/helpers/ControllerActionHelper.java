@@ -5,6 +5,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import slimeattack07.naval_warfare.util.ControllerAction;
+import slimeattack07.naval_warfare.util.FunctionCaller;
 import slimeattack07.naval_warfare.util.Spell;
 import slimeattack07.naval_warfare.util.TargetType;
 
@@ -26,8 +27,21 @@ public class ControllerActionHelper {
 	public String translation;
 	public boolean triggers_passives;
 	public Spell spell;
+	public FunctionCaller function;
 	
 	public ControllerActionHelper() {
+	}
+	
+	public static ControllerActionHelper createFunction(FunctionCaller f, BlockPos ship, BlockPos location) {
+		ControllerActionHelper cah = new ControllerActionHelper();
+		
+		cah.delay = 10;
+		cah.action = ControllerAction.FUNCTION;
+		cah.function = f;
+		cah.board_te = ship;
+		cah.matching = location;
+		
+		return cah;
 	}
 	
 	public static ControllerActionHelper createValidate() {

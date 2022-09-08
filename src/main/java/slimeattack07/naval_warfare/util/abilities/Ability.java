@@ -2,6 +2,7 @@ package slimeattack07.naval_warfare.util.abilities;
 
 import java.util.ArrayList;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -10,6 +11,10 @@ import slimeattack07.naval_warfare.tileentity.BoardTE;
 
 public interface Ability {
 
+	public default void activate(Level level, Player player, BoardTE board, BlockPos ship) {
+		activate(level, player, board);
+	}
+	
 	public void activate(Level level, Player player, BoardTE board);
 	
 	public int getAmount();

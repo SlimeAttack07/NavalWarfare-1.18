@@ -1,0 +1,18 @@
+{
+	"parent": "naval_warfare:block/template_avernus_one",
+	"textures": {
+		"0": "block/red_concrete_powder",
+		"1": "block/gray_wool",
+		"2": "block/green_wool",
+		"3": "block/blue_wool",
+		"4": "block/orange_wool",
+		"5": "block/white_wool",
+		"6": "block/red_wool",
+		"7": "block/light_blue_wool",
+		"8": "block/magenta_wool",
+		"9": "block/black_wool",
+		"10": "block/lime_wool",
+		"11": "block/blue_terracotta",
+		"particle": "block/red_concrete_powder"
+    }
+}

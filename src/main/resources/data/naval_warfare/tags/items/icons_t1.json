@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "naval_warfare:icon_salvo",
+	"naval_warfare:icon_vertical_salvo",
     "naval_warfare:icon_counterfire",
 	"naval_warfare:icon_suppression",
 	"naval_warfare:icon_energy_start",
@@ -9,8 +10,6 @@
 	"naval_warfare:icon_energy_grant",
 	"naval_warfare:icon_flare",
 	"naval_warfare:icon_minor_insight",
-	"naval_warfare:icon_ghost_ship",
-	"naval_warfare:icon_raft",
 	"naval_warfare:icon_anti_air",
 	"naval_warfare:icon_seaworthy"
   ]

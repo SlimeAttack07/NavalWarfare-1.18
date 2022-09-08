@@ -17,5 +17,6 @@ public enum ControllerAction {
 	NAPALM,
 	TURN_DAMAGE,
 	SPELL,
-	RAFT;
+	RAFT,
+	FUNCTION;
 }

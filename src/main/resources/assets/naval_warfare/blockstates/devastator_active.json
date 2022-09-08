@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "naval_warfare:block/devastator_active" }
+    }
+}

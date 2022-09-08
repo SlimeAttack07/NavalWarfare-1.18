@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_devastator_two",
+	"textures": {
+		"0": "block/black_wool",
+		"1": "block/red_terracotta",
+		"2": "block/cyan_terracotta",
+		"3": "block/gray_concrete",
+		"4": "block/black_concrete",
+		"5": "block/yellow_terracotta",
+		"particle": "block/black_wool"
+    }
+}

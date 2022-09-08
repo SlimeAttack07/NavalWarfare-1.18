@@ -18,6 +18,10 @@ public class DisappearingBlock extends Block implements EntityBlock{
 		super(Properties.of(Material.STONE).noCollission().noDrops());
 	}
 	
+	public DisappearingBlock(Properties prop) {
+		super(prop);
+	}
+	
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
 		return NWTileEntityTypes.DISAPPEAR.get().create(pos, state);

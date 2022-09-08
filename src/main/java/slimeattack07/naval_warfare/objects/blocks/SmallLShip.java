@@ -72,10 +72,6 @@ public class SmallLShip extends ShipBlock {
 			return offset(dir, pos, -1, 0);
 		case THREE:
 			return offset(dir, pos, 1, 1) ;
-		case FOUR:
-			break;
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

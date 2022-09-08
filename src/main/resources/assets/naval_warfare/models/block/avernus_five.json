@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_avernus_five",
+	"textures": {
+		"0": "block/red_wool",
+		"1": "block/gray_concrete",
+		"2": "block/white_concrete",
+		"3": "block/white_terracotta",
+		"4": "block/black_wool",
+		"particle": "block/red_wool"
+    }
+}

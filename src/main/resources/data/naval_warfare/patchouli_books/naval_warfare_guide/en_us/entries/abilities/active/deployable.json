@@ -1,0 +1,43 @@
+{
+    "name": "Deployables",
+    "icon": "naval_warfare:icon_deployable",
+    "category": "naval_warfare:abilities/active",
+    "pages": [
+        {
+			"type": "patchouli:text",
+			"text": "$(l)(Active-Defensive)/$$(br)Deployables are deployed on your own board $(l)on unknown tiles/$. They act like any other ship and can even have abilities, but the opponent does not have to destroy them to win the game."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(l)Tips & Tricks:/$$(li)Try to place deployables in smart spots. If it has an active ability, then place it somewhere where you think the opponent won't easily find it. If it has a passive ability that you want the opponent to trigger, then place it somewhere where it's easy for the opponent to find it."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(li)Deployables must be placed on unknown tiles, meaning that any tile that has already been damaged is not valid. $(l)If you ignore this and still try to place it on a known tile, then the game will try to relocate it to a random spot.$(li)If there are no valid spots for the deployable, then the spent energy will be refunded."
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Ships",
+			"entries": [
+				"naval_warfare:ships/ship_types/battleships/landguard",
+				"naval_warfare:ships/ship_types/destroyers/meeanne",
+				"naval_warfare:ships/ship_types/destroyers/narvik",
+				"naval_warfare:ships/ship_types/submarines/barcross",
+				"naval_warfare:ships/ship_types/supports/amaranthus",
+				"naval_warfare:ships/ship_types/supports/paradox"
+			]
+		},
+		{
+			"type": "patchouli:relations",
+			"title": "Deployables",
+			"entries": [
+				"naval_warfare:ships/ship_types/deployables/landguard_active",
+				"naval_warfare:ships/ship_types/deployables/meeanne_active",
+				"naval_warfare:ships/ship_types/deployables/narvik_active",
+				"naval_warfare:ships/ship_types/deployables/barcross_active",
+				"naval_warfare:ships/ship_types/deployables/amaranthus_active",
+				"naval_warfare:ships/ship_types/deployables/paradox_active"
+			]
+		}
+    ]
+}

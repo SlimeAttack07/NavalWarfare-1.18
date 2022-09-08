@@ -26,6 +26,7 @@ import slimeattack07.naval_warfare.tileentity.ShipTE;
 import slimeattack07.naval_warfare.util.BattleLogAction;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.ControllerAction;
+import slimeattack07.naval_warfare.util.FunctionCaller;
 import slimeattack07.naval_warfare.util.HitResult;
 import slimeattack07.naval_warfare.util.ShipState;
 import slimeattack07.naval_warfare.util.Spell;
@@ -301,6 +302,7 @@ public class NBTHelper {
 		compound = helper.translation == null ? compound : safePutString("translation", helper.translation, compound);
 		compound = helper.triggers_passives ? safePutBoolean("triggers_passives", true, compound) : compound;
 		compound = helper.spell == null ? compound : safePutString("spell", helper.spell.toString(), compound);
+		compound = helper.function == null ? compound : safePutString("function", helper.function.name().toUpperCase(), compound);
 		
 		return compound;
 	}
@@ -464,6 +466,7 @@ public class NBTHelper {
 			cah.item = compound.contains("item") ? ForgeRegistries.ITEMS.getValue(new ResourceLocation(compound.getString("item"))) : null;
 			cah.translation = compound.contains("translation") ? compound.getString("translation") : null;
 			cah.hover = compound.contains("hover") ? compound.getString("hover") : null;
+			cah.function = compound.contains("function") ? FunctionCaller.valueOf(compound.getString("function")) : null;
 			
 			return cah;
 		} catch(Exception e) {

@@ -1,0 +1,31 @@
+{
+	"parent": "naval_warfare:block/template_avernus_three",
+	"textures": {
+		"0": "block/red_wool",
+		"1": "block/gray_concrete",
+		"2": "block/brown_concrete",
+		"3": "block/magenta_concrete",
+		"4": "block/lime_concrete",
+		"5": "block/yellow_concrete",
+		"6": "block/warped_planks",
+		"7": "block/white_concrete",
+		"8": "block/brown_wool",
+		"9": "block/magenta_wool",
+		"10": "block/lime_wool",
+		"11": "block/yellow_wool",
+		"12": "block/cyan_wool",
+		"13": "block/white_wool",
+		"14": "block/orange_concrete",
+		"15": "block/red_concrete",
+		"16": "block/black_concrete",
+		"17": "block/orange_wool",
+		"18": "block/black_wool",
+		"19": "block/blue_concrete",
+		"20": "block/green_concrete",
+		"21": "block/light_blue_concrete",
+		"22": "block/blue_wool",
+		"23": "block/green_wool",
+		"24": "block/light_blue_wool",
+		"particle": "block/red_wool"
+    }
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_amphion_one",
+	"textures": {
+		"0": "block/black_wool",
+		"1": "block/gray_wool",
+		"2": "block/yellow_wool",
+		"3": "block/gray_concrete_powder",
+		"particle": "block/black_wool"
+    }
+}

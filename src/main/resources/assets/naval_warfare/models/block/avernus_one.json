@@ -1,0 +1,18 @@
+{
+	"parent": "naval_warfare:block/template_avernus_one",
+	"textures": {
+		"0": "block/red_wool",
+		"1": "block/gray_concrete",
+		"2": "block/green_concrete",
+		"3": "block/blue_concrete",
+		"4": "block/orange_concrete",
+		"5": "block/white_concrete",
+		"6": "block/red_concrete",
+		"7": "block/light_blue_concrete",
+		"8": "block/magenta_concrete",
+		"9": "block/black_concrete",
+		"10": "block/lime_concrete",
+		"11": "block/warped_planks",
+		"particle": "block/red_wool"
+    }
+}

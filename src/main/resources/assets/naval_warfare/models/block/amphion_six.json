@@ -1,0 +1,15 @@
+{
+	"parent": "naval_warfare:block/template_amphion_six",
+	"textures": {
+		"0": "block/black_concrete",
+		"1": "block/gray_concrete",
+		"2": "block/yellow_concrete",
+		"3": "block/gray_wool",
+		"4": "block/black_wool",
+		"5": "block/light_gray_wool",
+		"6": "block/red_terracotta",
+		"7": "block/red_concrete",
+		"8": "block/gray_terracotta",
+		"particle": "block/black_concrete"
+    }
+}

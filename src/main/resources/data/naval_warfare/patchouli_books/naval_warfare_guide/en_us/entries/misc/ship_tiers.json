@@ -9,7 +9,7 @@
 		},
 		{
 			"type": "patchouli:text",
-			"text": "$(li)$(#B24340)$(l)Tier 6/$: Motherships (Future Update)$(li)$(#0E0E0E)$(l)Tier 7/$: Admin Ships (Creative Only, Future Update)"
+			"text": "$(li)$(#B24340)$(l)Tier 6/$: Motherships$(li)$(#0E0E0E)$(l)Tier 7/$: Admin Ships (Creative Only, Future Update)"
 		}
     ]
 }

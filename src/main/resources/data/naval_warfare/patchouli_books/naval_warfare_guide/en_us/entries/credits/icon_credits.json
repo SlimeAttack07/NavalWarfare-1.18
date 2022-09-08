@@ -22,12 +22,6 @@
 		},
 		{
 			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_raft",
-			"author": "Freepik",
-			"url": "https://www.flaticon.com/authors/freepik"
-		},
-		{
-			"type": "naval_warfare:credit",
 			"item": "naval_warfare:icon_mothership",
 			"author": "Freepik",
 			"url": "https://www.flaticon.com/authors/freepik"
@@ -59,6 +53,12 @@
 		{
 			"type": "naval_warfare:credit",
 			"item": "naval_warfare:icon_counterfire",
+			"author": "Freepik",
+			"url": "https://www.flaticon.com/authors/freepik"
+		},
+		{
+			"type": "naval_warfare:credit",
+			"item": "naval_warfare:icon_vertical_salvo",
 			"author": "Freepik",
 			"url": "https://www.flaticon.com/authors/freepik"
 		},
@@ -122,12 +122,6 @@
 			"author": "Freepik",
 			"url": "https://www.flaticon.com/authors/freepik"
 		},
-				{
-			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_deployable_aa",
-			"author": "Freepik",
-			"url": "https://www.flaticon.com/authors/freepik"
-		},
 	
 	
 		{
@@ -151,24 +145,6 @@
 		{
 			"type": "naval_warfare:credit",
 			"item": "naval_warfare:icon_guardian",
-			"author": "SmashIcons",
-			"url": "https://www.flaticon.com/authors/smashicons"
-		},
-		{
-			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_sea_mine",
-			"author": "SmashIcons",
-			"url": "https://www.flaticon.com/authors/smashicons"
-		},
-		{
-			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_turret",
-			"author": "SmashIcons",
-			"url": "https://www.flaticon.com/authors/smashicons"
-		},
-		{
-			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_ghost_ship",
 			"author": "SmashIcons",
 			"url": "https://www.flaticon.com/authors/smashicons"
 		},
@@ -233,12 +209,6 @@
 		{
 			"type": "naval_warfare:credit",
 			"item": "naval_warfare:icon_spyglass",
-			"author": "Good Ware",
-			"url": "https://www.flaticon.com/authors/good-ware"
-		},
-				{
-			"type": "naval_warfare:credit",
-			"item": "naval_warfare:icon_torpedo_decoy",
 			"author": "Good Ware",
 			"url": "https://www.flaticon.com/authors/good-ware"
 		},

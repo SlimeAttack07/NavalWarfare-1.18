@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_hyperion_active",
+	"textures": {
+		"0": "block/light_blue_terracotta",
+		"1": "block/gray_concrete",
+		"2": "block/blue_terracotta",
+		"3": "block/light_blue_wool",
+		"4": "block/black_concrete",
+		"particle": "block/light_blue_terracotta"
+    }
+}

@@ -5,7 +5,7 @@
     "pages": [
 		{
 			"type": "patchouli:text",
-			"text": "There are two main ways to design a ship: In modeling software like BlockBench or converting from structures. I personally used the second method for almost all ships in the mod. If you use modeling software, you'll need to ensure your model looks right in-game first before sending it in."
+			"text": "There are two main ways to design a ship: In modeling software like BlockBench/MagicaVoxel or converting from structures. I personally used the second method for almost all ships in the mod. If you use modeling software, you'll need to ensure your model looks right in-game first before sending it in."
 		},
 		{
 			"type": "patchouli:text",

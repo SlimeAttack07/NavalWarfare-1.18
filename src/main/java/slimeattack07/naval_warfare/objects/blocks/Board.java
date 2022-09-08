@@ -795,6 +795,9 @@ public class Board extends Block implements EntityBlock{
 				level.removeBlock(pos.above(i), false);
 		}
 		
+		if(level.getBlockState(pos.above(6)).getBlock() instanceof DisappearingBlock)
+			level.removeBlock(pos.above(6), false);
+		
 		if(level.getBlockState(pos.above(2)).getBlock() instanceof ShipMarkerBlock)
 			level.removeBlock(pos.above(2), false);
 		

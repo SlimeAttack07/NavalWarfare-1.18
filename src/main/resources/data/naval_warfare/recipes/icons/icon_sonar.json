@@ -8,7 +8,7 @@
 			"item": "minecraft:compass"
 		},
 		{
-			"item": "naval_warfare:icon_turret"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
 			"tag": "forge:dyes/green"

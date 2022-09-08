@@ -8,10 +8,10 @@
 			"item": "naval_warfare:hull_quadruple"
 		},
 		{
-			"item": "naval_warfare:icon_turret"
+			"item": "naval_warfare:icon_deployable"
 		},
 		{
-			"item": "naval_warfare:icon_turret"
+			"item": "naval_warfare:icon_salvo"
 		},
 		{
 			"item": "naval_warfare:icon_anti_air"

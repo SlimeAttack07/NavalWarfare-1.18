@@ -1,0 +1,12 @@
+{
+	"parent": "naval_warfare:block/template_aquilon_one",
+	"textures": {
+		"0": "block/gray_concrete",
+		"1": "block/cyan_terracotta",
+		"2": "block/warped_planks",
+		"3": "block/magenta_wool",
+		"4": "block/black_concrete",
+		"5": "block/light_gray_concrete",
+		"particle": "block/gray_concrete"
+    }
+}

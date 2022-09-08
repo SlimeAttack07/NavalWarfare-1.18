@@ -76,8 +76,6 @@ public class SmallTShip extends ShipBlock {
 			return offset(dir, pos, 1, 1) ;
 		case FOUR:
 			return offset(dir, pos, 1, -1);
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

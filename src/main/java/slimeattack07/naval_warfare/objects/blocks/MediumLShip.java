@@ -76,8 +76,6 @@ public class MediumLShip extends ShipBlock {
 			return offset(dir, pos, -1, 0) ;
 		case FOUR:
 			return offset(dir, pos, 2, 1);
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

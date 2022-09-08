@@ -1,0 +1,8 @@
+{
+	"parent": "naval_warfare:block/template_avernus_passive",
+	"textures": {
+		"0": "block/magenta_concrete_powder",
+		"1": "block/magenta_concrete",
+		"particle": "block/magenta_concrete_powder"
+    }
+}

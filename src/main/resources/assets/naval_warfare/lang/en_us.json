@@ -71,18 +71,14 @@
 	"item.naval_warfare.icon_shield_placer": "Shield Placer",
 	"item.naval_warfare.icon_guardian": "Guardian",
 	"item.naval_warfare.icon_napalm": "Napalm",
-	"item.naval_warfare.icon_sea_mine": "Sea Mine",
-	"item.naval_warfare.icon_turret": "Turret",
-	"item.naval_warfare.icon_ghost_ship": "Ghost Ship",
 	"item.naval_warfare.icon_torpedo_net": "Torpedo Net",
 	"item.naval_warfare.icon_anti_air": "Anti-Air",
 	"item.naval_warfare.icon_energy_shield": "Energy Shield",
 	"item.naval_warfare.icon_seaworthy": "Seaworthy",
-	"item.naval_warfare.icon_deployable_aa": "Deployable AA",
-	"item.naval_warfare.icon_torpedo_decoy": "Torpedo Decoy",
 	"item.naval_warfare.icon_sonar": "Sonar",
-	
-	"item.naval_warfare.icon_raft": "Raft",
+	"item.naval_warfare.icon_vertical_salvo": "Vertical Salvo",
+	"item.naval_warfare.icon_deployable": "Deployable",
+
 	"item.naval_warfare.icon_heatseaker": "Heatseaker",
 	
 	"item.naval_warfare.icon_battleship": "Battleship",
@@ -147,7 +143,14 @@
 	"block.naval_warfare.ghostnova_passive": "Ghostnova Passive",
 	"block.naval_warfare.glenearn_active": "Glenearn Active",
 	"block.naval_warfare.glenearn_passive": "Glenearn Passive",
-	
+	"block.naval_warfare.amphion_active": "Ampion Active",
+	"block.naval_warfare.amphion_fragment": "Ampion Fragment",
+	"block.naval_warfare.aquilon_active": "Aquilon Active",
+	"block.naval_warfare.devastator_active": "Devastator Active",
+	"block.naval_warfare.neutron_active": "Neutron Active",
+	"block.naval_warfare.towering_terror_active": "Towering Terror Active",
+	"block.naval_warfare.mini_nuke": "Mini Nuke",
+	"block.naval_warfare.hyperion_active_active": "Hyperion Active Active",
 	
 	"_DEPLOYABLES": "DEPLOYABLES",
 
@@ -159,6 +162,8 @@
 	"block.naval_warfare.raft": "Crude Raft",
 	"block.naval_warfare.amaranthus_active": "Amaranthus Active (SAM Hovercraft)",
 	"block.naval_warfare.barcross_active": "Barcross Active (Torpedo Decoy)",
+	"block.naval_warfare.hyperion_active": "Hyperion Active (Air Support)",
+	"block.naval_warfare.avernus_passive": "Avernus Passive (Cargo Chaos)",
 	
 
 	"_SHIPS": "__SHIPS__",
@@ -208,6 +213,14 @@
 	"block.naval_warfare.glenearn": "Glenearn",
 	"block.naval_warfare.ghostnova": "Ghostnova",
 	"block.naval_warfare.arethuse": "Arethuse",
+	"block.naval_warfare.avernus": "Avernus",
+	"block.naval_warfare.devastator": "Devastator",
+	"block.naval_warfare.towering_terror": "Towering Terror",
+	"block.naval_warfare.tryphon": "Tryphon",
+	"block.naval_warfare.neutron": "Neutron",
+	"block.naval_warfare.aquilon": "Aquilon",
+	"block.naval_warfare.hyperion": "Hyperion",
+	"block.naval_warfare.amphion": "Amphion",
 	
 	
 	"_DUMMY_BLOCKS": "__DUMMY_BLOCKS__ Please leave this here, as this is mainly used for defensive deployable abilities",
@@ -300,9 +313,11 @@
 	"message.naval_warfare.energy_start_opponent": "Your opponent starts with MARKER1 energy",
 	"message.naval_warfare.target_offensive": "This ability needs to target the opponent's board!",
 	"message.naval_warfare.target_defensive": "This ability needs to target your own board!",
-	"message.naval_warfare.failed_deploy": "Failed to deploy ability, you have lost it. Please make sure the area you select can actually spawn the deployable!",
-	"message.naval_warfare.failed_deploy_spell": "Failed to deploy spell, you have lost it. Please make sure the area you select can actually spawn the deployable!",
+	"message.naval_warfare.failed_deploy": "Failed to deploy ability, you have lost it. There are likely no valid spots left that can support this deployable.",
+	"message.naval_warfare.failed_deploy_spell": "Failed to deploy spell, you have lost it. There are likely no valid spots left that can support this deployable.",
 	"message.naval_warfare.failed_deploy_raft": "An error occured whilest trying to configure your raft. Your raft will not have any health this game to prevent further issues.",
+	"message.naval_warfare.failed_deploy_all": "Failed to deploy the full amount of requested deployables. There are likely no valid spots left that can support these deployables.",
+	"message.naval_warfare.shifted": "The selected location was invalid. The deployable has been summoned on a random tile instead.",
 	"message.naval_warfare.no_spell": "You've already used your spell this game!",
 	"message.naval_warfare.cant_remove": "Can't remove ships in this controller state!",
 	"message.naval_warfare.not_usable": "This is not a ship you can put in your loadout! It will not be registered.",
@@ -378,6 +393,7 @@
 	"misc.naval_warfare.width": "Width",
 	"misc.naval_warfare.amount": "Amount",
 	"misc.naval_warfare.dummy": "Dummy",
+	"misc.naval_warfare.amount_deployed": "Amount Deployed",
 
 
 	"_TAGS": "_TAGS_",
@@ -432,6 +448,7 @@
 	"shapes.naval_warfare.large_zig": "Large Zigzag",
 	"shapes.naval_warfare.cross": "Cross",
 	"shapes.naval_warfare.small_b": "Small B",
+	"shapes.naval_warfare.mothership": "Mothership",
 	
 
 	"_SPELL_DETAILS": "_SPELL DETAILS_",
@@ -463,6 +480,9 @@
 	"ability.naval_warfare.energy_cost": "Energy cost",
 	"ability.naval_warfare.extra_tiles": "Extra tiles affected on hit",
 	"ability.naval_warfare.tiles_targeted": "Targeted tiles",
+	"ability.naval_warfare.extra_targets": "Extra tiles targeted",
+	"ability.naval_warfare.passive_if_active": "Only has an effect if the ship's active ability has been used.",
+	"ability.naval_warfare.passive_not_triggered": "Passive ability has not been activated since not all conditions were met.",
 
 
 	"_ABILTIES": "_ABILITIES_",
@@ -549,6 +569,23 @@
 	"abilities.naval_warfare.kamikaze": "Kamikaze",
 	"abilities.naval_warfare.deterrent": "Deterrent",
 	"abilities.naval_warfare.upwards_fire": "Upwards Fire",
+	"abilities.naval_warfare.stealth_bomber": "Stealth Bomber",
+	"abilities.naval_warfare.reactor_meltdown": "Reactor Meltdown",
+	"abilities.naval_warfare.update_position": "Update Position",
+	"abilities.naval_warfare.cargo_chaos": "Cargo Chaos",
+	"abilities.naval_warfare.devastate": "Devastate",
+	"abilities.naval_warfare.speedster": "Speedster",
+	"abilities.naval_warfare.flyby": "Flyby",
+	"abilities.naval_warfare.shielded": "Shielded",
+	"abilities.naval_warfare.scanner": "Scanner",
+	"abilities.naval_warfare.hidden": "Hidden",
+	"abilities.naval_warfare.scouting_fire": "Scouting Fire",
+	"abilities.naval_warfare.radar": "Radar",
+	"abilities.naval_warfare.energy_railgun": "Energy Railgun",
+	"abilities.naval_warfare.energy_reserves": "Energy Reserves",
+	"abilities.naval_warfare.air_support": "Air Support",
+	"abilities.naval_warfare.supply_spill": "Supply Spill",
+	"abilities.naval_warfare.tactical_bombardment": "Tactical Bombardment",
 	
 	"abilities.naval_warfare.magic_shield": "Magic Shield",
 	"abilities.naval_warfare.crude_raft": "Crude Raft",
@@ -623,6 +660,10 @@
 	"advancements.naval_warfare.streak_8.description": "Deal at least 8 damage in a single turn",
 	"advancements.naval_warfare.streak_12.title": "Wipeout",
 	"advancements.naval_warfare.streak_12.description": "Deal at least 12 damage in a single turn",
+	"advancements.naval_warfare.battle_recorder.title": "Keep it for later",
+	"advancements.naval_warfare.battle_recorder.description": "Obtain a Battle Recorder",
+	"advancements.naval_warfare.battle_viewer.title": "Learn from the past",
+	"advancements.naval_warfare.battle_viewer.description": "Obtain a Battle Viewer",
 	
 	
 	

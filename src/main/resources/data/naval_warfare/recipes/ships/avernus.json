@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t5"
+		},
+		{
+			"item": "naval_warfare:hull_quintuple"
+		},
+		{
+			"item": "naval_warfare:icon_energy_gain"
+		},
+		{
+			"item": "naval_warfare:icon_energy_gain"
+		},
+		{
+			"item": "naval_warfare:icon_deployable"
+		},
+		{
+			"item": "naval_warfare:icon_deployable"
+		},
+		{
+			"item": "naval_warfare:icon_deployable"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:avernus",
+		"count": 1
+	}
+}

@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "naval_warfare:icon_salvo"
+			"item": "naval_warfare:icon_vertical_salvo"
 		}
 	],
 	"result": {

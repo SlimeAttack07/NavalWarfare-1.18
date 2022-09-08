@@ -1,0 +1,11 @@
+{
+	"parent": "naval_warfare:block/template_tryphon_two",
+	"textures": {
+		"0": "block/cyan_concrete",
+		"1": "block/warped_planks",
+		"2": "block/gray_concrete",
+		"3": "block/light_blue_concrete",
+		"4": "block/black_concrete",
+		"particle": "block/cyan_concrete"
+    }
+}

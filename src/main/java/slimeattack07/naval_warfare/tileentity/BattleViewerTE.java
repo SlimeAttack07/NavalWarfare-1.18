@@ -3,6 +3,8 @@ package slimeattack07.naval_warfare.tileentity;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.google.gson.JsonSyntaxException;
+
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -234,7 +236,11 @@ public class BattleViewerTE extends BlockEntity{
 		Player player = level.getPlayerByUUID(uuid);
 		
 		if(blh.message != null && player != null) {
-			player.sendMessage(Component.Serializer.fromJson(blh.message), Util.NIL_UUID);
+			try {
+				player.sendMessage(Component.Serializer.fromJson(blh.message), Util.NIL_UUID);
+			} catch (JsonSyntaxException e) {
+				NavalWarfare.LOGGER.warn("Received malformed JSON while reading viewer action " + blh + ": " + e.getMessage());
+			}
 		}
 		
 		removeFirstAction();
@@ -255,7 +261,7 @@ public class BattleViewerTE extends BlockEntity{
 				if(success && tile instanceof BoardTE) {
 					if(ship.hasPassiveAbility() && ship.PASSIVE_ABILITY.getPassiveType().equals(PassiveType.DEPLOYED)) {
 						BoardTE bte = (BoardTE) tile;
-						ship.PASSIVE_ABILITY.activate(level, null, bte);
+						ship.PASSIVE_ABILITY.activate(level, null, bte, pos);
 					}
 				}
 			}

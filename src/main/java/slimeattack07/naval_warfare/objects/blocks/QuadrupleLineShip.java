@@ -76,8 +76,6 @@ public class QuadrupleLineShip extends ShipBlock {
 			return offset(dir, pos, 0, 1);
 		case FOUR:
 			return offset(dir, pos, 0, -3);
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

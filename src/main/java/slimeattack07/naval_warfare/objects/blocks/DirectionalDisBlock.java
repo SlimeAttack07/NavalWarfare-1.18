@@ -16,6 +16,10 @@ public class DirectionalDisBlock extends DisappearingBlock{
 		registerDefaultState(defaultBlockState().setValue(FACING, Direction.NORTH));
 	}
 	
+	public DirectionalDisBlock(Properties prop) {
+		super(prop);
+	}
+	
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return defaultBlockState().setValue(FACING, context.getHorizontalDirection());

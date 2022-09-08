@@ -69,12 +69,6 @@ public class DoubleLineShip extends ShipBlock {
 			return offset(dir, pos, 0, 1);
 		case TWO:
 			return offset(dir, pos, 0, -1);
-		case THREE:
-			break;
-		case FOUR:
-			break;
-		case FIVE:
-			break;
 		default:
 			break;	
 		}

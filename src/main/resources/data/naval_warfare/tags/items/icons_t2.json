@@ -4,7 +4,6 @@
     "naval_warfare:icon_missile",
     "naval_warfare:icon_retaliation",
 	"naval_warfare:icon_heatseaker",
-	"naval_warfare:icon_turret",
 	"naval_warfare:icon_mortar",
 	"naval_warfare:icon_spyglass",
 	"naval_warfare:icon_major_insight",
@@ -24,9 +23,8 @@
 	"naval_warfare:icon_guardian",
 	"naval_warfare:icon_shield_placer",
 	"naval_warfare:icon_napalm",
-	"naval_warfare:icon_sea_mine",
 	"naval_warfare:icon_torpedo_net",
 	"naval_warfare:icon_energy_shield",
-	"naval_warfare:icon_deployable_aa"
+	"naval_warfare:icon_deployable"
   ]
 }

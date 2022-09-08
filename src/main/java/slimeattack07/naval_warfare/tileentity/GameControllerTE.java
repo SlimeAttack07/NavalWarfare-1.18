@@ -62,6 +62,7 @@ import slimeattack07.naval_warfare.util.TargetType;
 import slimeattack07.naval_warfare.util.abilities.Ability;
 import slimeattack07.naval_warfare.util.abilities.Napalm;
 import slimeattack07.naval_warfare.util.abilities.Seaworthy;
+import slimeattack07.naval_warfare.util.abilities.motherships.Amphion;
 import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
 import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 import slimeattack07.naval_warfare.util.helpers.NBTHelper;
@@ -491,10 +492,8 @@ public class GameControllerTE extends BlockEntity{
 			if(!cah.player.equals("dummy"))
 				player = level.getPlayerByUUID(UUID.fromString(cah.player));
 			
-			if(cah.animation != null) {
-				BattleLogHelper blh_drop = BattleLogHelper.createDropBlock(te.getId(), !cah.multi_ability, cah.animation.getRegistryName());
-				recordOnRecorders(blh_drop);
-			}
+			if(cah.animation != null)
+				recordOnRecorders(BattleLogHelper.createDropBlock(te.getId(), !cah.multi_ability, cah.animation.getRegistryName()));
 			
 			recordOnRecorders(BattleLogHelper.createDelay(cah.delay));
 
@@ -522,9 +521,9 @@ public class GameControllerTE extends BlockEntity{
 				player = level.getPlayerByUUID(UUID.fromString(cah.player));
 
 			if(active)
-				ship.ACTIVE_ABILITY.activate(level, player, te);
+				ship.ACTIVE_ABILITY.activate(level, player, te, cah.pos);
 			else
-				ship.PASSIVE_ABILITY.activate(level, player, te);
+				ship.PASSIVE_ABILITY.activate(level, player, te, cah.pos);
 
 			action_number++;
 		}
@@ -947,6 +946,42 @@ public class GameControllerTE extends BlockEntity{
 		removeFirstTurnAction();
 	}
 	
+	private void doFunctionAction(ControllerActionHelper cah) {
+		ShipBlock ship = null;
+		BoardTE te = null;
+		BlockEntity tile = level.getBlockEntity(cah.matching);
+		
+		if(tile instanceof BoardTE)
+			te = (BoardTE) tile;
+		
+		Block block = level.getBlockState(cah.board_te).getBlock();
+		
+		if(block instanceof ShipBlock)
+			ship = (ShipBlock) block;
+		
+		if(ship == null || te == null) {
+			removeFirstTurnAction();
+			
+			return;
+		}
+		
+		switch(cah.function) {
+		case AMPHION_DROPNUKE:{
+			if(ship.ACTIVE_ABILITY instanceof Amphion) {
+				Amphion amphion = (Amphion) ship.ACTIVE_ABILITY;
+				amphion.dropNuke(level, te);
+			}
+			
+			break;
+		}
+			
+		default:
+			break;
+		}
+		
+		removeFirstTurnAction();
+	}
+	
 	private void doMultiTarget(ControllerActionHelper cah) {
 		BlockEntity tile = level.getBlockEntity(cah.board_te);
 		
@@ -1290,6 +1325,9 @@ public class GameControllerTE extends BlockEntity{
 				addTurnAction(ControllerActionHelper.createValidate());
 			}
 			removeFirstTurnAction();
+			break;
+		case FUNCTION:
+			doFunctionAction(cah);
 			break;
 		default:
 			NavalWarfare.LOGGER.warn("I don't know how to execute this turn action! Please report this to the mod author! Turn action is: " + cah);

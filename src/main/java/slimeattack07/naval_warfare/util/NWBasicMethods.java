@@ -298,6 +298,9 @@ public class NWBasicMethods {
 	}
 	
 	public static void dropBlock(Level level, BlockPos pos, double offset, int time, Block block) {
+		if(block == null)
+			return;
+		
 		FallingBlockEntity falling = new FallingBlockEntity(level, pos.getX() + 0.5, pos.getY() + offset, pos.getZ() + 0.5, 
 				block.defaultBlockState());
 		falling.time = 1;

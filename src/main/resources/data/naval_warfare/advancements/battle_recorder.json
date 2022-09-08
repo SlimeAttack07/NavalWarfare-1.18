@@ -1,0 +1,38 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.naval_warfare.battle_recorder.title"
+        },
+        "description": {
+            "translate": "advancements.naval_warfare.battle_recorder.description",
+            "color": "gray"
+        },
+        "icon": {
+            "item": "naval_warfare:battle_recorder"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+     "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+							"naval_warfare:battle_recorder"
+						]
+                    }
+                ]
+            }
+        }
+    },
+	"requirements": [
+		[
+			"item"
+		]
+	],
+    "parent": "naval_warfare:root"
+}

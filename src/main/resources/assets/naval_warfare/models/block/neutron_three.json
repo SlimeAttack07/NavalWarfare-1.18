@@ -1,0 +1,13 @@
+{
+	"parent": "naval_warfare:block/template_neutron_three",
+	"textures": {
+		"0": "block/green_terracotta",
+		"1": "block/green_concrete",
+		"2": "block/gray_concrete",
+		"3": "block/black_concrete",
+		"4": "block/cyan_terracotta",
+		"5": "block/lime_concrete",
+		"6": "block/light_gray_wool",
+		"particle": "block/green_terracotta"
+    }
+}

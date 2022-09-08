@@ -12,7 +12,8 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import slimeattack07.naval_warfare.objects.blocks.Board;
 import slimeattack07.naval_warfare.objects.blocks.ShipBlock;
 import slimeattack07.naval_warfare.tileentity.BoardTE;
@@ -20,60 +21,77 @@ import slimeattack07.naval_warfare.tileentity.GameControllerTE;
 import slimeattack07.naval_warfare.util.BoardState;
 import slimeattack07.naval_warfare.util.NWBasicMethods;
 import slimeattack07.naval_warfare.util.helpers.BattleLogHelper;
+import slimeattack07.naval_warfare.util.helpers.ControllerActionHelper;
 
 public class Deployable implements Ability {
 	private final int AMOUNT;
-	private final int COST;
+	protected final int COST;
 	private final String NAME;
-	private final RegistryObject<Item> ITEM;
 	protected final ShipBlock SHIP;
+	protected final boolean PASSIVE;
 	
-	public Deployable(int amount, int cost, String name, RegistryObject<Item> item, ShipBlock ship) {
+	public Deployable(int amount, int cost, String name, Block ship, boolean passive) {
 		NAME = name;
 		AMOUNT = amount;
 		COST = cost;
-		ITEM = item;
-		SHIP = ship;
+		SHIP = ship instanceof ShipBlock ? (ShipBlock) ship : null;
+		PASSIVE = passive;
 	}
 	
 	@Override
 	public void activate(Level level, Player player, BoardTE board) {
-		ArrayList<BoardTE> tiles = getTiles(level, board);
+		if(SHIP == null)
+			return;
+		
+		ArrayList<BoardTE> tiles = getTilesReal(level, board);
 		
 		if(tiles.isEmpty())
 			return;
 		
-		BoardTE te = tiles.get(0);
-		BlockPos pos = te.getBlockPos().above();
+		boolean success = false;
+		boolean shifted = false;
 		
 		ArrayList<Direction> dirs = Lists.newArrayList(new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST});
 		Collections.shuffle(dirs);
 		
-		boolean success = false;
+		Board b = (Board) board.getBlockState().getBlock();
+		GameControllerTE controller = b.getController(level, board.getBlockPos());
 		
-		for(Direction dir : dirs) {
-			success = SHIP.summonShip(level, pos, SHIP.defaultBlockState().setValue(ShipBlock.FACING, dir), true, false);
+		for(BoardTE te : tiles) {
+			BlockPos pos = te.getBlockPos().above();
 			
-			if(success) {
-				if(SHIP.hasPassiveAbility() && SHIP.PASSIVE_ABILITY.getPassiveType().equals(PassiveType.DEPLOYED))
-					SHIP.PASSIVE_ABILITY.activate(level, player, board);
+			for(Direction dir : dirs) {
+				success = SHIP.summonShip(level, pos, SHIP.defaultBlockState().setValue(ShipBlock.FACING, dir), true, false);
 				
-				Board b = (Board) board.getBlockState().getBlock();
-				GameControllerTE controller = b.getController(level, board.getBlockPos());
-				
-				if(controller != null)
-					controller.recordOnRecorders(BattleLogHelper.createDeployable(board.getId(), SHIP.getRegistryName(), dir));
-				
-				break;
+				if(success) {
+					if(SHIP.hasPassiveAbility() && SHIP.PASSIVE_ABILITY.getPassiveType().equals(PassiveType.DEPLOYED))
+						SHIP.PASSIVE_ABILITY.activate(level, player, te);
+					
+					if(controller != null)
+						controller.recordOnRecorders(BattleLogHelper.createDeployable(te.getId(), SHIP.getRegistryName(), dir));
+					
+					break;
+				}
 			}
+			
+			if(success)
+				break;
+			
+			shifted = true;			
 		}
 		
-		if(!success)
+		if(!success && !PASSIVE) {
 			NWBasicMethods.messagePlayer(player, "message.naval_warfare.failed_deploy");
+			
+			if(controller != null)
+				controller.addAction(ControllerActionHelper.createEnergyGain(COST, true));
+		}
 		
-		Board b = (Board) te.getBlockState().getBlock();
-		BoardState bstate = b.getBoardState(te.getBlockState());
-		level.setBlockAndUpdate(te.getBlockPos(), te.getBlockState().setValue(Board.STATE, bstate.deselect()));		
+		if(shifted && !PASSIVE)
+			NWBasicMethods.messagePlayer(player, "message.naval_warfare.shifted");		
+				
+		BoardState bstate = b.getBoardState(board.getBlockState());
+		level.setBlockAndUpdate(board.getBlockPos(), board.getBlockState().setValue(Board.STATE, bstate.deselect()));
 	}
 
 	@Override
@@ -98,10 +116,26 @@ public class Deployable implements Ability {
 		return tiles;
 	}
 	
+	public ArrayList<BoardTE> getTilesReal(Level level, BoardTE te){
+		if(te == null)
+			return new ArrayList<>();
+
+		ArrayList<BoardTE> tiles = new ArrayList<>();
+		
+		tiles = te.collectUnknownEmptyTilesNoMatch(false);
+		tiles.remove(te);
+		Collections.shuffle(tiles);
+		
+		if(!PASSIVE)
+			tiles.add(0, te);
+		
+		return tiles;
+	}
+	
 	@Override
 	public MutableComponent hoverableInfo() {
 		String name = ChatFormatting.GREEN + NWBasicMethods.getTranslation(getTranslation()) + ChatFormatting.WHITE;
-		String hover = NWBasicMethods.getTranslation("misc.naval_warfare.cost") + ": " + COST + ", ";
+		String hover = PASSIVE ? "" : NWBasicMethods.getTranslation("misc.naval_warfare.cost") + ": " + COST;
 		
 		return NWBasicMethods.hoverableText(name, "gray", hover);
 	}
@@ -113,7 +147,7 @@ public class Deployable implements Ability {
 	
 	@Override
 	public Item getAnimationItem() {
-		return ITEM.get();
+		return SHIP == null ? Blocks.BARRIER.asItem() : SHIP.asItem();
 	}
 	
 	@Override

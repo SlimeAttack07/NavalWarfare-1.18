@@ -26,4 +26,8 @@ public class ShipPartProperty extends EnumProperty<ShipPart>{
 	public static ShipPartProperty createFive() {
 		return new ShipPartProperty(ShipPart.getSizeFive());
 	}
+	
+	public static ShipPartProperty createNine() {
+		return new ShipPartProperty(ShipPart.getSizeNine());
+	}
 }

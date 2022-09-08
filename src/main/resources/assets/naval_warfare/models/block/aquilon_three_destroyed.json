@@ -1,0 +1,10 @@
+{
+	"parent": "naval_warfare:block/template_aquilon_three",
+	"textures": {
+		"0": "block/gray_concrete_powder",
+		"1": "block/blue_terracotta",
+		"2": "block/gray_concrete_powder",
+		"3": "block/black_concrete_powder",
+		"particle": "block/gray_concrete_powder"
+    }
+}

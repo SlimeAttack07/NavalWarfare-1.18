@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "naval_warfare:hull_t4"
+		},
+		{
+			"item": "naval_warfare:hull_quintuple"
+		},
+		{
+			"item": "naval_warfare:icon_deployable"
+		},
+		{
+			"item": "naval_warfare:icon_deployable"
+		},
+		{
+			"item": "naval_warfare:icon_energy_grant"
+		},
+		{
+			"item": "naval_warfare:icon_bomber"
+		}
+	],
+	"result": {
+		"item": "naval_warfare:hyperion",
+		"count": 1
+	}
+}
